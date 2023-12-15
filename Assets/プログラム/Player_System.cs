@@ -9,7 +9,8 @@ public class Player_System : MonoBehaviour
 
     [Header("--- GetComponent ---")]
     [SerializeField] public Rigidbody rb;
-    [SerializeField] public GameObject camera;
+    [SerializeField] public GameObject CAMERA;
+    [SerializeField] public GameObject POINTER;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
@@ -27,11 +28,25 @@ public class Player_System : MonoBehaviour
     [Tooltip("移動速度")]
     public float walk_speed = 10;
     [Tooltip("空中速度")]
-    public float air_speed = 30;
+    public float airwalk_speed = 30;
+
+    public Vector3 aOrigin;
+    public Vector3 bOrigin;
 
     void Update()
     {
-        transform.eulerAngles = camera.transform.eulerAngles;
+        //transform.eulerAngles = new Vector3(transform.eulerAngles.x,CAMERA.transform.eulerAngles.y, transform.eulerAngles.z) ;
+        if (aOrigin != POINTER.transform.position)
+        {
+            float x = POINTER.transform.position.x - aOrigin.x;
+            float y = POINTER.transform.position.y - aOrigin.y;
+            Debug.Log(x+"　"+y);
+            transform.eulerAngles = new Vector3(x, y, transform.eulerAngles.z);
+        }
+
+        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        POINTER.transform.position = target;
+        aOrigin = POINTER.transform.position;
 
         if (Input.GetKeyDown(KeyCode.Q)) this.transform.position = Vector3.zero;
         if (move_permit //移動許可が出されており
@@ -50,10 +65,16 @@ public class Player_System : MonoBehaviour
     {
         if (move_permit)
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
+            float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
+            Vector3 Player_movedir = new Vector3(x, rb.velocity.y, z).normalized; // 正規化
+            Player_movedir = CAMERA.transform.forward * z + CAMERA.transform.right * x;
+            rb.velocity = new Vector3(Player_movedir.x * walk_speed, rb.velocity.y, Player_movedir.z * walk_speed);
+            //rb.velocity = Player_movedir * walk_speed;
+            /*
             rb.AddForce(x * walk_speed, 0, z * walk_speed, ForceMode.Impulse);
             rb.velocity = new Vector3(Input.GetAxis("Horizontal"), rb.velocity.y, Input.GetAxis("Vertical"));
+            */
         }
     }
     void OnTriggerStay(Collider other)
@@ -62,10 +83,7 @@ public class Player_System : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            isJumping_running = false;
-        }
+        if (other.gameObject.CompareTag("Floor")) isJumping_running = false;
     }
     void OnTriggerExit(Collider other)
     {

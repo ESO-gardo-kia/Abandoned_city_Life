@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Player_Camera : MonoBehaviour
 {
-    public float view_speed = 2;
-    private Vector3 past_pos;
+    [SerializeField] GameObject player;
+
     void Update()
     {
-        if (past_pos != Input.mousePosition)
+        float mx = Input.GetAxis("Mouse X");
+        float my = Input.GetAxis("Mouse Y") *-1;
+
+        if (Mathf.Abs(mx) > 0.001f)
         {
-            transform.eulerAngles += new Vector3(Input.mousePosition.y - past_pos.y / view_speed,
-                                            Input.mousePosition.x - past_pos.x / view_speed,
-                                            0);
-            past_pos = Input.mousePosition;
+            // 回転軸はワールド座標のY軸
+            transform.RotateAround(player.transform.position, Vector3.up, mx);
         }
 
-
+        if (Mathf.Abs(my) > 0.001f)
+        {
+            // 回転軸はカメラ自身のX軸
+            transform.RotateAround(player.transform.position, transform.right, my);
+        }
     }
 }
