@@ -35,19 +35,20 @@ public class Player_System : MonoBehaviour
 
     void Update()
     {
+        /*
+        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        POINTER.transform.position = target;
+        aOrigin = POINTER.transform.position;
         //transform.eulerAngles = new Vector3(transform.eulerAngles.x,CAMERA.transform.eulerAngles.y, transform.eulerAngles.z) ;
+        
         if (aOrigin != POINTER.transform.position)
         {
             float x = POINTER.transform.position.x - aOrigin.x;
             float y = POINTER.transform.position.y - aOrigin.y;
-            Debug.Log(x+"Å@"+y);
-            transform.eulerAngles = new Vector3(x, y, transform.eulerAngles.z);
+            //Debug.Log(x+"Å@"+y);
+            CAMERA.transform.eulerAngles = new Vector3(x, y, transform.eulerAngles.z);
         }
-
-        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        POINTER.transform.position = target;
-        aOrigin = POINTER.transform.position;
-
+        */
         if (Input.GetKeyDown(KeyCode.Q)) this.transform.position = Vector3.zero;
         if (move_permit //à⁄ìÆãñâ¬Ç™èoÇ≥ÇÍÇƒÇ®ÇË
         && Input.GetKey(KeyCode.Space) //buttonÇ™âüÇ≥ÇÍÇƒÇ¢Çƒ
@@ -59,7 +60,7 @@ public class Player_System : MonoBehaviour
             isJumping = false;
         }
         if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
-
+        //Debug.Log(POINTER.transform.position);
     }
     void FixedUpdate()
     {
