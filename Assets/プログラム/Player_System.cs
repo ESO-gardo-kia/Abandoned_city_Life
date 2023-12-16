@@ -10,15 +10,14 @@ public class Player_System : MonoBehaviour
     [Header("--- GetComponent ---")]
     [SerializeField] public Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
-    [SerializeField] public GameObject POINTER;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
     public float jump_num = 100;
     public float jump_second = 0.1f;
 
-    public bool isJumping = false;//ジャンプ出来るか否か
-    public bool isJumping_running = false;//ジャンプ処理中か否か
+    private bool isJumping = false;//ジャンプ出来るか否か
+    private bool isJumping_running = false;//ジャンプ処理中か否か
 
     //レイキャスト関係
     private Vector3 my_origin;
@@ -35,20 +34,7 @@ public class Player_System : MonoBehaviour
 
     void Update()
     {
-        /*
-        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        POINTER.transform.position = target;
-        aOrigin = POINTER.transform.position;
-        //transform.eulerAngles = new Vector3(transform.eulerAngles.x,CAMERA.transform.eulerAngles.y, transform.eulerAngles.z) ;
-        
-        if (aOrigin != POINTER.transform.position)
-        {
-            float x = POINTER.transform.position.x - aOrigin.x;
-            float y = POINTER.transform.position.y - aOrigin.y;
-            //Debug.Log(x+"　"+y);
-            CAMERA.transform.eulerAngles = new Vector3(x, y, transform.eulerAngles.z);
-        }
-        */
+        this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.Q)) this.transform.position = Vector3.zero;
         if (move_permit //移動許可が出されており
         && Input.GetKey(KeyCode.Space) //buttonが押されていて
@@ -60,22 +46,18 @@ public class Player_System : MonoBehaviour
             isJumping = false;
         }
         if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
-        //Debug.Log(POINTER.transform.position);
+        
     }
     void FixedUpdate()
     {
+        
         if (move_permit)
         {
             float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
             float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
             Vector3 Player_movedir = new Vector3(x, rb.velocity.y, z).normalized; // 正規化
-            Player_movedir = CAMERA.transform.forward * z + CAMERA.transform.right * x;
+            Player_movedir = this.transform.forward * z + this.transform.right * x;
             rb.velocity = new Vector3(Player_movedir.x * walk_speed, rb.velocity.y, Player_movedir.z * walk_speed);
-            //rb.velocity = Player_movedir * walk_speed;
-            /*
-            rb.AddForce(x * walk_speed, 0, z * walk_speed, ForceMode.Impulse);
-            rb.velocity = new Vector3(Input.GetAxis("Horizontal"), rb.velocity.y, Input.GetAxis("Vertical"));
-            */
         }
     }
     void OnTriggerStay(Collider other)
