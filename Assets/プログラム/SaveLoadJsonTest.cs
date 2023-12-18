@@ -5,15 +5,13 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class SaveLoadJsonTest : MonoBehaviour
 {
     public string SavePath;
     public Text nyuryoku;
-
+    
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         SavePath = Application.persistentDataPath + "/SaveData.json";
     }
     [Serializable]
@@ -25,7 +23,7 @@ public class GameManager : MonoBehaviour
     public void GameSave()
     {
         Debug.Log("ÉZÅ[ÉuÇµÇ‹ÇµÇΩ");
-        SaveData save = new();
+        SaveData save = new(); 
         save.Id = 0709;
         save.Name = "Gardo_kia";
 
