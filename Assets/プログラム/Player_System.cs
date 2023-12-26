@@ -10,6 +10,8 @@ public class Player_System : MonoBehaviour
     [Header("--- GetComponent ---")]
     [SerializeField] public Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
+    [SerializeField] public GameObject SHOTPOS;
+    [SerializeField] public GameObject SHOTOBJ;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
@@ -19,18 +21,13 @@ public class Player_System : MonoBehaviour
     private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
 
-    //レイキャスト関係
-    private Vector3 my_origin;
-    private Ray right_ray;//右
-    private Ray left_ray;//左
-
     [Tooltip("移動速度")]
     public float walk_speed = 10;
-    [Tooltip("空中速度")]
-    public float airwalk_speed = 30;
 
-    public Vector3 aOrigin;
-    public Vector3 bOrigin;
+    //仮
+    public float bullet_speed = 5;
+    public float num = 0;
+    public float max_num = 10;
 
     void Update()
     {
@@ -50,9 +47,15 @@ public class Player_System : MonoBehaviour
     }
     void FixedUpdate()
     {
-        
         if (move_permit)
         {
+            if (num >= max_num && Input.GetKey(KeyCode.E))
+            {
+                NomalShot();
+                num = 0;
+            }
+            else if(num < max_num) num += 0.2f;
+
             float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
             float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
             Vector3 Player_movedir = new Vector3(x, rb.velocity.y, z).normalized; // 正規化
@@ -92,5 +95,13 @@ public class Player_System : MonoBehaviour
                 yield return new WaitForSeconds(jump_second);
             }
         }
+    }
+    public void NomalShot()
+    {
+        GameObject shotObj = Instantiate(SHOTOBJ,SHOTPOS.transform.position,Quaternion.identity);
+        Rigidbody rb = shotObj.GetComponent<Rigidbody>();
+        rb.velocity = CAMERA.transform.forward * bullet_speed;
+        shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
+        //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
 }
