@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [CreateAssetMenu(menuName = "ScriptableObject/GunList")]
 public class Gun_List : ScriptableObject
 {
@@ -10,7 +11,7 @@ public class Gun_List : ScriptableObject
     {
         public int id;
         public string name;
-        public int sprite_id;
+        public Sprite sprite_id;
         public float price;
 
         public float bullet_damage;//É_ÉÅÅ[ÉW

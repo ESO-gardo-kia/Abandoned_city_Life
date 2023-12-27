@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public string SavePath;
-    public Text fpsText;
+    private string SavePath;
 
     void Start()
     {
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
     {
         public int Id;
         public string Name;
-
     }
     void Update()
     {

@@ -10,8 +10,12 @@ public class Player_System : MonoBehaviour
     [Header("--- GetComponent ---")]
     [SerializeField] public Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
-    [SerializeField] public GameObject SHOTPOS;
-    [SerializeField] public GameObject SHOTOBJ;
+    [SerializeField] private GameObject SHOTPOS;
+
+    [SerializeField] private GameObject PCanvas;
+    [SerializeField] private ContactObj_System ConObj;
+    [SerializeField] private GameObject ContactPanel;
+    [SerializeField] private Text ContactText;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
@@ -24,26 +28,40 @@ public class Player_System : MonoBehaviour
     [Tooltip("移動速度")]
     public float walk_speed = 10;
 
-    //仮
+    [Header("--- 仮 ---")]
     public float bullet_speed = 5;
     public float num = 0;
     public float max_num = 10;
+    [SerializeField] public GameObject SHOTOBJ;
 
+    private void Awake()
+    {
+        SHOTPOS = transform.Find("SHOTPOS").gameObject;
+        PCanvas = transform.Find("PCanvas").gameObject;
+
+        ContactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
+        ContactText = transform.Find("PCanvas/ContactPanel/ContactText").gameObject.GetComponent<Text>();
+        ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+    }
+    void Start()
+    {
+
+    }
     void Update()
     {
         this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
-        if (Input.GetKeyDown(KeyCode.Q)) this.transform.position = Vector3.zero;
+        if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (move_permit //移動許可が出されており
         && Input.GetKey(KeyCode.Space) //buttonが押されていて
         && !isJumping_running//ジャンプ処理中ではない場合で
         && isJumping)//接地している場合
-        {//JunpMoveが起動できる
+        {
             Debug.Log("ジャンプ");
             StartCoroutine("JunpMove");
             isJumping = false;
         }
         if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
-        
+        if (Input.GetKeyDown(KeyCode.Q) && ConObj != null) ConObj.Contact_function();
     }
     void FixedUpdate()
     {
@@ -51,6 +69,7 @@ public class Player_System : MonoBehaviour
         {
             if (num >= max_num && Input.GetKey(KeyCode.E))
             {
+                Debug.Log("発射しました");
                 NomalShot();
                 num = 0;
             }
@@ -70,10 +89,22 @@ public class Player_System : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor")) isJumping_running = false;
+        if (other.gameObject.CompareTag("Contact"))
+        {
+            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 50);
+            ConObj = other.GetComponent<ContactObj_System>();
+            ContactText.text = ConObj.contact_text;
+        }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Floor")) isJumping = false;
+        if (other.gameObject.CompareTag("Contact"))
+        {
+            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            ConObj = null;
+            ContactText.text = null;
+        }
     }
     IEnumerator JunpMove()
     {

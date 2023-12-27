@@ -10,4 +10,8 @@ public class Bullet_System : MonoBehaviour
         if(death_time <= 0) Destroy(gameObject);
         else death_time -= 0.02f;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if (gameObject.CompareTag("Player") == false) Destroy(gameObject);
+    }
 }
