@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Gun_List;
 
 public class Player_System : MonoBehaviour
 {
     static public bool move_permit = true;//移動可能か否か
 
     [Header("--- GetComponent ---")]
+    [SerializeField] public Gun_List gunlist;
     [SerializeField] public Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
     [SerializeField] private GameObject SHOTPOS;
 
     [SerializeField] private GameObject PCanvas;
+
     [SerializeField] private ContactObj_System ConObj;
     [SerializeField] private GameObject ContactPanel;
     [SerializeField] private Text ContactText;
+
+    [SerializeField] private GameObject MenuPanel;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
@@ -28,10 +33,9 @@ public class Player_System : MonoBehaviour
     [Tooltip("移動速度")]
     public float walk_speed = 10;
 
-    [Header("--- 仮 ---")]
-    public float bullet_speed = 5;
-    public float num = 0;
-    public float max_num = 10;
+    [Header("--- 装備品 ---")]
+    public int weapon_id;
+    private float rate_count = 0;
     [SerializeField] public GameObject SHOTOBJ;
 
     private void Awake()
@@ -41,11 +45,12 @@ public class Player_System : MonoBehaviour
 
         ContactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
         ContactText = transform.Find("PCanvas/ContactPanel/ContactText").gameObject.GetComponent<Text>();
-        ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-    }
-    void Start()
-    {
 
+        MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
+
+        ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        MenuPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        ContactText.text = null;
     }
     void Update()
     {
@@ -67,13 +72,13 @@ public class Player_System : MonoBehaviour
     {
         if (move_permit)
         {
-            if (num >= max_num && Input.GetKey(KeyCode.E))
+            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && Input.GetKey(KeyCode.E))
             {
                 Debug.Log("発射しました");
                 NomalShot();
-                num = 0;
+                rate_count = 0;
             }
-            else if(num < max_num) num += 0.2f;
+            else if(rate_count < gunlist.Performance[weapon_id].rapid_fire_rate) rate_count += 0.2f;
 
             float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
             float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
@@ -91,7 +96,7 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Floor")) isJumping_running = false;
         if (other.gameObject.CompareTag("Contact"))
         {
-            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 50);
+            ContactPanel.GetComponent<Image>().color = new Color(255, 255, 255, 50);
             ConObj = other.GetComponent<ContactObj_System>();
             ContactText.text = ConObj.contact_text;
         }
@@ -129,9 +134,15 @@ public class Player_System : MonoBehaviour
     }
     public void NomalShot()
     {
+        
         GameObject shotObj = Instantiate(SHOTOBJ,SHOTPOS.transform.position,Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
-        rb.velocity = CAMERA.transform.forward * bullet_speed;
+        Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+        var Guns = gunlist.Performance;
+
+        bs.damage = Guns[1].bullet_damage;
+        bs.death_time = Guns[1].bullet_range;
+        rb.velocity = CAMERA.transform.forward * Guns[1].bullet_speed;
         shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }

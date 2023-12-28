@@ -12,30 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af80c4c31c0516f4a8092051041f0bcb, type: 3}
   m_Name: Gun_List
   m_EditorClassIdentifier: 
-  Items:
+  Performance:
   - id: 0
-    name: testgun
-    sprite_id: 0
+    name: 
+    sprite_id: {fileID: 0}
     price: 0
     bullet_damage: 0
+    bullet_range: 0
     bullet_speed: 0
     rapid_fire_rate: 0
     loaded_bullets: 0
     reload_speed: 0
+  - id: 1
+    name: 
+    sprite_id: {fileID: 0}
+    price: 0
+    bullet_damage: 5
+    bullet_range: 1
+    bullet_speed: 100
+    rapid_fire_rate: 1
+    loaded_bullets: 50
+    reload_speed: 10
   - id: 0
-    name: pistol
-    sprite_id: 0
+    name: 
+    sprite_id: {fileID: 0}
     price: 0
     bullet_damage: 0
-    bullet_speed: 0
-    rapid_fire_rate: 0
-    loaded_bullets: 0
-    reload_speed: 0
-  - id: 0
-    name: assault_rifle
-    sprite_id: 0
-    price: 0
-    bullet_damage: 0
+    bullet_range: 0
     bullet_speed: 0
     rapid_fire_rate: 0
     loaded_bullets: 0
