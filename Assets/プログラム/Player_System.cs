@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Gun_List;
 
 public class Player_System : MonoBehaviour
 {
@@ -17,10 +16,14 @@ public class Player_System : MonoBehaviour
     [SerializeField] private GameObject PCanvas;
 
     [SerializeField] private ContactObj_System ConObj;
+    [SerializeField] private CollectObj_System ColObj;
     [SerializeField] private GameObject ContactPanel;
     [SerializeField] private Text ContactText;
+    [SerializeField] private Slider CollectGage;
 
     [SerializeField] private GameObject MenuPanel;
+
+    [SerializeField] private GameObject GamePanel;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
@@ -36,6 +39,7 @@ public class Player_System : MonoBehaviour
     [Header("--- 装備品 ---")]
     public int weapon_id;
     private float rate_count = 0;
+    private float collect_count = 0;
     [SerializeField] public GameObject SHOTOBJ;
 
     private void Awake()
@@ -45,28 +49,50 @@ public class Player_System : MonoBehaviour
 
         ContactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
         ContactText = transform.Find("PCanvas/ContactPanel/ContactText").gameObject.GetComponent<Text>();
+        CollectGage = transform.Find("PCanvas/ContactPanel/CollectGage").gameObject.GetComponent<Slider>();
 
         MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
 
+        GamePanel = transform.Find("PCanvas/GamePanel").gameObject;
+
         ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         MenuPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        ContactPanel.SetActive(false);
         ContactText.text = null;
     }
     void Update()
     {
         this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
-        if (move_permit //移動許可が出されており
-        && Input.GetKey(KeyCode.Space) //buttonが押されていて
-        && !isJumping_running//ジャンプ処理中ではない場合で
-        && isJumping)//接地している場合
+        if (move_permit)
         {
-            Debug.Log("ジャンプ");
-            StartCoroutine("JunpMove");
-            isJumping = false;
+            if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
+            if (Input.GetKey(KeyCode.Space) //buttonが押されていて
+            && !isJumping_running//ジャンプ処理中ではない場合で
+            && isJumping)//接地している場合
+            {
+                Debug.Log("ジャンプ");
+                StartCoroutine("JunpMove");
+                isJumping = false;
+            }
+            
+            if (Input.GetKey(KeyCode.Q))
+            {
+                if (ConObj != null) ConObj.Contact_function();
+                if (ColObj != null && CollectGage.value != CollectGage.maxValue)
+                {
+                    CollectGage.value += 0.02f;
+                }
+                else if (ColObj != null && CollectGage.value == CollectGage.maxValue) 
+                {
+                    ColObj.CollectObj_function();
+                    ContactPanel.SetActive(false);
+                    ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                    ColObj = null;
+                    ContactText.text = null;
+                }
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
-        if (Input.GetKeyDown(KeyCode.Q) && ConObj != null) ConObj.Contact_function();
     }
     void FixedUpdate()
     {
@@ -94,8 +120,18 @@ public class Player_System : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor")) isJumping_running = false;
+        if (other.gameObject.CompareTag("Collect"))
+        {
+            ContactPanel.SetActive(true);
+            ContactPanel.GetComponent<Image>().color = new Color(255, 255, 255, 50);
+            ColObj = other.GetComponent<CollectObj_System>();
+            ContactText.text = ColObj.collect_text;
+            CollectGage.maxValue = ColObj.collect_time;
+            CollectGage.value = 0;
+        }
         if (other.gameObject.CompareTag("Contact"))
         {
+            ContactPanel.SetActive(true);
             ContactPanel.GetComponent<Image>().color = new Color(255, 255, 255, 50);
             ConObj = other.GetComponent<ContactObj_System>();
             ContactText.text = ConObj.contact_text;
@@ -104,8 +140,16 @@ public class Player_System : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Floor")) isJumping = false;
+        if (other.gameObject.CompareTag("Collect"))
+        {
+            ContactPanel.SetActive(false);
+            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            ColObj = null;
+            ContactText.text = null;
+        }
         if (other.gameObject.CompareTag("Contact"))
         {
+            ContactPanel.SetActive(false);
             ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
             ConObj = null;
             ContactText.text = null;

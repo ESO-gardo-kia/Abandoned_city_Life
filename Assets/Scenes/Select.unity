@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb2134abc2705c459a3019ad49aaee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cond: 3
+  Cond: 4
   title_scene: Title
   test_stage: Test_Stage
   Select_scene: Slect
