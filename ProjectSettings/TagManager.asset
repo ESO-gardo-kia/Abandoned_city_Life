@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Contact
+  - Collect
   layers:
   - Default
   - TransparentFX

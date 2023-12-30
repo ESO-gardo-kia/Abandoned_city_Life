@@ -1,33 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Profiling;
-/// <summary>
-/// For debugging: FPS Counter
-/// デバッグ用: FPS カウンタ
-/// </summary>
 public class FPSCounter : MonoBehaviour
 {
-    /// <summary>
-    /// Reflect measurement results every 'EveryCalcurationTime' seconds.
-    /// EveryCalcurationTime 秒ごとに計測結果を反映する
-    /// </summary>
     [SerializeField, Range(0.1f, 1.0f)]
     float EveryCalcurationTime = 0.5f;
-
-    /// <summary>
-    /// FPS value
-    /// </summary>
-    public float Fps
-    {
-        get; private set;
-    }
+    public float Fps{get; private set;}
 
     int frameCount;
     float prevTime;
-    public Text FPStext;
+    private Text FPStext;
 
     void Start()
     {
+        FPStext = transform.Find("Debug_Canvas/FPStext").gameObject.GetComponent<Text>();
         frameCount = 0;
         prevTime = 0.0f;
         Fps = 0.0f;

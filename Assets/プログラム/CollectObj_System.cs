@@ -8,6 +8,9 @@ public class CollectObj_System : MonoBehaviour
     public CollectObj_Select cs;
     public string collect_text = "çÃéÊÇµÇ‹Ç∑Ç©";
     public float collect_time = 1;
+
+    public int collect_item_id;
+    public int collect_item_num;
     public void CollectObj_function()
     {
         switch (cs)

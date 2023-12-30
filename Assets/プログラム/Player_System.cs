@@ -6,24 +6,22 @@ using UnityEngine.UI;
 public class Player_System : MonoBehaviour
 {
     static public bool move_permit = true;//à⁄ìÆâ¬î\Ç©î€Ç©
-
+    
     [Header("--- GetComponent ---")]
     [SerializeField] public Gun_List gunlist;
     [SerializeField] public Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
-    [SerializeField] private GameObject SHOTPOS;
+    private GameObject SHOTPOS;
 
-    [SerializeField] private GameObject PCanvas;
+    private GameObject PCanvas;
 
-    [SerializeField] private ContactObj_System ConObj;
-    [SerializeField] private CollectObj_System ColObj;
-    [SerializeField] private GameObject ContactPanel;
-    [SerializeField] private Text ContactText;
-    [SerializeField] private Slider CollectGage;
-
-    [SerializeField] private GameObject MenuPanel;
-
-    [SerializeField] private GameObject GamePanel;
+    private ContactObj_System ConObj;
+    private CollectObj_System ColObj;
+    private GameObject ContactPanel;
+    private GameObject MenuPanel;
+    private GameObject GamePanel;
+    private Text ContactText;
+    private Slider CollectGage;
 
     [Header("--- äÓñ{ìÆçÏ ---")]
     public float jumpforce = 6f;
@@ -85,9 +83,13 @@ public class Player_System : MonoBehaviour
                 }
                 else if (ColObj != null && CollectGage.value == CollectGage.maxValue) 
                 {
-                    ColObj.CollectObj_function();
+                    Player_Manager.Item_Inventory[ColObj.collect_item_id] += ColObj.collect_item_num;
+                    Debug.Log(Player_Manager.Item_Inventory[ColObj.collect_item_id]);
+                    
                     ContactPanel.SetActive(false);
                     ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                    CollectGage.value = 0;
+                    ColObj.CollectObj_function();
                     ColObj = null;
                     ContactText.text = null;
                 }

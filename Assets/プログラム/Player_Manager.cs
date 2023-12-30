@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player_Manager : MonoBehaviour
 {
-    public static int[,] Item_Inventory;
+    static public int[] Item_Inventory = new int[100];
+    [SerializeField] static private ItemSprite_List IS_L;
     public static Player_Manager instance;
     private void Awake()
     {
