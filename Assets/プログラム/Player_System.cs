@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +30,7 @@ public class Player_System : MonoBehaviour
     public float jump_num = 100;
     public float jump_second = 0.1f;
 
-    private bool isJumping = false;//ジャンプ出来るか否か
+    public bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
 
     [Tooltip("移動速度")]
@@ -53,8 +55,8 @@ public class Player_System : MonoBehaviour
 
         GamePanel = transform.Find("PCanvas/GamePanel").gameObject;
 
-        ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-        MenuPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+        MenuPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
         ContactPanel.SetActive(false);
         ContactText.text = null;
     }
@@ -73,7 +75,17 @@ public class Player_System : MonoBehaviour
                 StartCoroutine("JunpMove");
                 isJumping = false;
             }
-            
+
+            Ray downray = new Ray(gameObject.transform.position,Vector3.down);
+            RaycastHit hit;
+            if (Physics.Raycast(downray, out hit, 10.0f))
+            {
+                var n = hit.point.y - gameObject.transform.position.y + 0.5f;
+                if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumping_running) isJumping = true;
+            }
+            Debug.DrawRay(downray.origin, downray.direction * 10, UnityEngine.Color.red, 5);
+
+
             if (Input.GetKey(KeyCode.Q))
             {
                 if (ConObj != null) ConObj.Contact_function();
@@ -87,7 +99,7 @@ public class Player_System : MonoBehaviour
                     Debug.Log(Player_Manager.Item_Inventory[ColObj.collect_item_id]);
                     
                     ContactPanel.SetActive(false);
-                    ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+                    ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
                     CollectGage.value = 0;
                     ColObj.CollectObj_function();
                     ColObj = null;
@@ -117,7 +129,7 @@ public class Player_System : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Floor")) isJumping = true;
+        //if (other.gameObject.CompareTag("Floor")) isJumping = true;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -125,7 +137,7 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Collect"))
         {
             ContactPanel.SetActive(true);
-            ContactPanel.GetComponent<Image>().color = new Color(255, 255, 255, 50);
+            ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(255, 255, 255, 50);
             ColObj = other.GetComponent<CollectObj_System>();
             ContactText.text = ColObj.collect_text;
             CollectGage.maxValue = ColObj.collect_time;
@@ -134,7 +146,7 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Contact"))
         {
             ContactPanel.SetActive(true);
-            ContactPanel.GetComponent<Image>().color = new Color(255, 255, 255, 50);
+            ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(255, 255, 255, 50);
             ConObj = other.GetComponent<ContactObj_System>();
             ContactText.text = ConObj.contact_text;
         }
@@ -145,14 +157,14 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Collect"))
         {
             ContactPanel.SetActive(false);
-            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
             ColObj = null;
             ContactText.text = null;
         }
         if (other.gameObject.CompareTag("Contact"))
         {
             ContactPanel.SetActive(false);
-            ContactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
             ConObj = null;
             ContactText.text = null;
         }
@@ -164,7 +176,7 @@ public class Player_System : MonoBehaviour
         float ju_fo = jumpforce;
         for (int i = 0; i <= jump_num && isJumping_running == true; i++)
         {
-            Debug.Log("jump処理");
+            //Debug.Log("jump処理");
             if (Input.GetKey(KeyCode.Space) && i == 0)
             {
                 rb.AddForce(Vector3.up * (jumpforce), ForceMode.Impulse);
