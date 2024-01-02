@@ -7,7 +7,8 @@ TagManager:
   - Floor
   - Contact
   - Collect
-  - enemy
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

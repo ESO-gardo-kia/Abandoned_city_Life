@@ -13,14 +13,14 @@ public class Bullet_System : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log(other.gameObject.tag);
-            Destroy(gameObject);
         }
-        else
+        else if (!other.gameObject.CompareTag("Player"))
         {
             Debug.Log(other.gameObject.tag);
+            //Destroy(gameObject);
         }
     }
 }
