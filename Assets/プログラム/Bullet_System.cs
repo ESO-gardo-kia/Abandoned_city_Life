@@ -13,11 +13,14 @@ public class Bullet_System : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("floor") || gameObject.CompareTag("enemy"))
+        if (other.gameObject.tag != "Player")
         {
-            Debug.Log(other.gameObject.name);
+            Debug.Log(other.gameObject.tag);
             Destroy(gameObject);
         }
-
+        else
+        {
+            Debug.Log(other.gameObject.tag);
+        }
     }
 }
