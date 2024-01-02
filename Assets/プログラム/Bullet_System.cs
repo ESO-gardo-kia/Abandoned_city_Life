@@ -11,8 +11,13 @@ public class Bullet_System : MonoBehaviour
         if(death_time <= 0) Destroy(gameObject);
         else death_time -= 0.02f;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //if (gameObject.CompareTag("Player") == false) Destroy(gameObject);
+        if (gameObject.CompareTag("floor") || gameObject.CompareTag("enemy"))
+        {
+            Debug.Log(other.gameObject.name);
+            Destroy(gameObject);
+        }
+
     }
 }

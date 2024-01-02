@@ -112,7 +112,7 @@ public class Player_System : MonoBehaviour
     {
         if (move_permit)
         {
-            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && Input.GetKey(KeyCode.E))
+            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && Input.GetKey(KeyCode.Tab))
             {
                 Debug.Log("”­ŽË‚µ‚Ü‚µ‚½");
                 NomalShot();
