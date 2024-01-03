@@ -14,4 +14,8 @@ public class Damage_Text : MonoBehaviour
         if (death_time <= 0) Destroy(gameObject);
         else death_time -= 0.02f;
     }
+    public void TextReset()
+    {
+        death_time = 1;
+    }
 }

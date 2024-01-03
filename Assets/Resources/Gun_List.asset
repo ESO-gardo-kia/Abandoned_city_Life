@@ -26,20 +26,20 @@ MonoBehaviour:
   - id: 1
     name: pistol
     sprite_id: {fileID: 0}
-    price: 0
+    price: 10
+    bullet_damage: 5
+    bullet_range: 1
+    bullet_speed: 100
+    rapid_fire_rate: 2
+    loaded_bullets: 50
+    reload_speed: 10
+  - id: 0
+    name: assaultrifle
+    sprite_id: {fileID: 0}
+    price: 100
     bullet_damage: 5
     bullet_range: 1
     bullet_speed: 100
     rapid_fire_rate: 1
     loaded_bullets: 50
     reload_speed: 10
-  - id: 0
-    name: assaultrifle
-    sprite_id: {fileID: 0}
-    price: 0
-    bullet_damage: 0
-    bullet_range: 0
-    bullet_speed: 0
-    rapid_fire_rate: 0
-    loaded_bullets: 0
-    reload_speed: 0
