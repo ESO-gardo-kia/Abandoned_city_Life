@@ -31,8 +31,8 @@ MonoBehaviour:
     bullet_range: 1
     bullet_speed: 100
     rapid_fire_rate: 2
-    loaded_bullets: 50
-    reload_speed: 10
+    loaded_bullets: 10
+    reload_speed: 3
   - id: 0
     name: assaultrifle
     sprite_id: {fileID: 0}

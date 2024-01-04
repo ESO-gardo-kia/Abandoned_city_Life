@@ -15,7 +15,7 @@ public class Gun_List : ScriptableObject
         public float price = 100;
 
         public float bullet_damage = 5;//ダメージ
-        public float bullet_range = 5;//ダメージ
+        public float bullet_range = 5;//射程
         public float bullet_speed = 100;//弾速
         public float rapid_fire_rate = 1;//連射速度
         public float loaded_bullets = 50;//装弾数

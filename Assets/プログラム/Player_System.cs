@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using UniRx.Triggers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ public class Player_System : MonoBehaviour
     private GameObject MenuPanel;
     private GameObject GamePanel;
     private Text ContactText;
+    private Text BulletText;
     private Slider CollectGage;
 
     [Header("--- 基本動作 ---")]
@@ -37,16 +39,24 @@ public class Player_System : MonoBehaviour
     public float walk_speed = 10;
 
     [Header("--- 装備品 ---")]
+    private GameObject MeleeWeapon;
+
     public int weapon_id;
     private float rate_count = 0;
-    private float collect_count = 0;
+    public float loaded_bullets = 0;//弾の最大値
+    public float current_loaded_bullets = 0;//現在の残弾
+    public float reload_speed = 0;//リロード完了値
+    public float reload_count = 0;//リロードカウント
+    public bool isreload;
     [SerializeField] public GameObject SHOTOBJ;
 
     private void Awake()
     {
+        MeleeWeapon = transform.Find("MeleeWeapon").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
         PCanvas = transform.Find("PCanvas").gameObject;
-
+        BulletText = transform.Find("PCanvas/BulletText").gameObject.GetComponent<Text>();
+        
         ContactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
         ContactText = transform.Find("PCanvas/ContactPanel/ContactText").gameObject.GetComponent<Text>();
         CollectGage = transform.Find("PCanvas/ContactPanel/CollectGage").gameObject.GetComponent<Slider>();
@@ -59,9 +69,12 @@ public class Player_System : MonoBehaviour
         MenuPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
         ContactPanel.SetActive(false);
         ContactText.text = null;
+
+        Wepon_Chenge();
     }
     void Update()
     {
+        BulletText.text = current_loaded_bullets.ToString();
         this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (move_permit)
@@ -112,14 +125,30 @@ public class Player_System : MonoBehaviour
     {
         if (move_permit)
         {
-            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && Input.GetKey(KeyCode.Tab))
+            //銃関係
+            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && current_loaded_bullets > 0 && !isreload&& Input.GetMouseButton(0))
             {
                 Debug.Log("発射しました");
                 NomalShot();
+                current_loaded_bullets--;
                 rate_count = 0;
             }
+            if (current_loaded_bullets < loaded_bullets
+                && Input.GetKey(KeyCode.R)) isreload = true;
+            if (isreload)
+            {
+                reload_count += 0.2f;
+                if (reload_count >= reload_speed)
+                {
+                    current_loaded_bullets = loaded_bullets;
+                    reload_count = 0;
+                    isreload = false;
+                }
+            }
             else if(rate_count < gunlist.Performance[weapon_id].rapid_fire_rate) rate_count += 0.2f;
-
+            //物理攻撃
+            if (Input.GetKey(KeyCode.R)) MeleeAttack();
+            //移動処理
             float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
             float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
             Vector3 Player_movedir = new Vector3(x, rb.velocity.y, z).normalized; // 正規化
@@ -203,5 +232,18 @@ public class Player_System : MonoBehaviour
         rb.velocity = CAMERA.transform.forward * Guns[1].bullet_speed;
         shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
+    }
+    public void MeleeAttack()
+    {
+        Rigidbody rb = MeleeWeapon.GetComponent<Rigidbody>();
+    }
+    public void Wepon_Chenge()
+    {
+        isreload = false;
+        reload_count = 0;
+        var Guns = gunlist.Performance;
+        loaded_bullets = Guns[weapon_id].loaded_bullets;
+        current_loaded_bullets = Guns[weapon_id].loaded_bullets;
+        reload_speed = Guns[weapon_id].reload_speed;
     }
 }
