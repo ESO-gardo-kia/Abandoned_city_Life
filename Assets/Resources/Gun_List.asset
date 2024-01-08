@@ -33,7 +33,7 @@ MonoBehaviour:
     rapid_fire_rate: 2
     loaded_bullets: 10
     reload_speed: 3
-  - id: 0
+  - id: 2
     name: assaultrifle
     sprite_id: {fileID: 0}
     price: 100

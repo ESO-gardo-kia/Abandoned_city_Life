@@ -1,48 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
 
 public class Enemy_System : MonoBehaviour
 {
-    [SerializeField] public GameObject EnemyCanvas;
+    [SerializeField] public GameObject Player;
+    public GameObject Enemy_Obj;
+
+    private GameObject EnemyCanvas;
+    private Slider HPSlider;
     [SerializeField] public GameObject TEXTOBJ;
     private GameObject TEXTPOS;
+    private GameObject old_dt;
+    private float old_damage;
 
-    private GameObject obj;
-    private float edamage;
-    
+    private NavMeshAgent navMeshAgent;
+
+
     void Start()
     {
+        Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         TEXTPOS = transform.Find("TEXTPOS").gameObject;
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
+        HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<Slider>();
+
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        navMeshAgent.destination = Player.transform.position;
+        EnemyCanvas.transform.LookAt(Player.transform);
+        EnemyCanvas.transform.eulerAngles += Vector3.down * 180;
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            if (obj == null)
+            if (old_dt == null)
             {
-                GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, Quaternion.identity, transform.Find("EnemyCanvas"));
+                GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, EnemyCanvas.transform.rotation, transform.Find("EnemyCanvas"));
                 UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
                 Bullet_System bs = other.GetComponent<Bullet_System>();
-                obj = dt;
+                Damage_Text dts = dt.GetComponent<Damage_Text>();
+                old_dt = dt;
 
-                Debug.Log(bs.damage);
                 t.text = bs.damage.ToString();
-                edamage = bs.damage;
+                old_damage = bs.damage;
             }
-            else if(obj != null)
+            else if(old_dt != null)
             {
-                edamage += other.GetComponent<Bullet_System>().damage;
-                obj.GetComponent<UnityEngine.UI.Text>().text = edamage.ToString();
-                obj.GetComponent<Damage_Text>().TextReset();
+                old_damage += other.GetComponent<Bullet_System>().damage;
+                old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
+                old_dt.GetComponent<Damage_Text>().TextReset();
             }
         }
     }
