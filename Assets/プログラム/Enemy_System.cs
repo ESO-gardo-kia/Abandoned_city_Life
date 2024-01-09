@@ -17,7 +17,7 @@ public class Enemy_System : MonoBehaviour
     private GameObject old_dt;
     private float old_damage;
 
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
 
     void Start()
@@ -27,7 +27,7 @@ public class Enemy_System : MonoBehaviour
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<Slider>();
 
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
     }
 
     void FixedUpdate()
