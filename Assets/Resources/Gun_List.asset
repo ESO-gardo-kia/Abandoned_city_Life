@@ -27,7 +27,7 @@ MonoBehaviour:
     name: pistol
     sprite_id: {fileID: 0}
     price: 10
-    bullet_damage: 5
+    bullet_damage: 1
     bullet_range: 1
     bullet_speed: 100
     rapid_fire_rate: 2

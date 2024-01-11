@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087225, g: 0.02989758, b: 0.029896658, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8188156, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.73129785, g: 0.8679245, b: 0.11053756, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1382,9 +1382,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 3601945063946245634}
-  Enemy_Obj: {fileID: 0}
+  Enemy_Obj: {fileID: 1563829705}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   navMeshAgent: {fileID: 1146664104}
+  enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
+  enemy_number: 1
+  name: 
+  exp: 1
+  hp: 10
+  currenthp: 0
+  atk: 5
+  currentatk: 0
+  agi: 5
+  currentagi: 0
 --- !u!4 &1146664100
 Transform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2247,7 @@ RectTransform:
   m_GameObject: {fileID: 1664105556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalScale: {x: 0.015, y: 0.02, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 698049925}
@@ -2249,7 +2259,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4, y: 0.5}
+  m_SizeDelta: {x: 169, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664105558
 MonoBehaviour:

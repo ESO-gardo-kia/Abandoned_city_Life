@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [CreateAssetMenu(menuName = "ScriptableObject/EnemyList")]
-public class Enemy_List : MonoBehaviour
+public class Enemy_List : ScriptableObject
 {
-    public List<EnemyList> Performance;
+    public List<EnemyList> Status;
     [System.Serializable]
     public class EnemyList
     {
