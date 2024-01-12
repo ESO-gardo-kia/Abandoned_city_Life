@@ -16,22 +16,22 @@ public class Enemy_System : MonoBehaviour
     private UnityEngine.UI.Slider HPSlider;
     [SerializeField] public GameObject TEXTOBJ;
     private GameObject TEXTPOS;
-    private GameObject old_dt;
-    private float old_damage;
+    public GameObject old_dt;
+    public float old_damage;
 
     public NavMeshAgent navMeshAgent;
-    [SerializeField] public Enemy_List enemy_List;
-    public int enemy_number;
-    public bool isdeath;
+    [SerializeField] private Enemy_List enemy_List;
+    private int enemy_number;
+    private bool isdeath;
 
-    public string name;
-    public float exp;
+    private string name;
+    private float exp;
 
-    public float hp;
+    private float hp;
     public float currenthp;
-    public float atk;
+    private float atk;
     public float currentatk;
-    public float agi;
+    private float agi;
     public float currentagi;
 
     void Start()
@@ -58,15 +58,16 @@ public class Enemy_System : MonoBehaviour
     {
         if (!isdeath)
         {
-            
+            Deathfunction();
         }
         else
         {
             navMeshAgent.destination = Player.transform.position;
         }
         
-        EnemyCanvas.transform.LookAt(Player.transform);
-        EnemyCanvas.transform.eulerAngles += Vector3.down * 180;
+        EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
+        //EnemyCanvas.transform.eulerAngles += Vector3.down * 180;
+        //EnemyCanvas.transform.eulerAngles += Vector3.right * 90;
 
         HPSlider.value = currenthp;
     }
@@ -74,12 +75,13 @@ public class Enemy_System : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, EnemyCanvas.transform.rotation, transform.Find("EnemyCanvas"));
-            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
-            Bullet_System bs = other.GetComponent<Bullet_System>();
-            Damage_Text dts = dt.GetComponent<Damage_Text>();
             if (old_dt == null)
             {
+                GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
+                UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
+                Bullet_System bs = other.GetComponent<Bullet_System>();
+                Damage_Text dts = dt.GetComponent<Damage_Text>();
+                Debug.Log("‹N“®1");
                 old_dt = dt;
 
                 t.text = bs.damage.ToString();
@@ -87,18 +89,28 @@ public class Enemy_System : MonoBehaviour
             }
             else if(old_dt != null)
             {
+                Debug.Log("‹N“®2");
                 old_damage += other.GetComponent<Bullet_System>().damage;
                 old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
                 old_dt.GetComponent<Damage_Text>().TextReset();
             }
-            TakeDmage(bs.damage);
+            TakeDmage(other.GetComponent<Bullet_System>().damage);
         }
     }
     void TakeDmage(float damage)
     {
         if (currenthp > 0)
         {
+            Debug.Log(damage);
             currenthp -= damage;
         }
+        if(currenthp <= 0)
+        {
+            isdeath = false;
+        }
+    }
+    void Deathfunction()
+    {
+        Destroy(gameObject);
     }
 }

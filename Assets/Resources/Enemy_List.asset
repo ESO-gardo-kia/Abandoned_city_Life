@@ -23,7 +23,7 @@ MonoBehaviour:
   - id: 0
     name: 
     Enemy_Model: {fileID: 0}
-    hp: 20
+    hp: 100
     atk: 5
     agi: 10
     exp: 10
