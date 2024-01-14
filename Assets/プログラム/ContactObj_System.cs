@@ -10,7 +10,7 @@ public class ContactObj_System : MonoBehaviour
     public Condition Cond;
     public string title_scene = "Title";
     public string test_stage = "Test_Stage";
-    public string Select_scene = "Slect";
+    public string Select_scene = "Select";
     public string Main_scene = "Main";
     public string contact_text;
 

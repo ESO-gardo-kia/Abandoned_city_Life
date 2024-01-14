@@ -9,6 +9,7 @@ TagManager:
   - Collect
   - Enemy
   - Bullet
+  - Attack_Obj
   layers:
   - Default
   - TransparentFX
