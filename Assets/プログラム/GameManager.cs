@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Stage_Information si;   
+    public Stage_Information si;
     public Enemy_Manager em;
     private string SavePath;
     public static GameManager instance;
 
-    public GameObject feedpanel;
+    private GameObject FeedPanel;
     public float start_count;//ステージ開始までのカウントダウン
     public float end_count;//ステージ終了までのカウントダウン
     private void Awake()
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         }
         //Stage_Information
         em.enemies_count = si.data[0].enemies_num;
+        FeedPanel = transform.Find("System_Canvas/FeedPanel").gameObject;
 
         //カーソル関係
         Cursor.visible = false;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        
+
     }
     public void GameSave()
     {
@@ -76,12 +77,12 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         DOTween.Sequence()
-        .Append(feedpanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
         //.Append(this.transform.DOMoveX(-3, 2f).SetRelative())
         .Play();
     }
     public void GameClear()
     {
-        
+
     }
 }
