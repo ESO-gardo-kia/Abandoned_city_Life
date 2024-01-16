@@ -17,6 +17,10 @@ public class Enemy_Manager : MonoBehaviour
     public void ParentEnemyDeath()
     {
         enemies_count--;
-        if(enemies_count == 0) isEnemies_death = true;
+        if (enemies_count == 0)
+        {
+            isEnemies_death = true;
+            transform.parent.GetComponent<GameManager>().GameClear();
+        }
     }
 }

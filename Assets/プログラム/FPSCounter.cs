@@ -13,7 +13,7 @@ public class FPSCounter : MonoBehaviour
 
     void Start()
     {
-        FPStext = transform.Find("Debug_Canvas/FPStext").gameObject.GetComponent<Text>();
+        FPStext = transform.Find("System_Canvas/FPStext").gameObject.GetComponent<Text>();
         frameCount = 0;
         prevTime = 0.0f;
         Fps = 0.0f;

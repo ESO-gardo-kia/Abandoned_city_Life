@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using System;
 using System.IO;
 using UnityEngine;
@@ -10,11 +9,24 @@ public class GameManager : MonoBehaviour
     public Stage_Information si;   
     public Enemy_Manager em;
     private string SavePath;
+    public static GameManager instance;
 
-    void Start()
+    public GameObject feedpanel;
+    public float start_count;//ステージ開始までのカウントダウン
+    public float end_count;//ステージ終了までのカウントダウン
+    private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         //Stage_Information
-        em.enemies_count=si.data[0].enemies_num;
+        em.enemies_count = si.data[0].enemies_num;
 
         //カーソル関係
         Cursor.visible = false;
@@ -22,6 +34,12 @@ public class GameManager : MonoBehaviour
         //セーブ関係
         SavePath = Application.persistentDataPath + "/SaveData.json";
         Application.targetFrameRate = 60;
+
+        GameStart();
+    }
+    void Start()
+    {
+
     }
     [Serializable]
     public class SaveData
@@ -55,8 +73,15 @@ public class GameManager : MonoBehaviour
         Debug.Log(load);
         Debug.Log("ロードしました");
     }
-    static public void GameClear()
+    public void GameStart()
     {
-        int a = 1;
+        DOTween.Sequence()
+        .Append(feedpanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
+        //.Append(this.transform.DOMoveX(-3, 2f).SetRelative())
+        .Play();
+    }
+    public void GameClear()
+    {
+        
     }
 }
