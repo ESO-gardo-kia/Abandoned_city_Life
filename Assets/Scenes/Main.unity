@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896766, a: 1}
+  m_IndirectSpecularColor: {r: 0.029087225, g: 0.02989758, b: 0.029896658, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +188,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &78636126
 GameObject:
@@ -887,6 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2789a9ffcc1a942a6804680372753a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  em: {fileID: 0}
   Player: {fileID: 3601945063946245634}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   navMeshAgent: {fileID: 1146664104}
@@ -1397,6 +1398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646351201}
+  - component: {fileID: 1646351202}
   m_Layer: 0
   m_Name: Enemy_Manager
   m_TagString: Untagged
@@ -1420,6 +1422,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646351202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646351200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a61e089ccf4234fb0eced63910f425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemies_death: 0
+  enemies_count: 0
 --- !u!1 &1661397896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1794,7 @@ PrefabInstance:
     - target: {fileID: 4322048087243402708, guid: 4096bc8588e21ca4687e2cb8540efbe6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4322048087243402708, guid: 4096bc8588e21ca4687e2cb8540efbe6,
         type: 3}
@@ -1835,6 +1851,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4322048087243402715, guid: 4096bc8588e21ca4687e2cb8540efbe6,
+        type: 3}
+      propertyPath: s
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0,
+        type: 2}
+    - target: {fileID: 4322048087243402715, guid: 4096bc8588e21ca4687e2cb8540efbe6,
+        type: 3}
+      propertyPath: em
+      value: 
+      objectReference: {fileID: 1646351202}
+    - target: {fileID: 4322048087243402715, guid: 4096bc8588e21ca4687e2cb8540efbe6,
+        type: 3}
+      propertyPath: si
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4096bc8588e21ca4687e2cb8540efbe6, type: 3}
 --- !u!20 &5263492240198181209 stripped

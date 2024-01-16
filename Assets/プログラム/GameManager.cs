@@ -7,10 +7,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public Stage_Information si;   
+    public Enemy_Manager em;
     private string SavePath;
 
     void Start()
     {
+        //Stage_Information
+        em.enemies_count=si.data[0].enemies_num;
+
         //カーソル関係
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -49,5 +54,9 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log(load);
         Debug.Log("ロードしました");
+    }
+    static public void GameClear()
+    {
+        int a = 1;
     }
 }

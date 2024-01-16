@@ -9,6 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class Enemy_System : MonoBehaviour
 {
+    [SerializeField] private Enemy_Manager em;
     [SerializeField] public GameObject Player;
     private GameObject Enemy_Obj;
     private GameObject Attack_Obj;
@@ -37,6 +38,7 @@ public class Enemy_System : MonoBehaviour
 
     void Start()
     {
+        em = transform.parent.GetComponent<Enemy_Manager>();
         Player = GameObject.Find("Player");
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
@@ -69,8 +71,6 @@ public class Enemy_System : MonoBehaviour
         }
         
         EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
-        //EnemyCanvas.transform.eulerAngles += Vector3.down * 180;
-        //EnemyCanvas.transform.eulerAngles += Vector3.right * 90;
 
         HPSlider.value = currenthp;
     }
@@ -150,6 +150,7 @@ public class Enemy_System : MonoBehaviour
     }
     void Deathfunction()
     {
+        em.ParentEnemyDeath();
         Destroy(gameObject);
     }
 }
