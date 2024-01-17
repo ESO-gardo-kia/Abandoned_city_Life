@@ -65,9 +65,11 @@ public class Player_System : MonoBehaviour
 
         GamePanel = transform.Find("PCanvas/GamePanel").gameObject;
 
-        ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
-        MenuPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+        //ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+        //MenuPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+
         ContactPanel.SetActive(false);
+        MenuPanel.SetActive(false);
         ContactText.text = null;
 
         Wepon_Chenge();
@@ -119,6 +121,11 @@ public class Player_System : MonoBehaviour
                     ContactText.text = null;
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            MenuPanel.SetActive(true);
         }
     }
     void FixedUpdate()
