@@ -12,27 +12,46 @@ public class Player_System : MonoBehaviour
     
     [Header("--- GetComponent ---")]
     [SerializeField] public Gun_List gunlist;
-    [SerializeField] public Rigidbody rb;
+    private Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
     private GameObject SHOTPOS;
+    private GameObject old_dt;
+    private float old_damage;
 
     private GameObject PCanvas;
 
     private ContactObj_System ConObj;
     private CollectObj_System ColObj;
+
     private GameObject ContactPanel;
-    private GameObject MenuPanel;
-    private GameObject GamePanel;
     private Text ContactText;
     private Text BulletText;
     private Slider CollectGage;
+
+    private GameObject MenuPanel;
+
+    private GameObject GamePanel;
+    private Slider HPSlider;
+    private Text HPText;
+    private Slider ENSlider;
+    private Text ENText;
+
+    [Header("--- ステータス ---")]
+    private float exp;
+
+    public float hp;
+    public float currenthp;
+    public float atk;
+    public float currentatk;
+    public float agi;
+    public float currentagi;
 
     [Header("--- 基本動作 ---")]
     public float jumpforce = 6f;
     public float jump_num = 100;
     public float jump_second = 0.1f;
 
-    public bool isJumping = false;//ジャンプ出来るか否か
+    private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
 
     [Tooltip("移動速度")]
@@ -43,39 +62,51 @@ public class Player_System : MonoBehaviour
 
     public int weapon_id;
     private float rate_count = 0;
-    public float loaded_bullets = 0;//弾の最大値
-    public float current_loaded_bullets = 0;//現在の残弾
-    public float reload_speed = 0;//リロード完了値
-    public float reload_count = 0;//リロードカウント
-    public bool isreload;
+    private float loaded_bullets = 0;//弾の最大値
+    private float current_loaded_bullets = 0;//現在の残弾
+    private float reload_speed = 0;//リロード完了値
+    private float reload_count = 0;//リロードカウント
+    private bool isreload;
     [SerializeField] public GameObject SHOTOBJ;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
+
         MeleeWeapon = transform.Find("MeleeWeapon").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
+
         PCanvas = transform.Find("PCanvas").gameObject;
-        BulletText = transform.Find("PCanvas/BulletText").gameObject.GetComponent<Text>();
         
         ContactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
-        ContactText = transform.Find("PCanvas/ContactPanel/ContactText").gameObject.GetComponent<Text>();
-        CollectGage = transform.Find("PCanvas/ContactPanel/CollectGage").gameObject.GetComponent<Slider>();
+        ContactText = ContactPanel.transform.Find("ContactText").gameObject.GetComponent<Text>();
+        CollectGage = ContactPanel.transform.Find("CollectGage").gameObject.GetComponent<Slider>();
 
         MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
 
         GamePanel = transform.Find("PCanvas/GamePanel").gameObject;
-
-        //ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
-        //MenuPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+        HPSlider = GamePanel.transform.Find("HPSlider").gameObject.GetComponent<Slider>();
+        HPText = GamePanel.transform.Find("HPText").gameObject.GetComponent<Text>();
+        ENSlider = GamePanel.transform.Find("ENSlider").gameObject.GetComponent<Slider>();
+        ENText = GamePanel.transform.Find("ENText").gameObject.GetComponent<Text>();
+        BulletText = GamePanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
 
         ContactPanel.SetActive(false);
         MenuPanel.SetActive(false);
         ContactText.text = null;
 
-        Wepon_Chenge();
+        currenthp = hp;
+        currentatk = atk;
+        currentagi = agi;
+        HPSlider.maxValue = hp;
+        HPSlider.value = currenthp;
+
+        Wepon_Initialization();
     }
     void Update()
     {
+        HPSlider.value = currenthp;
+        HPText.text = currenthp.ToString();
         BulletText.text = current_loaded_bullets.ToString();
         this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
@@ -97,8 +128,9 @@ public class Player_System : MonoBehaviour
             {
                 var n = hit.point.y - gameObject.transform.position.y + 0.5f;
                 if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumping_running) isJumping = true;
+                else isJumping = false;
             }
-            Debug.DrawRay(downray.origin, downray.direction * 10, UnityEngine.Color.red, 5);
+            //Debug.DrawRay(downray.origin, downray.direction * 10, UnityEngine.Color.red, 5);
 
 
             if (Input.GetKey(KeyCode.Q))
@@ -133,7 +165,10 @@ public class Player_System : MonoBehaviour
         if (move_permit)
         {
             //銃関係
-            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate && current_loaded_bullets > 0 && !isreload&& Input.GetMouseButton(0))
+            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate 
+                && current_loaded_bullets > 0 
+                && !isreload
+                && Input.GetMouseButton(0))
             {
                 Debug.Log("発射しました");
                 NomalShot();
@@ -186,6 +221,16 @@ public class Player_System : MonoBehaviour
             ConObj = other.GetComponent<ContactObj_System>();
             ContactText.text = ConObj.contact_text;
         }
+        if (move_permit)
+        {
+            if (other.gameObject.CompareTag("Bullet")
+                && other.GetComponent<Bullet_System>().target_tag == "Player")
+            {
+                TakeDmage(other.GetComponent<Bullet_System>().damage,
+                    other.GetComponent<Bullet_System>());
+            }
+
+        }
     }
     void OnTriggerExit(Collider other)
     {
@@ -204,6 +249,29 @@ public class Player_System : MonoBehaviour
             ConObj = null;
             ContactText.text = null;
         }
+    }
+    void TakeDmage(float damage,Bullet_System BS)
+    {
+        /*
+        if (old_dt == null)
+        {
+            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
+            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
+            Damage_Text dts = dt.GetComponent<Damage_Text>();
+            old_dt = dt;
+
+            t.text = BS.damage.ToString();
+            old_damage = BS.damage;
+        }
+        else if (old_dt != null)
+        {
+            old_damage += BS.damage;
+            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
+            old_dt.GetComponent<Damage_Text>().TextReset();
+        }
+        */
+        if (currenthp > 0) currenthp -= damage;
+        if (currenthp <= 0) transform.root.GetComponent<GameManager>().GameOver();
     }
     IEnumerator JunpMove()
     {
@@ -234,6 +302,7 @@ public class Player_System : MonoBehaviour
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
         var Guns = gunlist.Performance;
 
+        bs.target_tag = "Enemy";
         bs.damage = Guns[1].bullet_damage;
         bs.death_time = Guns[1].bullet_range;
         rb.velocity = CAMERA.transform.forward * Guns[1].bullet_speed;
@@ -244,7 +313,7 @@ public class Player_System : MonoBehaviour
     {
         Rigidbody rb = MeleeWeapon.GetComponent<Rigidbody>();
     }
-    public void Wepon_Chenge()
+    public void Wepon_Initialization()
     {
         isreload = false;
         reload_count = 0;

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Enemy_Manager : MonoBehaviour
 {
-    public bool isEnemies_death;
+    static public bool enemies_move_permit;
+    public GameManager gm;
     public int enemies_count;
     void Start()
     {
-        enemies_count = transform.childCount;
+        gm = transform.parent.GetComponent<GameManager>();
+        enemies_count = gm.si.data[gm.stage_number].enemies_num[0];
     }
     void Update()
     {
@@ -19,7 +21,6 @@ public class Enemy_Manager : MonoBehaviour
         enemies_count--;
         if (enemies_count == 0)
         {
-            isEnemies_death = true;
             transform.parent.GetComponent<GameManager>().GameClear();
         }
     }

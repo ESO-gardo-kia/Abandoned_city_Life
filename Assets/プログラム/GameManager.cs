@@ -7,15 +7,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Stage_Information si;
     public Enemy_Manager em;
     private string SavePath;
     public static GameManager instance;
 
+    public Stage_Information si;
+    public int stage_number;
     private GameObject FeedPanel;
-    public float start_count;//ステージ開始までのカウントダウン
+    public int start_count;//ステージ開始までのカウントダウン
     private GameObject Sc_Text;
-    public float end_count;//ステージ終了までのカウントダウン
+    public int end_count;//ステージ終了までのカウントダウン
     private GameObject Ec_Text;
     private void Awake()
     {
@@ -29,10 +30,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         //Stage_Information
-        em.enemies_count = si.data[0].enemies_num;
         FeedPanel = transform.Find("System_Canvas/FeedPanel").gameObject;
         Sc_Text = transform.Find("System_Canvas/Sc_Text").gameObject;
         Ec_Text = transform.Find("System_Canvas/Ec_Text").gameObject;
+        em.enemies_count = si.data[stage_number].enemies_num[0];
 
         //カーソル関係
         Cursor.visible = false;
@@ -43,15 +44,15 @@ public class GameManager : MonoBehaviour
 
         GameStart();
     }
-    void Start()
-    {
-
-    }
     [Serializable]
     public class SaveData
     {
         public int Id;
         public string Name;
+    }
+    void Start()
+    {
+
     }
     void Update()
     {
@@ -81,14 +82,36 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
+        Player_System.move_permit = false;
+        Enemy_Manager.enemies_move_permit = false;
         FeedPanel.SetActive(true);
         DOTween.Sequence()
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
-        .Append(Sc_Text.GetComponent<Text>().DOCounter(5,0,5.0f).SetEase(Ease.Linear).SetDelay(0.5f))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)
+        .OnComplete(() => {
+            Debug.Log(si.data[0].name);
+            Sc_Text.GetComponent<Text>().text = si.data[0].name;
+        }))
+        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(1f)
+        .OnComplete(() => {
+            Player_System.move_permit = true;
+            Enemy_Manager.enemies_move_permit = true;
+            Debug.Log(Enemy_Manager.enemies_move_permit);
+            Sc_Text.GetComponent<Text>().text = "Start!";
+        }))
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f))
         .Play();
     }
     public void GameClear()
     {
 
+    }
+    public void GameOver()
+    {
+        Debug.Log("クリア");
+        Player_System.move_permit = false;
+        Enemy_Manager.enemies_move_permit = false;
+        DOTween.Sequence()
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
+        .Play();
     }
 }
