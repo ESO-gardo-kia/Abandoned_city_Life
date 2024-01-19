@@ -11,8 +11,9 @@ public class Scene_Manager : MonoBehaviour
 
     private void Start()
     {
-        gm = transform.parent.GetComponent<GameManager>();
+        gm = transform.GetComponent<GameManager>();
     }
+    /*
     public void SM_Title_Transfer()
     {
         SceneManager.LoadScene(si.data[0].name);
@@ -40,5 +41,12 @@ public class Scene_Manager : MonoBehaviour
 #else
         Application.Quit();//ゲームプレイ終了
 #endif
+    }
+    */
+
+    public void Load_Scene(int stage_number)
+    {
+        if (stage_number == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        else SceneManager.LoadScene(si.data[stage_number].name);
     }
 }

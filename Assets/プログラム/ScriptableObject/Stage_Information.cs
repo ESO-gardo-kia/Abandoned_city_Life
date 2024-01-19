@@ -24,6 +24,7 @@ public class Stage_Information: ScriptableObject
         }
         public StageTipe stagetipe;
         public string name;
+        public Vector3 spawn_pos;
         public int[] enemies_num;//“G‚Ì”
         public float time_limit;//§ŒÀŠÔ
     }

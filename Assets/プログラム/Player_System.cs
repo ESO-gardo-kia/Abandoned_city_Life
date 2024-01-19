@@ -91,17 +91,7 @@ public class Player_System : MonoBehaviour
         ENText = GamePanel.transform.Find("ENText").gameObject.GetComponent<Text>();
         BulletText = GamePanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
 
-        ContactPanel.SetActive(false);
-        MenuPanel.SetActive(false);
-        ContactText.text = null;
-
-        currenthp = hp;
-        currentatk = atk;
-        currentagi = agi;
-        HPSlider.maxValue = hp;
-        HPSlider.value = currenthp;
-
-        Wepon_Initialization();
+        Player_Reset();
     }
     void Update()
     {
@@ -129,7 +119,7 @@ public class Player_System : MonoBehaviour
                 var n = hit.point.y - gameObject.transform.position.y + 0.5f;
                 if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumping_running) isJumping = true;
                 else isJumping = false;
-            }
+            }else isJumping = false;
             //Debug.DrawRay(downray.origin, downray.direction * 10, UnityEngine.Color.red, 5);
 
 
@@ -155,9 +145,19 @@ public class Player_System : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            move_permit = false;
             MenuPanel.SetActive(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.Tab) && MenuPanel.activeSelf)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            move_permit = true;
+            MenuPanel.SetActive(false);
         }
     }
     void FixedUpdate()
@@ -313,7 +313,21 @@ public class Player_System : MonoBehaviour
     {
         Rigidbody rb = MeleeWeapon.GetComponent<Rigidbody>();
     }
-    public void Wepon_Initialization()
+    public void Player_Reset()
+    {
+        ContactPanel.SetActive(false);
+        MenuPanel.SetActive(false);
+        ContactText.text = null;
+
+        currenthp = hp;
+        currentatk = atk;
+        currentagi = agi;
+        HPSlider.maxValue = hp;
+        HPSlider.value = currenthp;
+
+        Wepon_Reset();
+    }
+    public void Wepon_Reset()
     {
         isreload = false;
         reload_count = 0;
