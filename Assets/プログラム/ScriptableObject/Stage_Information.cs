@@ -11,6 +11,10 @@ public class Stage_Information: ScriptableObject
     {
         public enum StageTipe
         {
+            //タイトル
+        　　title,
+            //セーフエリア（戦わない）
+            Safe,
             //ウェーブごとに出てくる敵を全て倒せばクリア
             wave,
             //段々難易度が上がっていく
@@ -18,7 +22,7 @@ public class Stage_Information: ScriptableObject
             //ボス戦
             boss,
         }
-        public int id;
+        public StageTipe stagetipe;
         public string name;
         public int[] enemies_num;//敵の数
         public float time_limit;//制限時間

@@ -6,26 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
-    public string title_scene = "Title";
-    public string test_stage = "Test_Stage";
-    public string Select_scene = "Slect";
-    public string Main_scene = "Main";
+    private GameManager gm;
+    public Stage_Information si;
 
+    private void Start()
+    {
+        gm = transform.parent.GetComponent<GameManager>();
+    }
     public void SM_Title_Transfer()
     {
-        SceneManager.LoadScene(title_scene);
+        SceneManager.LoadScene(si.data[0].name);
     }
     public void SM_Test_Transfer()
     {
-        SceneManager.LoadScene(test_stage);
+        SceneManager.LoadScene(si.data[2].name);
     }
     public void SM_Select_Transfer()
     {
-        SceneManager.LoadScene(Select_scene);
+        SceneManager.LoadScene(si.data[1].name);
     }
     public void SM_Main_Transfer()
     {
-        SceneManager.LoadScene(Main_scene);
+        SceneManager.LoadScene(si.data[2].name);
     }
     public void SM_Replay_Transfer()
     {

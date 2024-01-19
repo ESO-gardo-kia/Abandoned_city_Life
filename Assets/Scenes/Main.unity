@@ -2717,10 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15236113341b65845bc1cbab151a031c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title_scene: Title
-  test_stage: Test_Stage
-  Select_scene: Select
-  Main_scene: Main
+  si: {fileID: 0}
 --- !u!114 &1060361044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,7 +2743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246ce8a86f1c97243988a8dab074450d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  em: {fileID: 1646351202}
   si: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0, type: 2}
   stage_number: 0
   start_count: 1
@@ -3140,7 +3136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228244894}
-  m_LocalRotation: {x: 0.062324416, y: 0.000000017306572, z: -0.000000001080723, w: 0.998056}
+  m_LocalRotation: {x: 0.062324416, y: -0.000000017306572, z: 0.000000001080723, w: 0.998056}
   m_LocalPosition: {x: 0, y: -0.1000061, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3473,7 +3469,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302038224}
-  m_LocalRotation: {x: 0.09853762, y: -0.000000004280661, z: 4.238689e-10, w: 0.99513334}
+  m_LocalRotation: {x: 0.098537624, y: 0.0000000042806607, z: -4.238689e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: -0.1000061, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3845,6 +3841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664400297026862259, guid: 6b9e27b7252fdeb499c14c4c8c317109,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664400297026862259, guid: 6b9e27b7252fdeb499c14c4c8c317109,
         type: 3}
@@ -4508,7 +4509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a61e089ccf4234fb0eced63910f425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
   enemies_count: 0
 --- !u!1 &1657546938
 GameObject:

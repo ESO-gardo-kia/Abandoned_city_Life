@@ -2,7 +2,9 @@ using DG.Tweening;
 using System;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static ContactObj_System;
 //using static System.Net.Mime.MediaTypeNames;
 
 public class GameManager : MonoBehaviour
@@ -46,20 +48,13 @@ public class GameManager : MonoBehaviour
         SavePath = Application.persistentDataPath + "/SaveData.json";
         Application.targetFrameRate = 60;
 
-        GameStart();
+        Debug.Log(si.data[0].name);
     }
     [Serializable]
     public class SaveData
     {
         public int Id;
         public string Name;
-    }
-    void Start()
-    {
-
-    }
-    void Update()
-    {
     }
     public void GameSave()
     {
@@ -103,6 +98,29 @@ public class GameManager : MonoBehaviour
         .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f))
         .Play();
     }
+    /*
+    public void GameStart()
+    {
+        
+        Player_System.move_permit = false;
+        Enemy_Manager.enemies_move_permit = false;
+        FeedPanel.SetActive(true);
+        DOTween.Sequence()
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)
+        .OnComplete(() => {
+            Debug.Log(si.data[0].name);
+            Sc_Text.GetComponent<Text>().text = si.data[0].name;
+        }))
+        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(1f)
+        .OnComplete(() => {
+            Player_System.move_permit = true;
+            Enemy_Manager.enemies_move_permit = true;
+            Sc_Text.GetComponent<Text>().text = "Start!";
+        }))
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f))
+        .Play();
+    }
+    */
     public void GameClear()
     {
         Debug.Log("ÉNÉäÉA");
@@ -142,5 +160,24 @@ public class GameManager : MonoBehaviour
             Enemy_Manager.enemies_move_permit = true;
         }))
         .Play();
+    }
+    public void Scene_Transition_Process()
+    {
+        string sn = SceneManager.GetActiveScene().name;
+        switch (sn)
+        {
+            case "Title":
+                //em.Manager_Setting(si.data)
+
+                break;
+            case "Select":
+                si.data[1].stagetipe
+                em.Manager_Setting(1);
+                break;
+            case "Main":
+                SceneManager.LoadScene(si.data[2].name);
+                break;
+        }
+        
     }
 }
