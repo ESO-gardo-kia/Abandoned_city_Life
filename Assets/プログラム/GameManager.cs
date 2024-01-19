@@ -125,6 +125,22 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-
+        Debug.Log("ゲームオーバー");
+        Player_System.move_permit = false;
+        Enemy_Manager.enemies_move_permit = false;
+        DOTween.Sequence()
+        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f).SetDelay(1f)
+        .OnComplete(() =>
+        {
+            sm.SM_Select_Transfer();
+        }))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)
+        .OnComplete(() => {
+            Debug.Log(si.data[0].name);
+            Sc_Text.GetComponent<Text>().text = si.data[0].name;
+            Player_System.move_permit = true;
+            Enemy_Manager.enemies_move_permit = true;
+        }))
+        .Play();
     }
 }
