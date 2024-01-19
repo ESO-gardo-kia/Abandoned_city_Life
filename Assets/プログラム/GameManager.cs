@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Enemy_Manager em;
+    private Enemy_Manager em;
+    private Scene_Manager sm;
     private string SavePath;
     public static GameManager instance;
 
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Application.targetFrameRate = 60;
+        sm = transform.GetComponent<Scene_Manager>();
+        em = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
         //Stage_Information
         FeedPanel = transform.Find("System_Canvas/FeedPanel").gameObject;
         Sc_Text = transform.Find("System_Canvas/Sc_Text").gameObject;
@@ -56,7 +60,6 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-
     }
     public void GameSave()
     {
@@ -95,7 +98,6 @@ public class GameManager : MonoBehaviour
         .OnComplete(() => {
             Player_System.move_permit = true;
             Enemy_Manager.enemies_move_permit = true;
-            Debug.Log(Enemy_Manager.enemies_move_permit);
             Sc_Text.GetComponent<Text>().text = "Start!";
         }))
         .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f))
@@ -103,15 +105,26 @@ public class GameManager : MonoBehaviour
     }
     public void GameClear()
     {
-
-    }
-    public void GameOver()
-    {
         Debug.Log("ÉNÉäÉA");
         Player_System.move_permit = false;
         Enemy_Manager.enemies_move_permit = false;
         DOTween.Sequence()
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f).SetDelay(1f)
+        .OnComplete(() =>
+        {
+            sm.SM_Select_Transfer();
+        }))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)
+        .OnComplete(() => {
+            Debug.Log(si.data[0].name);
+            Sc_Text.GetComponent<Text>().text = si.data[0].name;
+            Player_System.move_permit = true;
+            Enemy_Manager.enemies_move_permit = true;
+        }))
         .Play();
+    }
+    public void GameOver()
+    {
+
     }
 }

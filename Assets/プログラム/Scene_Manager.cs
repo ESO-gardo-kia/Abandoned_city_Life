@@ -6,16 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Manager : MonoBehaviour
 {
-
     public string title_scene = "Title";
     public string test_stage = "Test_Stage";
     public string Select_scene = "Slect";
     public string Main_scene = "Main";
 
-    void Awake()
-    {
-        Application.targetFrameRate = 60;
-    }
     public void SM_Title_Transfer()
     {
         SceneManager.LoadScene(title_scene);

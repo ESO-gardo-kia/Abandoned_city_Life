@@ -88,7 +88,6 @@ public class Enemy_System : MonoBehaviour
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
             HPSlider.value = currenthp;
-            Debug.Log(rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate);
             //eŠÖŒW
             if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate 
                 && navMeshAgent.destination != null)
