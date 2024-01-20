@@ -7,6 +7,7 @@ public class Enemy_Manager : MonoBehaviour
 {
     static public bool enemies_move_permit;
     [SerializeField] private GameObject Enemy_Obj;
+    [SerializeField] private GameObject Player;
     private GameManager gm;
     public int enemies_count;
     void Start()
@@ -20,16 +21,18 @@ public class Enemy_Manager : MonoBehaviour
     public void Enemies_Spawn_Function()
     {
         //foreach (var i in num) enemies_count += i;
-        Vector3 randomPosition = GetRandomPosition();
-        GameObject newObject = Instantiate(Enemy_Obj, randomPosition, Quaternion.identity);
-        newObject.transform.parent = transform;
+        Vector3 spawnpos = GetRandomPosition();
+        GameObject eo = Instantiate(Enemy_Obj, spawnpos, Quaternion.identity,transform.parent = transform);
+        eo.GetComponent<Enemy_System>().Player = Player;
+        Enemy_Manager.enemies_move_permit = true;
     }
     public void Enemies_Spawn_Function(int[] num)
     {
         foreach (var i in num) enemies_count += i;
-        Vector3 randomPosition = GetRandomPosition();
-        GameObject newObject = Instantiate(Enemy_Obj, randomPosition, Quaternion.identity);
-        newObject.transform.parent = transform;
+        Vector3 spawnpos = GetRandomPosition();
+        GameObject eo = Instantiate(Enemy_Obj, spawnpos, Quaternion.identity, transform.parent = transform);
+        eo.GetComponent<Enemy_System>().Player = Player;
+        Enemy_Manager.enemies_move_permit = true;
     }
     Vector3 GetRandomPosition()
     {

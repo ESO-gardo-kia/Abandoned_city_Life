@@ -50,27 +50,7 @@ public class Enemy_System : MonoBehaviour
 
     void Start()
     {
-        em = transform.parent.GetComponent<Enemy_Manager>();
-        Player = GameObject.Find("Player");
-        Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
-        Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
-        SHOTPOS = transform.Find("SHOTPOS").gameObject;
-        TEXTPOS = transform.Find("TEXTPOS").gameObject;
-        EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
-        HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        navMeshAgent = this.GetComponent<NavMeshAgent>();
-        isdeath = true;
-        var e_l = enemy_List.Status[1];
-        Ename = e_l.name;
-        exp = e_l.exp;
-        hp = e_l.hp;
-        atk = e_l.atk;
-        agi =  e_l.agi;
-        currenthp = hp;
-        currentatk = atk;
-        currentagi = agi;
-        HPSlider.maxValue = hp;
-        HPSlider.value = currenthp;
+        Enemy_Reset();
     }
 
     void FixedUpdate()
@@ -81,8 +61,9 @@ public class Enemy_System : MonoBehaviour
             {
                 Deathfunction();
             }
-            else
+            else if (isdeath)
             {
+                Debug.Log(Player == null);
                 navMeshAgent.destination = Player.transform.position;
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
@@ -133,6 +114,30 @@ public class Enemy_System : MonoBehaviour
 
             }
         }
+    }
+    public void Enemy_Reset()
+    {
+        em = transform.parent.GetComponent<Enemy_Manager>();
+        if(Player == null) Player = GameObject.Find("Player");
+        Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
+        Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
+        SHOTPOS = transform.Find("SHOTPOS").gameObject;
+        TEXTPOS = transform.Find("TEXTPOS").gameObject;
+        EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
+        HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        isdeath = true;
+        var e_l = enemy_List.Status[1];
+        Ename = e_l.name;
+        exp = e_l.exp;
+        hp = e_l.hp;
+        atk = e_l.atk;
+        agi = e_l.agi;
+        currenthp = hp;
+        currentatk = atk;
+        currentagi = agi;
+        HPSlider.maxValue = hp;
+        HPSlider.value = currenthp;
     }
     void TakeDmage(float damage , Bullet_System BS)
     {

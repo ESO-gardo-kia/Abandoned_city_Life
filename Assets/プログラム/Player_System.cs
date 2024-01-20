@@ -252,24 +252,6 @@ public class Player_System : MonoBehaviour
     }
     void TakeDmage(float damage,Bullet_System BS)
     {
-        /*
-        if (old_dt == null)
-        {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
-            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
-            Damage_Text dts = dt.GetComponent<Damage_Text>();
-            old_dt = dt;
-
-            t.text = BS.damage.ToString();
-            old_damage = BS.damage;
-        }
-        else if (old_dt != null)
-        {
-            old_damage += BS.damage;
-            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            old_dt.GetComponent<Damage_Text>().TextReset();
-        }
-        */
         if (currenthp > 0) currenthp -= damage;
         if (currenthp <= 0) transform.root.GetComponent<GameManager>().GameOver();
     }

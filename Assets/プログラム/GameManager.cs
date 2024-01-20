@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System;
 using System.IO;
@@ -9,6 +10,7 @@ using static ContactObj_System;
 
 public class GameManager : MonoBehaviour
 {
+    public CinemachineInputProvider InputProvider;
     private Enemy_Manager em;
     private Scene_Manager sm;
     private Player_System ps;
@@ -52,13 +54,6 @@ public class GameManager : MonoBehaviour
         SavePath = Application.persistentDataPath + "/SaveData.json";
         Application.targetFrameRate = 60;
     }
-    [Serializable]
-    public class SaveData
-    {
-        public int Id;
-        public string Name;
-    }
-
     public void Scene_Transition_Process(int sn)
     {
         //プレイヤーや敵の行動停止
@@ -101,10 +96,10 @@ public class GameManager : MonoBehaviour
             case 0://リプレイ
                 break;
             case 1://タイトル
-                //em.Manager_Setting(1);
+                //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                 break;
             case 2://
-                em.Enemies_Spawn_Function(si.data[sn].enemies_num);
+                //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                 break;
         }
     }
@@ -166,6 +161,12 @@ public class GameManager : MonoBehaviour
             Enemy_Manager.enemies_move_permit = true;
         }))
         .Play();
+    }
+    [Serializable]
+    public class SaveData
+    {
+        public int Id;
+        public string Name;
     }
     public void DataSave()
     {
