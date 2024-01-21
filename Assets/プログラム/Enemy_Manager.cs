@@ -8,43 +8,61 @@ public class Enemy_Manager : MonoBehaviour
     static public bool enemies_move_permit;
     [SerializeField] private GameObject Enemy_Obj;
     [SerializeField] private GameObject Player;
+    public GameObject[] SPL;//SpawnPoint_List
+    public int spawn_range = 20;
     private GameManager gm;
-    public int enemies_count;
+    public int all_enemies_count;
+    public bool iscompletion;//今のウェーブが終わったかどうか
     void Start()
     {
         gm = transform.parent.GetComponent<GameManager>();
+        SPL = new GameObject[transform.Find("SpawnPoint_List").childCount];
+        for(int i = 0; i < transform.Find("SpawnPoint_List").childCount; i++)
+        {
+            SPL[i] = transform.Find("SpawnPoint_List").GetChild(i).gameObject;
+        }
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Q)) Enemies_Spawn_Function();
+        int[] ints = new int[1];
+        if (Input.GetKey(KeyCode.Q)) Enemies_Spawn_Function(ints);
     }
-    public void Enemies_Spawn_Function()
+    public IEnumerator Enemies_Spawn_Function(int[] num)
     {
-        //foreach (var i in num) enemies_count += i;
-        Vector3 spawnpos = GetRandomPosition();
-        GameObject eo = Instantiate(Enemy_Obj, spawnpos, Quaternion.identity,transform.parent = transform);
-        eo.GetComponent<Enemy_System>().Player = Player;
+        iscompletion = false;
+        foreach (var i in num) all_enemies_count += i;
+        for(int wave_num = 0; wave_num < num.Length; wave_num++)
+        {
+            int enemies_count = 0;
+            enemies_count += num[wave_num];
+            Debug.Log("ウェーブ"+(wave_num + 1)+"開始");
+            for (int i2 = 0
+                ; i2 < num[wave_num] 
+                ; i2++)
+            {
+                Debug.Log("敵出現");
+                Vector3 sp = SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(
+                 Random.Range(-spawn_range, spawn_range)
+               , 0f
+               , Random.Range(-spawn_range, spawn_range));
+
+                GameObject eo = Instantiate(Enemy_Obj, sp, Quaternion.identity, transform.parent = transform);
+                eo.GetComponent<Enemy_System>().Player = Player;
+                enemies_count--;
+                yield return new WaitForSeconds(0.5f);
+            }
+            if (enemies_count != 0)
+            { 
+            }
+        }
+
+
         Enemy_Manager.enemies_move_permit = true;
-    }
-    public void Enemies_Spawn_Function(int[] num)
-    {
-        foreach (var i in num) enemies_count += i;
-        Vector3 spawnpos = GetRandomPosition();
-        GameObject eo = Instantiate(Enemy_Obj, spawnpos, Quaternion.identity, transform.parent = transform);
-        eo.GetComponent<Enemy_System>().Player = Player;
-        Enemy_Manager.enemies_move_permit = true;
-    }
-    Vector3 GetRandomPosition()
-    {
-        Vector3 randomPosition = new Vector3(Random.Range(-100f, 100f), 0f, Random.Range(-100f, 100f));
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPosition, out hit, 1.0f, NavMesh.AllAreas)) return hit.position;
-        else return GetRandomPosition();
     }
     public void ParentEnemyDeath()
     {
-        enemies_count--;
-        if (enemies_count == 0)
+        all_enemies_count--;
+        if (all_enemies_count == 0)
         {
             transform.parent.GetComponent<GameManager>().GameClear();
         }

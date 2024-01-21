@@ -57,11 +57,11 @@ public class Enemy_System : MonoBehaviour
     {
         if (Enemy_Manager.enemies_move_permit == true)
         {
-            if (!isdeath)
+            if (isdeath)
             {
                 Deathfunction();
             }
-            else if (isdeath)
+            else if (!isdeath && !Player_System.player_isdeath)
             {
                 Debug.Log(Player == null);
                 navMeshAgent.destination = Player.transform.position;
@@ -126,7 +126,7 @@ public class Enemy_System : MonoBehaviour
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
         navMeshAgent = this.GetComponent<NavMeshAgent>();
-        isdeath = true;
+        isdeath = false;
         var e_l = enemy_List.Status[1];
         Ename = e_l.name;
         exp = e_l.exp;
@@ -165,7 +165,7 @@ public class Enemy_System : MonoBehaviour
         }
         if(currenthp <= 0)
         {
-            isdeath = false;
+            isdeath = true;
         }
     }
     public void NomalShot()
@@ -211,7 +211,7 @@ public class Enemy_System : MonoBehaviour
         }
         if (currenthp <= 0)
         {
-            isdeath = false;
+            isdeath = true;
         }
     }
     void Deathfunction()

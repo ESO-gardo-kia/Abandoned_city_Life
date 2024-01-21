@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Player_System : MonoBehaviour
 {
     static public bool move_permit = true;//ˆÚ“®‰Â”\‚©”Û‚©
+    static public bool player_isdeath = true;//ˆÚ“®‰Â”\‚©”Û‚©
     
     [Header("--- GetComponent ---")]
     [SerializeField] public Gun_List gunlist;
@@ -253,7 +254,11 @@ public class Player_System : MonoBehaviour
     void TakeDmage(float damage,Bullet_System BS)
     {
         if (currenthp > 0) currenthp -= damage;
-        if (currenthp <= 0) transform.root.GetComponent<GameManager>().GameOver();
+        if (currenthp <= 0)
+        {
+            player_isdeath = true;
+            transform.root.GetComponent<GameManager>().GameOver();
+        }
     }
     IEnumerator JunpMove()
     {
@@ -301,6 +306,7 @@ public class Player_System : MonoBehaviour
         MenuPanel.SetActive(false);
         ContactText.text = null;
 
+        player_isdeath = false;
         currenthp = hp;
         currentatk = atk;
         currentagi = agi;

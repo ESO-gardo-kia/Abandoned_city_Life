@@ -89,19 +89,24 @@ public class GameManager : MonoBehaviour
             Enemy_Manager.enemies_move_permit = true;
             Sc_Text.GetComponent<Text>().text = "Start!";
         }))
-        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f))
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f)
+                .OnComplete(() => {
+                    Player_System.move_permit = true;
+                    Enemy_Manager.enemies_move_permit = true;
+                    Sc_Text.GetComponent<Text>().text = "Start!";
+                    switch (sn)
+                    {
+                        case 0://リプレイ
+                            break;
+                        case 1://タイトル
+                               //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
+                            break;
+                        case 2://
+                            StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num));
+                            break;
+                    }
+                }))
         .Play();
-        switch (sn)
-        {
-            case 0://リプレイ
-                break;
-            case 1://タイトル
-                //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
-                break;
-            case 2://
-                //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
-                break;
-        }
     }
     public void GameStart()
     {
