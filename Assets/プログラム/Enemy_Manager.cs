@@ -12,6 +12,7 @@ public class Enemy_Manager : MonoBehaviour
     public int spawn_range = 20;
     private GameManager gm;
     public int all_enemies_count;
+    public int current_enemies_count;
     public bool iscompletion;//今のウェーブが終わったかどうか
     void Start()
     {
@@ -33,8 +34,7 @@ public class Enemy_Manager : MonoBehaviour
         foreach (var i in num) all_enemies_count += i;
         for(int wave_num = 0; wave_num < num.Length; wave_num++)
         {
-            int enemies_count = 0;
-            enemies_count += num[wave_num];
+            current_enemies_count += num[wave_num];
             Debug.Log("ウェーブ"+(wave_num + 1)+"開始");
             for (int i2 = 0
                 ; i2 < num[wave_num] 
@@ -48,10 +48,10 @@ public class Enemy_Manager : MonoBehaviour
 
                 GameObject eo = Instantiate(Enemy_Obj, sp, Quaternion.identity, transform.parent = transform);
                 eo.GetComponent<Enemy_System>().Player = Player;
-                enemies_count--;
+                current_enemies_count--;
                 yield return new WaitForSeconds(0.5f);
             }
-            if (enemies_count != 0)
+            if (current_enemies_count != 0)
             { 
             }
         }
@@ -61,10 +61,24 @@ public class Enemy_Manager : MonoBehaviour
     }
     public void ParentEnemyDeath()
     {
+        current_enemies_count--;
         all_enemies_count--;
         if (all_enemies_count == 0)
         {
             transform.parent.GetComponent<GameManager>().GameClear();
         }
+    }
+    public void Enemy_Manager_Reset()
+    {
+        /*
+        for (int i = 0; i < transform.GetChild(); i++)
+        {
+
+        }
+        */
+        enemies_move_permit = false;
+        all_enemies_count = 0;
+        current_enemies_count = 0;
+        iscompletion = false;
     }
 }

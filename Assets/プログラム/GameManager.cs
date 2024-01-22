@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         {
             sm.Load_Scene(sn);//シーン移動
             ps.Player_Reset();//プレイヤーの情報をリセットさせる
+            em.Enemy_Manager_Reset();
             transform.Find("Player_Manager").gameObject.transform.position = si.data[sn].spawn_pos;
         }))
         .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)//フェードイン
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
                         case 0://リプレイ
                             break;
                         case 1://タイトル
+
                                //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                             break;
                         case 2://

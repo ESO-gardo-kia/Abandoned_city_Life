@@ -257,7 +257,7 @@ public class Player_System : MonoBehaviour
         if (currenthp <= 0)
         {
             player_isdeath = true;
-            transform.root.GetComponent<GameManager>().GameOver();
+            transform.root.GetComponent<GameManager>().Scene_Transition_Process(1);
         }
     }
     IEnumerator JunpMove()
