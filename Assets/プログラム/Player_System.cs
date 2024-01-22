@@ -70,7 +70,7 @@ public class Player_System : MonoBehaviour
     private bool isreload;
     [SerializeField] public GameObject SHOTOBJ;
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
 
@@ -92,7 +92,7 @@ public class Player_System : MonoBehaviour
         ENText = GamePanel.transform.Find("ENText").gameObject.GetComponent<Text>();
         BulletText = GamePanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
 
-        Player_Reset();
+        Player_Reset(false);
     }
     void Update()
     {
@@ -144,16 +144,16 @@ public class Player_System : MonoBehaviour
                     ContactText.text = null;
                 }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf)
+        }
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && move_permit)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             move_permit = false;
             MenuPanel.SetActive(true);
         }
-        else if(Input.GetKeyDown(KeyCode.Tab) && MenuPanel.activeSelf)
+        else if (Input.GetKeyDown(KeyCode.Tab) && MenuPanel.activeSelf)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -300,12 +300,23 @@ public class Player_System : MonoBehaviour
     {
         Rigidbody rb = MeleeWeapon.GetComponent<Rigidbody>();
     }
-    public void Player_Reset()
+    public void Player_Reset(bool IS)
     {
-        ContactPanel.SetActive(false);
-        MenuPanel.SetActive(false);
+        if (!IS)
+        {
+            move_permit = false;
+            GamePanel.SetActive(false);
+            ContactPanel.SetActive(false);
+            MenuPanel.SetActive(false);
+        }
+        else
+        {
+            move_permit = true;
+            GamePanel.SetActive(true);
+            ContactPanel.SetActive(false);
+            MenuPanel.SetActive(false);
+        }
         ContactText.text = null;
-
         player_isdeath = false;
         currenthp = hp;
         currentatk = atk;

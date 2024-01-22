@@ -26,7 +26,7 @@ public class Enemy_Manager : MonoBehaviour
     private void Update()
     {
         int[] ints = new int[1];
-        if (Input.GetKey(KeyCode.Q)) Enemies_Spawn_Function(ints);
+        if (Input.GetKeyDown(KeyCode.Q)) Enemy_Manager_Reset();
     }
     public IEnumerator Enemies_Spawn_Function(int[] num)
     {
@@ -46,17 +46,11 @@ public class Enemy_Manager : MonoBehaviour
                , 0f
                , Random.Range(-spawn_range, spawn_range));
 
-                GameObject eo = Instantiate(Enemy_Obj, sp, Quaternion.identity, transform.parent = transform);
+                GameObject eo = Instantiate(Enemy_Obj, sp, Quaternion.identity, transform.Find("Enemy_ObjList"));
                 eo.GetComponent<Enemy_System>().Player = Player;
-                current_enemies_count--;
                 yield return new WaitForSeconds(0.5f);
             }
-            if (current_enemies_count != 0)
-            { 
-            }
         }
-
-
         Enemy_Manager.enemies_move_permit = true;
     }
     public void ParentEnemyDeath()
@@ -70,12 +64,10 @@ public class Enemy_Manager : MonoBehaviour
     }
     public void Enemy_Manager_Reset()
     {
-        /*
-        for (int i = 0; i < transform.GetChild(); i++)
+        for (int i = 0; i < transform.Find("Enemy_ObjList").childCount; i++) 
         {
-
+            Destroy(transform.Find("Enemy_ObjList").GetChild(i).gameObject);
         }
-        */
         enemies_move_permit = false;
         all_enemies_count = 0;
         current_enemies_count = 0;

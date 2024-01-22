@@ -10,7 +10,6 @@ using static ContactObj_System;
 
 public class GameManager : MonoBehaviour
 {
-    public CinemachineInputProvider InputProvider;
     private Enemy_Manager em;
     private Scene_Manager sm;
     private Player_System ps;
@@ -26,18 +25,10 @@ public class GameManager : MonoBehaviour
     private GameObject Ec_Text;
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
     private void Start()
     {
+        DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
         sm = transform.GetComponent<Scene_Manager>();
         em = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
@@ -48,22 +39,25 @@ public class GameManager : MonoBehaviour
         Ec_Text = transform.Find("System_Canvas/Ec_Text").gameObject;
 
         //カーソル関係
+        /*
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        */
         //セーブ関係
         SavePath = Application.persistentDataPath + "/SaveData.json";
         Application.targetFrameRate = 60;
     }
     public void Scene_Transition_Process(int sn)
     {
+        Debug.Log("scene変更");
+        //フェードパネル表示
+        FeedPanel.SetActive(true);
         //プレイヤーや敵の行動停止
         Player_System.move_permit = false;
         Enemy_Manager.enemies_move_permit = false;
         //カーソル非表示
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //フェードパネル表示
-        FeedPanel.SetActive(true);
         DOTween.Sequence()
         /*
          * フェードアウトが完了したら
@@ -75,14 +69,14 @@ public class GameManager : MonoBehaviour
         .OnComplete(() =>
         {
             sm.Load_Scene(sn);//シーン移動
-            ps.Player_Reset();//プレイヤーの情報をリセットさせる
-            em.Enemy_Manager_Reset();
-            transform.Find("Player_Manager").gameObject.transform.position = si.data[sn].spawn_pos;
+            ps.Player_Reset(true);//プレイヤーの情報をリセットさせる
+            em.Enemy_Manager_Reset();//エネミーマネージャーリセット
+            transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[sn].spawn_pos;
         }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)//フェードイン
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
+                    Debug.Log(FeedPanel);
                     Sc_Text.GetComponent<Text>().text = si.data[sn].name;//ステージ名表示
-                    FeedPanel.SetActive(false);
                 }))
         .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(1f)
         .OnComplete(() => {
@@ -97,18 +91,21 @@ public class GameManager : MonoBehaviour
                     Sc_Text.GetComponent<Text>().text = "Start!";
                     switch (sn)
                     {
-                        case 0://リプレイ
+                        case 0://タイトル
+                            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
                             break;
-                        case 1://タイトル
-
-                               //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
+                        case 1://セレクト
+                            
+                            //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                             break;
-                        case 2://
+                        case 2://Main
+                            //if(si.data[sn].name == SceneManager.GetActiveScene().name)
                             StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num));
                             break;
                     }
                 }))
         .Play();
+        FeedPanel.SetActive(false);
     }
     public void GameStart()
     {
