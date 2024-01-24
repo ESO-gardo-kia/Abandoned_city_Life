@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class Bullet_System : MonoBehaviour
 {
+    public enum Bullet_Type
+    {
+        Normal
+    }
+    public Bullet_Type type;
     public string target_tag;
     public float death_time = 1;
     public float damage;
     void FixedUpdate()
     {
-        if(death_time <= 0) Destroy(gameObject);
-        else death_time -= 0.02f;
+        switch(type)
+        {
+            case Bullet_Type.Normal:
+                if (death_time <= 0) Destroy(gameObject);
+                else death_time -= 0.02f;
+                break;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(gameObject);
+        /*
         if(target_tag == "Enemy")
         {
             if (other.gameObject.CompareTag("Enemy"))
@@ -38,5 +50,6 @@ public class Bullet_System : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        */
     }
 }

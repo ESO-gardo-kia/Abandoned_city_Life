@@ -9,9 +9,8 @@ public class Enemy_List : ScriptableObject
     [System.Serializable]
     public class EnemyList
     {
-        public int id;
         public string name;
-        public Sprite Enemy_Model;
+        public GameObject Enemy_Model;
 
         public float hp = 10;
         public float atk = 5;

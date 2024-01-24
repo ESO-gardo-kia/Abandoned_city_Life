@@ -6,31 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class ContactObj_System : MonoBehaviour
 {
-    public enum Condition{Door,Clear,Title,Select,Main,Replay,End}
-    public Condition Cond;
+    public enum Contact_Type{StageSelect,Wepon_by}
+    public Contact_Type Cont;
     public string contact_text;
 
     public void Contact_function()
     {
-        switch (Cond)
+        switch (Cont)
         {
-            case Condition.Door:
+            case Contact_Type.StageSelect:
                 
                 break;
-            case Condition.Clear:
-                
-                break;
-            case Condition.Title:
-                
-                break;
-            case Condition.Select:
-                
-                break;
-            case Condition.Main:
-                
-                break;
-            case Condition.Replay:
-                
+            case Contact_Type.Wepon_by:
+
                 break;
         }
     }
