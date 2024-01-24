@@ -111,7 +111,7 @@ public class EnemyType2 : MonoBehaviour
     public void Enemy_Reset()
     {
         Debug.Log("“G‚Ìî•ñ‚ğƒŠƒZƒbƒg‚·‚é");
-        em = transform.parent.GetComponent<Enemy_Manager>();
+        em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
         if (Player == null) Player = GameObject.Find("Player");
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;

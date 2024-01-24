@@ -55,10 +55,14 @@ public class Enemy_Manager : MonoBehaviour
                 {
                     case 0:
                         eo.GetComponent<Enemy_System>().Player = Player;
+                        eo.GetComponent<Enemy_System>().em = this;
+                        Debug.Log(eo.GetComponent<Enemy_System>().em);
                         eo.GetComponent<Enemy_System>().Enemy_Reset();
                         break; 
                     case 1:
                         eo.GetComponent<EnemyType2>().Player = Player;
+                        eo.GetComponent<EnemyType2>().em = this;
+                        Debug.Log(eo.GetComponent<EnemyType2>().em);
                         eo.GetComponent<EnemyType2>().Enemy_Reset();
                         break;
                     case 2:

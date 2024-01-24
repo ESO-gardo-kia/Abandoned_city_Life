@@ -63,7 +63,6 @@ public class Enemy_System : MonoBehaviour
             }
             else if (!isdeath && !Player_System.player_isdeath)
             {
-                Debug.Log(Player == null);
                 navMeshAgent.destination = Player.transform.position;
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
@@ -117,8 +116,8 @@ public class Enemy_System : MonoBehaviour
     }
     public void Enemy_Reset()
     {
-        em = transform.parent.GetComponent<Enemy_Manager>();
-        if(Player == null) Player = GameObject.Find("Player");
+        em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
+        if (Player == null) Player = GameObject.Find("Player");
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
