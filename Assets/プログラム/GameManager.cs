@@ -10,6 +10,7 @@ using static ContactObj_System;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool isDotweem;
     private Enemy_Manager em;
     private Scene_Manager sm;
     private Player_System ps;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public Stage_Information si;
     public int stage_number;
-    private GameObject FeedPanel;
+    public GameObject FeedPanel;
     public int start_count;//ステージ開始までのカウントダウン
     private GameObject Sc_Text;
     public int end_count;//ステージ終了までのカウントダウン
@@ -49,7 +50,6 @@ public class GameManager : MonoBehaviour
     }
     public void Scene_Transition_Process(int sn)
     {
-        Debug.Log("scene変更");
         //フェードパネル表示
         FeedPanel.SetActive(true);
         //プレイヤーや敵の行動停止
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         .OnComplete(() =>
         {
             sm.Load_Scene(sn);//シーン移動
-            ps.Player_Reset(true);//プレイヤーの情報をリセットさせる
+            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
             em.Enemy_Manager_Reset();//エネミーマネージャーリセット
             transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[sn].spawn_pos;
         }))
@@ -86,26 +86,28 @@ public class GameManager : MonoBehaviour
         }))
         .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
+                    Sc_Text.transform.localScale = Vector3.one;
                     Player_System.move_permit = true;
                     Enemy_Manager.enemies_move_permit = true;
-                    Sc_Text.GetComponent<Text>().text = "Start!";
+                    Sc_Text.GetComponent<Text>().text = "";
+                    FeedPanel.SetActive(false);
                     switch (sn)
                     {
                         case 0://タイトル
-                            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
                             break;
                         case 1://セレクト
-                            
+                            ps.Player_Reset(true);
                             //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                             break;
                         case 2://Main
+                            ps.Player_Reset(true);
                             //if(si.data[sn].name == SceneManager.GetActiveScene().name)
                             StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num));
                             break;
                     }
                 }))
         .Play();
-        FeedPanel.SetActive(false);
+
     }
     public void GameStart()
     {

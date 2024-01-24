@@ -34,6 +34,8 @@ public class Enemy_Manager : MonoBehaviour
         foreach (var i in num) all_enemies_count += i;
         for(int wave_num = 0; wave_num < num.Length; wave_num++)
         {
+            if (!Player_System.move_permit
+                &&!Enemy_Manager.enemies_move_permit) yield break;
             current_enemies_count += num[wave_num];
             Debug.Log("ウェーブ"+(wave_num + 1)+"開始");
             for (int i2 = 0
