@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Stage_Information
   m_EditorClassIdentifier: 
   data:
-  - stagetipe: 0
+  - stagetype: 0
     name: Title
     spawn_pos: {x: 0, y: 0, z: 0}
     enemies_num: 
     time_limit: 0
-  - stagetipe: 1
+  - stagetype: 1
     name: Select
     spawn_pos: {x: 0, y: 0, z: 0}
     enemies_num: 
     time_limit: 0
-  - stagetipe: 2
+  - stagetype: 2
     name: Main
     spawn_pos: {x: 0, y: 0, z: 0}
-    enemies_num: 05000000050000000500000005000000
+    enemies_num: 0500000005000000
     time_limit: 0
-  - stagetipe: 0
+  - stagetype: 0
     name: TestStage
     spawn_pos: {x: 0, y: 0, z: 0}
-    enemies_num: 01000000
+    enemies_num: 
     time_limit: 0

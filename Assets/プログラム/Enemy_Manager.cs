@@ -8,6 +8,7 @@ public class Enemy_Manager : MonoBehaviour
     static public bool enemies_move_permit;
     [SerializeField] private GameObject Enemy_Obj;
     [SerializeField] private GameObject Player;
+    [SerializeField] public Enemy_List el;
     public GameObject[] SPL;//SpawnPoint_List
     public int spawn_range = 20;
     private GameManager gm;
@@ -30,26 +31,40 @@ public class Enemy_Manager : MonoBehaviour
     }
     public IEnumerator Enemies_Spawn_Function(int[] num)
     {
+        //num[敵のID,敵の数]
         iscompletion = false;
         foreach (var i in num) all_enemies_count += i;
-        for(int wave_num = 0; wave_num < num.Length; wave_num++)
+        
+        for(int enemyID = 0; enemyID < num.Length; enemyID++)
         {
-            if (!Player_System.move_permit
-                &&!Enemy_Manager.enemies_move_permit) yield break;
-            current_enemies_count += num[wave_num];
-            Debug.Log("ウェーブ"+(wave_num + 1)+"開始");
-            for (int i2 = 0
-                ; i2 < num[wave_num] 
-                ; i2++)
+            if (!Player_System.move_permit&&!Enemy_Manager.enemies_move_permit) yield break;
+            current_enemies_count += num[enemyID];
+            Debug.Log((enemyID + 1)+"出現");
+
+            for (int i2 = 0; i2 < num[enemyID] ; i2++)
             {
                 Debug.Log("敵出現");
+
                 Vector3 sp = SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(
                  Random.Range(-spawn_range, spawn_range)
                , 0f
                , Random.Range(-spawn_range, spawn_range));
 
-                GameObject eo = Instantiate(Enemy_Obj, sp, Quaternion.identity, transform.Find("Enemy_ObjList"));
-                eo.GetComponent<Enemy_System>().Player = Player;
+                GameObject eo = Instantiate(el.Status[enemyID].Enemy_Model, sp, Quaternion.identity, transform.Find("Enemy_ObjList"));
+                switch (enemyID)
+                {
+                    case 0:
+                        eo.GetComponent<Enemy_System>().Player = Player;
+                        eo.GetComponent<Enemy_System>().Enemy_Reset();
+                        break; 
+                    case 1:
+                        eo.GetComponent<EnemyType2>().Player = Player;
+                        eo.GetComponent<EnemyType2>().Enemy_Reset();
+                        break;
+                    case 2:
+                        //eo.GetComponent<Enemy_System>().Player = Player;
+                        break;
+                }
                 yield return new WaitForSeconds(0.5f);
             }
         }

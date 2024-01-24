@@ -73,18 +73,18 @@ public class GameManager : MonoBehaviour
             em.Enemy_Manager_Reset();//エネミーマネージャーリセット
             transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[sn].spawn_pos;
         }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(0.5f)//フェードイン
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(0f)//フェードイン
                 .OnComplete(() => {
                     Debug.Log(FeedPanel);
                     Sc_Text.GetComponent<Text>().text = si.data[sn].name;//ステージ名表示
                 }))
-        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(1f)
+        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(0f)
         .OnComplete(() => {
             Player_System.move_permit = true;
             Enemy_Manager.enemies_move_permit = true;
             Sc_Text.GetComponent<Text>().text = "Start!";
         }))
-        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0.5f)
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0f)
                 .OnComplete(() => {
                     Sc_Text.transform.localScale = Vector3.one;
                     Player_System.move_permit = true;

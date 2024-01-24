@@ -9,20 +9,18 @@ public class Stage_Information: ScriptableObject
     [System.Serializable]
     public class stage_information
     {
-        public enum StageTipe
+        public enum StageType
         {
             //タイトル
         　　title,
             //セーフエリア（戦わない）
             Safe,
-            //ウェーブごとに出てくる敵を全て倒せばクリア
-            wave,
             //段々難易度が上がっていく
             endless,
             //ボス戦
             boss,
         }
-        public StageTipe stagetipe;
+        public StageType stagetype;
         public string name;
         public Vector3 spawn_pos;
         public int[] enemies_num;//敵の数

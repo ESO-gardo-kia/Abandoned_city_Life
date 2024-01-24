@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class Enemy_System : MonoBehaviour
 {
-    private Enemy_Manager em;
+    [SerializeField] public Enemy_Manager em;
     [SerializeField] public GameObject Player;
     [SerializeField] public Gun_List gunlist;
     private GameObject SHOTPOS;

@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyType2 : MonoBehaviour
 {
-    private Enemy_Manager em;
-    private GameObject Player;
+    public Enemy_Manager em;
+    [SerializeField] public GameObject Player;
     [SerializeField] public Gun_List gunlist;
     private GameObject SHOTPOS;
     private GameObject Enemy_Obj;
@@ -110,6 +110,7 @@ public class EnemyType2 : MonoBehaviour
     }
     public void Enemy_Reset()
     {
+        Debug.Log("“G‚Ìî•ñ‚ğƒŠƒZƒbƒg‚·‚é");
         em = transform.parent.GetComponent<Enemy_Manager>();
         if (Player == null) Player = GameObject.Find("Player");
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
