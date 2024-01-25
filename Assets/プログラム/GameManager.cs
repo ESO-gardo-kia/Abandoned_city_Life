@@ -10,6 +10,7 @@ using static ContactObj_System;
 
 public class GameManager : MonoBehaviour
 {
+    public int num = 1;
     public static bool isDotweem;
     private Enemy_Manager em;
     private Scene_Manager sm;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public Stage_Information si;
     public int stage_number;
-    public GameObject FeedPanel;
+    private GameObject FeedPanel;
     public int start_count;//ステージ開始までのカウントダウン
     private GameObject Sc_Text;
     public int end_count;//ステージ終了までのカウントダウン
@@ -65,43 +66,41 @@ public class GameManager : MonoBehaviour
          * プレイヤーリセット
          * スポーンポイントに移動
          */
-        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f).SetDelay(1f)//フェードアウト
+        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f*num).SetDelay(0f)//フェードアウト
         .OnComplete(() =>
         {
             sm.Load_Scene(sn);//シーン移動
-            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
             em.Enemy_Manager_Reset();//エネミーマネージャーリセット
+            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
             transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[sn].spawn_pos;
         }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(0f)//フェードイン
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * num).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
                     Debug.Log(FeedPanel);
                     Sc_Text.GetComponent<Text>().text = si.data[sn].name;//ステージ名表示
                 }))
-        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f).SetEase(Ease.InQuart).SetDelay(0f)
+        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
         .OnComplete(() => {
             Player_System.move_permit = true;
             Enemy_Manager.enemies_move_permit = true;
-            Sc_Text.GetComponent<Text>().text = "Start!";
+            if(sn == 2)Sc_Text.GetComponent<Text>().text = "Start!";
         }))
-        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InQuart).SetDelay(0f)
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
                     Sc_Text.transform.localScale = Vector3.one;
-                    Player_System.move_permit = true;
                     Enemy_Manager.enemies_move_permit = true;
                     Sc_Text.GetComponent<Text>().text = "";
                     FeedPanel.SetActive(false);
                     switch (sn)
                     {
                         case 0://タイトル
+                            ps.Player_Reset(false);
                             break;
                         case 1://セレクト
                             ps.Player_Reset(true);
-                            //em.Enemies_Spawn_Function(si.data[sn].enemies_num);
                             break;
                         case 2://Main
                             ps.Player_Reset(true);
-                            //if(si.data[sn].name == SceneManager.GetActiveScene().name)
                             StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num));
                             break;
                     }

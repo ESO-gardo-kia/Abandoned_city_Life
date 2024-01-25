@@ -15,12 +15,20 @@ public class Stage_Information: ScriptableObject
         　　title,
             //セーフエリア（戦わない）
             Safe,
+            NomalStage,
             //段々難易度が上がっていく
             endless,
             //ボス戦
             boss,
         }
+        public enum TransitionScene
+        {
+            Title,
+            Select,
+            Main
+        }
         public StageType stagetype;
+        public TransitionScene tran_scene;
         public string name;
         public Vector3 spawn_pos;
         public int[] enemies_num;//敵の数

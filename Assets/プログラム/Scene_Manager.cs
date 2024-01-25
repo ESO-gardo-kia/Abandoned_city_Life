@@ -47,6 +47,6 @@ public class Scene_Manager : MonoBehaviour
     public void Load_Scene(int stage_number)
     {
         if (stage_number == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else SceneManager.LoadScene(si.data[stage_number].name);
+        else SceneManager.LoadScene((int)si.data[stage_number].tran_scene);
     }
 }

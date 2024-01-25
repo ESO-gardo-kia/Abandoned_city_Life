@@ -1,3 +1,6 @@
+using Cinemachine;
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -5,19 +8,24 @@ using UniRx.Triggers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Player_System : MonoBehaviour
 {
+    public bool bo = true;
     static public bool move_permit = true;//移動可能か否か
     static public bool player_isdeath = true;//移動可能か否か
     
     [Header("--- GetComponent ---")]
+    public CinemachineBrain brain;
     [SerializeField] public Gun_List gunlist;
     private Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
     private GameObject SHOTPOS;
     private GameObject old_dt;
     private float old_damage;
+
+    private GameObject getpanel;
 
     private GameObject PCanvas;
 
@@ -54,6 +62,8 @@ public class Player_System : MonoBehaviour
 
     private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
+
+    public bool isPanel;//何かの画面を開いているか否か
 
     [Tooltip("移動速度")]
     public float walk_speed = 10;
@@ -92,13 +102,10 @@ public class Player_System : MonoBehaviour
         ENText = GamePanel.transform.Find("ENText").gameObject.GetComponent<Text>();
         BulletText = GamePanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
 
-        Player_Reset(false);
+        Player_Reset(bo);
     }
     void Update()
     {
-        HPSlider.value = currenthp;
-        HPText.text = currenthp.ToString();
-        BulletText.text = current_loaded_bullets.ToString();
         this.transform.eulerAngles = new Vector3(0, CAMERA.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (move_permit)
@@ -126,11 +133,9 @@ public class Player_System : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Q))
             {
-                if (ConObj != null) ConObj.Contact_function();
-                if (ColObj != null && CollectGage.value != CollectGage.maxValue)
-                {
-                    CollectGage.value += 0.02f;
-                }
+
+
+                if (ColObj != null && CollectGage.value != CollectGage.maxValue) CollectGage.value += 0.02f;
                 else if (ColObj != null && CollectGage.value == CollectGage.maxValue) 
                 {
                     Player_Manager.Item_Inventory[ColObj.collect_item_id] += ColObj.collect_item_num;
@@ -146,19 +151,29 @@ public class Player_System : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && move_permit)
+
+        //以下UI関係
+        HPSlider.value = currenthp;
+        HPText.text = currenthp.ToString();
+        BulletText.text = current_loaded_bullets.ToString();
+        if (getpanel)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            move_permit = false;
-            MenuPanel.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E) && ConObj != null && !getpanel.activeSelf && !isPanel)
+            {
+                Canvas_Transition(getpanel, true);
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && getpanel.activeSelf && isPanel)
+            {
+                Canvas_Transition(getpanel, false);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && move_permit && !isPanel)
+        {
+            Canvas_Transition(MenuPanel, true);
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && MenuPanel.activeSelf)
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            move_permit = true;
-            MenuPanel.SetActive(false);
+            Canvas_Transition(MenuPanel,false);
         }
     }
     void FixedUpdate()
@@ -220,7 +235,8 @@ public class Player_System : MonoBehaviour
             ContactPanel.SetActive(true);
             ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(255, 255, 255, 50);
             ConObj = other.GetComponent<ContactObj_System>();
-            ContactText.text = ConObj.contact_text;
+            if (ConObj.contact_text != null) ContactText.text = ConObj.contact_text;
+            getpanel = ConObj.Panel;
         }
         if (move_permit)
         {
@@ -245,10 +261,12 @@ public class Player_System : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Contact"))
         {
+            if (getpanel.activeSelf) Canvas_Transition(getpanel, false);
             ContactPanel.SetActive(false);
             ContactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
             ConObj = null;
             ContactText.text = null;
+            getpanel = null;
         }
     }
     void TakeDmage(float damage,Bullet_System BS)
@@ -305,17 +323,18 @@ public class Player_System : MonoBehaviour
         if (!IS)
         {
             move_permit = false;
+            brain.enabled = false;
             GamePanel.SetActive(false);
-            ContactPanel.SetActive(false);
-            MenuPanel.SetActive(false);
         }
         else
         {
             move_permit = true;
+            brain.enabled = true;
             GamePanel.SetActive(true);
-            ContactPanel.SetActive(false);
-            MenuPanel.SetActive(false);
         }
+        MenuPanel.transform.localScale = Vector3.zero;
+        ContactPanel.SetActive(false);
+        MenuPanel.SetActive(false);
         ContactText.text = null;
         player_isdeath = false;
         currenthp = hp;
@@ -334,5 +353,43 @@ public class Player_System : MonoBehaviour
         loaded_bullets = Guns[weapon_id].loaded_bullets;
         current_loaded_bullets = Guns[weapon_id].loaded_bullets;
         reload_speed = Guns[weapon_id].reload_speed;
+    }
+    public void Canvas_Transition(GameObject Panel,bool IS)
+    {
+        /*
+         * trueが画面を開く時の処理
+         * falseが画面を閉じる時の処理
+         */
+        if (IS)
+        {
+            brain.enabled = false;
+            move_permit = false;
+            isPanel = true;
+            Panel.SetActive(true);
+            DOTween.Sequence()
+                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
+                .SetEase(Ease.OutSine)
+                .OnComplete(() => {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.Confined;
+                }))
+                .Play();
+        }
+        else
+        {
+            DOTween.Sequence()
+                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
+                .SetEase(Ease.OutSine)
+              　.OnComplete(() => {
+                  Cursor.visible = false;
+                  Cursor.lockState = CursorLockMode.Locked;
+                  brain.enabled = true;
+                  move_permit = true;
+                  isPanel = false;
+                  Panel.SetActive(false);
+                  Debug.Log("終了");
+                }))
+                .Play();
+        }
     }
 }
