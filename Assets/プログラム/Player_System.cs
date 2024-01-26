@@ -160,11 +160,11 @@ public class Player_System : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && ConObj != null && !getpanel.activeSelf && !isPanel)
             {
-                Canvas_Transition(getpanel, true);
+                Canvas_Transition(ConObj,getpanel, true);
             }
             else if (Input.GetKeyDown(KeyCode.E) && getpanel.activeSelf && isPanel)
             {
-                Canvas_Transition(getpanel, false);
+                Canvas_Transition(ConObj,getpanel, false);
             }
         }
         if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && move_permit && !isPanel)
@@ -181,7 +181,7 @@ public class Player_System : MonoBehaviour
         if (move_permit)
         {
             //銃関係
-            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate 
+            if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate 
                 && current_loaded_bullets > 0 
                 && !isreload
                 && Input.GetMouseButton(0))
@@ -203,7 +203,7 @@ public class Player_System : MonoBehaviour
                     isreload = false;
                 }
             }
-            else if(rate_count < gunlist.Performance[weapon_id].rapid_fire_rate) rate_count += 0.2f;
+            else if(rate_count < gunlist.Data[weapon_id].rapid_fire_rate) rate_count += 0.2f;
             //物理攻撃
             if (Input.GetKey(KeyCode.R)) MeleeAttack();
             //移動処理
@@ -305,7 +305,7 @@ public class Player_System : MonoBehaviour
         GameObject shotObj = Instantiate(SHOTOBJ,SHOTPOS.transform.position,Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
-        var Guns = gunlist.Performance;
+        var Guns = gunlist.Data;
 
         bs.target_tag = "Enemy";
         bs.damage = Guns[1].bullet_damage;
@@ -349,12 +349,12 @@ public class Player_System : MonoBehaviour
     {
         isreload = false;
         reload_count = 0;
-        var Guns = gunlist.Performance;
+        var Guns = gunlist.Data;
         loaded_bullets = Guns[weapon_id].loaded_bullets;
         current_loaded_bullets = Guns[weapon_id].loaded_bullets;
         reload_speed = Guns[weapon_id].reload_speed;
     }
-    public void Canvas_Transition(GameObject Panel,bool IS)
+    public void Canvas_Transition(GameObject Panel, bool IS)
     {
         /*
          * trueが画面を開く時の処理
@@ -368,8 +368,12 @@ public class Player_System : MonoBehaviour
             Panel.SetActive(true);
             DOTween.Sequence()
                 .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
-                .SetEase(Ease.OutSine)
+                .SetEase(Ease.OutCirc)
                 .OnComplete(() => {
+                    brain.enabled = false;
+                    move_permit = false;
+                    isPanel = true;
+                    Panel.SetActive(true);
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.Confined;
                 }))
@@ -377,16 +381,66 @@ public class Player_System : MonoBehaviour
         }
         else
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            brain.enabled = true;
+            move_permit = true;
             DOTween.Sequence()
                 .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
-                .SetEase(Ease.OutSine)
-              　.OnComplete(() => {
+                .SetEase(Ease.OutCirc)
+              .OnComplete(() => {
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;
                   brain.enabled = true;
                   move_permit = true;
                   isPanel = false;
                   Panel.SetActive(false);
+                  Debug.Log("終了");
+              }))
+                .Play();
+        }
+    }
+    public void Canvas_Transition(ContactObj_System con,GameObject Panel,bool IS)
+    {
+        /*
+         * trueが画面を開く時の処理
+         * falseが画面を閉じる時の処理
+         */
+        if (IS)
+        {
+            brain.enabled = false;
+            move_permit = false;
+            isPanel = true;
+            con.Canvas_Open();
+            DOTween.Sequence()
+                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
+                .SetEase(Ease.OutCirc)
+                .OnComplete(() => {
+                    brain.enabled = false;
+                    move_permit = false;
+                    isPanel = true;
+                    Panel.SetActive(true);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.Confined;
+                }))
+                .Play();
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            brain.enabled = true;
+            move_permit = true;
+            DOTween.Sequence()
+                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
+                .SetEase(Ease.OutCirc)
+              　.OnComplete(() => {
+                  Cursor.visible = false;
+                  Cursor.lockState = CursorLockMode.Locked;
+                  brain.enabled = true;
+                  move_permit = true;
+                  isPanel = false;
+                  con.Canvas_Close();
                   Debug.Log("終了");
                 }))
                 .Play();

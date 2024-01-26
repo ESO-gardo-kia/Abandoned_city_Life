@@ -63,7 +63,7 @@ public class EnemyType2 : MonoBehaviour
 
             HPSlider.value = currenthp;
             //eŠÖŒW
-            if (rate_count >= gunlist.Performance[weapon_id].rapid_fire_rate
+            if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate
                 && navMeshAgent.destination != null)
             {
                 Debug.Log("”­ŽË‚µ‚Ü‚µ‚½");
@@ -83,7 +83,7 @@ public class EnemyType2 : MonoBehaviour
                 }
             }
             */
-            if (rate_count < gunlist.Performance[weapon_id].rapid_fire_rate) rate_count += 0.2f;
+            if (rate_count < gunlist.Data[weapon_id].rapid_fire_rate) rate_count += 0.2f;
             //if(!old_dt) old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
 
         }
@@ -168,7 +168,7 @@ public class EnemyType2 : MonoBehaviour
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
-        var Guns = gunlist.Performance;
+        var Guns = gunlist.Data;
 
         bs.target_tag = "Player";
         bs.damage = Guns[1].bullet_damage;
