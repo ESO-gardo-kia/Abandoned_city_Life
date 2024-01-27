@@ -45,6 +45,11 @@ public class Player_System : MonoBehaviour
     private Slider ENSlider;
     private Text ENText;
 
+    [Header("--- サウンド ---")]
+    private AudioSource AS;
+    public AudioClip panel_sound;
+    private AudioClip shot_sound;
+
     [Header("--- ステータス ---")]
     private float exp;
 
@@ -83,6 +88,7 @@ public class Player_System : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        AS = GetComponent<AudioSource>();
 
         MeleeWeapon = transform.Find("MeleeWeapon").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
@@ -301,7 +307,7 @@ public class Player_System : MonoBehaviour
     }
     public void NomalShot()
     {
-        
+        AS.PlayOneShot(shot_sound);
         GameObject shotObj = Instantiate(SHOTOBJ,SHOTPOS.transform.position,Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
@@ -328,6 +334,8 @@ public class Player_System : MonoBehaviour
         }
         else
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             move_permit = true;
             brain.enabled = true;
             GamePanel.SetActive(true);
@@ -350,6 +358,7 @@ public class Player_System : MonoBehaviour
         isreload = false;
         reload_count = 0;
         var Guns = gunlist.Data;
+        shot_sound = Guns[num].shot;
         loaded_bullets = Guns[num].loaded_bullets;
         current_loaded_bullets = Guns[num].loaded_bullets;
         reload_speed = Guns[num].reload_speed;
@@ -362,6 +371,7 @@ public class Player_System : MonoBehaviour
          */
         if (IS)
         {
+            AS.PlayOneShot(panel_sound);
             brain.enabled = false;
             move_permit = false;
             isPanel = true;
@@ -381,6 +391,7 @@ public class Player_System : MonoBehaviour
         }
         else
         {
+            AS.PlayOneShot(panel_sound);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             brain.enabled = true;
@@ -408,6 +419,7 @@ public class Player_System : MonoBehaviour
          */
         if (IS)
         {
+            AS.PlayOneShot(panel_sound);
             brain.enabled = false;
             move_permit = false;
             isPanel = true;
@@ -427,6 +439,7 @@ public class Player_System : MonoBehaviour
         }
         else
         {
+            AS.PlayOneShot(panel_sound);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             brain.enabled = true;

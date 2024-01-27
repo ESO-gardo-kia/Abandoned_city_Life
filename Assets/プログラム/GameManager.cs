@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                             break;
                         case 2://Main
                             ps.Player_Reset(true);
-                            StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num));
+                            StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num1));
                             break;
                     }
                 }))

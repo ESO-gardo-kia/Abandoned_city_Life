@@ -31,7 +31,14 @@ public class Stage_Information: ScriptableObject
         public TransitionScene tran_scene;
         public string name;
         public Vector3 spawn_pos;
-        public int[] enemies_num;//敵の数
+        //3ウェーブ固定
+        public int[] enemies_num1;
+        public int[] enemies_num2;
+        public int[] enemies_num3;
+        public Wave a;
         public float time_limit;//制限時間
+    }
+    public class Wave
+    {
     }
 }

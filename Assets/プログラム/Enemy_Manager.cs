@@ -29,19 +29,19 @@ public class Enemy_Manager : MonoBehaviour
         int[] ints = new int[1];
         if (Input.GetKeyDown(KeyCode.Q)) Enemy_Manager_Reset();
     }
-    public IEnumerator Enemies_Spawn_Function(int[] num)
+    public IEnumerator Enemies_Spawn_Function(int[] wave1)
     {
-        //num[“G‚ÌID,“G‚Ì”]
+        //wave1[“G‚ÌID,“G‚Ì”]
         iscompletion = false;
-        foreach (var i in num) all_enemies_count += i;
+        foreach (var i in wave1) all_enemies_count += i;
         
-        for(int enemyID = 0; enemyID < num.Length; enemyID++)
+        for(int enemyID = 0; enemyID < wave1.Length; enemyID++)
         {
             if (!Player_System.move_permit&&!Enemy_Manager.enemies_move_permit) yield break;
-            current_enemies_count += num[enemyID];
+            current_enemies_count += wave1[enemyID];
             Debug.Log((enemyID + 1)+"oŒ»");
 
-            for (int i2 = 0; i2 < num[enemyID] ; i2++)
+            for (int i2 = 0; i2 < wave1[enemyID] ; i2++)
             {
                 Debug.Log("“GoŒ»");
 

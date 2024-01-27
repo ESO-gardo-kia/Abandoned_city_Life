@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Gun_List
   m_EditorClassIdentifier: 
   Data:
-  - ispossession: 1
+  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+    reload: {fileID: 0}
+    ispossession: 1
     id: 0
     name: HG-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
@@ -24,7 +26,9 @@ MonoBehaviour:
     reload_speed: 1
     bullet_range: 6
     bullet_speed: 100
-  - ispossession: 1
+  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+    reload: {fileID: 0}
+    ispossession: 1
     id: 0
     name: AR-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
@@ -35,7 +39,9 @@ MonoBehaviour:
     reload_speed: 3
     bullet_range: 8
     bullet_speed: 120
-  - ispossession: 1
+  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+    reload: {fileID: 0}
+    ispossession: 1
     id: 0
     name: SR-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
@@ -43,10 +49,12 @@ MonoBehaviour:
     bullet_damage: 35
     rapid_fire_rate: 15
     loaded_bullets: 4
-    reload_speed: 5
+    reload_speed: 10
     bullet_range: 50
     bullet_speed: 200
-  - ispossession: 1
+  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+    reload: {fileID: 0}
+    ispossession: 1
     id: 0
     name: RY-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}

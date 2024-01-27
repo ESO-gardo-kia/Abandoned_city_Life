@@ -17,35 +17,47 @@ MonoBehaviour:
     tran_scene: 0
     name: Title
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 
+    enemies_num1: 
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
   - stagetype: 1
     tran_scene: 1
     name: Select
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 
+    enemies_num1: 
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
   - stagetype: 2
     tran_scene: 2
     name: Stage1
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 0500000005000000
+    enemies_num1: 05000000
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
   - stagetype: 2
     tran_scene: 2
     name: Stage2
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 0500000005000000
+    enemies_num1: 
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
   - stagetype: 2
     tran_scene: 2
     name: Stage3
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 0500000005000000
+    enemies_num1: 
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
   - stagetype: 4
     tran_scene: 2
     name: Boss1
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num: 0500000005000000
+    enemies_num1: 
+    enemies_num2: 
+    enemies_num3: 
     time_limit: 0
