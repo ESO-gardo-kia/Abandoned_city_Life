@@ -15,23 +15,45 @@ MonoBehaviour:
   Data:
   - ispossession: 1
     id: 0
-    name: Pistol
+    name: HG-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
     price: 0
-    bullet_damage: 9
-    rapid_fire_rate: 2
-    loaded_bullets: 9
+    bullet_damage: 10
+    rapid_fire_rate: 3
+    loaded_bullets: 8
     reload_speed: 1
-    bullet_range: 4
-    bullet_speed: 80
+    bullet_range: 6
+    bullet_speed: 100
   - ispossession: 1
     id: 0
-    name: Pistol
+    name: AR-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
     price: 0
-    bullet_damage: 9
-    rapid_fire_rate: 2
-    loaded_bullets: 9
-    reload_speed: 1
-    bullet_range: 4
-    bullet_speed: 80
+    bullet_damage: 7
+    rapid_fire_rate: 0.8
+    loaded_bullets: 25
+    reload_speed: 3
+    bullet_range: 8
+    bullet_speed: 120
+  - ispossession: 1
+    id: 0
+    name: SR-1
+    sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
+    price: 0
+    bullet_damage: 35
+    rapid_fire_rate: 15
+    loaded_bullets: 4
+    reload_speed: 5
+    bullet_range: 50
+    bullet_speed: 200
+  - ispossession: 1
+    id: 0
+    name: RY-1
+    sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
+    price: 0
+    bullet_damage: 2
+    rapid_fire_rate: 0.1
+    loaded_bullets: 100
+    reload_speed: 10
+    bullet_range: 12
+    bullet_speed: 200

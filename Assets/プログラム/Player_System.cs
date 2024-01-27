@@ -71,7 +71,7 @@ public class Player_System : MonoBehaviour
     [Header("--- ‘•”õ•i ---")]
     private GameObject MeleeWeapon;
 
-    public int weapon_id;
+    public static int player_weapon_id;
     private float rate_count = 0;
     private float loaded_bullets = 0;//’e‚ÌÅ‘å’l
     private float current_loaded_bullets = 0;//Œ»Ý‚ÌŽc’e
@@ -181,7 +181,7 @@ public class Player_System : MonoBehaviour
         if (move_permit)
         {
             //eŠÖŒW
-            if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate 
+            if (rate_count >= gunlist.Data[player_weapon_id].rapid_fire_rate 
                 && current_loaded_bullets > 0 
                 && !isreload
                 && Input.GetMouseButton(0))
@@ -203,7 +203,7 @@ public class Player_System : MonoBehaviour
                     isreload = false;
                 }
             }
-            else if(rate_count < gunlist.Data[weapon_id].rapid_fire_rate) rate_count += 0.2f;
+            else if(rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate) rate_count += 0.2f;
             //•¨—UŒ‚
             if (Input.GetKey(KeyCode.R)) MeleeAttack();
             //ˆÚ“®ˆ—
@@ -343,16 +343,16 @@ public class Player_System : MonoBehaviour
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
 
-        Wepon_Reset();
+        Wepon_Reset(player_weapon_id);
     }
-    public void Wepon_Reset()
+    public void Wepon_Reset(int num)
     {
         isreload = false;
         reload_count = 0;
         var Guns = gunlist.Data;
-        loaded_bullets = Guns[weapon_id].loaded_bullets;
-        current_loaded_bullets = Guns[weapon_id].loaded_bullets;
-        reload_speed = Guns[weapon_id].reload_speed;
+        loaded_bullets = Guns[num].loaded_bullets;
+        current_loaded_bullets = Guns[num].loaded_bullets;
+        reload_speed = Guns[num].reload_speed;
     }
     public void Canvas_Transition(GameObject Panel, bool IS)
     {
