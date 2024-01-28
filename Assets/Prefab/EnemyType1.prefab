@@ -488,7 +488,7 @@ MonoBehaviour:
   Player: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
-  weapon_id: 0
+  weapon_id: 3
   SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
   enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
 --- !u!1 &7216383993865719829

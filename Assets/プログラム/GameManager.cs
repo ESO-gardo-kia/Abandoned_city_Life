@@ -1,7 +1,9 @@
 using Cinemachine;
 using DG.Tweening;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
     public int num = 1;
     public static bool isDotweem;
+    private AudioSource AS;
     private Enemy_Manager em;
     private Scene_Manager sm;
     private Player_System ps;
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
+        AS = GetComponent<AudioSource>();
         sm = transform.GetComponent<Scene_Manager>();
         em = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
         ps = transform.Find("Player_Manager/Player_System").GetComponent<Player_System>();
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
         Sc_Text = transform.Find("System_Canvas/Sc_Text").gameObject;
         Ec_Text = transform.Find("System_Canvas/Ec_Text").gameObject;
 
+        AS.PlayOneShot(si.data[0].BGM);
         //カーソル関係
         /*
         Cursor.visible = false;
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
         .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f*num).SetDelay(0f)//フェードアウト
         .OnComplete(() =>
         {
+            AS.Stop();
             sm.Load_Scene(sn);//シーン移動
             em.Enemy_Manager_Reset();//エネミーマネージャーリセット
             ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
@@ -76,7 +82,7 @@ public class GameManager : MonoBehaviour
         }))
         .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * num).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
-                    Debug.Log(FeedPanel);
+                    AS.PlayOneShot(si.data[sn].BGM);
                     Sc_Text.GetComponent<Text>().text = si.data[sn].name;//ステージ名表示
                 }))
         .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
@@ -101,7 +107,15 @@ public class GameManager : MonoBehaviour
                             break;
                         case 2://Main
                             ps.Player_Reset(true);
-                            StartCoroutine(em.Enemies_Spawn_Function(si.data[sn].enemies_num1));
+                            
+                            List<int[]> wave = new List<int[]>
+                            {
+                                si.data[sn].enemies_num1,
+                                si.data[sn].enemies_num2,
+                                si.data[sn].enemies_num3
+                            };
+                            StartCoroutine(em.Enemies_Spawn_Function(wave));
+                            
                             break;
                     }
                 }))

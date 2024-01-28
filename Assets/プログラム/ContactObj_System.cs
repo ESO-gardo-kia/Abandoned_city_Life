@@ -43,11 +43,6 @@ public class ContactObj_System : MonoBehaviour
         Panel.SetActive(true);
         switch (Cont)
         {
-            case Contact_Type.None:
-
-                break;
-            case Contact_Type.StageSelect:
-                break;
             case Contact_Type.Production_Table:
                 Gun_ReadIn();
                 break;

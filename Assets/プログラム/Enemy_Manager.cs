@@ -29,15 +29,33 @@ public class Enemy_Manager : MonoBehaviour
         int[] ints = new int[1];
         if (Input.GetKeyDown(KeyCode.Q)) Enemy_Manager_Reset();
     }
-    public IEnumerator Enemies_Spawn_Function(int[] wave1)
+    public IEnumerator Enemies_Spawn_Function(List<int[]>wave)
     {
+        
         //wave1[敵のID,敵の数]
         iscompletion = false;
-        foreach (var i in wave1) all_enemies_count += i;
+        foreach (var i in wave[0]) all_enemies_count += i;
+        yield return new WaitForSeconds(0.5f);
         
+        for(int wavenum = 0;  wavenum <= 2; wavenum++)
+        {
+            if (!Player_System.move_permit && !enemies_move_permit) yield break;
+            for (int i = 0; i < wave[wavenum].Length; i++)
+            {
+                if (!Player_System.move_permit && !enemies_move_permit) yield break;
+                Spawn_Function(i);
+                yield return new WaitForSeconds(0.5f);
+            }
+            Debug.Log("ウェーブ"+wavenum+"終了");
+            yield return new WaitForSeconds(10);
+        }
+        
+        enemies_move_permit = true;
+
+        /*
         for(int enemyID = 0; enemyID < wave1.Length; enemyID++)
         {
-            if (!Player_System.move_permit&&!Enemy_Manager.enemies_move_permit) yield break;
+            if (!Player_System.move_permit&&!enemies_move_permit) yield break;
             current_enemies_count += wave1[enemyID];
             Debug.Log((enemyID + 1)+"出現");
 
@@ -73,6 +91,33 @@ public class Enemy_Manager : MonoBehaviour
             }
         }
         Enemy_Manager.enemies_move_permit = true;
+        */
+    }
+    public void Spawn_Function(int i)
+    {
+        Vector3 sp = SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(
+Random.Range(-spawn_range, spawn_range)
+, 0f
+, Random.Range(-spawn_range, spawn_range));
+
+        GameObject eo = Instantiate(el.Status[i].Enemy_Model, sp, Quaternion.identity, transform.Find("Enemy_ObjList"));
+        switch (i)
+        {
+            case 0:
+                eo.GetComponent<Enemy_System>().Player = Player;
+                eo.GetComponent<Enemy_System>().em = this;
+                Debug.Log(eo.GetComponent<Enemy_System>().em);
+                eo.GetComponent<Enemy_System>().Enemy_Reset();
+                break;
+            case 1:
+                eo.GetComponent<EnemyType2>().Player = Player;
+                eo.GetComponent<EnemyType2>().em = this;
+                Debug.Log(eo.GetComponent<EnemyType2>().em);
+                eo.GetComponent<EnemyType2>().Enemy_Reset();
+                break;
+            case 2:
+                break;
+        }
     }
     public void ParentEnemyDeath()
     {

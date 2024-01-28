@@ -9,6 +9,7 @@ public class Stage_Information: ScriptableObject
     [System.Serializable]
     public class stage_information
     {
+        public AudioClip BGM;
         public enum StageType
         {
             //ƒ^ƒCƒgƒ‹
@@ -35,10 +36,6 @@ public class Stage_Information: ScriptableObject
         public int[] enemies_num1;
         public int[] enemies_num2;
         public int[] enemies_num3;
-        public Wave a;
         public float time_limit;//§ŒÀŠÔ
-    }
-    public class Wave
-    {
     }
 }

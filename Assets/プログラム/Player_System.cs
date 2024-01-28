@@ -8,7 +8,6 @@ using UniRx.Triggers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class Player_System : MonoBehaviour
 {
@@ -340,6 +339,7 @@ public class Player_System : MonoBehaviour
             brain.enabled = true;
             GamePanel.SetActive(true);
         }
+        isPanel = false;
         MenuPanel.transform.localScale = Vector3.zero;
         ContactPanel.SetActive(false);
         MenuPanel.SetActive(false);
