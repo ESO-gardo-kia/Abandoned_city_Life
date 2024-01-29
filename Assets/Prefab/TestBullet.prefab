@@ -127,5 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9282f234f6355c48b8b249c94560ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death_time: 1
-  damage: 0
+  rb: {fileID: 2594642818979987878}
+  gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
+  type: 0
+  target_tag: Player
+  damage: 10
+  speed: 0
+  dire: {x: 0, y: 0, z: 0}
+  death_dis: 33.333332
+  firstpos: {x: 67.730354, y: 1.9724827, z: 66.05079}
+  target_pos: {x: 0, y: 0, z: 0}

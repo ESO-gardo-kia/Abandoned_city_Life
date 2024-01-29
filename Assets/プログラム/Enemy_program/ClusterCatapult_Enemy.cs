@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyType2 : MonoBehaviour
+public class ClusterCatapult_Enemy : MonoBehaviour
 {
     public Enemy_Manager em;
     [SerializeField] public GameObject Player;
@@ -19,7 +17,7 @@ public class EnemyType2 : MonoBehaviour
     private GameObject old_dt;
     private float old_damage;
 
-    private NavMeshAgent navMeshAgent;
+    private NavMeshAgent NMA;
 
     [Header("--- 装備品 ---")]
     public int weapon_id;
@@ -56,16 +54,18 @@ public class EnemyType2 : MonoBehaviour
             }
             else if (!isdeath && !Player_System.player_isdeath)
             {
-                Debug.Log(Player == null);
-                navMeshAgent.destination = Player.transform.position;
-                //Quaternion.RotateTowards(4, Player.transform.localRotation, 4);
+                NMA.destination = Player.transform.position;
+
+                transform.localRotation = Quaternion.RotateTowards(transform.rotation
+                    , Quaternion.LookRotation(Player.transform.position - transform.position)
+                    , 10);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
             HPSlider.value = currenthp;
             //銃関係
             if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate
-                && navMeshAgent.destination != null)
+                && NMA.destination != null)
             {
                 Debug.Log("発射しました");
                 NomalShot();
@@ -119,8 +119,10 @@ public class EnemyType2 : MonoBehaviour
         TEXTPOS = transform.Find("TEXTPOS").gameObject;
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        navMeshAgent = this.GetComponent<NavMeshAgent>();
+        NMA = this.GetComponent<NavMeshAgent>();
         isdeath = false;
+        //ステータス反映
+        //StatusはScriptableObjectにて改変する事
         var e_l = enemy_List.Status[1];
         Ename = e_l.name;
         exp = e_l.exp;
@@ -132,6 +134,9 @@ public class EnemyType2 : MonoBehaviour
         currentagi = agi;
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
+
+        NMA.speed = agi;
+        NMA.stoppingDistance = gunlist.Data[weapon_id].bullet_range / 1.5f;
     }
     void TakeDmage(float damage, Bullet_System BS)
     {
@@ -168,11 +173,14 @@ public class EnemyType2 : MonoBehaviour
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
         var Guns = gunlist.Data;
+        
+        //shotObj.GetComponent<Bullet_System>().NomalShot(gunlist);
 
+        bs.type = Bullet_System.Bullet_Type.parabola;
         bs.target_tag = "Player";
         bs.damage = Guns[weapon_id].bullet_damage;
-        bs.death_dis = Guns[weapon_id].bullet_range;
-        rb.velocity = this.transform.forward * Guns[weapon_id].bullet_speed;
+        bs.death_dis = Guns[weapon_id].bullet_range / 1.5f;
+        bs.firstpos = SHOTPOS.transform.position;
         shotObj.transform.eulerAngles = this.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }

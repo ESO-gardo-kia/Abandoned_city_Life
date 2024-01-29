@@ -29,61 +29,25 @@ public class Enemy_Manager : MonoBehaviour
     {
         //wave1[敵のID,敵の数]
         iscompletion = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         foreach (var i in wave) current_enemies_count += i;// 現ウェーブの敵の総数を数える
-        Debug.Log(current_wave);
-        for (int i = 0; i < wave.Length; i++)
+        Debug.Log(wave[0]);
+        for(int id = 0; id < wave.Length; id++)
         {
-            //敵を生成
-            if (!Player_System.move_permit && !enemies_move_permit) yield break;
-            Spawn_Function(i);
-            yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < wave[id]; i++)
+            {
+                //敵を生成
+                Debug.Log(i);
+                if (!Player_System.move_permit && !enemies_move_permit) yield break;
+                Spawn_Function(i);
+                yield return new WaitForSeconds(0.5f);
+            }
         }
+
         Debug.Log("ウェーブ" + current_wave + "終了");
         if (current_wave == 2) Debug.Log("全ウェーブ終了");
         enemies_move_permit = true;
         current_wave++;//次のウェーブへ数字を進める
-
-        /*
-        for(int enemyID = 0; enemyID < wave1.Length; enemyID++)
-        {
-            if (!Player_System.move_permit&&!enemies_move_permit) yield break;
-            current_enemies_count += wave1[enemyID];
-            Debug.Log((enemyID + 1)+"出現");
-
-            for (int i2 = 0; i2 < wave1[enemyID] ; i2++)
-            {
-                Debug.Log("敵出現");
-
-                Vector3 sp = SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(
-                 Random.Range(-spawn_range, spawn_range)
-               , 0f
-               , Random.Range(-spawn_range, spawn_range));
-
-                GameObject eo = Instantiate(el.Status[enemyID].Enemy_Model, sp, Quaternion.identity, transform.Find("Enemy_ObjList"));
-                switch (enemyID)
-                {
-                    case 0:
-                        eo.GetComponent<Enemy_System>().Player = Player;
-                        eo.GetComponent<Enemy_System>().em = this;
-                        Debug.Log(eo.GetComponent<Enemy_System>().em);
-                        eo.GetComponent<Enemy_System>().Enemy_Reset();
-                        break; 
-                    case 1:
-                        eo.GetComponent<EnemyType2>().Player = Player;
-                        eo.GetComponent<EnemyType2>().em = this;
-                        Debug.Log(eo.GetComponent<EnemyType2>().em);
-                        eo.GetComponent<EnemyType2>().Enemy_Reset();
-                        break;
-                    case 2:
-                        //eo.GetComponent<Enemy_System>().Player = Player;
-                        break;
-                }
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-        Enemy_Manager.enemies_move_permit = true;
-        */
     }
     public void Spawn_Function(int i)
     {
@@ -96,16 +60,12 @@ public class Enemy_Manager : MonoBehaviour
         switch (i)
         {
             case 0:
-                eo.GetComponent<Enemy_System>().Player = Player;
-                eo.GetComponent<Enemy_System>().em = this;
-                Debug.Log(eo.GetComponent<Enemy_System>().em);
-                eo.GetComponent<Enemy_System>().Enemy_Reset();
+                eo.GetComponent<Shooter_Enemy>().Player = Player;
+                eo.GetComponent<Shooter_Enemy>().em = this;
+                Debug.Log(eo.GetComponent<Shooter_Enemy>().em);
+                eo.GetComponent<Shooter_Enemy>().Enemy_Reset();
                 break;
             case 1:
-                eo.GetComponent<EnemyType2>().Player = Player;
-                eo.GetComponent<EnemyType2>().em = this;
-                Debug.Log(eo.GetComponent<EnemyType2>().em);
-                eo.GetComponent<EnemyType2>().Enemy_Reset();
                 break;
             case 2:
                 break;

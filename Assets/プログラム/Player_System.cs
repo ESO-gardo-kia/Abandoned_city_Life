@@ -120,7 +120,6 @@ public class Player_System : MonoBehaviour
             && !isJumping_running//ジャンプ処理中ではない場合で
             && isJumping)//接地している場合
             {
-                Debug.Log("ジャンプ");
                 StartCoroutine("JunpMove");
                 isJumping = false;
             }

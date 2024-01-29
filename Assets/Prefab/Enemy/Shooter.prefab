@@ -382,12 +382,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7216383993853507425}
   - component: {fileID: 7216383993853507429}
+  - component: {fileID: -3458310008348356530}
   - component: {fileID: 7216383993853507428}
   - component: {fileID: 7216383993853507431}
   - component: {fileID: 7216383993853507430}
-  - component: {fileID: -3458310008348356530}
   m_Layer: 0
-  m_Name: EnemyType1
+  m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,6 +421,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216383993853507424}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &-3458310008348356530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216383993853507424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c57ef830ca31154682c9e33fa4a6b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  em: {fileID: 0}
+  Player: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
+  gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
+  TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
+  weapon_id: 0
+  SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
+  enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
 --- !u!65 &7216383993853507428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -472,25 +491,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-3458310008348356530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216383993853507424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c57ef830ca31154682c9e33fa4a6b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  em: {fileID: 0}
-  Player: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
-  gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
-  weapon_id: 3
-  SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
-  enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
 --- !u!1 &7216383993865719829
 GameObject:
   m_ObjectHideFlags: 0
