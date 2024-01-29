@@ -114,8 +114,9 @@ public class GameManager : MonoBehaviour
                                 si.data[sn].enemies_num2,
                                 si.data[sn].enemies_num3
                             };
-                            StartCoroutine(em.Enemies_Spawn_Function(wave));
-                            
+                            em.all_wave = wave;
+                            StartCoroutine(em.Enemies_Spawn_Function(wave[0]));
+
                             break;
                     }
                 }))

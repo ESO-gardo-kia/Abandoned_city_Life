@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet_System : MonoBehaviour
@@ -9,16 +10,21 @@ public class Bullet_System : MonoBehaviour
         Normal
     }
     public Bullet_Type type;
+    public Vector3 firstpos;
     public string target_tag;
-    public float death_time = 1;
+    public float death_dis = 1;
     public float damage;
     void FixedUpdate()
     {
         switch(type)
         {
             case Bullet_Type.Normal:
+                float dis = Vector3.Distance(firstpos,transform.position);
+                if(dis <= death_dis) Destroy(gameObject);
+                /*
                 if (death_time <= 0) Destroy(gameObject);
                 else death_time -= 0.02f;
+                */
                 break;
         }
     }

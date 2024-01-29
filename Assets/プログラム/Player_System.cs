@@ -314,7 +314,8 @@ public class Player_System : MonoBehaviour
 
         bs.target_tag = "Enemy";
         bs.damage = Guns[1].bullet_damage;
-        bs.death_time = Guns[1].bullet_range;
+        bs.death_dis = Guns[1].bullet_range;
+        bs.firstpos = SHOTPOS.transform.position;
         rb.velocity = CAMERA.transform.forward * Guns[1].bullet_speed;
         shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
