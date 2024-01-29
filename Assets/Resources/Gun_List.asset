@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun_List
   m_EditorClassIdentifier: 
   Data:
-  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+  - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
     id: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     reload_speed: 1
     bullet_range: 6
     bullet_speed: 100
-  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+  - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
     id: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     reload_speed: 3
     bullet_range: 8
     bullet_speed: 120
-  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+  - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
     id: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
     reload_speed: 10
     bullet_range: 50
     bullet_speed: 200
-  - shot: {fileID: 8300000, guid: ac0e1d3973dc0594791fd91cd855575d, type: 3}
+  - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
     id: 0

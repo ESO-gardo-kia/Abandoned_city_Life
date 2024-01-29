@@ -42,7 +42,9 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: d0e2fc18fe036412f8223b3b3d9ad574,
       type: 2}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - Server
   - serializedVersion: 2
     name: Balanced
     pixelLightCount: 1
@@ -82,6 +84,7 @@ QualitySettings:
     excludedTargetPlatforms:
     - Standalone
     - Server
+    - Android
   - serializedVersion: 2
     name: High Fidelity
     pixelLightCount: 2
@@ -118,11 +121,9 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 7b7fd9122c28c4d15b667c7040e3b3fd,
       type: 2}
-    excludedTargetPlatforms:
-    - Standalone
-    - Server
+    excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 1
+    Android: 0
     CloudRendering: 2
     GameCoreScarlett: 2
     GameCoreXboxOne: 2
@@ -132,7 +133,7 @@ QualitySettings:
     PS5: 2
     Server: 0
     Stadia: 2
-    Standalone: 0
+    Standalone: 2
     WebGL: 1
     Windows Store Apps: 2
     XboxOne: 2
