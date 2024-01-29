@@ -24,7 +24,7 @@ MonoBehaviour:
     rapid_fire_rate: 3
     loaded_bullets: 8
     reload_speed: 1
-    bullet_range: 6
+    bullet_range: 2
     bullet_speed: 100
   - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
@@ -63,5 +63,5 @@ MonoBehaviour:
     rapid_fire_rate: 0.1
     loaded_bullets: 100
     reload_speed: 10
-    bullet_range: 12
+    bullet_range: 100
     bullet_speed: 200

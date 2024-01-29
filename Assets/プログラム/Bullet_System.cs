@@ -20,7 +20,7 @@ public class Bullet_System : MonoBehaviour
         {
             case Bullet_Type.Normal:
                 float dis = Vector3.Distance(firstpos,transform.position);
-                if(dis <= death_dis) Destroy(gameObject);
+                if(dis >= death_dis) Destroy(gameObject);
                 /*
                 if (death_time <= 0) Destroy(gameObject);
                 else death_time -= 0.02f;

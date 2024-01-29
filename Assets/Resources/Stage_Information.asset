@@ -36,9 +36,9 @@ MonoBehaviour:
     tran_scene: 2
     name: Stage1
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num1: 05000000
-    enemies_num2: 0a000000
-    enemies_num3: 0f000000
+    enemies_num1: 01000000
+    enemies_num2: 01000000
+    enemies_num3: 01000000
     time_limit: 0
   - BGM: {fileID: 0}
     stagetype: 2

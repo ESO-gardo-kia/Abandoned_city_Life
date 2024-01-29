@@ -58,6 +58,7 @@ public class EnemyType2 : MonoBehaviour
             {
                 Debug.Log(Player == null);
                 navMeshAgent.destination = Player.transform.position;
+                //Quaternion.RotateTowards(4, Player.transform.localRotation, 4);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
@@ -104,7 +105,6 @@ public class EnemyType2 : MonoBehaviour
                 {
                     TakeDmage(other.GetComponent<Attack_System>().damage, other, other.GetComponent<Attack_System>());
                 }
-
             }
         }
     }
@@ -164,16 +164,15 @@ public class EnemyType2 : MonoBehaviour
     }
     public void NomalShot()
     {
-
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
         var Guns = gunlist.Data;
 
         bs.target_tag = "Player";
-        bs.damage = Guns[1].bullet_damage;
-        bs.death_dis = Guns[1].bullet_range;
-        rb.velocity = this.transform.forward * Guns[1].bullet_speed;
+        bs.damage = Guns[weapon_id].bullet_damage;
+        bs.death_dis = Guns[weapon_id].bullet_range;
+        rb.velocity = this.transform.forward * Guns[weapon_id].bullet_speed;
         shotObj.transform.eulerAngles = this.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
