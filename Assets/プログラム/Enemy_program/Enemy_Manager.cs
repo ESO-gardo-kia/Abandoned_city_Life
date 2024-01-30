@@ -8,7 +8,7 @@ public class Enemy_Manager : MonoBehaviour
     static public bool enemies_move_permit;
     public List<int[]> all_wave;
     [SerializeField] private GameObject Enemy_Obj;
-    [SerializeField] private GameObject Player;
+    [SerializeField] public GameObject player_system;
     [SerializeField] public Enemy_List el;
     public GameObject[] SPL;//SpawnPoint_List
     public int spawn_range = 20;
@@ -60,10 +60,10 @@ public class Enemy_Manager : MonoBehaviour
         switch (i)
         {
             case 0:
-                eo.GetComponent<Shooter_Enemy>().Player = Player;
-                eo.GetComponent<Shooter_Enemy>().em = this;
-                Debug.Log(eo.GetComponent<Shooter_Enemy>().em);
-                eo.GetComponent<Shooter_Enemy>().Enemy_Reset();
+                Shooter_Enemy se = eo.GetComponent<Shooter_Enemy>();
+                se.em = this;
+                se.Enemy_Reset();
+                Debug.Log(se.Player);
                 break;
             case 1:
                 break;

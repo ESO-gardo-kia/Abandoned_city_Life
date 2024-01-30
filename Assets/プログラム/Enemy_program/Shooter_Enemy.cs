@@ -112,7 +112,7 @@ public class Shooter_Enemy: MonoBehaviour
     {
         Debug.Log("“G‚Ìî•ñ‚ğƒŠƒZƒbƒg‚·‚é");
         em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        if (Player == null) Player = GameObject.Find("Player");
+        Player = em.player_system;
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
