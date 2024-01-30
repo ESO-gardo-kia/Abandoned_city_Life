@@ -8,7 +8,7 @@ public class Enemy_Manager : MonoBehaviour
     static public bool enemies_move_permit;
     public List<int[]> all_wave;
     [SerializeField] private GameObject Enemy_Obj;
-    [SerializeField] public GameObject Player;
+    [SerializeField] private GameObject Player;
     [SerializeField] public Enemy_List el;
     public GameObject[] SPL;//SpawnPoint_List
     public int spawn_range = 20;
@@ -39,7 +39,7 @@ public class Enemy_Manager : MonoBehaviour
                 //ìGÇê∂ê¨
                 Debug.Log(i);
                 if (!Player_System.move_permit && !enemies_move_permit) yield break;
-                Spawn_Function(wave.Length);
+                Spawn_Function(i);
                 yield return new WaitForSeconds(0.5f);
             }
         }

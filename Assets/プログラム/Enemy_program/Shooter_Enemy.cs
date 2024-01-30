@@ -54,11 +54,11 @@ public class Shooter_Enemy: MonoBehaviour
             }
             else if (!isdeath && !Player_System.player_isdeath)
             {
+                NMA.destination = Player.transform.position;
+
                 transform.localRotation = Quaternion.RotateTowards(transform.rotation
                     , Quaternion.LookRotation(Player.transform.position - transform.position)
                     , 10);
-                NMA.destination = Player.transform.position;
-                Debug.Log(NMA.destination);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
@@ -112,7 +112,7 @@ public class Shooter_Enemy: MonoBehaviour
     {
         Debug.Log("ìGÇÃèÓïÒÇÉäÉZÉbÉgÇ∑ÇÈ");
         em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        if (Player == null) Player = GameObject.Find("Player_System");
+        if (Player == null) Player = GameObject.Find("Player");
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
