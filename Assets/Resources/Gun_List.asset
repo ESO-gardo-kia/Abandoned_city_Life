@@ -20,12 +20,15 @@ MonoBehaviour:
     name: HG-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
     price: 0
-    bullet_damage: 10
+    bullet_damage: 4
     rapid_fire_rate: 3
     loaded_bullets: 8
     reload_speed: 1
     bullet_range: 50
     bullet_speed: 100
+    diffusion__chance: 1
+    multi_bullet: 3
+    type: 0
   - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -39,6 +42,9 @@ MonoBehaviour:
     reload_speed: 3
     bullet_range: 70
     bullet_speed: 120
+    diffusion__chance: 2
+    multi_bullet: 1
+    type: 0
   - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -50,8 +56,11 @@ MonoBehaviour:
     rapid_fire_rate: 15
     loaded_bullets: 4
     reload_speed: 10
-    bullet_range: 200
-    bullet_speed: 200
+    bullet_range: 500
+    bullet_speed: 500
+    diffusion__chance: 0
+    multi_bullet: 1
+    type: 0
   - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -63,5 +72,24 @@ MonoBehaviour:
     rapid_fire_rate: 0.1
     loaded_bullets: 100
     reload_speed: 10
-    bullet_range: 30
+    bullet_range: 200
     bullet_speed: 200
+    diffusion__chance: 10
+    multi_bullet: 1
+    type: 0
+  - shot: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
+    reload: {fileID: 0}
+    ispossession: 1
+    id: 0
+    name: qqq
+    sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
+    price: 0
+    bullet_damage: 2
+    rapid_fire_rate: 0.1
+    loaded_bullets: 100
+    reload_speed: 10
+    bullet_range: 200
+    bullet_speed: 200
+    diffusion__chance: 10
+    multi_bullet: 1
+    type: 2

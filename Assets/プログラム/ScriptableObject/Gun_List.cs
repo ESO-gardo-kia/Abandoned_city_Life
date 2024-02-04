@@ -23,5 +23,15 @@ public class Gun_List : ScriptableObject
         public float reload_speed;//ƒŠƒ[ƒh‘¬“x
         public float bullet_range;//Ë’ö
         public float bullet_speed;//’e‘¬
+        public float diffusion__chance;//ŠgU—¦
+        public float multi_bullet;//
+
+        public enum Bullet_Type
+        {
+            Normal,
+            parabola,
+            split
+        }
+        public Bullet_Type type;
     }
 }

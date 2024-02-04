@@ -1,11 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using UniRx.Triggers;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -89,7 +84,6 @@ public class Player_System : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         AS = GetComponent<AudioSource>();
 
-        MeleeWeapon = transform.Find("MeleeWeapon").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
 
         PCanvas = transform.Find("PCanvas").gameObject;
@@ -190,7 +184,7 @@ public class Player_System : MonoBehaviour
                 && !isreload
                 && Input.GetMouseButton(0))
             {
-                Debug.Log("発射しました");
+                //Debug.Log("発射しました");
                 NomalShot();
                 current_loaded_bullets--;
                 rate_count = 0;
@@ -208,8 +202,6 @@ public class Player_System : MonoBehaviour
                 }
             }
             else if(rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate) rate_count += 0.2f;
-            //物理攻撃
-            if (Input.GetKey(KeyCode.R)) MeleeAttack();
             //移動処理
             float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
             float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
@@ -306,22 +298,24 @@ public class Player_System : MonoBehaviour
     public void NomalShot()
     {
         AS.PlayOneShot(shot_sound);
-        GameObject shotObj = Instantiate(SHOTOBJ,SHOTPOS.transform.position,Quaternion.identity);
-        Rigidbody rb = shotObj.GetComponent<Rigidbody>();
-        Bullet_System bs = shotObj.GetComponent<Bullet_System>();
-        var Guns = gunlist.Data;
+        var Guns = gunlist.Data[player_weapon_id];
+        for (int i = 0 ; i < Guns.multi_bullet ; i++)
+        {
+            GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
+            Rigidbody rb = shotObj.GetComponent<Rigidbody>();
+            Bullet_System bs = shotObj.GetComponent<Bullet_System>();
 
-        bs.target_tag = "Enemy";
-        bs.damage = Guns[1].bullet_damage;
-        bs.death_dis = Guns[1].bullet_range;
-        bs.firstpos = SHOTPOS.transform.position;
-        rb.velocity = CAMERA.transform.forward * Guns[1].bullet_speed;
-        shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
-        //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
-    }
-    public void MeleeAttack()
-    {
-        Rigidbody rb = MeleeWeapon.GetComponent<Rigidbody>();
+            bs.type = (Bullet_System.Bullet_Type)Guns.type;
+            bs.target_tag = "Enemy";
+            bs.damage = Guns.bullet_damage;
+            bs.death_dis = Guns.bullet_range;
+            bs.firstpos = SHOTPOS.transform.position;
+            shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
+            shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance));
+            rb.velocity = bs.transform.forward * Guns.bullet_speed;
+        }
     }
     public void Player_Reset(bool IS)
     {

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,8 +8,7 @@ public class Shooter_Enemy: MonoBehaviour
     [SerializeField] public GameObject Player;
     [SerializeField] public Gun_List gunlist;
     private GameObject SHOTPOS;
-    private GameObject Enemy_Obj;
-    private GameObject Attack_Obj;
+    public GameObject wheel;
 
     private GameObject EnemyCanvas;
     private UnityEngine.UI.Slider HPSlider;
@@ -18,10 +18,16 @@ public class Shooter_Enemy: MonoBehaviour
     private float old_damage;
 
     private NavMeshAgent NMA;
+    private Rigidbody rb;
 
     [Header("--- 装備品 ---")]
-    public int weapon_id;
-    private float rate_count = 0;
+    public AudioClip shotsound;
+    public float bullet_damage;//ダメージ
+    public float rapid_fire_rate;//連射速度
+    public float bullet_range;//射程
+    public float bullet_speed;//弾速
+    public float diffusion_chance;//拡散率
+    public float rate_count = 0;
     [SerializeField] public GameObject SHOTOBJ;
 
     [Header("--- ステータス ---")]
@@ -46,6 +52,7 @@ public class Shooter_Enemy: MonoBehaviour
 
     void FixedUpdate()
     {
+        if (rb.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up,rb.velocity.magnitude * 3);
         if (Enemy_Manager.enemies_move_permit == true)
         {
             if (isdeath)
@@ -58,35 +65,20 @@ public class Shooter_Enemy: MonoBehaviour
 
                 transform.localRotation = Quaternion.RotateTowards(transform.rotation
                     , Quaternion.LookRotation(Player.transform.position - transform.position)
-                    , 10);
+                    , 1);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
             HPSlider.value = currenthp;
             //銃関係
-            if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate
+            if (rate_count >= rapid_fire_rate
                 && NMA.destination != null)
             {
                 Debug.Log("発射しました");
                 NomalShot();
                 rate_count = 0;
             }
-            /*
-            if (current_loaded_bullets <= 0) isreload = true;
-            if (isreload)
-            {
-                reload_count += 0.2f;
-                if (reload_count >= reload_speed)
-                {
-                    current_loaded_bullets = loaded_bullets;
-                    reload_count = 0;
-                    isreload = false;
-                }
-            }
-            */
-            if (rate_count < gunlist.Data[weapon_id].rapid_fire_rate) rate_count += 0.2f;
-            //if(!old_dt) old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
-
+            if (rate_count < rapid_fire_rate) rate_count += 0.2f;
         }
     }
     void OnTriggerEnter(Collider other)
@@ -110,16 +102,15 @@ public class Shooter_Enemy: MonoBehaviour
     }
     public void Enemy_Reset()
     {
-        Debug.Log("敵の情報をリセットする");
+        //Debug.Log("敵の情報をリセットする");
         em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
         Player = em.player_system;
-        Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
-        Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
         TEXTPOS = transform.Find("TEXTPOS").gameObject;
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        NMA = this.GetComponent<NavMeshAgent>();
+        NMA = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
         isdeath = false;
         //ステータス反映
         //StatusはScriptableObjectにて改変する事
@@ -136,7 +127,7 @@ public class Shooter_Enemy: MonoBehaviour
         HPSlider.value = currenthp;
 
         NMA.speed = agi;
-        NMA.stoppingDistance = gunlist.Data[weapon_id].bullet_range / 1.5f;
+        NMA.stoppingDistance = 20;
     }
     void TakeDmage(float damage, Bullet_System BS)
     {
@@ -172,14 +163,16 @@ public class Shooter_Enemy: MonoBehaviour
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
-        var Guns = gunlist.Data;
 
         bs.target_tag = "Player";
-        bs.damage = Guns[weapon_id].bullet_damage;
-        bs.death_dis = Guns[weapon_id].bullet_range / 1.5f;
+        bs.damage = bullet_damage;
+        bs.death_dis = bullet_range / 1.5f;
         bs.firstpos = SHOTPOS.transform.position;
-        rb.velocity = this.transform.forward * Guns[weapon_id].bullet_speed;
-        shotObj.transform.eulerAngles = this.transform.eulerAngles;
+        shotObj.transform.eulerAngles = transform.eulerAngles;
+        shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusion_chance, diffusion_chance)
+                            , Random.Range(-diffusion_chance, diffusion_chance)
+                            , Random.Range(diffusion_chance, diffusion_chance));
+        rb.velocity = bs.transform.forward * bullet_speed;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
     void TakeDmage(float damage, Collider other, Attack_System AS)

@@ -6,6 +6,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
     public Enemy_Manager em;
     [SerializeField] public GameObject Player;
     [SerializeField] public Gun_List gunlist;
+    private AudioSource AS;
     private GameObject SHOTPOS;
     private GameObject Enemy_Obj;
     private GameObject Attack_Obj;
@@ -20,9 +21,15 @@ public class ClusterCatapult_Enemy : MonoBehaviour
     private NavMeshAgent NMA;
 
     [Header("--- 装備品 ---")]
-    public int weapon_id;
+    public AudioClip shotsound;
+    public float bullet_damage;//ダメージ
+    public float rapid_fire_rate;//連射速度
+    public float bullet_range;//射程
+    public float bullet_speed;//弾速
+    public float diffusion_chance;//拡散率
     private float rate_count = 0;
     [SerializeField] public GameObject SHOTOBJ;
+    [SerializeField] public GameObject SPLITOBJ;
 
     [Header("--- ステータス ---")]
     [SerializeField] private Enemy_List enemy_List;
@@ -54,17 +61,14 @@ public class ClusterCatapult_Enemy : MonoBehaviour
             }
             else if (!isdeath && !Player_System.player_isdeath)
             {
+                if (Player == null) Debug.Log("何も入ってない");
                 NMA.destination = Player.transform.position;
-
-                transform.localRotation = Quaternion.RotateTowards(transform.rotation
-                    , Quaternion.LookRotation(Player.transform.position - transform.position)
-                    , 10);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
             HPSlider.value = currenthp;
             //銃関係
-            if (rate_count >= gunlist.Data[weapon_id].rapid_fire_rate
+            if (rate_count >= rapid_fire_rate
                 && NMA.destination != null)
             {
                 Debug.Log("発射しました");
@@ -84,7 +88,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
                 }
             }
             */
-            if (rate_count < gunlist.Data[weapon_id].rapid_fire_rate) rate_count += 0.2f;
+            if (rate_count < rapid_fire_rate) rate_count += 0.2f;
             //if(!old_dt) old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
 
         }
@@ -110,16 +114,17 @@ public class ClusterCatapult_Enemy : MonoBehaviour
     }
     public void Enemy_Reset()
     {
-        Debug.Log("敵の情報をリセットする");
+        //Debug.Log("敵の情報をリセットする");
         em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        if (Player == null) Player = GameObject.Find("Player");
+        Player = em.player_system;
         Enemy_Obj = transform.Find("Enemy_Obj").gameObject;
         Attack_Obj = transform.Find("Enemy_Obj/Attack_Obj").gameObject;
         SHOTPOS = transform.Find("SHOTPOS").gameObject;
         TEXTPOS = transform.Find("TEXTPOS").gameObject;
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        NMA = this.GetComponent<NavMeshAgent>();
+        NMA = GetComponent<NavMeshAgent>();
+        AS = GetComponent<AudioSource>();
         isdeath = false;
         //ステータス反映
         //StatusはScriptableObjectにて改変する事
@@ -136,7 +141,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
         HPSlider.value = currenthp;
 
         NMA.speed = agi;
-        NMA.stoppingDistance = gunlist.Data[weapon_id].bullet_range / 1.5f;
+        NMA.stoppingDistance = bullet_range / 1.5f;
     }
     void TakeDmage(float damage, Bullet_System BS)
     {
@@ -169,19 +174,25 @@ public class ClusterCatapult_Enemy : MonoBehaviour
     }
     public void NomalShot()
     {
+        AS.PlayOneShot(shotsound);
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
         var Guns = gunlist.Data;
-        
-        //shotObj.GetComponent<Bullet_System>().NomalShot(gunlist);
+
+        Vector3 targetpos = Player.transform.position + Vector3.up * 30;
 
         bs.type = Bullet_System.Bullet_Type.parabola;
         bs.target_tag = "Player";
-        bs.damage = Guns[weapon_id].bullet_damage;
-        bs.death_dis = Guns[weapon_id].bullet_range / 1.5f;
-        bs.firstpos = SHOTPOS.transform.position;
-        shotObj.transform.eulerAngles = this.transform.eulerAngles;
+        bs.damage = bullet_damage;
+        bs.shot_power = bullet_speed;
+        bs.death_dis = bullet_range;
+        bs.target_pos = targetpos;
+        bs.SPLITOBJ = SPLITOBJ;
+
+        SHOTPOS.transform.LookAt(targetpos);
+        rb.velocity = SHOTPOS.transform.forward * bullet_speed;
+        shotObj.transform.eulerAngles = SHOTPOS.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
     void TakeDmage(float damage, Collider other, Attack_System AS)

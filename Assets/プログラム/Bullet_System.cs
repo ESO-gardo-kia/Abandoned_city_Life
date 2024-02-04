@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,108 +13,83 @@ public class Bullet_System : MonoBehaviour
     public enum Bullet_Type
     {
         Normal,
-        parabola
+        following,
+        parabola,
+        split,
     }
     public Bullet_Type type;
     public string target_tag;
     public float damage;
     public float speed;
     public Vector3 dire;
-    //Normal
     public float death_dis = 1;
+    //Normal
     public Vector3 firstpos;
+    //following
+    public GameObject targetobj;
     //parabola
-    public Vector3 target_pos; 
+    public float shot_power;
+    public Vector3 target_pos;
+    public GameObject SPLITOBJ;
     void FixedUpdate()
     {
         switch(type)
         {
             case Bullet_Type.Normal:
-                //rb.velocity = dire * speed;
-                float dis = Vector3.Distance(firstpos,transform.position);
-                if(dis >= death_dis) Destroy(gameObject);
-                /*
-                if (death_time <= 0) Destroy(gameObject);
-                else death_time -= 0.02f;
-                */
+                if(Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+                break;
+            case Bullet_Type.following:
+                rb.velocity = transform.forward * speed;
+                if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+                transform.localRotation = Quaternion.RotateTowards(transform.rotation
+                    , Quaternion.LookRotation(targetobj.transform.position - transform.position)
+                    , 10);
                 break;
             case Bullet_Type.parabola:
-                //CalculateVelocity();
+                if(transform.position.y >= target_pos.y)
+                {
+                    Debug.Log("トウタツ");
+                    cluster_Down(30);
+                }
+                break;
+            case Bullet_Type.split:
+                float dis = Vector3.Distance(firstpos, transform.position);
+                if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
                 break;
         }
     }
-    /// <summary>
-    /// 標的に命中する射出速度の計算
-    /// </summary>
-    /// <param name="pointA">射出開始座標</param>
-    /// <param name="pointB">標的の座標</param>
-    /// <returns>射出速度</returns>
-    private Vector3 CalculateVelocity(Vector3 pointA, Vector3 pointB, float angle)
+    //分裂して
+    public void cluster_Down(int num)
     {
-        // 射出角をラジアンに変換
-        float rad = angle * Mathf.PI / 180;
-        // 水平方向の距離x
-        float x = Vector2.Distance(new Vector2(pointA.x, pointA.z), new Vector2(pointB.x, pointB.z));
-        // 垂直方向の距離y
-        float y = pointA.y - pointB.y;
-        // 斜方投射の公式を初速度について解く
-        float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
-        if (float.IsNaN(speed))
+        Quaternion[] vec = new Quaternion[num];
+        for(int i = 0;i < vec.Length; i++)
         {
-            // 条件を満たす初速を算出できなければVector3.zeroを返す
-            return Vector3.zero;
+            Debug.Log("分裂");
+            vec[i] = new Quaternion(Random.Range(-180, 180)
+                                , Random.Range(-180, 180)
+                                , Random.Range(-180, 180)
+                                ,0);
+            GameObject shotObj = Instantiate(SPLITOBJ, transform.position, vec[i]);
+            Rigidbody rb = shotObj.GetComponent<Rigidbody>();
+            Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+
+            bs.type = Bullet_Type.split;
+            bs.target_tag = "Player";
+            bs.damage = damage;
+            bs.shot_power = shot_power;
+            bs.death_dis = 100;
+            bs.firstpos = transform.position;
+            bs.target_pos = target_pos;
+
+            rb.velocity = shotObj.transform.forward * Random.Range(0, 10);
         }
-        else
-        {
-            return (new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed);
-        }
+        Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        /*
-        if(target_tag == "Enemy")
+        if (other.gameObject.CompareTag("Floor"))
         {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                //Debug.Log(other.gameObject.tag);
-                Destroy(gameObject);
-            }
-            else if (!other.gameObject.CompareTag("Player"))
-            {
-                //Debug.Log(other.gameObject.tag);
-            }
+            Destroy(gameObject);
         }
-        if (target_tag == "Player")
-        {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                //Debug.Log(other.gameObject.tag);
-            }
-            else if (!other.gameObject.CompareTag("Player"))
-            {
-                //Debug.Log(other.gameObject.tag);
-                Destroy(gameObject);
-            }
-        }
-        */
-    }
-    /// <summary>
-    /// 弾を発射する
-    /// </summary>
-    public void NomalShot(string targettag,int weapon_id ,GameObject SHOTPOS , GameObject SHOTOBJ,Vector3 direction)
-    {
-        target_tag = targettag;
-        firstpos = SHOTPOS.transform.position;
-        dire = direction;
-        var Guns = gunlist.Data;
-        damage = Guns[weapon_id].bullet_damage;
-        death_dis = Guns[weapon_id].bullet_range / 1.5f;
-        speed = Guns[weapon_id].bullet_speed;
-
-        GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
-        //rb.velocity = transform.forward * Guns[weapon_id].bullet_speed;
-        shotObj.transform.eulerAngles = this.transform.eulerAngles;
-        //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
 }

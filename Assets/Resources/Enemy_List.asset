@@ -18,17 +18,17 @@ MonoBehaviour:
       type: 3}
     hp: 100
     atk: 5
-    agi: 10
+    agi: 20
     exp: 10
   - name: Shooter
-    Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,
+    Enemy_Model: {fileID: 2662304819684148828, guid: ffb986583b3653743914cfccc1806d63,
       type: 3}
     hp: 100
     atk: 5
     agi: 10
     exp: 10
   - name: Shooter
-    Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,
+    Enemy_Model: {fileID: 7216383993853507424, guid: 12b9de1976d3171479daac88e3e618bb,
       type: 3}
     hp: 100
     atk: 5
