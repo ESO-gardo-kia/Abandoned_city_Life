@@ -51,7 +51,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -230,6 +230,8 @@ MonoBehaviour:
   dire: {x: 0, y: 0, z: 0}
   death_dis: 33.333332
   firstpos: {x: 67.730354, y: 1.9724827, z: 66.05079}
+  isfollow: 1
+  targetobj: {fileID: 0}
   shot_power: 0
   target_pos: {x: 0, y: 0, z: 0}
   SPLITOBJ: {fileID: 0}

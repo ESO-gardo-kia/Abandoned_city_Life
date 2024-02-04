@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
         }))
         .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
+                    Debug.Log(si.data[1].name);
                     Sc_Text.transform.localScale = Vector3.one;
                     Enemy_Manager.enemies_move_permit = true;
                     Sc_Text.GetComponent<Text>().text = "";

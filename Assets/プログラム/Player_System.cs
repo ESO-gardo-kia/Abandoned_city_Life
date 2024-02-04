@@ -16,6 +16,7 @@ public class Player_System : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] public GameObject CAMERA;
     private GameObject SHOTPOS;
+    public GameObject wheel;
     private GameObject old_dt;
     private float old_damage;
 
@@ -147,7 +148,7 @@ public class Player_System : MonoBehaviour
                     ContactText.text = null;
                 }
             }
-
+            if (rb.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up, rb.velocity.magnitude * 2);
         }
 
         //ˆÈ‰ºUIŠÖŒW

@@ -26,6 +26,7 @@ public class Bullet_System : MonoBehaviour
     //Normal
     public Vector3 firstpos;
     //following
+    public bool isfollow = true;
     public GameObject targetobj;
     //parabola
     public float shot_power;
@@ -40,10 +41,19 @@ public class Bullet_System : MonoBehaviour
                 break;
             case Bullet_Type.following:
                 rb.velocity = transform.forward * speed;
-                if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
-                transform.localRotation = Quaternion.RotateTowards(transform.rotation
-                    , Quaternion.LookRotation(targetobj.transform.position - transform.position)
-                    , 10);
+                if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) > 10)
+                {
+                    Debug.Log("’Ç”ö‰ðœ");
+                    isfollow = false;
+                }
+                if (isfollow)
+                {
+                    if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+                    transform.localRotation = Quaternion.RotateTowards(transform.rotation
+                        , Quaternion.LookRotation(targetobj.transform.position - transform.position)
+                        , 10);
+                }
+
                 break;
             case Bullet_Type.parabola:
                 if(transform.position.y >= target_pos.y)
