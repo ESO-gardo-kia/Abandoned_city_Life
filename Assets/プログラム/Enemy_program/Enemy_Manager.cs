@@ -30,6 +30,7 @@ public class Enemy_Manager : MonoBehaviour
     }
     public IEnumerator Enemies_Spawn_Function(int[] wave)
     {
+        Debug.Log("ゲーム開始");
         //wave1[敵のID,敵の数]
         iscompletion = false;
         yield return new WaitForSeconds(0f);
@@ -81,7 +82,7 @@ public class Enemy_Manager : MonoBehaviour
     {
         current_enemies_count--;
         //現在のウェーブの敵が0になったら次のウェーブに移行
-        if (current_enemies_count == 0 && current_wave != 3) StartCoroutine(Enemies_Spawn_Function(all_wave[current_wave]));
+        if (current_enemies_count <= 0 && current_wave != 3) StartCoroutine(Enemies_Spawn_Function(all_wave[current_wave]));
         //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
         if (current_enemies_count == 0 && current_wave == 3) transform.parent.GetComponent<GameManager>().
                 Scene_Transition_Process(1);
@@ -94,6 +95,7 @@ public class Enemy_Manager : MonoBehaviour
         }
         enemies_move_permit = false;
         current_enemies_count = 0;
+        current_wave = 0;
         iscompletion = false;
     }
 }

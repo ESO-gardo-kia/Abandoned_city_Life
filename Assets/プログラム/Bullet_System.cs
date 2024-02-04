@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Networking;
 using static Gun_List;
 using static Unity.VisualScripting.Member;
 
@@ -41,7 +42,7 @@ public class Bullet_System : MonoBehaviour
                 break;
             case Bullet_Type.following:
                 rb.velocity = transform.forward * speed;
-                if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) > 10)
+                if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) < 7)
                 {
                     Debug.Log("追尾解除");
                     isfollow = false;
@@ -50,7 +51,7 @@ public class Bullet_System : MonoBehaviour
                 {
                     if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
                     transform.localRotation = Quaternion.RotateTowards(transform.rotation
-                        , Quaternion.LookRotation(targetobj.transform.position - transform.position)
+                        , Quaternion.LookRotation((targetobj.transform.position + Vector3.up) - transform.position)
                         , 10);
                 }
 
@@ -59,7 +60,7 @@ public class Bullet_System : MonoBehaviour
                 if(transform.position.y >= target_pos.y)
                 {
                     Debug.Log("トウタツ");
-                    cluster_Down(30);
+                    cluster_Down(10);
                 }
                 break;
             case Bullet_Type.split:
@@ -71,17 +72,20 @@ public class Bullet_System : MonoBehaviour
     //分裂して
     public void cluster_Down(int num)
     {
-        Quaternion[] vec = new Quaternion[num];
+        Vector3[] vec = new Vector3[num];
         for(int i = 0;i < vec.Length; i++)
         {
             Debug.Log("分裂");
-            vec[i] = new Quaternion(Random.Range(-180, 180)
-                                , Random.Range(-180, 180)
-                                , Random.Range(-180, 180)
-                                ,0);
-            GameObject shotObj = Instantiate(SPLITOBJ, transform.position, vec[i]);
+            GameObject shotObj = Instantiate(SPLITOBJ, transform.position, Quaternion.identity);
             Rigidbody rb = shotObj.GetComponent<Rigidbody>();
             Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+
+            shotObj.transform.localEulerAngles = Vector3.right * 90;
+            vec[i] = new Vector3(Random.Range(-20, 20)
+                    , Random.Range(-90, 90)
+                    , Random.Range(-90, 90));
+            //shotObj.transform.LookAt(targetobj.transform);
+            shotObj.transform.localEulerAngles += vec[i];
 
             bs.type = Bullet_Type.split;
             bs.target_tag = "Player";
@@ -91,7 +95,7 @@ public class Bullet_System : MonoBehaviour
             bs.firstpos = transform.position;
             bs.target_pos = target_pos;
 
-            rb.velocity = shotObj.transform.forward * Random.Range(0, 10);
+            rb.velocity = shotObj.transform.forward * 80;
         }
         Destroy(gameObject);
     }

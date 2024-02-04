@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static ContactObj_System;
+using static Stage_Information;
 //using static System.Net.Mime.MediaTypeNames;
 
 public class GameManager : MonoBehaviour
@@ -93,20 +94,20 @@ public class GameManager : MonoBehaviour
         }))
         .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
-                    Debug.Log(si.data[1].name);
+                    Debug.Log(si.data[sn].name);
                     Sc_Text.transform.localScale = Vector3.one;
                     Enemy_Manager.enemies_move_permit = true;
                     Sc_Text.GetComponent<Text>().text = "";
                     FeedPanel.SetActive(false);
-                    switch (sn)
+                    switch (si.data[sn].tran_scene)
                     {
-                        case 0://タイトル
+                        case stage_information.TransitionScene.Title://タイトル
                             ps.Player_Reset(false);
                             break;
-                        case 1://セレクト
+                        case stage_information.TransitionScene.Select://セレクト
                             ps.Player_Reset(true);
                             break;
-                        case 2://Main
+                        case stage_information.TransitionScene.Main://Main
                             ps.Player_Reset(true);
                             
                             List<int[]> wave = new List<int[]>

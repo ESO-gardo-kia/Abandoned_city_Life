@@ -65,7 +65,7 @@ public class Shooter_Enemy: MonoBehaviour
 
                 transform.localRotation = Quaternion.RotateTowards(transform.rotation
                     , Quaternion.LookRotation(Player.transform.position - transform.position)
-                    , 1);
+                    , 3);
             }
             EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
 
@@ -114,7 +114,7 @@ public class Shooter_Enemy: MonoBehaviour
         isdeath = false;
         //ステータス反映
         //StatusはScriptableObjectにて改変する事
-        var e_l = enemy_List.Status[1];
+        var e_l = enemy_List.Status[0];
         Ename = e_l.name;
         exp = e_l.exp;
         hp = e_l.hp;

@@ -1798,7 +1798,7 @@ MonoBehaviour:
   contact_text: StageSlect
   Panel: {fileID: 0}
   WPanel: {fileID: 0}
-  gl: {fileID: 0}
+  gl: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
 --- !u!114 &582218437
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class Player_System : MonoBehaviour
     private AudioSource AS;
     public AudioClip panel_sound;
     private AudioClip shot_sound;
+    public AudioClip damage_sound;
 
     [Header("--- ステータス ---")]
     private float exp;
@@ -268,7 +269,11 @@ public class Player_System : MonoBehaviour
     }
     void TakeDmage(float damage,Bullet_System BS)
     {
-        if (currenthp > 0) currenthp -= damage;
+        if (currenthp > 0)
+        {
+            AS.PlayOneShot(damage_sound);
+            currenthp -= damage;
+        }
         if (currenthp <= 0)
         {
             player_isdeath = true;
@@ -320,6 +325,7 @@ public class Player_System : MonoBehaviour
     }
     public void Player_Reset(bool IS)
     {
+        Debug.Log("プレイヤー情報がリセットされました");
         if (!IS)
         {
             move_permit = false;
@@ -345,8 +351,10 @@ public class Player_System : MonoBehaviour
         currentagi = agi;
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
-
+        transform.eulerAngles = Vector3.zero;
+        rb.velocity = Vector3.zero;
         Wepon_Reset(player_weapon_id);
+        Debug.Log("プレイヤー情報がリセットしおわりました");
     }
     public void Wepon_Reset(int num)
     {

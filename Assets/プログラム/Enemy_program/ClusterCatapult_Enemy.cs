@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -75,21 +76,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
                 NomalShot();
                 rate_count = 0;
             }
-            /*
-            if (current_loaded_bullets <= 0) isreload = true;
-            if (isreload)
-            {
-                reload_count += 0.2f;
-                if (reload_count >= reload_speed)
-                {
-                    current_loaded_bullets = loaded_bullets;
-                    reload_count = 0;
-                    isreload = false;
-                }
-            }
-            */
             if (rate_count < rapid_fire_rate) rate_count += 0.2f;
-            //if(!old_dt) old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
 
         }
     }
@@ -178,6 +165,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+        TrailRenderer tr = shotObj.GetComponent<TrailRenderer>();
         var Guns = gunlist.Data;
 
         Vector3 targetpos = Player.transform.position + Vector3.up * 30;
@@ -188,10 +176,18 @@ public class ClusterCatapult_Enemy : MonoBehaviour
         bs.shot_power = bullet_speed;
         bs.death_dis = bullet_range;
         bs.target_pos = targetpos;
+        bs.targetobj = Player;
         bs.SPLITOBJ = SPLITOBJ;
 
         SHOTPOS.transform.LookAt(targetpos);
         rb.velocity = SHOTPOS.transform.forward * bullet_speed;
+        shotObj.transform.localScale = shotObj.transform.localScale * 6;
+
+        AnimationCurve curve = new AnimationCurve();
+        curve.AddKey(0f, 0.3f*6);
+        curve.AddKey(0.3f * 6, 0.0f);
+
+        tr.widthCurve = curve;
         shotObj.transform.eulerAngles = SHOTPOS.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
