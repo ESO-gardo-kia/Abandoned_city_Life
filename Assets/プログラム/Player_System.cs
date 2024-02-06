@@ -64,6 +64,9 @@ public class Player_System : MonoBehaviour
     private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
 
+    public float dash_speed = 4;
+    public float dash_num = 3;
+
     public bool isPanel;//何かの画面を開いているか否か
 
     [Tooltip("移動速度")]
@@ -111,6 +114,11 @@ public class Player_System : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (move_permit)
         {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                StartCoroutine("DashMove");
+            }
+
             if (Input.GetKeyUp(KeyCode.Space)) isJumping_running = false;
             if (Input.GetKey(KeyCode.Space) //buttonが押されていて
             && !isJumping_running//ジャンプ処理中ではない場合で
@@ -299,6 +307,14 @@ public class Player_System : MonoBehaviour
                 rb.AddForce(Vector3.up * (ju_fo), ForceMode.Impulse);
                 yield return new WaitForSeconds(jump_second);
             }
+        }
+    }
+    IEnumerator DashMove()
+    {
+        for(int i = 0 ; i < 3 ; i++)
+        {
+            rb.AddForce(transform.forward * dash_speed, ForceMode.Impulse);
+            yield return new WaitForSeconds(0.01f);
         }
     }
     public void NomalShot()
