@@ -36,7 +36,7 @@ public class Player_System : MonoBehaviour
 
     private GameObject MenuPanel;
 
-    private GameObject GamePanel;
+    public GameObject GamePanel;
     private Slider ReloadSlider;
     private Slider HPSlider;
     private Text HPText;
@@ -44,6 +44,8 @@ public class Player_System : MonoBehaviour
     private Text ENText;
     private Image WeaponImage;
     private Text BulletText;
+
+    private GameObject money_text;
     [Space(10)]
     [SerializeField]
     [Header("--- サウンド ---")]
@@ -123,6 +125,8 @@ public class Player_System : MonoBehaviour
         ENText = GamePanel.transform.Find("ENText").gameObject.GetComponent<Text>();
         BulletText = GamePanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
         WeaponImage = GamePanel.transform.Find("WeaponImage").gameObject.GetComponent<Image>();
+
+        money_text = transform.Find("PCanvas/money_text").gameObject;
 
         Player_Reset(bo);
     }
@@ -337,7 +341,7 @@ public class Player_System : MonoBehaviour
         if (currenthp <= 0)
         {
             player_isdeath = true;
-            transform.root.Find("EnemyManager").GetComponent<Enemy_Manager>().Player_Death();
+            GameObject.Find("EnemyManager").GetComponent<Enemy_Manager>().Player_Death();
         }
     }
     IEnumerator JunpMove()
@@ -503,6 +507,8 @@ public class Player_System : MonoBehaviour
             switch (ConObj.Cont)
             {
                 case Contact_Type.Production_Table:
+                    money_text.SetActive(true);
+                    money_text.GetComponent<Text>().text = GameManager.Money.ToString();
                     rb.useGravity = false;
                     rb.velocity = Vector3.zero;
                     transform.position = ConObj.idlepos.transform.position;
@@ -539,6 +545,7 @@ public class Player_System : MonoBehaviour
                 .SetEase(Ease.OutCirc)
               　.OnComplete(() => {
                   rb.useGravity = true;
+                  money_text.SetActive(false);
                   if (Contact_Type.Production_Table == ConObj.Cont) ConObj.VC.Priority = 1;
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;

@@ -90,8 +90,10 @@ public class ContactObj_System : MonoBehaviour
                 "\r\nmulti_bullet:" + Guns.multi_bullet.ToString() +
                 "\r\ndiffusion:" + Guns.diffusion__chance.ToString();
             }
-            Button_Equip Wbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
-            Wbutton.Enum = i;
+            Button_Equip EQbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
+            EQbutton.Enum = i;
+            Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
+            BUbutton.Enum = i;
         }
     }
     public void Wepon_creating()

@@ -445,8 +445,9 @@ GameObject:
   - component: {fileID: 6670328909282158896}
   - component: {fileID: 6670328909282159311}
   - component: {fileID: 6670328909282159310}
+  - component: {fileID: 5085426645990558507}
   m_Layer: 5
-  m_Name: Create
+  m_Name: BUY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,10 +556,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ContactObj_System, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 5085426645990558507}
+        m_TargetAssemblyTypeName: Buy_Button, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -582,6 +583,20 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0.6938925, b: 0, a: 1}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &5085426645990558507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670328909282159308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b803ba260de56ea4782688fe689229ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enum: 0
+  gl: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
 --- !u!1 &6670328909601732336
 GameObject:
   m_ObjectHideFlags: 0

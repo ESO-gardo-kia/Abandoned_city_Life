@@ -67,7 +67,7 @@ MonoBehaviour:
     id: 500
     name: SG-1
     sprite_id: {fileID: 21300000, guid: 1b6e26f12cfca2c4290e60577ce081fc, type: 3}
-    price: 0
+    price: 500
     bullet_damage: 1
     rapid_fire_rate: 2
     loaded_bullets: 20

@@ -8,7 +8,7 @@ public class Button_Equip : MonoBehaviour
     public int Enum;
     public void OnButtonClick()
     {
-        if (Player_Manager.isWeapon[Enum])
+        if (Player_Manager.isWeapon[Enum] == true)
         {
             Debug.Log("•Ší‚ğ•Ï‚¦‚Ü‚µ‚½");
             Player_System.player_weapon_id = Enum;
