@@ -127,6 +127,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
         currentagi = agi;
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
+        enemy_number = 3;
 
         NMA.speed = agi;
         NMA.stoppingDistance = 20;
@@ -212,7 +213,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
     }
     void Deathfunction()
     {
-        em.ParentEnemyDeath(transform.position);
+        em.ParentEnemyDeath(enemy_number);
         Destroy(gameObject);
     }
 }

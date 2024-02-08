@@ -131,6 +131,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
         currentagi = agi;
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
+        enemy_number = 2;
 
         NMA.speed = agi;
         NMA.stoppingDistance = bullet_range / 1.5f;
@@ -229,7 +230,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
     }
     void Deathfunction()
     {
-        em.ParentEnemyDeath(transform.position);
+        em.ParentEnemyDeath(enemy_number);
         Destroy(gameObject);
     }
 }

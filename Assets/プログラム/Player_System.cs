@@ -337,7 +337,7 @@ public class Player_System : MonoBehaviour
         if (currenthp <= 0)
         {
             player_isdeath = true;
-            transform.root.GetComponent<GameManager>().Scene_Transition_Process(1);
+            transform.root.Find("EnemyManager").GetComponent<Enemy_Manager>().Player_Death();
         }
     }
     IEnumerator JunpMove()

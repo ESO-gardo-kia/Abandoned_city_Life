@@ -1,6 +1,7 @@
 using Cinemachine;
 using DG.Tweening;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Unity.VisualScripting;
@@ -13,6 +14,7 @@ using static Stage_Information;
 
 public class GameManager : MonoBehaviour
 {
+    public static float Money;
     public int num = 1;
     public static bool isDotweem;
     private AudioSource AS;
@@ -24,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public Stage_Information si;
     public int stage_number;
+
+    private GameObject GameOverPanel;
+    private Text GameOverText;
     private GameObject FeedPanel;
     public int start_count;//ステージ開始までのカウントダウン
     private GameObject Sc_Text;
@@ -41,10 +46,14 @@ public class GameManager : MonoBehaviour
         em = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
         ps = transform.Find("Player_Manager/Player_System").GetComponent<Player_System>();
         //Stage_Information
+        GameOverPanel = transform.Find("System_Canvas/GameOverPanel").gameObject;
+        GameOverText = GameOverPanel.transform.Find("GameOverText").GetComponent<Text>();
+
         FeedPanel = transform.Find("System_Canvas/FeedPanel").gameObject;
         Sc_Text = transform.Find("System_Canvas/Sc_Text").gameObject;
         Ec_Text = transform.Find("System_Canvas/Ec_Text").gameObject;
 
+        GameOverPanel.SetActive(false);
         AS.PlayOneShot(si.data[0].BGM);
         //カーソル関係
         /*
@@ -54,6 +63,13 @@ public class GameManager : MonoBehaviour
         //セーブ関係
         SavePath = Application.persistentDataPath + "/SaveData.json";
         Application.targetFrameRate = 60;
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Z))
+        {
+            //GameOver();
+        }
     }
     public void Scene_Transition_Process(int sn)
     {
@@ -100,6 +116,7 @@ public class GameManager : MonoBehaviour
                     Enemy_Manager.enemies_move_permit = true;
                     Sc_Text.GetComponent<Text>().text = "";
                     FeedPanel.SetActive(false);
+                    GameOverPanel.SetActive(false);
                     switch (si.data[sn].tran_scene)
                     {
                         case stage_information.TransitionScene.Title://タイトル
@@ -166,7 +183,7 @@ public class GameManager : MonoBehaviour
         }))
         .Play();
     }
-    public void GameOver()
+    public IEnumerator GameOver(int[] num,string str,float mo)
     {
         //フェードパネル表示
         FeedPanel.SetActive(true);
@@ -177,46 +194,23 @@ public class GameManager : MonoBehaviour
         //カーソル非表示
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
+        Money += mo;
+        int total = 0;
+        foreach (int i in num) total = i;
         ps.CVC.Priority = 100;
-        DOTween.Sequence()
-        /*
-         * フェードアウトが完了したら
-         * 移動したいシーンへ移動
-         * プレイヤーリセット
-         * スポーンポイントに移動
-         */
-        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f * num).SetDelay(0f)//フェードアウト
-        .OnComplete(() =>
-        {
-            AS.Stop();
-            sm.Load_Scene(1);//シーン移動
-            em.Enemy_Manager_Reset();//エネミーマネージャーリセット
-            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
-            transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[1].spawn_pos;
-        }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * num).SetDelay(0.5f)//フェードイン
-                .OnComplete(() => {
-                    AS.PlayOneShot(si.data[1].BGM);
-                    Sc_Text.GetComponent<Text>().text = si.data[1].name;//ステージ名表示
-                }))
-        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
-        .OnComplete(() => {
-            Player_System.move_permit = true;
-            Enemy_Manager.enemies_move_permit = true;
-        }))
-        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
-                .OnComplete(() => {
-                    ps.CVC.Priority = 1;
-                    Debug.Log(si.data[1].name);
-                    Sc_Text.transform.localScale = Vector3.one;
-                    Enemy_Manager.enemies_move_permit = true;
-                    Sc_Text.GetComponent<Text>().text = "";
-                    FeedPanel.SetActive(false);
-                    ps.Player_Reset(true);
-                }))
-        .Play();
-
+        GameOverPanel.SetActive(true);
+        GameOverText.text =
+            "Stage1 : " + str +
+            "\r\nGet Money : " + mo.ToString() +
+            "\r\n\r\nDestroyed Enemyes" + 
+            "\r\nShooter:" + num[0].ToString() +
+            "\r\nAssault:" + num[1].ToString() +
+            "\r\nClusterCatapult:" + num[2].ToString() +
+            "\r\nFollowingShooter:" + num[3].ToString();
+        yield return new WaitForSeconds(5);
+        ps.CVC.Priority = 1;
+        GameOverPanel.SetActive(false);
+        Scene_Transition_Process(1);
     }
     [Serializable]
     public class SaveData

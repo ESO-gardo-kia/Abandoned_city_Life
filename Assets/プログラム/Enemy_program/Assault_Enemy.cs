@@ -111,6 +111,7 @@ public class Assault_Enemy : MonoBehaviour
         currentagi = agi;
         HPSlider.maxValue = hp;
         HPSlider.value = currenthp;
+        enemy_number = 1;
 
         NMA.speed = agi;
         NMA.stoppingDistance = 0;
@@ -178,7 +179,7 @@ public class Assault_Enemy : MonoBehaviour
     void Deathfunction()
     {
         Debug.Log("Ž€–S");
-        em.ParentEnemyDeath(transform.position);
+        em.ParentEnemyDeath(enemy_number);
         Destroy(gameObject);
     }
 }
