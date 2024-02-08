@@ -1,0 +1,7041 @@
+{
+	"meta": {
+		"format_version": "4.9",
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "Assault3DModel",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": {
+		"width": 16,
+		"height": 16
+	},
+	"elements": [
+		{
+			"name": "torus",
+			"color": 4,
+			"origin": [0, 11, 0],
+			"rotation": [0, 0, 90],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"xWoP": [1.98712, 1.52572, 8.75],
+				"yP6k": [2.27099, 0, 10],
+				"Awkb": [1.98712, -1.52572, 8.75],
+				"OhMM": [1.70324, 0, 7.5],
+				"vgwF": [5.56778, 1.52572, 7.01696],
+				"prrH": [6.36317, 0, 8.01938],
+				"38lP": [5.56778, -1.52572, 7.01696],
+				"rrpB": [4.77238, 0, 6.01453],
+				"er8J": [8.04567, 1.52572, 3.89412],
+				"961K": [9.19505, 0, 4.45042],
+				"EVLl": [8.04567, -1.52572, 3.89412],
+				"I3Bi": [6.89629, 0, 3.33781],
+				"oVvT": [8.93002, 1.52572, 0],
+				"KJlL": [10.20573, 0, 0],
+				"pwvs": [8.93002, -1.52572, 0],
+				"NhFF": [7.6543, 0, 0],
+				"u8Dv": [8.04567, 1.52572, -3.89412],
+				"RARL": [9.19505, 0, -4.45042],
+				"tce0": [8.04567, -1.52572, -3.89412],
+				"iVkx": [6.89629, 0, -3.33781],
+				"xIaF": [5.56778, 1.52572, -7.01696],
+				"awEi": [6.36317, 0, -8.01938],
+				"LgbI": [5.56778, -1.52572, -7.01696],
+				"tjuM": [4.77238, 0, -6.01453],
+				"ROrO": [1.98712, 1.52572, -8.75],
+				"4bIF": [2.27099, 0, -10],
+				"a6uB": [1.98712, -1.52572, -8.75],
+				"abGk": [1.70324, 0, -7.5],
+				"Z2Pl": [-1.98712, 1.52572, -8.75],
+				"hbb4": [-2.27099, 0, -10],
+				"w15W": [-1.98712, -1.52572, -8.75],
+				"yBMA": [-1.70324, 0, -7.5],
+				"1fcg": [-5.56778, 1.52572, -7.01696],
+				"z3Wx": [-6.36317, 0, -8.01938],
+				"HDp7": [-5.56778, -1.52572, -7.01696],
+				"Wj85": [-4.77238, 0, -6.01453],
+				"7LRj": [-8.04567, 1.52572, -3.89412],
+				"Mg08": [-9.19505, 0, -4.45042],
+				"kb3B": [-8.04567, -1.52572, -3.89412],
+				"3vD1": [-6.89629, 0, -3.33781],
+				"RDxN": [-8.93002, 1.52572, 0],
+				"F2zM": [-10.20573, 0, 0],
+				"A3TN": [-8.93002, -1.52572, 0],
+				"mBEG": [-7.6543, 0, 0],
+				"qqGM": [-8.04567, 1.52572, 3.89412],
+				"DZeF": [-9.19505, 0, 4.45042],
+				"Mz1q": [-8.04567, -1.52572, 3.89412],
+				"GyDf": [-6.89629, 0, 3.33781],
+				"2Fyo": [-5.56778, 1.52572, 7.01696],
+				"SXjO": [-6.36317, 0, 8.01938],
+				"y7d7": [-5.56778, -1.52572, 7.01696],
+				"RGdj": [-4.77238, 0, 6.01453],
+				"zwdb": [-1.98712, 1.52572, 8.75],
+				"zE0W": [-2.27099, 0, 10],
+				"ZVZN": [-1.98712, -1.52572, 8.75],
+				"DuuF": [-1.70324, 0, 7.5]
+			},
+			"faces": {
+				"Eiy9Gq5d": {
+					"uv": {
+						"yP6k": [0, 6.4324],
+						"prrH": [10.9018, 6.4324],
+						"xWoP": [0.68125, 3.5],
+						"vgwF": [10.22055, 3.5]
+					},
+					"vertices": ["yP6k", "prrH", "xWoP", "vgwF"],
+					"texture": 0
+				},
+				"koWqVZUZ": {
+					"uv": {
+						"Awkb": [0.68125, 6.4324],
+						"38lP": [10.22055, 6.4324],
+						"yP6k": [0, 3.5],
+						"prrH": [10.9018, 3.5]
+					},
+					"vertices": ["Awkb", "38lP", "yP6k", "prrH"],
+					"texture": 0
+				},
+				"g2jTmnUG": {
+					"uv": {
+						"OhMM": [8.85805, 3.5],
+						"rrpB": [0.68125, 3.5],
+						"Awkb": [9.5393, 6.4326],
+						"38lP": [0, 6.4326]
+					},
+					"vertices": ["OhMM", "rrpB", "Awkb", "38lP"],
+					"texture": 0
+				},
+				"pYCRqKJJ": {
+					"uv": {
+						"xWoP": [9.5393, 3.5],
+						"vgwF": [0, 3.5],
+						"OhMM": [8.85805, 6.4326],
+						"rrpB": [0.68125, 6.4326]
+					},
+					"vertices": ["xWoP", "vgwF", "OhMM", "rrpB"],
+					"texture": 0
+				},
+				"69vYaCKL": {
+					"uv": {
+						"prrH": [0, 6.4324],
+						"961K": [10.9018, 6.4324],
+						"vgwF": [0.68125, 3.5],
+						"er8J": [10.22055, 3.5]
+					},
+					"vertices": ["prrH", "961K", "vgwF", "er8J"],
+					"texture": 0
+				},
+				"n4zBADIa": {
+					"uv": {
+						"38lP": [0.68125, 6.4324],
+						"EVLl": [10.22055, 6.4324],
+						"prrH": [0, 3.5],
+						"961K": [10.9018, 3.5]
+					},
+					"vertices": ["38lP", "EVLl", "prrH", "961K"],
+					"texture": 0
+				},
+				"0KbAMx8i": {
+					"uv": {
+						"rrpB": [8.85805, 3.5],
+						"I3Bi": [0.68125, 3.5],
+						"38lP": [9.5393, 6.4326],
+						"EVLl": [0, 6.4326]
+					},
+					"vertices": ["rrpB", "I3Bi", "38lP", "EVLl"],
+					"texture": 0
+				},
+				"FaaLCQWT": {
+					"uv": {
+						"vgwF": [9.5393, 3.5],
+						"er8J": [0, 3.5],
+						"rrpB": [8.85805, 6.4326],
+						"I3Bi": [0.68125, 6.4326]
+					},
+					"vertices": ["vgwF", "er8J", "rrpB", "I3Bi"],
+					"texture": 0
+				},
+				"0IaGxQPf": {
+					"uv": {
+						"961K": [0, 6.4324],
+						"KJlL": [10.9018, 6.4324],
+						"er8J": [0.68125, 3.5],
+						"oVvT": [10.22055, 3.5]
+					},
+					"vertices": ["961K", "KJlL", "er8J", "oVvT"],
+					"texture": 0
+				},
+				"JpvUF5mn": {
+					"uv": {
+						"EVLl": [0.68125, 6.4324],
+						"pwvs": [10.22055, 6.4324],
+						"961K": [0, 3.5],
+						"KJlL": [10.9018, 3.5]
+					},
+					"vertices": ["EVLl", "pwvs", "961K", "KJlL"],
+					"texture": 0
+				},
+				"zgtpnuEc": {
+					"uv": {
+						"I3Bi": [8.85805, 3.5],
+						"NhFF": [0.68125, 3.5],
+						"EVLl": [9.5393, 6.4326],
+						"pwvs": [0, 6.4326]
+					},
+					"vertices": ["I3Bi", "NhFF", "EVLl", "pwvs"],
+					"texture": 0
+				},
+				"xkdNQ1Gk": {
+					"uv": {
+						"er8J": [9.5393, 3.5],
+						"oVvT": [0, 3.5],
+						"I3Bi": [8.85805, 6.4326],
+						"NhFF": [0.68125, 6.4326]
+					},
+					"vertices": ["er8J", "oVvT", "I3Bi", "NhFF"],
+					"texture": 0
+				},
+				"AcNxjovU": {
+					"uv": {
+						"KJlL": [0, 6.4324],
+						"RARL": [10.9018, 6.4324],
+						"oVvT": [0.68125, 3.5],
+						"u8Dv": [10.22055, 3.5]
+					},
+					"vertices": ["KJlL", "RARL", "oVvT", "u8Dv"],
+					"texture": 0
+				},
+				"LnPZM7OR": {
+					"uv": {
+						"pwvs": [0.68125, 6.4324],
+						"tce0": [10.22055, 6.4324],
+						"KJlL": [0, 3.5],
+						"RARL": [10.9018, 3.5]
+					},
+					"vertices": ["pwvs", "tce0", "KJlL", "RARL"],
+					"texture": 0
+				},
+				"7aAFHnLX": {
+					"uv": {
+						"NhFF": [8.85805, 3.5],
+						"iVkx": [0.68125, 3.5],
+						"pwvs": [9.5393, 6.4326],
+						"tce0": [0, 6.4326]
+					},
+					"vertices": ["NhFF", "iVkx", "pwvs", "tce0"],
+					"texture": 0
+				},
+				"fOvLLOjr": {
+					"uv": {
+						"oVvT": [9.5393, 3.5],
+						"u8Dv": [0, 3.5],
+						"NhFF": [8.85805, 6.4326],
+						"iVkx": [0.68125, 6.4326]
+					},
+					"vertices": ["oVvT", "u8Dv", "NhFF", "iVkx"],
+					"texture": 0
+				},
+				"BFdhxI97": {
+					"uv": {
+						"RARL": [0, 6.4324],
+						"awEi": [10.9018, 6.4324],
+						"u8Dv": [0.68125, 3.5],
+						"xIaF": [10.22055, 3.5]
+					},
+					"vertices": ["RARL", "awEi", "u8Dv", "xIaF"],
+					"texture": 0
+				},
+				"raJfETJk": {
+					"uv": {
+						"tce0": [0.68125, 6.4324],
+						"LgbI": [10.22055, 6.4324],
+						"RARL": [0, 3.5],
+						"awEi": [10.9018, 3.5]
+					},
+					"vertices": ["tce0", "LgbI", "RARL", "awEi"],
+					"texture": 0
+				},
+				"yEYxfeGD": {
+					"uv": {
+						"iVkx": [8.85805, 3.5],
+						"tjuM": [0.68125, 3.5],
+						"tce0": [9.5393, 6.4326],
+						"LgbI": [0, 6.4326]
+					},
+					"vertices": ["iVkx", "tjuM", "tce0", "LgbI"],
+					"texture": 0
+				},
+				"z0R2NsqH": {
+					"uv": {
+						"u8Dv": [9.5393, 3.5],
+						"xIaF": [0, 3.5],
+						"iVkx": [8.85805, 6.4326],
+						"tjuM": [0.68125, 6.4326]
+					},
+					"vertices": ["u8Dv", "xIaF", "iVkx", "tjuM"],
+					"texture": 0
+				},
+				"EMOAxb8f": {
+					"uv": {
+						"awEi": [0, 6.4324],
+						"4bIF": [10.9018, 6.4324],
+						"xIaF": [0.68125, 3.5],
+						"ROrO": [10.22055, 3.5]
+					},
+					"vertices": ["awEi", "4bIF", "xIaF", "ROrO"],
+					"texture": 0
+				},
+				"ROJsAU9T": {
+					"uv": {
+						"LgbI": [0.68125, 6.4324],
+						"a6uB": [10.22055, 6.4324],
+						"awEi": [0, 3.5],
+						"4bIF": [10.9018, 3.5]
+					},
+					"vertices": ["LgbI", "a6uB", "awEi", "4bIF"],
+					"texture": 0
+				},
+				"BHTTFZHx": {
+					"uv": {
+						"tjuM": [8.85805, 3.5],
+						"abGk": [0.68125, 3.5],
+						"LgbI": [9.5393, 6.4326],
+						"a6uB": [0, 6.4326]
+					},
+					"vertices": ["tjuM", "abGk", "LgbI", "a6uB"],
+					"texture": 0
+				},
+				"uJTWJLCw": {
+					"uv": {
+						"xIaF": [9.5393, 3.5],
+						"ROrO": [0, 3.5],
+						"tjuM": [8.85805, 6.4326],
+						"abGk": [0.68125, 6.4326]
+					},
+					"vertices": ["xIaF", "ROrO", "tjuM", "abGk"],
+					"texture": 0
+				},
+				"CJMr0AkZ": {
+					"uv": {
+						"4bIF": [0, 6.4324],
+						"hbb4": [10.9018, 6.4324],
+						"ROrO": [0.68125, 3.5],
+						"Z2Pl": [10.22055, 3.5]
+					},
+					"vertices": ["4bIF", "hbb4", "ROrO", "Z2Pl"],
+					"texture": 0
+				},
+				"XIEnWrxd": {
+					"uv": {
+						"a6uB": [0.68125, 6.4324],
+						"w15W": [10.22055, 6.4324],
+						"4bIF": [0, 3.5],
+						"hbb4": [10.9018, 3.5]
+					},
+					"vertices": ["a6uB", "w15W", "4bIF", "hbb4"],
+					"texture": 0
+				},
+				"A7naKvLa": {
+					"uv": {
+						"abGk": [8.85805, 3.5],
+						"yBMA": [0.68125, 3.5],
+						"a6uB": [9.5393, 6.4326],
+						"w15W": [0, 6.4326]
+					},
+					"vertices": ["abGk", "yBMA", "a6uB", "w15W"],
+					"texture": 0
+				},
+				"OyOVX4vL": {
+					"uv": {
+						"ROrO": [9.5393, 3.5],
+						"Z2Pl": [0, 3.5],
+						"abGk": [8.85805, 6.4326],
+						"yBMA": [0.68125, 6.4326]
+					},
+					"vertices": ["ROrO", "Z2Pl", "abGk", "yBMA"],
+					"texture": 0
+				},
+				"FGikz7b7": {
+					"uv": {
+						"hbb4": [0, 6.4324],
+						"z3Wx": [10.9018, 6.4324],
+						"Z2Pl": [0.68125, 3.5],
+						"1fcg": [10.22055, 3.5]
+					},
+					"vertices": ["hbb4", "z3Wx", "Z2Pl", "1fcg"],
+					"texture": 0
+				},
+				"Wqc1eXx3": {
+					"uv": {
+						"w15W": [0.68125, 6.4324],
+						"HDp7": [10.22055, 6.4324],
+						"hbb4": [0, 3.5],
+						"z3Wx": [10.9018, 3.5]
+					},
+					"vertices": ["w15W", "HDp7", "hbb4", "z3Wx"],
+					"texture": 0
+				},
+				"BHxMNn2g": {
+					"uv": {
+						"yBMA": [8.85805, 3.5],
+						"Wj85": [0.68125, 3.5],
+						"w15W": [9.5393, 6.4326],
+						"HDp7": [0, 6.4326]
+					},
+					"vertices": ["yBMA", "Wj85", "w15W", "HDp7"],
+					"texture": 0
+				},
+				"bniKPlMG": {
+					"uv": {
+						"Z2Pl": [9.5393, 3.5],
+						"1fcg": [0, 3.5],
+						"yBMA": [8.85805, 6.4326],
+						"Wj85": [0.68125, 6.4326]
+					},
+					"vertices": ["Z2Pl", "1fcg", "yBMA", "Wj85"],
+					"texture": 0
+				},
+				"0YWlXsOV": {
+					"uv": {
+						"z3Wx": [0, 6.4324],
+						"Mg08": [10.9018, 6.4324],
+						"1fcg": [0.68125, 3.5],
+						"7LRj": [10.22055, 3.5]
+					},
+					"vertices": ["z3Wx", "Mg08", "1fcg", "7LRj"],
+					"texture": 0
+				},
+				"pMfuNCyN": {
+					"uv": {
+						"HDp7": [0.68125, 6.4324],
+						"kb3B": [10.22055, 6.4324],
+						"z3Wx": [0, 3.5],
+						"Mg08": [10.9018, 3.5]
+					},
+					"vertices": ["HDp7", "kb3B", "z3Wx", "Mg08"],
+					"texture": 0
+				},
+				"T0Vfrulm": {
+					"uv": {
+						"Wj85": [8.85805, 3.5],
+						"3vD1": [0.68125, 3.5],
+						"HDp7": [9.5393, 6.4326],
+						"kb3B": [0, 6.4326]
+					},
+					"vertices": ["Wj85", "3vD1", "HDp7", "kb3B"],
+					"texture": 0
+				},
+				"SVN4qUQc": {
+					"uv": {
+						"1fcg": [9.5393, 3.5],
+						"7LRj": [0, 3.5],
+						"Wj85": [8.85805, 6.4326],
+						"3vD1": [0.68125, 6.4326]
+					},
+					"vertices": ["1fcg", "7LRj", "Wj85", "3vD1"],
+					"texture": 0
+				},
+				"nH8ZuMjy": {
+					"uv": {
+						"Mg08": [0, 6.4324],
+						"F2zM": [10.9018, 6.4324],
+						"7LRj": [0.68125, 3.5],
+						"RDxN": [10.22055, 3.5]
+					},
+					"vertices": ["Mg08", "F2zM", "7LRj", "RDxN"],
+					"texture": 0
+				},
+				"NjpDocX6": {
+					"uv": {
+						"kb3B": [0.68125, 6.4324],
+						"A3TN": [10.22055, 6.4324],
+						"Mg08": [0, 3.5],
+						"F2zM": [10.9018, 3.5]
+					},
+					"vertices": ["kb3B", "A3TN", "Mg08", "F2zM"],
+					"texture": 0
+				},
+				"vvdMOkgT": {
+					"uv": {
+						"3vD1": [8.85805, 3.5],
+						"mBEG": [0.68125, 3.5],
+						"kb3B": [9.5393, 6.4326],
+						"A3TN": [0, 6.4326]
+					},
+					"vertices": ["3vD1", "mBEG", "kb3B", "A3TN"],
+					"texture": 0
+				},
+				"rGS0eUl1": {
+					"uv": {
+						"7LRj": [9.5393, 3.5],
+						"RDxN": [0, 3.5],
+						"3vD1": [8.85805, 6.4326],
+						"mBEG": [0.68125, 6.4326]
+					},
+					"vertices": ["7LRj", "RDxN", "3vD1", "mBEG"],
+					"texture": 0
+				},
+				"suduoZZe": {
+					"uv": {
+						"F2zM": [0, 6.4324],
+						"DZeF": [10.9018, 6.4324],
+						"RDxN": [0.68125, 3.5],
+						"qqGM": [10.22055, 3.5]
+					},
+					"vertices": ["F2zM", "DZeF", "RDxN", "qqGM"],
+					"texture": 0
+				},
+				"Lri512s0": {
+					"uv": {
+						"A3TN": [0.68125, 6.4324],
+						"Mz1q": [10.22055, 6.4324],
+						"F2zM": [0, 3.5],
+						"DZeF": [10.9018, 3.5]
+					},
+					"vertices": ["A3TN", "Mz1q", "F2zM", "DZeF"],
+					"texture": 0
+				},
+				"BJjIM0MK": {
+					"uv": {
+						"mBEG": [8.85805, 3.5],
+						"GyDf": [0.68125, 3.5],
+						"A3TN": [9.5393, 6.4326],
+						"Mz1q": [0, 6.4326]
+					},
+					"vertices": ["mBEG", "GyDf", "A3TN", "Mz1q"],
+					"texture": 0
+				},
+				"apxKR1DL": {
+					"uv": {
+						"RDxN": [9.5393, 3.5],
+						"qqGM": [0, 3.5],
+						"mBEG": [8.85805, 6.4326],
+						"GyDf": [0.68125, 6.4326]
+					},
+					"vertices": ["RDxN", "qqGM", "mBEG", "GyDf"],
+					"texture": 0
+				},
+				"jl2RuQgl": {
+					"uv": {
+						"DZeF": [0, 6.4324],
+						"SXjO": [10.9018, 6.4324],
+						"qqGM": [0.68125, 3.5],
+						"2Fyo": [10.22055, 3.5]
+					},
+					"vertices": ["DZeF", "SXjO", "qqGM", "2Fyo"],
+					"texture": 0
+				},
+				"tP2ezhAO": {
+					"uv": {
+						"Mz1q": [0.68125, 6.4324],
+						"y7d7": [10.22055, 6.4324],
+						"DZeF": [0, 3.5],
+						"SXjO": [10.9018, 3.5]
+					},
+					"vertices": ["Mz1q", "y7d7", "DZeF", "SXjO"],
+					"texture": 0
+				},
+				"ii7pTWAH": {
+					"uv": {
+						"GyDf": [8.85805, 3.5],
+						"RGdj": [0.68125, 3.5],
+						"Mz1q": [9.5393, 6.4326],
+						"y7d7": [0, 6.4326]
+					},
+					"vertices": ["GyDf", "RGdj", "Mz1q", "y7d7"],
+					"texture": 0
+				},
+				"XbWLX1fL": {
+					"uv": {
+						"qqGM": [9.5393, 3.5],
+						"2Fyo": [0, 3.5],
+						"GyDf": [8.85805, 6.4326],
+						"RGdj": [0.68125, 6.4326]
+					},
+					"vertices": ["qqGM", "2Fyo", "GyDf", "RGdj"],
+					"texture": 0
+				},
+				"Vd9lJT2m": {
+					"uv": {
+						"SXjO": [0, 6.4324],
+						"zE0W": [10.9018, 6.4324],
+						"2Fyo": [0.68125, 3.5],
+						"zwdb": [10.22055, 3.5]
+					},
+					"vertices": ["SXjO", "zE0W", "2Fyo", "zwdb"],
+					"texture": 0
+				},
+				"YeYiQNzF": {
+					"uv": {
+						"y7d7": [0.68125, 6.4324],
+						"ZVZN": [10.22055, 6.4324],
+						"SXjO": [0, 3.5],
+						"zE0W": [10.9018, 3.5]
+					},
+					"vertices": ["y7d7", "ZVZN", "SXjO", "zE0W"],
+					"texture": 0
+				},
+				"gSsX9owt": {
+					"uv": {
+						"RGdj": [8.85805, 3.5],
+						"DuuF": [0.68125, 3.5],
+						"y7d7": [9.5393, 6.4326],
+						"ZVZN": [0, 6.4326]
+					},
+					"vertices": ["RGdj", "DuuF", "y7d7", "ZVZN"],
+					"texture": 0
+				},
+				"JiQTMxJR": {
+					"uv": {
+						"2Fyo": [9.5393, 3.5],
+						"zwdb": [0, 3.5],
+						"RGdj": [8.85805, 6.4326],
+						"DuuF": [0.68125, 6.4326]
+					},
+					"vertices": ["2Fyo", "zwdb", "RGdj", "DuuF"],
+					"texture": 0
+				},
+				"QoFK45iQ": {
+					"uv": {
+						"zE0W": [0, 6.4324],
+						"yP6k": [10.9018, 6.4324],
+						"zwdb": [0.68125, 3.5],
+						"xWoP": [10.22055, 3.5]
+					},
+					"vertices": ["zE0W", "yP6k", "zwdb", "xWoP"],
+					"texture": 0
+				},
+				"4MICCmqP": {
+					"uv": {
+						"ZVZN": [0.68125, 6.4324],
+						"Awkb": [10.22055, 6.4324],
+						"zE0W": [0, 3.5],
+						"yP6k": [10.9018, 3.5]
+					},
+					"vertices": ["ZVZN", "Awkb", "zE0W", "yP6k"],
+					"texture": 0
+				},
+				"YXuiLdYH": {
+					"uv": {
+						"DuuF": [8.85805, 3.5],
+						"OhMM": [0.68125, 3.5],
+						"ZVZN": [9.5393, 6.4326],
+						"Awkb": [0, 6.4326]
+					},
+					"vertices": ["DuuF", "OhMM", "ZVZN", "Awkb"],
+					"texture": 0
+				},
+				"JRbjhZAu": {
+					"uv": {
+						"zwdb": [9.5393, 3.5],
+						"xWoP": [0, 3.5],
+						"DuuF": [8.85805, 6.4326],
+						"OhMM": [0.68125, 6.4326]
+					},
+					"vertices": ["zwdb", "xWoP", "DuuF", "OhMM"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "ccfd6e25-3601-7c39-adb2-2fad5524b648"
+		},
+		{
+			"name": "torus",
+			"color": 4,
+			"origin": [0, 11, 0],
+			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"xWoP": [2.23051, 1.07572, 10.0625],
+				"yP6k": [2.54913, 0, 11.5],
+				"Awkb": [2.23051, -1.07572, 10.0625],
+				"OhMM": [1.91186, 0, 8.625],
+				"vgwF": [6.24972, 1.07572, 8.0695],
+				"prrH": [7.14255, 0, 9.22228],
+				"38lP": [6.24972, -1.07572, 8.0695],
+				"rrpB": [5.35691, 0, 6.91671],
+				"er8J": [9.03111, 1.07572, 4.47823],
+				"961K": [10.32127, 0, 5.11798],
+				"EVLl": [9.03111, -1.07572, 4.47823],
+				"I3Bi": [7.74095, 0, 3.83849],
+				"oVvT": [10.02378, 1.07572, 0],
+				"KJlL": [11.45573, 0, 0],
+				"pwvs": [10.02378, -1.07572, 0],
+				"NhFF": [8.5918, 0, 0],
+				"u8Dv": [9.03111, 1.07572, -4.47823],
+				"RARL": [10.32127, 0, -5.11798],
+				"tce0": [9.03111, -1.07572, -4.47823],
+				"iVkx": [7.74095, 0, -3.83849],
+				"xIaF": [6.24972, 1.07572, -8.0695],
+				"awEi": [7.14255, 0, -9.22228],
+				"LgbI": [6.24972, -1.07572, -8.0695],
+				"tjuM": [5.35691, 0, -6.91671],
+				"ROrO": [2.23051, 1.07572, -10.0625],
+				"4bIF": [2.54913, 0, -11.5],
+				"a6uB": [2.23051, -1.07572, -10.0625],
+				"abGk": [1.91186, 0, -8.625],
+				"zwdb": [-2.23051, 1.07572, 10.0625],
+				"zE0W": [-2.54913, 0, 11.5],
+				"ZVZN": [-2.23051, -1.07572, 10.0625],
+				"DuuF": [-1.91186, 0, 8.625],
+				"2Fyo": [-6.24972, 1.07572, 8.0695],
+				"SXjO": [-7.14255, 0, 9.22228],
+				"y7d7": [-6.24972, -1.07572, 8.0695],
+				"RGdj": [-5.35691, 0, 6.91671],
+				"qqGM": [-9.03111, 1.07572, 4.47823],
+				"DZeF": [-10.32127, 0, 5.11798],
+				"Mz1q": [-9.03111, -1.07572, 4.47823],
+				"GyDf": [-7.74095, 0, 3.83849],
+				"RDxN": [-10.02378, 1.07572, 0],
+				"F2zM": [-11.45573, 0, 0],
+				"A3TN": [-10.02378, -1.07572, 0],
+				"mBEG": [-8.5918, 0, 0],
+				"7LRj": [-9.03111, 1.07572, -4.47823],
+				"Mg08": [-10.32127, 0, -5.11798],
+				"kb3B": [-9.03111, -1.07572, -4.47823],
+				"3vD1": [-7.74095, 0, -3.83849],
+				"1fcg": [-6.24972, 1.07572, -8.0695],
+				"z3Wx": [-7.14255, 0, -9.22228],
+				"HDp7": [-6.24972, -1.07572, -8.0695],
+				"Wj85": [-5.35691, 0, -6.91671],
+				"Z2Pl": [-2.23051, 1.07572, -10.0625],
+				"hbb4": [-2.54913, 0, -11.5],
+				"w15W": [-2.23051, -1.07572, -10.0625],
+				"yBMA": [-1.91186, 0, -8.625]
+			},
+			"faces": {
+				"Eiy9Gq5d": {
+					"uv": {
+						"yP6k": [0, 9.9324],
+						"prrH": [10.9018, 9.9324],
+						"xWoP": [0.68125, 7],
+						"vgwF": [10.22055, 7]
+					},
+					"vertices": ["yP6k", "prrH", "xWoP", "vgwF"],
+					"texture": 0
+				},
+				"koWqVZUZ": {
+					"uv": {
+						"Awkb": [0.68125, 9.9324],
+						"38lP": [10.22055, 9.9324],
+						"yP6k": [0, 7],
+						"prrH": [10.9018, 7]
+					},
+					"vertices": ["Awkb", "38lP", "yP6k", "prrH"],
+					"texture": 0
+				},
+				"g2jTmnUG": {
+					"uv": {
+						"OhMM": [8.85805, 7],
+						"rrpB": [0.68125, 7],
+						"Awkb": [9.5393, 9.9326],
+						"38lP": [0, 9.9326]
+					},
+					"vertices": ["OhMM", "rrpB", "Awkb", "38lP"],
+					"texture": 0
+				},
+				"pYCRqKJJ": {
+					"uv": {
+						"xWoP": [9.5393, 7],
+						"vgwF": [0, 7],
+						"OhMM": [8.85805, 9.9326],
+						"rrpB": [0.68125, 9.9326]
+					},
+					"vertices": ["xWoP", "vgwF", "OhMM", "rrpB"],
+					"texture": 0
+				},
+				"69vYaCKL": {
+					"uv": {
+						"prrH": [0, 9.9324],
+						"961K": [10.9018, 9.9324],
+						"vgwF": [0.68125, 7],
+						"er8J": [10.22055, 7]
+					},
+					"vertices": ["prrH", "961K", "vgwF", "er8J"],
+					"texture": 0
+				},
+				"n4zBADIa": {
+					"uv": {
+						"38lP": [0.68125, 9.9324],
+						"EVLl": [10.22055, 9.9324],
+						"prrH": [0, 7],
+						"961K": [10.9018, 7]
+					},
+					"vertices": ["38lP", "EVLl", "prrH", "961K"],
+					"texture": 0
+				},
+				"0KbAMx8i": {
+					"uv": {
+						"rrpB": [8.85805, 7],
+						"I3Bi": [0.68125, 7],
+						"38lP": [9.5393, 9.9326],
+						"EVLl": [0, 9.9326]
+					},
+					"vertices": ["rrpB", "I3Bi", "38lP", "EVLl"],
+					"texture": 0
+				},
+				"FaaLCQWT": {
+					"uv": {
+						"vgwF": [9.5393, 7],
+						"er8J": [0, 7],
+						"rrpB": [8.85805, 9.9326],
+						"I3Bi": [0.68125, 9.9326]
+					},
+					"vertices": ["vgwF", "er8J", "rrpB", "I3Bi"],
+					"texture": 0
+				},
+				"0IaGxQPf": {
+					"uv": {
+						"961K": [0, 9.9324],
+						"KJlL": [10.9018, 9.9324],
+						"er8J": [0.68125, 7],
+						"oVvT": [10.22055, 7]
+					},
+					"vertices": ["961K", "KJlL", "er8J", "oVvT"],
+					"texture": 0
+				},
+				"JpvUF5mn": {
+					"uv": {
+						"EVLl": [0.68125, 9.9324],
+						"pwvs": [10.22055, 9.9324],
+						"961K": [0, 7],
+						"KJlL": [10.9018, 7]
+					},
+					"vertices": ["EVLl", "pwvs", "961K", "KJlL"],
+					"texture": 0
+				},
+				"zgtpnuEc": {
+					"uv": {
+						"I3Bi": [8.85805, 7],
+						"NhFF": [0.68125, 7],
+						"EVLl": [9.5393, 9.9326],
+						"pwvs": [0, 9.9326]
+					},
+					"vertices": ["I3Bi", "NhFF", "EVLl", "pwvs"],
+					"texture": 0
+				},
+				"xkdNQ1Gk": {
+					"uv": {
+						"er8J": [9.5393, 7],
+						"oVvT": [0, 7],
+						"I3Bi": [8.85805, 9.9326],
+						"NhFF": [0.68125, 9.9326]
+					},
+					"vertices": ["er8J", "oVvT", "I3Bi", "NhFF"],
+					"texture": 0
+				},
+				"AcNxjovU": {
+					"uv": {
+						"KJlL": [0, 9.9324],
+						"RARL": [10.9018, 9.9324],
+						"oVvT": [0.68125, 7],
+						"u8Dv": [10.22055, 7]
+					},
+					"vertices": ["KJlL", "RARL", "oVvT", "u8Dv"],
+					"texture": 0
+				},
+				"LnPZM7OR": {
+					"uv": {
+						"pwvs": [0.68125, 9.9324],
+						"tce0": [10.22055, 9.9324],
+						"KJlL": [0, 7],
+						"RARL": [10.9018, 7]
+					},
+					"vertices": ["pwvs", "tce0", "KJlL", "RARL"],
+					"texture": 0
+				},
+				"7aAFHnLX": {
+					"uv": {
+						"NhFF": [8.85805, 7],
+						"iVkx": [0.68125, 7],
+						"pwvs": [9.5393, 9.9326],
+						"tce0": [0, 9.9326]
+					},
+					"vertices": ["NhFF", "iVkx", "pwvs", "tce0"],
+					"texture": 0
+				},
+				"fOvLLOjr": {
+					"uv": {
+						"oVvT": [9.5393, 7],
+						"u8Dv": [0, 7],
+						"NhFF": [8.85805, 9.9326],
+						"iVkx": [0.68125, 9.9326]
+					},
+					"vertices": ["oVvT", "u8Dv", "NhFF", "iVkx"],
+					"texture": 0
+				},
+				"BFdhxI97": {
+					"uv": {
+						"RARL": [0, 9.9324],
+						"awEi": [10.9018, 9.9324],
+						"u8Dv": [0.68125, 7],
+						"xIaF": [10.22055, 7]
+					},
+					"vertices": ["RARL", "awEi", "u8Dv", "xIaF"],
+					"texture": 0
+				},
+				"raJfETJk": {
+					"uv": {
+						"tce0": [0.68125, 9.9324],
+						"LgbI": [10.22055, 9.9324],
+						"RARL": [0, 7],
+						"awEi": [10.9018, 7]
+					},
+					"vertices": ["tce0", "LgbI", "RARL", "awEi"],
+					"texture": 0
+				},
+				"yEYxfeGD": {
+					"uv": {
+						"iVkx": [8.85805, 7],
+						"tjuM": [0.68125, 7],
+						"tce0": [9.5393, 9.9326],
+						"LgbI": [0, 9.9326]
+					},
+					"vertices": ["iVkx", "tjuM", "tce0", "LgbI"],
+					"texture": 0
+				},
+				"z0R2NsqH": {
+					"uv": {
+						"u8Dv": [9.5393, 7],
+						"xIaF": [0, 7],
+						"iVkx": [8.85805, 9.9326],
+						"tjuM": [0.68125, 9.9326]
+					},
+					"vertices": ["u8Dv", "xIaF", "iVkx", "tjuM"],
+					"texture": 0
+				},
+				"EMOAxb8f": {
+					"uv": {
+						"awEi": [0, 9.9324],
+						"4bIF": [10.9018, 9.9324],
+						"xIaF": [0.68125, 7],
+						"ROrO": [10.22055, 7]
+					},
+					"vertices": ["awEi", "4bIF", "xIaF", "ROrO"],
+					"texture": 0
+				},
+				"ROJsAU9T": {
+					"uv": {
+						"LgbI": [0.68125, 9.9324],
+						"a6uB": [10.22055, 9.9324],
+						"awEi": [0, 7],
+						"4bIF": [10.9018, 7]
+					},
+					"vertices": ["LgbI", "a6uB", "awEi", "4bIF"],
+					"texture": 0
+				},
+				"BHTTFZHx": {
+					"uv": {
+						"tjuM": [8.85805, 7],
+						"abGk": [0.68125, 7],
+						"LgbI": [9.5393, 9.9326],
+						"a6uB": [0, 9.9326]
+					},
+					"vertices": ["tjuM", "abGk", "LgbI", "a6uB"],
+					"texture": 0
+				},
+				"uJTWJLCw": {
+					"uv": {
+						"xIaF": [9.5393, 7],
+						"ROrO": [0, 7],
+						"tjuM": [8.85805, 9.9326],
+						"abGk": [0.68125, 9.9326]
+					},
+					"vertices": ["xIaF", "ROrO", "tjuM", "abGk"],
+					"texture": 0
+				},
+				"CJMr0AkZ": {
+					"uv": {
+						"4bIF": [0, 9.9324],
+						"hbb4": [10.9018, 9.9324],
+						"ROrO": [0.68125, 7],
+						"Z2Pl": [10.22055, 7]
+					},
+					"vertices": ["4bIF", "hbb4", "ROrO", "Z2Pl"],
+					"texture": 0
+				},
+				"XIEnWrxd": {
+					"uv": {
+						"a6uB": [0.68125, 9.9324],
+						"w15W": [10.22055, 9.9324],
+						"4bIF": [0, 7],
+						"hbb4": [10.9018, 7]
+					},
+					"vertices": ["a6uB", "w15W", "4bIF", "hbb4"],
+					"texture": 0
+				},
+				"A7naKvLa": {
+					"uv": {
+						"abGk": [8.85805, 7],
+						"yBMA": [0.68125, 7],
+						"a6uB": [9.5393, 9.9326],
+						"w15W": [0, 9.9326]
+					},
+					"vertices": ["abGk", "yBMA", "a6uB", "w15W"],
+					"texture": 0
+				},
+				"OyOVX4vL": {
+					"uv": {
+						"ROrO": [9.5393, 7],
+						"Z2Pl": [0, 7],
+						"abGk": [8.85805, 9.9326],
+						"yBMA": [0.68125, 9.9326]
+					},
+					"vertices": ["ROrO", "Z2Pl", "abGk", "yBMA"],
+					"texture": 0
+				},
+				"QoFK45iQ": {
+					"uv": {
+						"zE0W": [0, 9.9324],
+						"yP6k": [10.9018, 9.9324],
+						"zwdb": [0.68125, 7],
+						"xWoP": [10.22055, 7]
+					},
+					"vertices": ["zE0W", "yP6k", "zwdb", "xWoP"],
+					"texture": 0
+				},
+				"4MICCmqP": {
+					"uv": {
+						"ZVZN": [0.68125, 9.9324],
+						"Awkb": [10.22055, 9.9324],
+						"zE0W": [0, 7],
+						"yP6k": [10.9018, 7]
+					},
+					"vertices": ["ZVZN", "Awkb", "zE0W", "yP6k"],
+					"texture": 0
+				},
+				"YXuiLdYH": {
+					"uv": {
+						"DuuF": [8.85805, 7],
+						"OhMM": [0.68125, 7],
+						"ZVZN": [9.5393, 9.9326],
+						"Awkb": [0, 9.9326]
+					},
+					"vertices": ["DuuF", "OhMM", "ZVZN", "Awkb"],
+					"texture": 0
+				},
+				"JRbjhZAu": {
+					"uv": {
+						"zwdb": [9.5393, 7],
+						"xWoP": [0, 7],
+						"DuuF": [8.85805, 9.9326],
+						"OhMM": [0.68125, 9.9326]
+					},
+					"vertices": ["zwdb", "xWoP", "DuuF", "OhMM"],
+					"texture": 0
+				},
+				"Vd9lJT2m": {
+					"uv": {
+						"SXjO": [10.9018, 9.9324],
+						"zE0W": [0, 9.9324],
+						"zwdb": [0.68125, 7],
+						"2Fyo": [10.22055, 7]
+					},
+					"vertices": ["SXjO", "zE0W", "zwdb", "2Fyo"],
+					"texture": 0
+				},
+				"YeYiQNzF": {
+					"uv": {
+						"y7d7": [10.22055, 9.9324],
+						"ZVZN": [0.68125, 9.9324],
+						"zE0W": [0, 7],
+						"SXjO": [10.9018, 7]
+					},
+					"vertices": ["y7d7", "ZVZN", "zE0W", "SXjO"],
+					"texture": 0
+				},
+				"gSsX9owt": {
+					"uv": {
+						"RGdj": [0.68125, 7],
+						"DuuF": [8.85805, 7],
+						"ZVZN": [9.5393, 9.9326],
+						"y7d7": [0, 9.9326]
+					},
+					"vertices": ["RGdj", "DuuF", "ZVZN", "y7d7"],
+					"texture": 0
+				},
+				"JiQTMxJR": {
+					"uv": {
+						"2Fyo": [0, 7],
+						"zwdb": [9.5393, 7],
+						"DuuF": [8.85805, 9.9326],
+						"RGdj": [0.68125, 9.9326]
+					},
+					"vertices": ["2Fyo", "zwdb", "DuuF", "RGdj"],
+					"texture": 0
+				},
+				"jl2RuQgl": {
+					"uv": {
+						"DZeF": [10.9018, 9.9324],
+						"SXjO": [0, 9.9324],
+						"2Fyo": [0.68125, 7],
+						"qqGM": [10.22055, 7]
+					},
+					"vertices": ["DZeF", "SXjO", "2Fyo", "qqGM"],
+					"texture": 0
+				},
+				"tP2ezhAO": {
+					"uv": {
+						"Mz1q": [10.22055, 9.9324],
+						"y7d7": [0.68125, 9.9324],
+						"SXjO": [0, 7],
+						"DZeF": [10.9018, 7]
+					},
+					"vertices": ["Mz1q", "y7d7", "SXjO", "DZeF"],
+					"texture": 0
+				},
+				"ii7pTWAH": {
+					"uv": {
+						"GyDf": [0.68125, 7],
+						"RGdj": [8.85805, 7],
+						"y7d7": [9.5393, 9.9326],
+						"Mz1q": [0, 9.9326]
+					},
+					"vertices": ["GyDf", "RGdj", "y7d7", "Mz1q"],
+					"texture": 0
+				},
+				"XbWLX1fL": {
+					"uv": {
+						"qqGM": [0, 7],
+						"2Fyo": [9.5393, 7],
+						"RGdj": [8.85805, 9.9326],
+						"GyDf": [0.68125, 9.9326]
+					},
+					"vertices": ["qqGM", "2Fyo", "RGdj", "GyDf"],
+					"texture": 0
+				},
+				"suduoZZe": {
+					"uv": {
+						"F2zM": [10.9018, 9.9324],
+						"DZeF": [0, 9.9324],
+						"qqGM": [0.68125, 7],
+						"RDxN": [10.22055, 7]
+					},
+					"vertices": ["F2zM", "DZeF", "qqGM", "RDxN"],
+					"texture": 0
+				},
+				"Lri512s0": {
+					"uv": {
+						"A3TN": [10.22055, 9.9324],
+						"Mz1q": [0.68125, 9.9324],
+						"DZeF": [0, 7],
+						"F2zM": [10.9018, 7]
+					},
+					"vertices": ["A3TN", "Mz1q", "DZeF", "F2zM"],
+					"texture": 0
+				},
+				"BJjIM0MK": {
+					"uv": {
+						"mBEG": [0.68125, 7],
+						"GyDf": [8.85805, 7],
+						"Mz1q": [9.5393, 9.9326],
+						"A3TN": [0, 9.9326]
+					},
+					"vertices": ["mBEG", "GyDf", "Mz1q", "A3TN"],
+					"texture": 0
+				},
+				"apxKR1DL": {
+					"uv": {
+						"RDxN": [0, 7],
+						"qqGM": [9.5393, 7],
+						"GyDf": [8.85805, 9.9326],
+						"mBEG": [0.68125, 9.9326]
+					},
+					"vertices": ["RDxN", "qqGM", "GyDf", "mBEG"],
+					"texture": 0
+				},
+				"nH8ZuMjy": {
+					"uv": {
+						"Mg08": [10.9018, 9.9324],
+						"F2zM": [0, 9.9324],
+						"RDxN": [0.68125, 7],
+						"7LRj": [10.22055, 7]
+					},
+					"vertices": ["Mg08", "F2zM", "RDxN", "7LRj"],
+					"texture": 0
+				},
+				"NjpDocX6": {
+					"uv": {
+						"kb3B": [10.22055, 9.9324],
+						"A3TN": [0.68125, 9.9324],
+						"F2zM": [0, 7],
+						"Mg08": [10.9018, 7]
+					},
+					"vertices": ["kb3B", "A3TN", "F2zM", "Mg08"],
+					"texture": 0
+				},
+				"vvdMOkgT": {
+					"uv": {
+						"3vD1": [0.68125, 7],
+						"mBEG": [8.85805, 7],
+						"A3TN": [9.5393, 9.9326],
+						"kb3B": [0, 9.9326]
+					},
+					"vertices": ["3vD1", "mBEG", "A3TN", "kb3B"],
+					"texture": 0
+				},
+				"rGS0eUl1": {
+					"uv": {
+						"7LRj": [0, 7],
+						"RDxN": [9.5393, 7],
+						"mBEG": [8.85805, 9.9326],
+						"3vD1": [0.68125, 9.9326]
+					},
+					"vertices": ["7LRj", "RDxN", "mBEG", "3vD1"],
+					"texture": 0
+				},
+				"0YWlXsOV": {
+					"uv": {
+						"z3Wx": [10.9018, 9.9324],
+						"Mg08": [0, 9.9324],
+						"7LRj": [0.68125, 7],
+						"1fcg": [10.22055, 7]
+					},
+					"vertices": ["z3Wx", "Mg08", "7LRj", "1fcg"],
+					"texture": 0
+				},
+				"pMfuNCyN": {
+					"uv": {
+						"HDp7": [10.22055, 9.9324],
+						"kb3B": [0.68125, 9.9324],
+						"Mg08": [0, 7],
+						"z3Wx": [10.9018, 7]
+					},
+					"vertices": ["HDp7", "kb3B", "Mg08", "z3Wx"],
+					"texture": 0
+				},
+				"T0Vfrulm": {
+					"uv": {
+						"Wj85": [0.68125, 7],
+						"3vD1": [8.85805, 7],
+						"kb3B": [9.5393, 9.9326],
+						"HDp7": [0, 9.9326]
+					},
+					"vertices": ["Wj85", "3vD1", "kb3B", "HDp7"],
+					"texture": 0
+				},
+				"SVN4qUQc": {
+					"uv": {
+						"1fcg": [0, 7],
+						"7LRj": [9.5393, 7],
+						"3vD1": [8.85805, 9.9326],
+						"Wj85": [0.68125, 9.9326]
+					},
+					"vertices": ["1fcg", "7LRj", "3vD1", "Wj85"],
+					"texture": 0
+				},
+				"FGikz7b7": {
+					"uv": {
+						"hbb4": [10.9018, 9.9324],
+						"z3Wx": [0, 9.9324],
+						"1fcg": [0.68125, 7],
+						"Z2Pl": [10.22055, 7]
+					},
+					"vertices": ["hbb4", "z3Wx", "1fcg", "Z2Pl"],
+					"texture": 0
+				},
+				"Wqc1eXx3": {
+					"uv": {
+						"w15W": [10.22055, 9.9324],
+						"HDp7": [0.68125, 9.9324],
+						"z3Wx": [0, 7],
+						"hbb4": [10.9018, 7]
+					},
+					"vertices": ["w15W", "HDp7", "z3Wx", "hbb4"],
+					"texture": 0
+				},
+				"BHxMNn2g": {
+					"uv": {
+						"yBMA": [0.68125, 7],
+						"Wj85": [8.85805, 7],
+						"HDp7": [9.5393, 9.9326],
+						"w15W": [0, 9.9326]
+					},
+					"vertices": ["yBMA", "Wj85", "HDp7", "w15W"],
+					"texture": 0
+				},
+				"bniKPlMG": {
+					"uv": {
+						"Z2Pl": [0, 7],
+						"1fcg": [9.5393, 7],
+						"Wj85": [8.85805, 9.9326],
+						"yBMA": [0.68125, 9.9326]
+					},
+					"vertices": ["Z2Pl", "1fcg", "Wj85", "yBMA"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "25b6fe02-5c16-2219-9678-36b8530f6ef1"
+		},
+		{
+			"name": "4Shooter3DModel素材_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6, 18, 7.25],
+			"to": [10, 19, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [10, 0, 6, 1],
+					"texture": 2
+				},
+				"east": {
+					"uv": [9.75, 0, 10, 1],
+					"texture": 2
+				},
+				"south": {
+					"uv": [6, 0, 10, 1],
+					"texture": 2
+				},
+				"west": {
+					"uv": [6, 0, 6.25, 1],
+					"texture": 2
+				},
+				"up": {
+					"uv": [6, 0, 10, 0.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [6, 0.75, 10, 1],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "c25e92e9-5146-0d88-a96b-2ba1273e490d"
+		},
+		{
+			"name": "4Shooter3DModel素材_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 17.5, 7.25],
+			"to": [6, 18.5, 8.75],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [6, 0.5, 4.5, 1.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [5.75, 0.5, 6, 1.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [4.5, 0.5, 6, 1.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [4.5, 0.5, 4.75, 1.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [4.5, 0.5, 6, 0.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [4.5, 1.25, 6, 1.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "63df8efd-ec4a-1720-a613-5374a9b578c2"
+		},
+		{
+			"name": "4Shooter3DModel素材_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [10, 17.5, 7.25],
+			"to": [11.5, 18.5, 8.75],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [11.5, 0.5, 10, 1.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [11.25, 0.5, 11.5, 1.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [10, 0.5, 11.5, 1.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [10, 0.5, 10.25, 1.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [10, 0.5, 11.5, 0.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [10, 1.25, 11.5, 1.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "03e68930-ac15-c85d-13e9-37710721a998"
+		},
+		{
+			"name": "4Shooter3DModel素材_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3.5, 17, 7.25],
+			"to": [4.5, 18, 8.75],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [4.5, 1, 3.5, 2],
+					"texture": 2
+				},
+				"east": {
+					"uv": [4.25, 1, 4.5, 2],
+					"texture": 2
+				},
+				"south": {
+					"uv": [3.5, 1, 4.5, 2],
+					"texture": 2
+				},
+				"west": {
+					"uv": [3.5, 1, 3.75, 2],
+					"texture": 2
+				},
+				"up": {
+					"uv": [3.5, 1, 4.5, 1.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [3.5, 1.75, 4.5, 2],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "f98b6b5f-883b-83a4-f27c-93149a62f5e7"
+		},
+		{
+			"name": "4Shooter3DModel素材_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [11.5, 17, 7.25],
+			"to": [12.5, 18, 8.75],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [12.5, 1, 11.5, 2],
+					"texture": 2
+				},
+				"east": {
+					"uv": [12.25, 1, 12.5, 2],
+					"texture": 2
+				},
+				"south": {
+					"uv": [11.5, 1, 12.5, 2],
+					"texture": 2
+				},
+				"west": {
+					"uv": [11.5, 1, 11.75, 2],
+					"texture": 2
+				},
+				"up": {
+					"uv": [11.5, 1, 12.5, 1.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [11.5, 1.75, 12.5, 2],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "7cca7911-869d-ed80-ce8c-423b0e31e00e"
+		},
+		{
+			"name": "4Shooter3DModel素材_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3, 16.5, 7.25],
+			"to": [3.5, 17.5, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [3.5, 1.5, 3, 2.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [3.25, 1.5, 3.5, 2.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [3, 1.5, 3.5, 2.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [3, 1.5, 3.25, 2.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [3, 1.5, 3.5, 1.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [3, 2.25, 3.5, 2.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "b160944d-6d59-85b5-a5d6-5c30d8fc61a0"
+		},
+		{
+			"name": "4Shooter3DModel素材_6",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [12.5, 16.5, 7.25],
+			"to": [13, 17.5, 8.75],
+			"autouv": 0,
+			"color": 2,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [13, 1.5, 12.5, 2.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [12.75, 1.5, 13, 2.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [12.5, 1.5, 13, 2.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [12.5, 1.5, 12.75, 2.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [12.5, 1.5, 13, 1.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [12.5, 2.25, 13, 2.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "dea3b360-487e-14e4-a1d2-25696a1f0cf1"
+		},
+		{
+			"name": "4Shooter3DModel素材_7",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.5, 16, 7.25],
+			"to": [3, 17, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [3, 2, 2.5, 3],
+					"texture": 2
+				},
+				"east": {
+					"uv": [2.75, 2, 3, 3],
+					"texture": 2
+				},
+				"south": {
+					"uv": [2.5, 2, 3, 3],
+					"texture": 2
+				},
+				"west": {
+					"uv": [2.5, 2, 2.75, 3],
+					"texture": 2
+				},
+				"up": {
+					"uv": [2.5, 2, 3, 2.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [2.5, 2.75, 3, 3],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "ac241c07-2fd6-05e5-95d2-2ce141d4f3db"
+		},
+		{
+			"name": "4Shooter3DModel素材_8",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3.5, 16.5, 7.25],
+			"to": [4, 17, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [4, 2, 3.5, 2.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [3.75, 2, 4, 2.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [3.5, 2, 4, 2.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [3.5, 2, 3.75, 2.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [3.5, 2, 4, 2.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [3.5, 2.25, 4, 2.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "af06e6da-57ec-f10d-c7fe-00e290ee098b"
+		},
+		{
+			"name": "4Shooter3DModel素材_9",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [12, 16.5, 7.25],
+			"to": [12.5, 17, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [12.5, 2, 12, 2.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [12.25, 2, 12.5, 2.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [12, 2, 12.5, 2.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [12, 2, 12.25, 2.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [12, 2, 12.5, 2.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [12, 2.25, 12.5, 2.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "5b151edb-47aa-8cf7-4795-9a0526d8d9bb"
+		},
+		{
+			"name": "4Shooter3DModel素材_10",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [13, 16, 7.25],
+			"to": [13.5, 17, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [13.5, 2, 13, 3],
+					"texture": 2
+				},
+				"east": {
+					"uv": [13.25, 2, 13.5, 3],
+					"texture": 2
+				},
+				"south": {
+					"uv": [13, 2, 13.5, 3],
+					"texture": 2
+				},
+				"west": {
+					"uv": [13, 2, 13.25, 3],
+					"texture": 2
+				},
+				"up": {
+					"uv": [13, 2, 13.5, 2.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [13, 2.75, 13.5, 3],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "24a2dc4f-b884-51ad-f23f-3cf62e59b5ba"
+		},
+		{
+			"name": "4Shooter3DModel素材_11",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2, 15, 7.25],
+			"to": [2.5, 16.5, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [2.5, 2.5, 2, 4],
+					"texture": 2
+				},
+				"east": {
+					"uv": [2.25, 2.5, 2.5, 4],
+					"texture": 2
+				},
+				"south": {
+					"uv": [2, 2.5, 2.5, 4],
+					"texture": 2
+				},
+				"west": {
+					"uv": [2, 2.5, 2.25, 4],
+					"texture": 2
+				},
+				"up": {
+					"uv": [2, 2.5, 2.5, 2.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [2, 3.75, 2.5, 4],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "8ca8deeb-5500-2330-4c98-0448be1b1127"
+		},
+		{
+			"name": "4Shooter3DModel素材_12",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [13.5, 15, 7.25],
+			"to": [14, 16.5, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [14, 2.5, 13.5, 4],
+					"texture": 2
+				},
+				"east": {
+					"uv": [13.75, 2.5, 14, 4],
+					"texture": 2
+				},
+				"south": {
+					"uv": [13.5, 2.5, 14, 4],
+					"texture": 2
+				},
+				"west": {
+					"uv": [13.5, 2.5, 13.75, 4],
+					"texture": 2
+				},
+				"up": {
+					"uv": [13.5, 2.5, 14, 2.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [13.5, 3.75, 14, 4],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "b4670516-546c-9682-0fe6-41a249f8583c"
+		},
+		{
+			"name": "4Shooter3DModel素材_13",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1.5, 14.5, 7.25],
+			"to": [2, 16, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [2, 3, 1.5, 4.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [1.75, 3, 2, 4.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [1.5, 3, 2, 4.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [1.5, 3, 1.75, 4.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [1.5, 3, 2, 3.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [1.5, 4.25, 2, 4.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "69dc3013-3adf-bb60-b939-a123c4a0073c"
+		},
+		{
+			"name": "4Shooter3DModel素材_14",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [14, 14.5, 7.25],
+			"to": [14.5, 16, 8.75],
+			"autouv": 0,
+			"color": 6,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [14.5, 3, 14, 4.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [14.25, 3, 14.5, 4.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [14, 3, 14.5, 4.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [14, 3, 14.25, 4.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [14, 3, 14.5, 3.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [14, 4.25, 14.5, 4.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "5deabeb2-0f2f-6903-618c-4820467c6ff9"
+		},
+		{
+			"name": "4Shooter3DModel素材_15",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1, 13, 7.25],
+			"to": [1.5, 15.5, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [1.5, 3.5, 1, 6],
+					"texture": 2
+				},
+				"east": {
+					"uv": [1.25, 3.5, 1.5, 6],
+					"texture": 2
+				},
+				"south": {
+					"uv": [1, 3.5, 1.5, 6],
+					"texture": 2
+				},
+				"west": {
+					"uv": [1, 3.5, 1.25, 6],
+					"texture": 2
+				},
+				"up": {
+					"uv": [1, 3.5, 1.5, 3.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [1, 5.75, 1.5, 6],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "99bf103d-1cbe-eb46-95bf-1d3fd7b60652"
+		},
+		{
+			"name": "4Shooter3DModel素材_16",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [14.5, 13, 7.25],
+			"to": [15, 15.5, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [15, 3.5, 14.5, 6],
+					"texture": 2
+				},
+				"east": {
+					"uv": [14.75, 3.5, 15, 6],
+					"texture": 2
+				},
+				"south": {
+					"uv": [14.5, 3.5, 15, 6],
+					"texture": 2
+				},
+				"west": {
+					"uv": [14.5, 3.5, 14.75, 6],
+					"texture": 2
+				},
+				"up": {
+					"uv": [14.5, 3.5, 15, 3.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [14.5, 5.75, 15, 6],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "c48a4007-5331-dcec-5a22-ff9bc24b7808"
+		},
+		{
+			"name": "4Shooter3DModel素材_17",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.5, 7.5, 7.25],
+			"to": [1, 14.5, 8.75],
+			"autouv": 0,
+			"color": 7,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [1, 4.5, 0.5, 11.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [0.75, 4.5, 1, 11.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [0.5, 4.5, 1, 11.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [0.5, 4.5, 0.75, 11.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [0.5, 4.5, 1, 4.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [0.5, 11.25, 1, 11.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "e50c30cd-35c7-c164-3d8b-4cceb70d5b18"
+		},
+		{
+			"name": "4Shooter3DModel素材_18",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [15, 7.5, 7.25],
+			"to": [15.5, 14.5, 8.75],
+			"autouv": 0,
+			"color": 6,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [15.5, 4.5, 15, 11.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [15.25, 4.5, 15.5, 11.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [15, 4.5, 15.5, 11.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [15, 4.5, 15.25, 11.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [15, 4.5, 15.5, 4.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [15, 11.25, 15.5, 11.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "ca408a2e-4d8d-c2a5-8a44-54b5859cd346"
+		},
+		{
+			"name": "4Shooter3DModel素材_19",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0, 9, 7.25],
+			"to": [0.5, 13, 8.75],
+			"autouv": 0,
+			"color": 7,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [0.5, 6, 0, 10],
+					"texture": 2
+				},
+				"east": {
+					"uv": [0.25, 6, 0.5, 10],
+					"texture": 2
+				},
+				"south": {
+					"uv": [0, 6, 0.5, 10],
+					"texture": 2
+				},
+				"west": {
+					"uv": [0, 6, 0.25, 10],
+					"texture": 2
+				},
+				"up": {
+					"uv": [0, 6, 0.5, 6.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [0, 9.75, 0.5, 10],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "c443e098-00be-efce-cf90-e208bcab01f1"
+		},
+		{
+			"name": "4Shooter3DModel素材_20",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [15.5, 9, 7.25],
+			"to": [16, 13, 8.75],
+			"autouv": 0,
+			"color": 5,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [16, 6, 15.5, 10],
+					"texture": 2
+				},
+				"east": {
+					"uv": [15.75, 6, 16, 10],
+					"texture": 2
+				},
+				"south": {
+					"uv": [15.5, 6, 16, 10],
+					"texture": 2
+				},
+				"west": {
+					"uv": [15.5, 6, 15.75, 10],
+					"texture": 2
+				},
+				"up": {
+					"uv": [15.5, 6, 16, 6.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [15.5, 9.75, 16, 10],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "b7f6c98d-ff16-8ffa-1e51-b4545dfe134d"
+		},
+		{
+			"name": "4Shooter3DModel素材_21",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1, 6.5, 7.25],
+			"to": [1.5, 9, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [1.5, 10, 1, 12.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [1.25, 10, 1.5, 12.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [1, 10, 1.5, 12.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [1, 10, 1.25, 12.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [1, 10, 1.5, 10.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [1, 12.25, 1.5, 12.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "b5365495-b151-93da-99db-391657b85522"
+		},
+		{
+			"name": "4Shooter3DModel素材_22",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [14.5, 6.5, 7.25],
+			"to": [15, 9, 8.75],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [15, 10, 14.5, 12.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [14.75, 10, 15, 12.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [14.5, 10, 15, 12.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [14.5, 10, 14.75, 12.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [14.5, 10, 15, 10.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [14.5, 12.25, 15, 12.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "4e09d40b-1d92-1f58-31f1-a728595acea1"
+		},
+		{
+			"name": "4Shooter3DModel素材_23",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1.5, 6, 7.25],
+			"to": [2, 7.5, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [2, 11.5, 1.5, 13],
+					"texture": 2
+				},
+				"east": {
+					"uv": [1.75, 11.5, 2, 13],
+					"texture": 2
+				},
+				"south": {
+					"uv": [1.5, 11.5, 2, 13],
+					"texture": 2
+				},
+				"west": {
+					"uv": [1.5, 11.5, 1.75, 13],
+					"texture": 2
+				},
+				"up": {
+					"uv": [1.5, 11.5, 2, 11.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [1.5, 12.75, 2, 13],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "37e372d0-f05d-db83-f248-a3f772b1b49b"
+		},
+		{
+			"name": "4Shooter3DModel素材_24",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [14, 6, 7.25],
+			"to": [14.5, 7.5, 8.75],
+			"autouv": 0,
+			"color": 5,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [14.5, 11.5, 14, 13],
+					"texture": 2
+				},
+				"east": {
+					"uv": [14.25, 11.5, 14.5, 13],
+					"texture": 2
+				},
+				"south": {
+					"uv": [14, 11.5, 14.5, 13],
+					"texture": 2
+				},
+				"west": {
+					"uv": [14, 11.5, 14.25, 13],
+					"texture": 2
+				},
+				"up": {
+					"uv": [14, 11.5, 14.5, 11.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [14, 12.75, 14.5, 13],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "961b12e8-f719-9b24-4c85-2d44642f1919"
+		},
+		{
+			"name": "4Shooter3DModel素材_25",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2, 5.5, 7.25],
+			"to": [2.5, 7, 8.75],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [2.5, 12, 2, 13.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [2.25, 12, 2.5, 13.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [2, 12, 2.5, 13.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [2, 12, 2.25, 13.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [2, 12, 2.5, 12.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [2, 13.25, 2.5, 13.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "6b048742-df1d-cd25-c3fc-cdfc6aaeab82"
+		},
+		{
+			"name": "4Shooter3DModel素材_26",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [13.5, 5.5, 7.25],
+			"to": [14, 7, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [14, 12, 13.5, 13.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [13.75, 12, 14, 13.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [13.5, 12, 14, 13.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [13.5, 12, 13.75, 13.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [13.5, 12, 14, 12.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [13.5, 13.25, 14, 13.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "526ffff6-49f4-1059-e208-9344361ba936"
+		},
+		{
+			"name": "4Shooter3DModel素材_27",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.5, 5, 7.25],
+			"to": [3, 6, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [3, 13, 2.5, 14],
+					"texture": 2
+				},
+				"east": {
+					"uv": [2.75, 13, 3, 14],
+					"texture": 2
+				},
+				"south": {
+					"uv": [2.5, 13, 3, 14],
+					"texture": 2
+				},
+				"west": {
+					"uv": [2.5, 13, 2.75, 14],
+					"texture": 2
+				},
+				"up": {
+					"uv": [2.5, 13, 3, 13.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [2.5, 13.75, 3, 14],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "3035a252-7a47-22c5-a9b7-645cca8ee482"
+		},
+		{
+			"name": "4Shooter3DModel素材_28",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [13, 5, 7.25],
+			"to": [13.5, 6, 8.75],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [13.5, 13, 13, 14],
+					"texture": 2
+				},
+				"east": {
+					"uv": [13.25, 13, 13.5, 14],
+					"texture": 2
+				},
+				"south": {
+					"uv": [13, 13, 13.5, 14],
+					"texture": 2
+				},
+				"west": {
+					"uv": [13, 13, 13.25, 14],
+					"texture": 2
+				},
+				"up": {
+					"uv": [13, 13, 13.5, 13.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [13, 13.75, 13.5, 14],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "d205ad37-57c9-9f6b-635c-2db3f905ebbb"
+		},
+		{
+			"name": "4Shooter3DModel素材_29",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3, 4.5, 7.25],
+			"to": [4, 5.5, 8.75],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [4, 13.5, 3, 14.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [3.75, 13.5, 4, 14.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [3, 13.5, 4, 14.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [3, 13.5, 3.25, 14.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [3, 13.5, 4, 13.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [3, 14.25, 4, 14.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "0265403f-c94d-c713-c139-c692aad45ebb"
+		},
+		{
+			"name": "4Shooter3DModel素材_30",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [12, 4.5, 7.25],
+			"to": [13, 5.5, 8.75],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [13, 13.5, 12, 14.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [12.75, 13.5, 13, 14.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [12, 13.5, 13, 14.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [12, 13.5, 12.25, 14.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [12, 13.5, 13, 13.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [12, 14.25, 13, 14.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "b0bc4a86-581b-d389-9ab9-ab2a0ddf345e"
+		},
+		{
+			"name": "4Shooter3DModel素材_31",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4, 4, 7.25],
+			"to": [4.5, 5, 8.75],
+			"autouv": 0,
+			"color": 7,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [4.5, 14, 4, 15],
+					"texture": 2
+				},
+				"east": {
+					"uv": [4.25, 14, 4.5, 15],
+					"texture": 2
+				},
+				"south": {
+					"uv": [4, 14, 4.5, 15],
+					"texture": 2
+				},
+				"west": {
+					"uv": [4, 14, 4.25, 15],
+					"texture": 2
+				},
+				"up": {
+					"uv": [4, 14, 4.5, 14.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [4, 14.75, 4.5, 15],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "d87434b4-f744-2739-9dc2-779394289f8a"
+		},
+		{
+			"name": "4Shooter3DModel素材_32",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [11.5, 4, 7.25],
+			"to": [12, 5, 8.75],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [12, 14, 11.5, 15],
+					"texture": 2
+				},
+				"east": {
+					"uv": [11.75, 14, 12, 15],
+					"texture": 2
+				},
+				"south": {
+					"uv": [11.5, 14, 12, 15],
+					"texture": 2
+				},
+				"west": {
+					"uv": [11.5, 14, 11.75, 15],
+					"texture": 2
+				},
+				"up": {
+					"uv": [11.5, 14, 12, 14.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [11.5, 14.75, 12, 15],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "f1dd4964-3c05-1c32-fbb1-74c53c0379c3"
+		},
+		{
+			"name": "4Shooter3DModel素材_33",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3.5, 4, 7.25],
+			"to": [4, 4.5, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [4, 14.5, 3.5, 15],
+					"texture": 2
+				},
+				"east": {
+					"uv": [3.75, 14.5, 4, 15],
+					"texture": 2
+				},
+				"south": {
+					"uv": [3.5, 14.5, 4, 15],
+					"texture": 2
+				},
+				"west": {
+					"uv": [3.5, 14.5, 3.75, 15],
+					"texture": 2
+				},
+				"up": {
+					"uv": [3.5, 14.5, 4, 14.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [3.5, 14.75, 4, 15],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "770ef3e5-566b-5977-05d2-7780b526909e"
+		},
+		{
+			"name": "4Shooter3DModel素材_34",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 3.5, 7.25],
+			"to": [6, 4.5, 8.75],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [6, 14.5, 4.5, 15.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [5.75, 14.5, 6, 15.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [4.5, 14.5, 6, 15.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [4.5, 14.5, 4.75, 15.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [4.5, 14.5, 6, 14.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [4.5, 15.25, 6, 15.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "1cf3bdf4-4307-a4de-65fb-51a04998fe48"
+		},
+		{
+			"name": "4Shooter3DModel素材_35",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [10, 3.5, 7.25],
+			"to": [11.5, 4.5, 8.75],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [11.5, 14.5, 10, 15.5],
+					"texture": 2
+				},
+				"east": {
+					"uv": [11.25, 14.5, 11.5, 15.5],
+					"texture": 2
+				},
+				"south": {
+					"uv": [10, 14.5, 11.5, 15.5],
+					"texture": 2
+				},
+				"west": {
+					"uv": [10, 14.5, 10.25, 15.5],
+					"texture": 2
+				},
+				"up": {
+					"uv": [10, 14.5, 11.5, 14.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [10, 15.25, 11.5, 15.5],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "167b7998-07d9-f487-0ce3-a7db1373d2e6"
+		},
+		{
+			"name": "4Shooter3DModel素材_36",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [12, 4, 7.25],
+			"to": [12.5, 4.5, 8.75],
+			"autouv": 0,
+			"color": 1,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [12.5, 14.5, 12, 15],
+					"texture": 2
+				},
+				"east": {
+					"uv": [12.25, 14.5, 12.5, 15],
+					"texture": 2
+				},
+				"south": {
+					"uv": [12, 14.5, 12.5, 15],
+					"texture": 2
+				},
+				"west": {
+					"uv": [12, 14.5, 12.25, 15],
+					"texture": 2
+				},
+				"up": {
+					"uv": [12, 14.5, 12.5, 14.75],
+					"texture": 2
+				},
+				"down": {
+					"uv": [12, 14.75, 12.5, 15],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "bfbca249-4df1-dcf1-3433-2b091f55daee"
+		},
+		{
+			"name": "4Shooter3DModel素材_37",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6, 3, 7.25],
+			"to": [10, 4, 8.75],
+			"autouv": 0,
+			"color": 7,
+			"rotation": [0, 90, 0],
+			"origin": [0, 3, 8],
+			"faces": {
+				"north": {
+					"uv": [10, 15, 6, 16],
+					"texture": 2
+				},
+				"east": {
+					"uv": [9.75, 15, 10, 16],
+					"texture": 2
+				},
+				"south": {
+					"uv": [6, 15, 10, 16],
+					"texture": 2
+				},
+				"west": {
+					"uv": [6, 15, 6.25, 16],
+					"texture": 2
+				},
+				"up": {
+					"uv": [6, 15, 10, 15.25],
+					"texture": 2
+				},
+				"down": {
+					"uv": [6, 15.75, 10, 16],
+					"texture": 2
+				}
+			},
+			"type": "cube",
+			"uuid": "a81cfe6e-39bd-b275-9057-67a77d5108f7"
+		},
+		{
+			"name": "3Shooter3DModel素材_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2, 2, 0],
+			"to": [2, 18, 0.25],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [10, 0, 6, 16],
+					"texture": 3
+				},
+				"east": {
+					"uv": [9.75, 0, 10, 16],
+					"texture": 3
+				},
+				"south": {
+					"uv": [6, 0, 10, 16],
+					"texture": 3
+				},
+				"west": {
+					"uv": [6, 0, 6.25, 16],
+					"texture": 3
+				},
+				"up": {
+					"uv": [6, 0, 10, 0.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [6, 15.75, 10, 16],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "1e7fb40b-871f-0e15-d068-e7c9e07050eb"
+		},
+		{
+			"name": "3Shooter3DModel素材_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3.5, 2.5, 0],
+			"to": [-2, 17.5, 0.25],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [6, 0.5, 4.5, 15.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [5.75, 0.5, 6, 15.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [4.5, 0.5, 6, 15.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [4.5, 0.5, 4.75, 15.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [4.5, 0.5, 6, 0.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [4.5, 15.25, 6, 15.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "d9c1a951-7af6-6e93-b4b6-8a822dad3854"
+		},
+		{
+			"name": "3Shooter3DModel素材_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2, 2.5, 0],
+			"to": [3.5, 17.5, 0.25],
+			"autouv": 0,
+			"color": 2,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [11.5, 0.5, 10, 15.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [11.25, 0.5, 11.5, 15.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [10, 0.5, 11.5, 15.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [10, 0.5, 10.25, 15.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [10, 0.5, 11.5, 0.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [10, 15.25, 11.5, 15.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "27cb5cbd-1c7f-3a2c-81e1-a3499e1e5d56"
+		},
+		{
+			"name": "3Shooter3DModel素材_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 3, 0],
+			"to": [-3.5, 17, 0.25],
+			"autouv": 0,
+			"color": 0,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [4.5, 1, 3.5, 15],
+					"texture": 3
+				},
+				"east": {
+					"uv": [4.25, 1, 4.5, 15],
+					"texture": 3
+				},
+				"south": {
+					"uv": [3.5, 1, 4.5, 15],
+					"texture": 3
+				},
+				"west": {
+					"uv": [3.5, 1, 3.75, 15],
+					"texture": 3
+				},
+				"up": {
+					"uv": [3.5, 1, 4.5, 1.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [3.5, 14.75, 4.5, 15],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "649696da-3619-b40e-540c-188479ed33d7"
+		},
+		{
+			"name": "3Shooter3DModel素材_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [3.5, 3, 0],
+			"to": [4.5, 17, 0.25],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [12.5, 1, 11.5, 15],
+					"texture": 3
+				},
+				"east": {
+					"uv": [12.25, 1, 12.5, 15],
+					"texture": 3
+				},
+				"south": {
+					"uv": [11.5, 1, 12.5, 15],
+					"texture": 3
+				},
+				"west": {
+					"uv": [11.5, 1, 11.75, 15],
+					"texture": 3
+				},
+				"up": {
+					"uv": [11.5, 1, 12.5, 1.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [11.5, 14.75, 12.5, 15],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "0227cd16-b972-c8c8-c38b-b1a6e4b3eda4"
+		},
+		{
+			"name": "3Shooter3DModel素材_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5, 3.5, 0],
+			"to": [-4.5, 16.5, 0.25],
+			"autouv": 0,
+			"color": 5,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [3.5, 1.5, 3, 14.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [3.25, 1.5, 3.5, 14.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [3, 1.5, 3.5, 14.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [3, 1.5, 3.25, 14.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [3, 1.5, 3.5, 1.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [3, 14.25, 3.5, 14.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "88e1ad49-c967-ee1b-df44-f43032fb84b8"
+		},
+		{
+			"name": "3Shooter3DModel素材_6",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 3.5, 0],
+			"to": [5, 16.5, 0.25],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [13, 1.5, 12.5, 14.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [12.75, 1.5, 13, 14.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [12.5, 1.5, 13, 14.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [12.5, 1.5, 12.75, 14.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [12.5, 1.5, 13, 1.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [12.5, 14.25, 13, 14.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "97f97dca-e62f-3737-2584-55f81b2acac6"
+		},
+		{
+			"name": "3Shooter3DModel素材_7",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.5, 4, 0],
+			"to": [-5, 16, 0.25],
+			"autouv": 0,
+			"color": 3,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [3, 2, 2.5, 14],
+					"texture": 3
+				},
+				"east": {
+					"uv": [2.75, 2, 3, 14],
+					"texture": 3
+				},
+				"south": {
+					"uv": [2.5, 2, 3, 14],
+					"texture": 3
+				},
+				"west": {
+					"uv": [2.5, 2, 2.75, 14],
+					"texture": 3
+				},
+				"up": {
+					"uv": [2.5, 2, 3, 2.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [2.5, 13.75, 3, 14],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "12b407d4-dba8-a507-4533-10eedd251d1b"
+		},
+		{
+			"name": "3Shooter3DModel素材_8",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5, 4, 0],
+			"to": [5.5, 16, 0.25],
+			"autouv": 0,
+			"color": 9,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [13.5, 2, 13, 14],
+					"texture": 3
+				},
+				"east": {
+					"uv": [13.25, 2, 13.5, 14],
+					"texture": 3
+				},
+				"south": {
+					"uv": [13, 2, 13.5, 14],
+					"texture": 3
+				},
+				"west": {
+					"uv": [13, 2, 13.25, 14],
+					"texture": 3
+				},
+				"up": {
+					"uv": [13, 2, 13.5, 2.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [13, 13.75, 13.5, 14],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "719e3128-1afe-239c-ceae-d859eaf2ec76"
+		},
+		{
+			"name": "3Shooter3DModel素材_9",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-6, 4.5, 0],
+			"to": [-5.5, 15.5, 0.25],
+			"autouv": 0,
+			"color": 6,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [2.5, 2.5, 2, 13.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [2.25, 2.5, 2.5, 13.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [2, 2.5, 2.5, 13.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [2, 2.5, 2.25, 13.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [2, 2.5, 2.5, 2.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [2, 13.25, 2.5, 13.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "f2d69129-6562-eebe-f814-328dd5a5d4b6"
+		},
+		{
+			"name": "3Shooter3DModel素材_10",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.5, 4.5, 0],
+			"to": [6, 15.5, 0.25],
+			"autouv": 0,
+			"color": 5,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [14, 2.5, 13.5, 13.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [13.75, 2.5, 14, 13.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [13.5, 2.5, 14, 13.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [13.5, 2.5, 13.75, 13.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [13.5, 2.5, 14, 2.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [13.5, 13.25, 14, 13.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "22a76720-26b5-b63d-94ab-72aec447cf0d"
+		},
+		{
+			"name": "3Shooter3DModel素材_11",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-6.5, 5, 0],
+			"to": [-6, 15, 0.25],
+			"autouv": 0,
+			"color": 7,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [2, 3, 1.5, 13],
+					"texture": 3
+				},
+				"east": {
+					"uv": [1.75, 3, 2, 13],
+					"texture": 3
+				},
+				"south": {
+					"uv": [1.5, 3, 2, 13],
+					"texture": 3
+				},
+				"west": {
+					"uv": [1.5, 3, 1.75, 13],
+					"texture": 3
+				},
+				"up": {
+					"uv": [1.5, 3, 2, 3.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [1.5, 12.75, 2, 13],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "e251c9ab-9d85-776e-14f5-360ec1c84b85"
+		},
+		{
+			"name": "3Shooter3DModel素材_12",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6, 5, 0],
+			"to": [6.5, 15, 0.25],
+			"autouv": 0,
+			"color": 5,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [14.5, 3, 14, 13],
+					"texture": 3
+				},
+				"east": {
+					"uv": [14.25, 3, 14.5, 13],
+					"texture": 3
+				},
+				"south": {
+					"uv": [14, 3, 14.5, 13],
+					"texture": 3
+				},
+				"west": {
+					"uv": [14, 3, 14.25, 13],
+					"texture": 3
+				},
+				"up": {
+					"uv": [14, 3, 14.5, 3.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [14, 12.75, 14.5, 13],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "adf8b014-dd5c-3f23-399a-fbafb93290f9"
+		},
+		{
+			"name": "3Shooter3DModel素材_13",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7, 5.5, 0],
+			"to": [-6.5, 14.5, 0.25],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [1.5, 3.5, 1, 12.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [1.25, 3.5, 1.5, 12.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [1, 3.5, 1.5, 12.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [1, 3.5, 1.25, 12.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [1, 3.5, 1.5, 3.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [1, 12.25, 1.5, 12.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "efa7d77c-357d-b2a7-907f-05ec976ef760"
+		},
+		{
+			"name": "3Shooter3DModel素材_14",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6.5, 5.5, 0],
+			"to": [7, 14.5, 0.25],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [15, 3.5, 14.5, 12.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [14.75, 3.5, 15, 12.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [14.5, 3.5, 15, 12.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [14.5, 3.5, 14.75, 12.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [14.5, 3.5, 15, 3.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [14.5, 12.25, 15, 12.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "427fa471-1d7e-5b6d-c71f-ed85fe6423f8"
+		},
+		{
+			"name": "3Shooter3DModel素材_15",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.5, 6.5, 0],
+			"to": [-7, 13.5, 0.25],
+			"autouv": 0,
+			"color": 6,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [1, 4.5, 0.5, 11.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0.75, 4.5, 1, 11.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [0.5, 4.5, 1, 11.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0.5, 4.5, 0.75, 11.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [0.5, 4.5, 1, 4.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [0.5, 11.25, 1, 11.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "e5a11573-43e8-19f9-76c2-86e7447454ec"
+		},
+		{
+			"name": "3Shooter3DModel素材_16",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7, 6.5, 0],
+			"to": [7.5, 13.5, 0.25],
+			"autouv": 0,
+			"color": 4,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [15.5, 4.5, 15, 11.5],
+					"texture": 3
+				},
+				"east": {
+					"uv": [15.25, 4.5, 15.5, 11.5],
+					"texture": 3
+				},
+				"south": {
+					"uv": [15, 4.5, 15.5, 11.5],
+					"texture": 3
+				},
+				"west": {
+					"uv": [15, 4.5, 15.25, 11.5],
+					"texture": 3
+				},
+				"up": {
+					"uv": [15, 4.5, 15.5, 4.75],
+					"texture": 3
+				},
+				"down": {
+					"uv": [15, 11.25, 15.5, 11.5],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "01e15536-56c6-bda0-0bb0-363bd072a9e1"
+		},
+		{
+			"name": "3Shooter3DModel素材_17",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 8, 0],
+			"to": [-7.5, 12, 0.25],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [0.5, 6, 0, 10],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0.25, 6, 0.5, 10],
+					"texture": 3
+				},
+				"south": {
+					"uv": [0, 6, 0.5, 10],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 6, 0.25, 10],
+					"texture": 3
+				},
+				"up": {
+					"uv": [0, 6, 0.5, 6.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [0, 9.75, 0.5, 10],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "c026d76e-a708-47d7-fb79-05d0c4d2695e"
+		},
+		{
+			"name": "3Shooter3DModel素材_18",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.5, 8, 0],
+			"to": [8, 12, 0.25],
+			"autouv": 0,
+			"color": 8,
+			"rotation": [0, 90, 0],
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [16, 6, 15.5, 10],
+					"texture": 3
+				},
+				"east": {
+					"uv": [15.75, 6, 16, 10],
+					"texture": 3
+				},
+				"south": {
+					"uv": [15.5, 6, 16, 10],
+					"texture": 3
+				},
+				"west": {
+					"uv": [15.5, 6, 15.75, 10],
+					"texture": 3
+				},
+				"up": {
+					"uv": [15.5, 6, 16, 6.25],
+					"texture": 3
+				},
+				"down": {
+					"uv": [15.5, 9.75, 16, 10],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "e02ed281-30f0-4c07-50d9-7f233d0677af"
+		},
+		{
+			"name": "sphere",
+			"color": 2,
+			"origin": [-15, 11, 0],
+			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"OWeC": [15, -5.5, 0],
+				"AENM": [15, 5.5, 0],
+				"Wb9E": [15, 0, 5.5],
+				"PEJy": [19.5, 0, 0],
+				"6OKI": [15, 0, -5.5],
+				"XqqN": [10.5, 0, 0]
+			},
+			"faces": {
+				"uqKKSf2x": {
+					"uv": {
+						"Wb9E": [6.386, 16],
+						"PEJy": [15.75, 16],
+						"AENM": [11.068, 7.4887]
+					},
+					"vertices": ["Wb9E", "PEJy", "AENM"],
+					"texture": 4
+				},
+				"pgPMvfTW": {
+					"uv": {
+						"PEJy": [15.75, 16],
+						"Wb9E": [6.386, 16],
+						"OWeC": [11.068, 7.4887]
+					},
+					"vertices": ["PEJy", "Wb9E", "OWeC"],
+					"texture": 4
+				},
+				"OgnepY9S": {
+					"uv": {
+						"PEJy": [6.386, 16],
+						"6OKI": [15.75, 16],
+						"AENM": [11.068, 7.4887]
+					},
+					"vertices": ["PEJy", "6OKI", "AENM"],
+					"texture": 4
+				},
+				"asFNLpXP": {
+					"uv": {
+						"6OKI": [15.75, 16],
+						"PEJy": [6.386, 16],
+						"OWeC": [11.068, 7.4887]
+					},
+					"vertices": ["6OKI", "PEJy", "OWeC"],
+					"texture": 4
+				},
+				"2PUB4R6U": {
+					"uv": {
+						"6OKI": [6.386, 16],
+						"XqqN": [15.75, 16],
+						"AENM": [11.068, 7.4887]
+					},
+					"vertices": ["6OKI", "XqqN", "AENM"],
+					"texture": 4
+				},
+				"IwoXKeQq": {
+					"uv": {
+						"XqqN": [15.75, 16],
+						"6OKI": [6.386, 16],
+						"OWeC": [11.068, 7.4887]
+					},
+					"vertices": ["XqqN", "6OKI", "OWeC"],
+					"texture": 4
+				},
+				"uHw8gfxc": {
+					"uv": {
+						"XqqN": [6.386, 16],
+						"Wb9E": [15.75, 16],
+						"AENM": [11.068, 7.4887]
+					},
+					"vertices": ["XqqN", "Wb9E", "AENM"],
+					"texture": 4
+				},
+				"nL0iUAQ7": {
+					"uv": {
+						"Wb9E": [6.386, 16],
+						"XqqN": [15.75, 16],
+						"OWeC": [11.068, 7.4887]
+					},
+					"vertices": ["Wb9E", "XqqN", "OWeC"],
+					"texture": 4
+				}
+			},
+			"type": "mesh",
+			"uuid": "cbd82888-0630-90e0-1b53-60022b79925e"
+		},
+		{
+			"name": "torus",
+			"color": 4,
+			"origin": [0, 11, 0],
+			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"xWoP": [2.9206, 1.07572, 13.125],
+				"yP6k": [3.3378, 0, 15],
+				"Awkb": [2.9206, -1.07572, 13.125],
+				"OhMM": [2.50336, 0, 11.25],
+				"vgwF": [8.18331, 1.07572, 10.52543],
+				"prrH": [9.35237, 0, 12.02906],
+				"38lP": [8.18331, -1.07572, 10.52543],
+				"rrpB": [7.01427, 0, 9.0218],
+				"er8J": [11.82523, 1.07572, 5.84117],
+				"961K": [13.51455, 0, 6.67563],
+				"EVLl": [11.82523, -1.07572, 5.84117],
+				"I3Bi": [10.13591, 0, 5.00673],
+				"oVvT": [13.12502, 1.07572, 0],
+				"KJlL": [15, 0, 0],
+				"pwvs": [13.12502, -1.07572, 0],
+				"NhFF": [11.25001, 0, 0],
+				"u8Dv": [11.82523, 1.07572, -5.84117],
+				"RARL": [13.51455, 0, -6.67563],
+				"tce0": [11.82523, -1.07572, -5.84117],
+				"iVkx": [10.13591, 0, -5.00673],
+				"xIaF": [8.18331, 1.07572, -10.52543],
+				"awEi": [9.35237, 0, -12.02906],
+				"LgbI": [8.18331, -1.07572, -10.52543],
+				"tjuM": [7.01427, 0, -9.0218],
+				"ROrO": [2.9206, 1.07572, -13.125],
+				"4bIF": [3.3378, 0, -15],
+				"a6uB": [2.9206, -1.07572, -13.125],
+				"abGk": [2.50336, 0, -11.25],
+				"zwdb": [-2.9206, 1.07572, 13.125],
+				"zE0W": [-3.3378, 0, 15],
+				"ZVZN": [-2.9206, -1.07572, 13.125],
+				"DuuF": [-2.50336, 0, 11.25],
+				"2Fyo": [-8.18331, 1.07572, 10.52543],
+				"SXjO": [-9.35237, 0, 12.02906],
+				"y7d7": [-8.18331, -1.07572, 10.52543],
+				"RGdj": [-7.01427, 0, 9.0218],
+				"qqGM": [-11.82523, 1.07572, 5.84117],
+				"DZeF": [-13.51455, 0, 6.67563],
+				"Mz1q": [-11.82523, -1.07572, 5.84117],
+				"GyDf": [-10.13591, 0, 5.00673],
+				"RDxN": [-13.12502, 1.07572, 0],
+				"F2zM": [-15, 0, 0],
+				"A3TN": [-13.12502, -1.07572, 0],
+				"mBEG": [-11.25001, 0, 0],
+				"7LRj": [-11.82523, 1.07572, -5.84117],
+				"Mg08": [-13.51455, 0, -6.67563],
+				"kb3B": [-11.82523, -1.07572, -5.84117],
+				"3vD1": [-10.13591, 0, -5.00673],
+				"1fcg": [-8.18331, 1.07572, -10.52543],
+				"z3Wx": [-9.35237, 0, -12.02906],
+				"HDp7": [-8.18331, -1.07572, -10.52543],
+				"Wj85": [-7.01427, 0, -9.0218],
+				"Z2Pl": [-2.9206, 1.07572, -13.125],
+				"hbb4": [-3.3378, 0, -15],
+				"w15W": [-2.9206, -1.07572, -13.125],
+				"yBMA": [-2.50336, 0, -11.25]
+			},
+			"faces": {
+				"Eiy9Gq5d": {
+					"uv": {
+						"yP6k": [0, 2.9324],
+						"prrH": [10.9018, 2.9324],
+						"xWoP": [0.68125, 0],
+						"vgwF": [10.22055, 0]
+					},
+					"vertices": ["yP6k", "prrH", "xWoP", "vgwF"],
+					"texture": 0
+				},
+				"koWqVZUZ": {
+					"uv": {
+						"Awkb": [0.68125, 2.9324],
+						"38lP": [10.22055, 2.9324],
+						"yP6k": [0, 0],
+						"prrH": [10.9018, 0]
+					},
+					"vertices": ["Awkb", "38lP", "yP6k", "prrH"],
+					"texture": 0
+				},
+				"g2jTmnUG": {
+					"uv": {
+						"OhMM": [10.19289, 0],
+						"rrpB": [0.78391, 0],
+						"Awkb": [10.9768, 2.9326],
+						"38lP": [0, 2.9326]
+					},
+					"vertices": ["OhMM", "rrpB", "Awkb", "38lP"],
+					"texture": 0
+				},
+				"pYCRqKJJ": {
+					"uv": {
+						"xWoP": [10.9768, 0],
+						"vgwF": [0, 0],
+						"OhMM": [10.19289, 2.9326],
+						"rrpB": [0.78391, 2.9326]
+					},
+					"vertices": ["xWoP", "vgwF", "OhMM", "rrpB"],
+					"texture": 0
+				},
+				"69vYaCKL": {
+					"uv": {
+						"prrH": [0, 2.9324],
+						"961K": [10.9018, 2.9324],
+						"vgwF": [0.68125, 0],
+						"er8J": [10.22055, 0]
+					},
+					"vertices": ["prrH", "961K", "vgwF", "er8J"],
+					"texture": 0
+				},
+				"n4zBADIa": {
+					"uv": {
+						"38lP": [0.68125, 2.9324],
+						"EVLl": [10.22055, 2.9324],
+						"prrH": [0, 0],
+						"961K": [10.9018, 0]
+					},
+					"vertices": ["38lP", "EVLl", "prrH", "961K"],
+					"texture": 0
+				},
+				"0KbAMx8i": {
+					"uv": {
+						"rrpB": [10.19289, 0],
+						"I3Bi": [0.78391, 0],
+						"38lP": [10.9768, 2.9326],
+						"EVLl": [0, 2.9326]
+					},
+					"vertices": ["rrpB", "I3Bi", "38lP", "EVLl"],
+					"texture": 0
+				},
+				"FaaLCQWT": {
+					"uv": {
+						"vgwF": [10.9768, 0],
+						"er8J": [0, 0],
+						"rrpB": [10.19289, 2.9326],
+						"I3Bi": [0.78391, 2.9326]
+					},
+					"vertices": ["vgwF", "er8J", "rrpB", "I3Bi"],
+					"texture": 0
+				},
+				"0IaGxQPf": {
+					"uv": {
+						"961K": [0, 2.9324],
+						"KJlL": [10.9018, 2.9324],
+						"er8J": [0.68125, 0],
+						"oVvT": [10.22055, 0]
+					},
+					"vertices": ["961K", "KJlL", "er8J", "oVvT"],
+					"texture": 0
+				},
+				"JpvUF5mn": {
+					"uv": {
+						"EVLl": [0.68125, 2.9324],
+						"pwvs": [10.22055, 2.9324],
+						"961K": [0, 0],
+						"KJlL": [10.9018, 0]
+					},
+					"vertices": ["EVLl", "pwvs", "961K", "KJlL"],
+					"texture": 0
+				},
+				"zgtpnuEc": {
+					"uv": {
+						"I3Bi": [10.19289, 0],
+						"NhFF": [0.78391, 0],
+						"EVLl": [10.9768, 2.9326],
+						"pwvs": [0, 2.9326]
+					},
+					"vertices": ["I3Bi", "NhFF", "EVLl", "pwvs"],
+					"texture": 0
+				},
+				"xkdNQ1Gk": {
+					"uv": {
+						"er8J": [10.9768, 0],
+						"oVvT": [0, 0],
+						"I3Bi": [10.19289, 2.9326],
+						"NhFF": [0.78391, 2.9326]
+					},
+					"vertices": ["er8J", "oVvT", "I3Bi", "NhFF"],
+					"texture": 0
+				},
+				"AcNxjovU": {
+					"uv": {
+						"KJlL": [0, 2.9324],
+						"RARL": [10.9018, 2.9324],
+						"oVvT": [0.68125, 0],
+						"u8Dv": [10.22055, 0]
+					},
+					"vertices": ["KJlL", "RARL", "oVvT", "u8Dv"],
+					"texture": 0
+				},
+				"LnPZM7OR": {
+					"uv": {
+						"pwvs": [0.68125, 2.9324],
+						"tce0": [10.22055, 2.9324],
+						"KJlL": [0, 0],
+						"RARL": [10.9018, 0]
+					},
+					"vertices": ["pwvs", "tce0", "KJlL", "RARL"],
+					"texture": 0
+				},
+				"7aAFHnLX": {
+					"uv": {
+						"NhFF": [10.19289, 0],
+						"iVkx": [0.78391, 0],
+						"pwvs": [10.9768, 2.9326],
+						"tce0": [0, 2.9326]
+					},
+					"vertices": ["NhFF", "iVkx", "pwvs", "tce0"],
+					"texture": 0
+				},
+				"fOvLLOjr": {
+					"uv": {
+						"oVvT": [10.9768, 0],
+						"u8Dv": [0, 0],
+						"NhFF": [10.19289, 2.9326],
+						"iVkx": [0.78391, 2.9326]
+					},
+					"vertices": ["oVvT", "u8Dv", "NhFF", "iVkx"],
+					"texture": 0
+				},
+				"BFdhxI97": {
+					"uv": {
+						"RARL": [0, 2.9324],
+						"awEi": [10.9018, 2.9324],
+						"u8Dv": [0.68125, 0],
+						"xIaF": [10.22055, 0]
+					},
+					"vertices": ["RARL", "awEi", "u8Dv", "xIaF"],
+					"texture": 0
+				},
+				"raJfETJk": {
+					"uv": {
+						"tce0": [0.68125, 2.9324],
+						"LgbI": [10.22055, 2.9324],
+						"RARL": [0, 0],
+						"awEi": [10.9018, 0]
+					},
+					"vertices": ["tce0", "LgbI", "RARL", "awEi"],
+					"texture": 0
+				},
+				"yEYxfeGD": {
+					"uv": {
+						"iVkx": [10.19289, 0],
+						"tjuM": [0.78391, 0],
+						"tce0": [10.9768, 2.9326],
+						"LgbI": [0, 2.9326]
+					},
+					"vertices": ["iVkx", "tjuM", "tce0", "LgbI"],
+					"texture": 0
+				},
+				"z0R2NsqH": {
+					"uv": {
+						"u8Dv": [10.9768, 0],
+						"xIaF": [0, 0],
+						"iVkx": [10.19289, 2.9326],
+						"tjuM": [0.78391, 2.9326]
+					},
+					"vertices": ["u8Dv", "xIaF", "iVkx", "tjuM"],
+					"texture": 0
+				},
+				"EMOAxb8f": {
+					"uv": {
+						"awEi": [0, 2.9324],
+						"4bIF": [10.9018, 2.9324],
+						"xIaF": [0.68125, 0],
+						"ROrO": [10.22055, 0]
+					},
+					"vertices": ["awEi", "4bIF", "xIaF", "ROrO"],
+					"texture": 0
+				},
+				"ROJsAU9T": {
+					"uv": {
+						"LgbI": [0.68125, 2.9324],
+						"a6uB": [10.22055, 2.9324],
+						"awEi": [0, 0],
+						"4bIF": [10.9018, 0]
+					},
+					"vertices": ["LgbI", "a6uB", "awEi", "4bIF"],
+					"texture": 0
+				},
+				"BHTTFZHx": {
+					"uv": {
+						"tjuM": [10.19289, 0],
+						"abGk": [0.78391, 0],
+						"LgbI": [10.9768, 2.9326],
+						"a6uB": [0, 2.9326]
+					},
+					"vertices": ["tjuM", "abGk", "LgbI", "a6uB"],
+					"texture": 0
+				},
+				"uJTWJLCw": {
+					"uv": {
+						"xIaF": [10.9768, 0],
+						"ROrO": [0, 0],
+						"tjuM": [10.19289, 2.9326],
+						"abGk": [0.78391, 2.9326]
+					},
+					"vertices": ["xIaF", "ROrO", "tjuM", "abGk"],
+					"texture": 0
+				},
+				"CJMr0AkZ": {
+					"uv": {
+						"4bIF": [0, 2.9324],
+						"hbb4": [10.9018, 2.9324],
+						"ROrO": [0.68125, 0],
+						"Z2Pl": [10.22055, 0]
+					},
+					"vertices": ["4bIF", "hbb4", "ROrO", "Z2Pl"],
+					"texture": 0
+				},
+				"XIEnWrxd": {
+					"uv": {
+						"a6uB": [0.68125, 2.9324],
+						"w15W": [10.22055, 2.9324],
+						"4bIF": [0, 0],
+						"hbb4": [10.9018, 0]
+					},
+					"vertices": ["a6uB", "w15W", "4bIF", "hbb4"],
+					"texture": 0
+				},
+				"A7naKvLa": {
+					"uv": {
+						"abGk": [10.19289, 0],
+						"yBMA": [0.78391, 0],
+						"a6uB": [10.9768, 2.9326],
+						"w15W": [0, 2.9326]
+					},
+					"vertices": ["abGk", "yBMA", "a6uB", "w15W"],
+					"texture": 0
+				},
+				"OyOVX4vL": {
+					"uv": {
+						"ROrO": [10.9768, 0],
+						"Z2Pl": [0, 0],
+						"abGk": [10.19289, 2.9326],
+						"yBMA": [0.78391, 2.9326]
+					},
+					"vertices": ["ROrO", "Z2Pl", "abGk", "yBMA"],
+					"texture": 0
+				},
+				"QoFK45iQ": {
+					"uv": {
+						"zE0W": [0, 2.9324],
+						"yP6k": [10.9018, 2.9324],
+						"zwdb": [0.68125, 0],
+						"xWoP": [10.22055, 0]
+					},
+					"vertices": ["zE0W", "yP6k", "zwdb", "xWoP"],
+					"texture": 0
+				},
+				"4MICCmqP": {
+					"uv": {
+						"ZVZN": [0.68125, 2.9324],
+						"Awkb": [10.22055, 2.9324],
+						"zE0W": [0, 0],
+						"yP6k": [10.9018, 0]
+					},
+					"vertices": ["ZVZN", "Awkb", "zE0W", "yP6k"],
+					"texture": 0
+				},
+				"YXuiLdYH": {
+					"uv": {
+						"DuuF": [10.19289, 0],
+						"OhMM": [0.78391, 0],
+						"ZVZN": [10.9768, 2.9326],
+						"Awkb": [0, 2.9326]
+					},
+					"vertices": ["DuuF", "OhMM", "ZVZN", "Awkb"],
+					"texture": 0
+				},
+				"JRbjhZAu": {
+					"uv": {
+						"zwdb": [10.9768, 0],
+						"xWoP": [0, 0],
+						"DuuF": [10.19289, 2.9326],
+						"OhMM": [0.78391, 2.9326]
+					},
+					"vertices": ["zwdb", "xWoP", "DuuF", "OhMM"],
+					"texture": 0
+				},
+				"Vd9lJT2m": {
+					"uv": {
+						"SXjO": [10.9018, 2.9324],
+						"zE0W": [0, 2.9324],
+						"zwdb": [0.68125, 0],
+						"2Fyo": [10.22055, 0]
+					},
+					"vertices": ["SXjO", "zE0W", "zwdb", "2Fyo"],
+					"texture": 0
+				},
+				"YeYiQNzF": {
+					"uv": {
+						"y7d7": [10.22055, 2.9324],
+						"ZVZN": [0.68125, 2.9324],
+						"zE0W": [0, 0],
+						"SXjO": [10.9018, 0]
+					},
+					"vertices": ["y7d7", "ZVZN", "zE0W", "SXjO"],
+					"texture": 0
+				},
+				"gSsX9owt": {
+					"uv": {
+						"RGdj": [0.78391, 0],
+						"DuuF": [10.19289, 0],
+						"ZVZN": [10.9768, 2.9326],
+						"y7d7": [0, 2.9326]
+					},
+					"vertices": ["RGdj", "DuuF", "ZVZN", "y7d7"],
+					"texture": 0
+				},
+				"JiQTMxJR": {
+					"uv": {
+						"2Fyo": [0, 0],
+						"zwdb": [10.9768, 0],
+						"DuuF": [10.19289, 2.9326],
+						"RGdj": [0.78391, 2.9326]
+					},
+					"vertices": ["2Fyo", "zwdb", "DuuF", "RGdj"],
+					"texture": 0
+				},
+				"jl2RuQgl": {
+					"uv": {
+						"DZeF": [10.9018, 2.9324],
+						"SXjO": [0, 2.9324],
+						"2Fyo": [0.68125, 0],
+						"qqGM": [10.22055, 0]
+					},
+					"vertices": ["DZeF", "SXjO", "2Fyo", "qqGM"],
+					"texture": 0
+				},
+				"tP2ezhAO": {
+					"uv": {
+						"Mz1q": [10.22055, 2.9324],
+						"y7d7": [0.68125, 2.9324],
+						"SXjO": [0, 0],
+						"DZeF": [10.9018, 0]
+					},
+					"vertices": ["Mz1q", "y7d7", "SXjO", "DZeF"],
+					"texture": 0
+				},
+				"ii7pTWAH": {
+					"uv": {
+						"GyDf": [0.78391, 0],
+						"RGdj": [10.19289, 0],
+						"y7d7": [10.9768, 2.9326],
+						"Mz1q": [0, 2.9326]
+					},
+					"vertices": ["GyDf", "RGdj", "y7d7", "Mz1q"],
+					"texture": 0
+				},
+				"XbWLX1fL": {
+					"uv": {
+						"qqGM": [0, 0],
+						"2Fyo": [10.9768, 0],
+						"RGdj": [10.19289, 2.9326],
+						"GyDf": [0.78391, 2.9326]
+					},
+					"vertices": ["qqGM", "2Fyo", "RGdj", "GyDf"],
+					"texture": 0
+				},
+				"suduoZZe": {
+					"uv": {
+						"F2zM": [10.9018, 2.9324],
+						"DZeF": [0, 2.9324],
+						"qqGM": [0.68125, 0],
+						"RDxN": [10.22055, 0]
+					},
+					"vertices": ["F2zM", "DZeF", "qqGM", "RDxN"],
+					"texture": 0
+				},
+				"Lri512s0": {
+					"uv": {
+						"A3TN": [10.22055, 2.9324],
+						"Mz1q": [0.68125, 2.9324],
+						"DZeF": [0, 0],
+						"F2zM": [10.9018, 0]
+					},
+					"vertices": ["A3TN", "Mz1q", "DZeF", "F2zM"],
+					"texture": 0
+				},
+				"BJjIM0MK": {
+					"uv": {
+						"mBEG": [0.78391, 0],
+						"GyDf": [10.19289, 0],
+						"Mz1q": [10.9768, 2.9326],
+						"A3TN": [0, 2.9326]
+					},
+					"vertices": ["mBEG", "GyDf", "Mz1q", "A3TN"],
+					"texture": 0
+				},
+				"apxKR1DL": {
+					"uv": {
+						"RDxN": [0, 0],
+						"qqGM": [10.9768, 0],
+						"GyDf": [10.19289, 2.9326],
+						"mBEG": [0.78391, 2.9326]
+					},
+					"vertices": ["RDxN", "qqGM", "GyDf", "mBEG"],
+					"texture": 0
+				},
+				"nH8ZuMjy": {
+					"uv": {
+						"Mg08": [10.9018, 2.9324],
+						"F2zM": [0, 2.9324],
+						"RDxN": [0.68125, 0],
+						"7LRj": [10.22055, 0]
+					},
+					"vertices": ["Mg08", "F2zM", "RDxN", "7LRj"],
+					"texture": 0
+				},
+				"NjpDocX6": {
+					"uv": {
+						"kb3B": [10.22055, 2.9324],
+						"A3TN": [0.68125, 2.9324],
+						"F2zM": [0, 0],
+						"Mg08": [10.9018, 0]
+					},
+					"vertices": ["kb3B", "A3TN", "F2zM", "Mg08"],
+					"texture": 0
+				},
+				"vvdMOkgT": {
+					"uv": {
+						"3vD1": [0.78391, 0],
+						"mBEG": [10.19289, 0],
+						"A3TN": [10.9768, 2.9326],
+						"kb3B": [0, 2.9326]
+					},
+					"vertices": ["3vD1", "mBEG", "A3TN", "kb3B"],
+					"texture": 0
+				},
+				"rGS0eUl1": {
+					"uv": {
+						"7LRj": [0, 0],
+						"RDxN": [10.9768, 0],
+						"mBEG": [10.19289, 2.9326],
+						"3vD1": [0.78391, 2.9326]
+					},
+					"vertices": ["7LRj", "RDxN", "mBEG", "3vD1"],
+					"texture": 0
+				},
+				"0YWlXsOV": {
+					"uv": {
+						"z3Wx": [10.9018, 2.9324],
+						"Mg08": [0, 2.9324],
+						"7LRj": [0.68125, 0],
+						"1fcg": [10.22055, 0]
+					},
+					"vertices": ["z3Wx", "Mg08", "7LRj", "1fcg"],
+					"texture": 0
+				},
+				"pMfuNCyN": {
+					"uv": {
+						"HDp7": [10.22055, 2.9324],
+						"kb3B": [0.68125, 2.9324],
+						"Mg08": [0, 0],
+						"z3Wx": [10.9018, 0]
+					},
+					"vertices": ["HDp7", "kb3B", "Mg08", "z3Wx"],
+					"texture": 0
+				},
+				"T0Vfrulm": {
+					"uv": {
+						"Wj85": [0.78391, 0],
+						"3vD1": [10.19289, 0],
+						"kb3B": [10.9768, 2.9326],
+						"HDp7": [0, 2.9326]
+					},
+					"vertices": ["Wj85", "3vD1", "kb3B", "HDp7"],
+					"texture": 0
+				},
+				"SVN4qUQc": {
+					"uv": {
+						"1fcg": [0, 0],
+						"7LRj": [10.9768, 0],
+						"3vD1": [10.19289, 2.9326],
+						"Wj85": [0.78391, 2.9326]
+					},
+					"vertices": ["1fcg", "7LRj", "3vD1", "Wj85"],
+					"texture": 0
+				},
+				"FGikz7b7": {
+					"uv": {
+						"hbb4": [10.9018, 2.9324],
+						"z3Wx": [0, 2.9324],
+						"1fcg": [0.68125, 0],
+						"Z2Pl": [10.22055, 0]
+					},
+					"vertices": ["hbb4", "z3Wx", "1fcg", "Z2Pl"],
+					"texture": 0
+				},
+				"Wqc1eXx3": {
+					"uv": {
+						"w15W": [10.22055, 2.9324],
+						"HDp7": [0.68125, 2.9324],
+						"z3Wx": [0, 0],
+						"hbb4": [10.9018, 0]
+					},
+					"vertices": ["w15W", "HDp7", "z3Wx", "hbb4"],
+					"texture": 0
+				},
+				"BHxMNn2g": {
+					"uv": {
+						"yBMA": [0.78391, 0],
+						"Wj85": [10.19289, 0],
+						"HDp7": [10.9768, 2.9326],
+						"w15W": [0, 2.9326]
+					},
+					"vertices": ["yBMA", "Wj85", "HDp7", "w15W"],
+					"texture": 0
+				},
+				"bniKPlMG": {
+					"uv": {
+						"Z2Pl": [0, 0],
+						"1fcg": [10.9768, 0],
+						"Wj85": [10.19289, 2.9326],
+						"yBMA": [0.78391, 2.9326]
+					},
+					"vertices": ["Z2Pl", "1fcg", "Wj85", "yBMA"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "9e5a964b-15c9-24d2-3455-6f4466580a69"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"tY7U": [16, 16],
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"3bkI": [16, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"xo0F": [16, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"oyBC": [9, 0],
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"ENlO": [9, 0],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"zdrK": [0, 0],
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"otq4": [0, 0],
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"Qxln": [0, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "6db670a0-c363-407c-3a20-ed13c5c693c7"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, 20, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "e33534fa-d851-7efd-7fff-6b191b306923"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, 40, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "aab9e3f8-8920-3307-b8c3-2f2f2108c3a5"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, 60, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "e18785b5-d9d7-6a45-8fa2-4be41c9d19cd"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, 80, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "cb4d59fd-d270-c79c-3ed7-934e6406b5bb"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, 80, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "8cc61058-45cc-58ac-4c0e-5a4a2dfd2d17"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, 60, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "6c44c51e-82b8-2e9b-fdcf-05474e767670"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, 40, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "c3ef14cc-e849-5fe2-cddc-96c1f790cc7d"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, 20, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "73d28028-f998-2da5-8064-d7596f5e5567"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, 0, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "4dfe70ab-a8ff-cf26-fd30-a6b461128730"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, -20, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "bf2123bb-5d81-c7ec-a061-fe47fd8321ba"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, -40, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "42f667d3-5527-de58-891b-08dd117a7676"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, -60, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "162e9669-d5ba-7d6f-b066-31871a326702"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [0, -80, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "5b753068-cf79-7dbf-04dc-c3999934dc3c"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, -80, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "3e39b708-90ff-5796-c2c9-4d77717807e6"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, -20, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "cc25c9d3-1655-a79d-ad1b-86d8c1bcbf58"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, -40, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "71ab7083-5b60-c90c-2a3f-3fcc5d0ef6ac"
+		},
+		{
+			"name": "cuboid",
+			"color": 4,
+			"origin": [0, 0, 0],
+			"rotation": [-180, -60, -180],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"tY7U": [2.25, 11.5, -12.5],
+				"oyBC": [2.25, 11.15, -15.5],
+				"xo0F": [2.25, 10.5, -12.5],
+				"3bkI": [2.25, 10.85, -15.5],
+				"otq4": [-2.25, 11.5, -12.5],
+				"Qxln": [-2.25, 11.15, -15.5],
+				"zdrK": [-2.25, 10.5, -12.5],
+				"ENlO": [-2.25, 10.85, -15.5],
+				"GbCJ": [0, 11.25, -16.5],
+				"JClc": [0, 10.75, -16.5],
+				"3M0e": [0, 10.25, -12.5],
+				"AooC": [0, 11.75, -12.5]
+			},
+			"faces": {
+				"ebBHjlVE": {
+					"uv": {
+						"tY7U": [13.5, 8],
+						"xo0F": [12, 8],
+						"oyBC": [13.5, 15],
+						"3bkI": [12, 15]
+					},
+					"vertices": ["tY7U", "xo0F", "oyBC", "3bkI"],
+					"texture": 6
+				},
+				"Cu57c84k": {
+					"uv": {
+						"otq4": [16, 0],
+						"Qxln": [9, 0],
+						"zdrK": [16, 1.5],
+						"ENlO": [9, 1.5]
+					},
+					"vertices": ["otq4", "Qxln", "zdrK", "ENlO"],
+					"texture": 6
+				},
+				"qUWKZhPg": {
+					"uv": {
+						"oyBC": [16, 0],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"tY7U": [16, 16]
+					},
+					"vertices": ["oyBC", "AooC", "GbCJ", "tY7U"],
+					"texture": 7
+				},
+				"V68CVff0": {
+					"uv": {
+						"xo0F": [16, 0],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"3bkI": [16, 16]
+					},
+					"vertices": ["xo0F", "JClc", "3M0e", "3bkI"],
+					"texture": 7
+				},
+				"D5g20S3R": {
+					"uv": {
+						"tY7U": [16, 0],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"xo0F": [16, 8]
+					},
+					"vertices": ["tY7U", "3M0e", "AooC", "xo0F"]
+				},
+				"lOPKpe9I": {
+					"uv": {
+						"3bkI": [9, 1.5],
+						"GbCJ": [16, 0],
+						"JClc": [16, 1.5],
+						"oyBC": [9, 0]
+					},
+					"vertices": ["3bkI", "GbCJ", "JClc", "oyBC"],
+					"texture": 6
+				},
+				"8SByTfO3": {
+					"uv": {
+						"Qxln": [9, 1.5],
+						"GbCJ": [16, 1.5],
+						"JClc": [16, 0],
+						"ENlO": [9, 0]
+					},
+					"vertices": ["Qxln", "GbCJ", "JClc", "ENlO"],
+					"texture": 6
+				},
+				"6IYgvwBE": {
+					"uv": {
+						"ENlO": [0, 16],
+						"JClc": [8, 16],
+						"3M0e": [8, 0],
+						"zdrK": [0, 0]
+					},
+					"vertices": ["ENlO", "JClc", "3M0e", "zdrK"],
+					"texture": 7
+				},
+				"3nHtyx52": {
+					"uv": {
+						"zdrK": [0, 8],
+						"3M0e": [8, 8],
+						"AooC": [8, 0],
+						"otq4": [0, 0]
+					},
+					"vertices": ["zdrK", "3M0e", "AooC", "otq4"]
+				},
+				"tbyaI3Qe": {
+					"uv": {
+						"otq4": [0, 16],
+						"AooC": [8, 16],
+						"GbCJ": [8, 0],
+						"Qxln": [0, 0]
+					},
+					"vertices": ["otq4", "AooC", "GbCJ", "Qxln"],
+					"texture": 7
+				}
+			},
+			"type": "mesh",
+			"uuid": "5d8be1e1-60c1-964c-36c7-a9a0b4913d93"
+		}
+	],
+	"outliner": [
+		"ccfd6e25-3601-7c39-adb2-2fad5524b648",
+		"cbd82888-0630-90e0-1b53-60022b79925e",
+		{
+			"name": "4Shooter3DModel",
+			"origin": [0, -8, 8],
+			"color": 0,
+			"uuid": "a49ad1fe-b690-9750-fac3-d3690451d020",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"c25e92e9-5146-0d88-a96b-2ba1273e490d",
+				"63df8efd-ec4a-1720-a613-5374a9b578c2",
+				"03e68930-ac15-c85d-13e9-37710721a998",
+				"f98b6b5f-883b-83a4-f27c-93149a62f5e7",
+				"7cca7911-869d-ed80-ce8c-423b0e31e00e",
+				"b160944d-6d59-85b5-a5d6-5c30d8fc61a0",
+				"dea3b360-487e-14e4-a1d2-25696a1f0cf1",
+				"ac241c07-2fd6-05e5-95d2-2ce141d4f3db",
+				"af06e6da-57ec-f10d-c7fe-00e290ee098b",
+				"5b151edb-47aa-8cf7-4795-9a0526d8d9bb",
+				"24a2dc4f-b884-51ad-f23f-3cf62e59b5ba",
+				"8ca8deeb-5500-2330-4c98-0448be1b1127",
+				"b4670516-546c-9682-0fe6-41a249f8583c",
+				"69dc3013-3adf-bb60-b939-a123c4a0073c",
+				"5deabeb2-0f2f-6903-618c-4820467c6ff9",
+				"99bf103d-1cbe-eb46-95bf-1d3fd7b60652",
+				"c48a4007-5331-dcec-5a22-ff9bc24b7808",
+				"e50c30cd-35c7-c164-3d8b-4cceb70d5b18",
+				"ca408a2e-4d8d-c2a5-8a44-54b5859cd346",
+				"c443e098-00be-efce-cf90-e208bcab01f1",
+				"b7f6c98d-ff16-8ffa-1e51-b4545dfe134d",
+				"b5365495-b151-93da-99db-391657b85522",
+				"4e09d40b-1d92-1f58-31f1-a728595acea1",
+				"37e372d0-f05d-db83-f248-a3f772b1b49b",
+				"961b12e8-f719-9b24-4c85-2d44642f1919",
+				"6b048742-df1d-cd25-c3fc-cdfc6aaeab82",
+				"526ffff6-49f4-1059-e208-9344361ba936",
+				"3035a252-7a47-22c5-a9b7-645cca8ee482",
+				"d205ad37-57c9-9f6b-635c-2db3f905ebbb",
+				"0265403f-c94d-c713-c139-c692aad45ebb",
+				"b0bc4a86-581b-d389-9ab9-ab2a0ddf345e",
+				"d87434b4-f744-2739-9dc2-779394289f8a",
+				"f1dd4964-3c05-1c32-fbb1-74c53c0379c3",
+				"770ef3e5-566b-5977-05d2-7780b526909e",
+				"1cf3bdf4-4307-a4de-65fb-51a04998fe48",
+				"167b7998-07d9-f487-0ce3-a7db1373d2e6",
+				"bfbca249-4df1-dcf1-3433-2b091f55daee",
+				"a81cfe6e-39bd-b275-9057-67a77d5108f7"
+			]
+		},
+		{
+			"name": "3Shooter3DModel",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "34034232-addf-0a7e-7e68-c78ae760aefa",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"1e7fb40b-871f-0e15-d068-e7c9e07050eb",
+				"d9c1a951-7af6-6e93-b4b6-8a822dad3854",
+				"27cb5cbd-1c7f-3a2c-81e1-a3499e1e5d56",
+				"649696da-3619-b40e-540c-188479ed33d7",
+				"0227cd16-b972-c8c8-c38b-b1a6e4b3eda4",
+				"88e1ad49-c967-ee1b-df44-f43032fb84b8",
+				"97f97dca-e62f-3737-2584-55f81b2acac6",
+				"12b407d4-dba8-a507-4533-10eedd251d1b",
+				"719e3128-1afe-239c-ceae-d859eaf2ec76",
+				"f2d69129-6562-eebe-f814-328dd5a5d4b6",
+				"22a76720-26b5-b63d-94ab-72aec447cf0d",
+				"e251c9ab-9d85-776e-14f5-360ec1c84b85",
+				"adf8b014-dd5c-3f23-399a-fbafb93290f9",
+				"efa7d77c-357d-b2a7-907f-05ec976ef760",
+				"427fa471-1d7e-5b6d-c71f-ed85fe6423f8",
+				"e5a11573-43e8-19f9-76c2-86e7447454ec",
+				"01e15536-56c6-bda0-0bb0-363bd072a9e1",
+				"c026d76e-a708-47d7-fb79-05d0c4d2695e",
+				"e02ed281-30f0-4c07-50d9-7f233d0677af"
+			]
+		},
+		{
+			"name": "bone",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "af5bfbf9-0429-a6f3-22c2-2caf0891f7d8",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"25b6fe02-5c16-2219-9678-36b8530f6ef1",
+				"9e5a964b-15c9-24d2-3455-6f4466580a69",
+				"6db670a0-c363-407c-3a20-ed13c5c693c7",
+				"4dfe70ab-a8ff-cf26-fd30-a6b461128730",
+				"5d8be1e1-60c1-964c-36c7-a9a0b4913d93",
+				"71ab7083-5b60-c90c-2a3f-3fcc5d0ef6ac",
+				"cc25c9d3-1655-a79d-ad1b-86d8c1bcbf58",
+				"3e39b708-90ff-5796-c2c9-4d77717807e6",
+				"5b753068-cf79-7dbf-04dc-c3999934dc3c",
+				"162e9669-d5ba-7d6f-b066-31871a326702",
+				"42f667d3-5527-de58-891b-08dd117a7676",
+				"bf2123bb-5d81-c7ec-a061-fe47fd8321ba",
+				"73d28028-f998-2da5-8064-d7596f5e5567",
+				"c3ef14cc-e849-5fe2-cddc-96c1f790cc7d",
+				"6c44c51e-82b8-2e9b-fdcf-05474e767670",
+				"8cc61058-45cc-58ac-4c0e-5a4a2dfd2d17",
+				"e33534fa-d851-7efd-7fff-6b191b306923",
+				"aab9e3f8-8920-3307-b8c3-2f2f2108c3a5",
+				"e18785b5-d9d7-6a45-8fa2-4be41c9d19cd",
+				"cb4d59fd-d270-c79c-3ed7-934e6406b5bb"
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\Shooter3DModel素材.png",
+			"name": "Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "0",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "4abfef26-3d97-4118-dc3e-cf34df3260bb",
+			"relative_path": "../../素材/Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAcVJREFUeF7tWrFOwzAQPZOEqjKIRi3iC9jYurLx3Wys3dj4AkSrtAKrKk4IIpdQXdZeh5NfFuvO6fn67tm+J8V5P22JiELY/w3k/bQbh6coJr2fx6Of3/O+GPm9sGMMwg4hdnaMvN7whHDo/Twe/TKvEPZOvHCi4ZIHgIg6BmhV3vtsVMGmr6wOE4hIlwEAAAzAFsAZgEMQt0DC12DyjVDyAJzYSpv/uWpbaRGNfzF0UbPq+smlGixz9rdXd+L/zep3thf3wr96fRP28kHO05rnt7mM5744XlXL9cd5nU0NJgvA9YRbYa3KPz0uBQOeX1adrcWEz4OyGgQAYAC2AM4AHIK4BRK+BgcxlGwjlDwAFgWMZs5Qg8MWuCxY9X1HqcZu5+yPjVRvi5LVW91KtTe/kWpws5PzueP5dSXjFRnH+9jI9cd5nU0NJgtAOeNWWKvyjZNqMGtZDWoxodoqq0EAAAZgC+AMwCGIWyDhaxCdYP+ZXLKdoKayshgLatBi1TRzBgM00bQYCwywWDXNnMEATTQtxgIDLFZNM2cwQBNNi7HAAItV08wZDNBE02IsMMBi1TRzBgM00bQYCwywWDXNnJNnwC8avVBuvfRQTAAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\2Shooter3DModel素材.png",
+			"name": "2Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "1",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "b0d3c48f-c81b-49f5-04c7-5a348ff4faad",
+			"relative_path": "../../素材/2Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAA+RJREFUeF7tW7FPE1EYvxMrIYUUoqZDG2FhKqCBjQ7+A7q5CDEMLg5Ohhh0c1FiiJODiyHEgIub/gMOZYMo0IkFTDs0MdEGGoIVz3hff5d+X++uvbNcr33Xpf3u3ru+/r7f+9573++rvrikGVrda2VZ0+vtXv+sRwAIBkiP9zojGhigHAAjwxQDfvykn764xCGYnOT2wnxvxQg9AkAwAP4eu0afnr1wXwe6nRENDFAWgF/VAebqq5dPTLt6lmTXn78sMRsxYnqqO2ODxQBlAYjHB8xV4FKMPI7VQE6Fg288FlyfIHt1wz5GdAsjdOUB0DR+FvC799/ece8ZVkb8O/iww5ByAGAKXPhNMeDolEOQTpBdKPPrGSwOV8bZjcTxvmm//kiX5U4SjWN6OFYNKwYoC8BQP02BPxdpH1CpEBPgeWOQXF0s0vovPZ/Pk8dnR8m3enrGfM/lttj1zwf2k6vTTNAjAGoM8Dr383xDaDFg85B7GswoD1Ks+LJHjHF6Bc0IiwERAB6jf8SAXpsC0Sqg6jIY7QRrx2Fld4LKH4aUB6BbEiJnxid2bO/Tb7VFw+yajNC5AQBhJOxJ0QiA85oCUhrDKS0sylDVmHNN2cX0jf+KBaFXhgIHICzqcNWQydo5kULggoTfPEJo1eHAAJAlMjJT06kKEQnAjQmefZaZJd8MiAAIWZXY9g7NfegJN8dcU4gass27u9TOqwIVuiqxwAFwxzf4uwAA3zw95T4GqUl6ZkDwP7HpD2IbH2UAkJ5/eNteaQJ82SwpUEaBFChokXXMaWmH2FKjIFjScQAgkR2dkmqbTlA0LpTJziTJzpfInh0le/OwPSqvBODeXVr3oTY7OQGK07v3XHFqNRZYDFAegCBobvcdTlE/kyEGQH12Gp9s53VV6HgMCA0AyA1WKicmKKlU0pzjxWKJYkBmnGJAft+0s9kZ087ltnyBuLbOT3uvahWpX/fI1051CGACPK99p7kPrRLVa4+ecM44VbRag1cegKBjgGTAwrz9CCwmOAxQqtRotrbukQHKA4DzN87VCE5YT+ExzCUco73mC6Tnnz7mNUjtckQqRc+Vtc0yFlgxQHkA2oV8s+c4MSDWRxUXqEl2qlLD8+Fh/Zj6oY4R2WxUubfMgGYDb9d9ZQGQqbcPospcVqMDcDDByQGyghXtwATYd0RSGbHL1ybGDxsiABpzjyaO8TivUPUDrl0f+Vypd3ScASvLNOyeB8Dmr7nMYQBA/mNlqJ+ayeo1dEY/WdozMkwtoHaj9hn9JBPOPQZEAIi5//aN/SyXHpMedooNkiGSUbLf/Qf8SuAMCBsAfwGhHdgLzFZaGQAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\4Shooter3DModel素材.png",
+			"name": "4Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "5",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "c2d2ac88-8546-bcf3-cbea-73f4daf7df39",
+			"relative_path": "../../素材/4Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAZ1JREFUeF7tW0ESgyAMxBfw/2fygnbakSlmAgmgVZLtUYsOu5sNhrCF63+vyVdsk+Obwy99+P5mNwCwE40xThGYUqqNP4W8Ux7SYtoyAAfGaxNNKU2BHGNklcUoY+g9Q4M4xj0BwDI/y3SvUWRlzCphRAFuAfhOnEr938xTpVCPKBShIlf1pzLmPQJwYP5uxiWvYLyhSbJGAW4BWGriNW+QPKGlALcAPCLNSbEu3deuEzgFAIAy3z/d9QeUcCC9qoCc7z0BsLTpjSqhVAAAsBT72nUBFFAghRDwGgKmmZe84OMBAMCy9KEAggD9SEIIwANggsgCSINIg8WOz+oFkN66ANIg0iDSINKg+zSYjdM0ELVdY9QEURP8IYAQsLwkhgfsDZe0YQKbo8zHgykvkJqm0CBRU0C+vmqfwEyLjImVoST9PEl0iUkVlNXqBVrmNQpYMhSuAIAFIl+8u4aIbnFypEZqjaUhr2mWpmMe0UipTXOSxwEACaHGfZwaK8HxdGqsJgqcHOWQsXxyVGsfbg5Pd4WGFr0QwkimUj/+DVLJ1EDfUfNsAAAAAElFTkSuQmCC"
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\3Shooter3DModel素材.png",
+			"name": "3Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "4",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "0f77425b-9d8e-4726-f5e4-5168f86fcc2e",
+			"relative_path": "../../素材/3Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAA/tJREFUeF7tWz1oFEEUvgtXKCTeBQSbSyHEKgkqEiyv0VaxsLAQFaMiiFwhKbRJo0WwOEQQNaJiYWEh2mpzpQRRSVIZsMg1gpA7E9DiyEn27Xfs+3Zmb7lLQHZmq92Z2Vn2fd/73pu/fG73r86An8gP+H7i67vaefhlZwxg/NFisTgQgK1Wy/b+joC3I50kIZ1lAyjEbT86OTke2KfT+KyQ3BrTwA6t6ed8+VhQsLy8amSAgRl9gdnXSybEXTKAEfmJkvgqkDs8LYh/fasBbA0fCgpGRr+rio11KS9u6vIjZ6TZt0VhBJi00hRtGZQJ/TDAWQMEP85Uh4+zo4IB9Q+CLF82BnC7yklhBBjA9awREUakAjdVo6jPu2gAhfyDBfH1JzXxSVys8vDdLgN+ad8eIWJs6Opcbr80AANYS6A1+P7VqmjOzZmYNiSCnIYBzhpA/Th8HZZ+fMvo2jmoPJCrv9btmoUDQcHYwZ+qYu2HlJfaurxyTpqBSRwl0Mm1+3IHZkIbemlCEgOcNUBimIOl5+fM6g7kgcy7N4IsXzYGcLvTZzUjbFFldk5EBMxMmyeYGOANsG1JhDvO8KABXQaQusNnmQH5TY1keUpj3VjSz51hYU6MAaQpiBZgADQgIWNUoFsZ4KIBjKIHXIA8nudvmNUdiL1/bnT93Hp7b1AxdfSParD0RcpHC7ocjU5dkjtoCkeL2Yf6e5yn2KJClAHeAFHfR9xvrkqGxRaGBjSbv5XpwQAgxfVobGMA86ZU2qe0gKMK6qEBzNDSuJ5X4LygJwOcNUB5j56LAwM4/rcaOomHr758avZpVn9GnKMBNOPCFdEG1pZiWecjYAJrVOOveYxgZYBLBlDi9/GTIF+9LL4DH4Zl78yY1R3Io5aRYvVfWdT9TEzLsy0a9Oofvd1dkDswFRpReyZaduK4ZsI2A7wBouoPBlysaIRYA2zqj7egAcwXqD+Q5qjA5aiHBuC5VzRgDXhRlzdTM8BZA7D4ca59uyo5Ouf2rP5AaqitMzv4uk0DuHyrINGEmcAag7HDvZqMOWxjFY4GMQ1w3gDdDJAyPFsU4FHbq0fs9fIMJNNqADMHvZ6/LnfQAGYiRwG8h2jAY4IYA7wBwrU8VnnPgHDKiROhzLmA8yLovAF8JhgOhpzNBP1o0MHhMJIlNSx2aULEGyC0gHFa3NlJUT8tHo4J4B9+ZSjcggKDZHFpzCiGfnWYNkA6szwOOvAyud8hEm5GyvIWGaMW+F1iYVh0aZuckQl+p6iDW2WNTECh3y1OKTMMk8Xt8ooJtjzBnxgJDztl+chMIhN4ZdCfGsvwsTkG258cNS2MZ/nkqHkjQLzUmcPTNoP81wb4B57mhHzmdrRuAAAAAElFTkSuQmCC"
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\5Shooter3DModel素材.png",
+			"name": "5Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "6",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "emissive",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "eaa3c5cf-e56d-9692-d2e2-ef85f13bce5e",
+			"relative_path": "../../素材/5Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAxlJREFUeF7tW71OG0EQvg1xIgTIiUjkAgvSUDkkUujgFfIEUOQlKGjTJFFEmR5RhBcgL5DCdKAIchUNIFy4IhZYCBxyETeeEzPmbr33u+ddN/bcn+6++ebb+TmLtXXHc+59Nr444r496r+FBYAxgHt81BkxwADjAHj+DDTg/A88+to6hWBhgdofVkdLI4QFgDEA/f1qFn59/By9DpSdEQMMMBaAm944cfXL6Svf7t3WyPZPX9vERo1496ac2hAwwFgAJibG/VXgSQU8jqsBD4XjU6oFb1+Dvbn9sEaUhRHCeAAch9YCcXP//YPoM3VlxF3hQ4oh4wDAEHj0FzTg4ppCUK+Cfdah2xu4OLyYJzuql0e+/W0HNvNMEg+uCD1WjUADjAVg6imEwL/HkAd0u8AE9Lw3Ca5utWD95553XfD40hz4VtQX/e9mc49s/3n8cHAVzQRhAegzQDX2XZoQBgzYPaGeRmZ0JkErfv0GxoR98mZEwAALgKL6WwaMWgjYVcDUZdBmgv1y2NhM0PhiyHgAytIQufV+kLJ9TLxPZYZZmo5QZgDgYET3pqgFIKsQ4KMxrNJ0mQz1vJXIll1FbCfSAu0nQ7kDoMt0uOfxZu0KayHQgUTcPoK20+HcAOCvyPBOTVFviAwCENlIcmIzwAKg2Vtiqp7nvFBlgnZvieUOQHRk5b93/wDUP2yiFHZHh4ewR3UGmSiJyAIeYwHAB08L1GGZoA0DCgcAR2QX1zC1rVchFs86YDdqYLttsJfmwN49SWfKawHoi59xIZC25zmAMi0oXAO0AQB7g93ulQ/KzEzNj/FWqw0a0JgHDXCPfHt5edG3m829WCBufafVnuq6LwsVzAvwuLA3WoObNx4AGaJp7+cM4NdXZQT3OL+elAFpP6DsetoBgEUIVlMoTqiieMOIJJbRqv0C2YPLgEu6nzMh0ADjAUiK7LDna8uAYR8g6XHGAhDWelNVe1UHhK0OqF2xkhjVm7g73gIg+X9i1nkAv742DAhjk2poyBKhwgCQtd3jhFOa52SuARYAxdhP07vDXMt4BvwHMA0ICwaLOiwAAAAASUVORK5CYII="
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\1Shooter3DModel素材.png",
+			"name": "1Shooter3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "7",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "bec83659-1b3f-defc-0f8a-0044dc152fe8",
+			"relative_path": "../../素材/1Shooter3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAxhJREFUeF7tWjFIXEEQ/UuwEA+xs9DCxspDJGIRMGlSJiApEjiDpLawEETEJqQRkUAKC+sgUYhFELS0iUKKEBE5KxsLLexETiwkXMiOc7Bz7md3bvn+fzu/Ofbfzp+/b2Zn9r8Z1dXVWU+SJNn/dfv/J3n+rFP/4nVVg/sD/b3G/bPzl3o8Uv5t3D+ufjHGw+VZY3xUHbt/3h553qUe95RM/fS9bm5ulSHY4kBFD8DhcaI9IJTlX4x/NGzy8+CTHofyhKfDSVgPEADEA2QLSAyQIChZIOI0GP1BKHoAWjxKF1486LGyiGgIAEW0Wsh3Fg8IiWYRnyUeUESrhXznBiV2XdtKfW536a3+Hzk5PEC9mgDO0HbtbgPHR+WQ67PJIUMVmgOk+gSAv/UdzQeghW0WQQ95ol7ruPFuEogUtLBNDj3k+wZweTYKjsqjh4TmAJs8IHoAcC+7Bha6l7OSc9XjO68RA1wF2xaAq9qbVAx6Sj8ejObTM+lZYG314SyAFSebUqwQZZYFogXgrj6po/lAv1mro5bBWmCH2tDRfG4BssDmulkzpHKVKaj5fV6GLHBXBzlaa2zWB3IdKmwlqCkLRA9AX1+vtojrdXFxqS2ZtZzr+/nOU1kvhKvPd2Gu8xsAnJ3DnrNduGepByytpMstzkOMoHIYU+z6ICahnOuCfOcJABiVR8qDqeAdVU+NqPz1G0TzlaV0uflFkPvwHrMAZB3aWUKVYycJZh1fy7rOV9EDMDQ06JUFTk5OdRbIWs7Vor7zVNYL4erzXZjr/AYA65uwV23XVAX2OvUArhztJqN6sacI9bkuyHeeAIAMzcz0aCp4q2t/9P/I0HDlkICh3WRUOXaXIQPla1nX+Yq7EK6cAHDPQYoHkIbKR9sCmJa40ZwrJ1mANFU/ehp0jZpyEmy3ozD/qw6+Bn2/IpGCy83XYPQAIEXFZ3Z4TFLuGKHoAXDNAsIKtxstzq/w8CpKuasMRQ8A9gfwq7y8qnLuqsPRA+CaBdq2QSJaALjdXtzmqtx1iUUPQKsdn9wO09x1inJbXosOwD9QCDR97LR8YQAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\普通の弾丸1.png",
+			"name": "普通の弾丸1.png",
+			"folder": "",
+			"namespace": "",
+			"id": "8",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "4305e301-28cc-666b-7c14-8d0883e1bb3e",
+			"relative_path": "../../素材/普通の弾丸1.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAkNJREFUeF7tW7FOwzAQtacyMCLKlAGpI4wdWfoHqD/Bxh9U/AFbfwL1D1g6ZmxHJIZMLWJkgMmIJg49x/EL8uCQu25np+75+d2ze+do83pv1PHnY0tM9VkE7f37F+kv9vTx4o3a84XStIVaTw+K+JOd0/5sTO3x2Yg2nGRh+/SK9GsBQBggISAawFoElaKqG1LoIfb9bEk0BIY4y8CcagDMZkb3x+vng23yCW2fvpTta7r/6pvyPLBb0V+7uC3tfEnbp3fUbutvG6/t91v9bZmfAGBDQBggISAawFsEme1+9XTlHMB15e28g8kJDuAIABxWOTRHYYAwgDkCEgLMCRAuUnAAR0KAwyrLOQAkRVmTQDSA9fIrFdwGuxZMkrKoUd6vVlRfPnZa25DzAoCvomNhPars9JoBbr2jzgRVlS/IALdkNTgA3Ds5doLzhb+m1zsANjNvqGpb23QKPg0GCADOrSyXAR2kNK0GAAYg/zViABoAbKUdvh73iIkFIF/6L0hYlXfr89ZdW/dPDkA+8WuAvcfg3G+oNaDq1wKAMIB5COxWfgCOYhypVNpdYD3ya0B1Zwk6LwAABri3sWoV/UW41wxA/mvEADRA8m0QhADyX5vIAVIDELuAAgBiAFLRvjMA+Q8ZgAb4/wBEnqVTAxB7lNdGAIj7NyUMCKfWO0hI3CPxIRCZUEjNgNiEjo7NqAweAJRX7zsAKK0PGTB8ANw3R53aWt8BCEjoIU+AGSAAOK/O/rG6mloDEAPQJtt8e5wZAN8mtFH95KJ8CAAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\テクスチャ\\3DModel\\素材\\ClusterCatapult3DModel素材.png",
+			"name": "ClusterCatapult3DModel素材.png",
+			"folder": "",
+			"namespace": "",
+			"id": "9",
+			"width": 64,
+			"height": 64,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "3b84963f-8f6f-d8e4-b218-d4b195d1179d",
+			"relative_path": "../../素材/ClusterCatapult3DModel素材.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAA3ZJREFUeF7tW79rFFEQzoFIQhKIFnoQiBEiiKiIoE3Ef8AyRUAsBCEIWgpWVlaCpYIIgoUIKVL6D4hpFERUJBDBWASiRRJQiYig8N77hP3O2Xlzt0e43blud+dm337zvW/ej3mt8dHhP0OG377xn1nWW9+Gs+xyjfr13pYDIDBAQrzqyOYyINfO2m6RAVZHuQ3st5213R0A3Lx81NTGHzu/S+3vLX4Mz8+fztMOOHv+OmrI9fmZUv+jI3tM7b3zeKVg7wBABEGdhblTASFGSoNZizAiqvnB86r9gdkPl96EV0DL/jHAAUj5PZcBHCFrhHOZINlZ3185A6wN6PWD+f/W9/cMgKbGn9a/l37jsxcb4fm1+fJscH8xqv+Fc+1Sf4cnx7KyD4wcgJTeO0Rwqj0U5gJQRSDFWQAMQF7XKC1FGhGW/t/t/+BPaid/F0S/5QAoDIDYnDxyPIAsMYAjp0VaYxA/z/UPBrxdfR9cIDt1zYDGAcB9SAOA1frrZrnKv/qwHSLz4FbR7urtqP5njk2UkuPA/uI6A7ILawAzgL9L1AAHIM2+GEFEmvP52vp0AJ8jgYhwpHEfEbfawR7tmZ5cC7d4/ID2SAxWGeAAkIpKDHj5Lo7Y0Let6t6tPbTi7Ik4wtw1Bgw8ALwoKuVRqc8hEswA3JeywtO7MRvgd/HG/9Ufqi/5x32ME1iTtCzWsSLUeAAQESCHkZTGgCtzsS9C3Q+1Y77+vFHM98tP4vXspWI+l+6zH2SVR0tF7dEYIK1XiKvCjQWAP5xVGkhDddHXcxlgVX0rA6Q5iPRdHQxwANL6PfcZjjxHEn2TNQBqjz6PiHJ2gNpDM6AJyA64z+/RGCppGu5nM8ABSGt53MekiEiqPrI3Yv9luZgdDs7GrLDzqxhTyY/0XilQPWuA5NgBSPN6nt05A4QBT+26AHqsZwHqCkh3tUmDiLSPBCkd1m4o7LPBhEBjZ4ONXxBpHAC8OaoBwPsCA78o6gDQ7rCVAb4zVNetMa7wlOoDfHeYipkGfnucKym0nRWeI+DaK0RSuZt1GVyy37USGTTIq8RS4UTtyuRyq8W9UlQ5uFD7UlkWJ2uxclViyOsVuNaq1XuuFXYAlBBWfcKjan+VM0BjBD/XKNpvfyoAaICfGmv6sTkwwXoAsWqV79aftd1+ctQPTzf8+Pxf9+YKEz+LxGYAAAAASUVORK5CYII="
+		}
+	],
+	"export_options": {
+		"gltf": {
+			"encoding": "ascii",
+			"scale": 32,
+			"embed_textures": true,
+			"armature": false,
+			"animations": true
+		},
+		"fbx": {
+			"encoding": "ascii",
+			"scale": 16,
+			"include_animations": true
+		}
+	}
+}

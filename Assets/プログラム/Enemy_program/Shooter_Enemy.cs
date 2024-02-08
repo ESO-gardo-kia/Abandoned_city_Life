@@ -74,7 +74,6 @@ public class Shooter_Enemy: MonoBehaviour
             if (rate_count >= rapid_fire_rate
                 && NMA.destination != null)
             {
-                Debug.Log("”­ŽË‚µ‚Ü‚µ‚½");
                 NomalShot();
                 rate_count = 0;
             }
@@ -89,6 +88,7 @@ public class Shooter_Enemy: MonoBehaviour
                 && other.GetComponent<Bullet_System>().target_tag == "Enemy")
             {
                 TakeDmage(other.GetComponent<Bullet_System>().damage, other.GetComponent<Bullet_System>());
+                other.GetComponent<Bullet_System>().BulletDestroy();
             }
             if (other.gameObject.CompareTag("Attack_Obj"))
             {
@@ -208,7 +208,8 @@ public class Shooter_Enemy: MonoBehaviour
     }
     void Deathfunction()
     {
-        em.ParentEnemyDeath();
+        Debug.Log("Ž€–S");
+        em.ParentEnemyDeath(transform.position);
         Destroy(gameObject);
     }
 }

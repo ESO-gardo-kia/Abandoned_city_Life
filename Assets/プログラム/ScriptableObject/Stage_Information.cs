@@ -12,10 +12,6 @@ public class Stage_Information: ScriptableObject
         public AudioClip BGM;
         public enum StageType
         {
-            //タイトル
-        　　title,
-            //セーフエリア（戦わない）
-            Safe,
             NomalStage,
             //段々難易度が上がっていく
             endless,

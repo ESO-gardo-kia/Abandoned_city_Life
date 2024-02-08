@@ -18,7 +18,14 @@ MonoBehaviour:
       type: 3}
     hp: 120
     atk: 5
-    agi: 20
+    agi: 15
+    exp: 10
+  - name: Assault
+    Enemy_Model: {fileID: 7216383993853507424, guid: 265fc38bddb3dad4e84734283549bc33,
+      type: 3}
+    hp: 90
+    atk: 1
+    agi: 25
     exp: 10
   - name: ClusterCatapult
     Enemy_Model: {fileID: 2662304819684148828, guid: ffb986583b3653743914cfccc1806d63,
@@ -32,14 +39,7 @@ MonoBehaviour:
       type: 3}
     hp: 200
     atk: 5
-    agi: 10
-    exp: 10
-  - name: Shooter
-    Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,
-      type: 3}
-    hp: 100
-    atk: 5
-    agi: 10
+    agi: 15
     exp: 10
   - name: Shooter
     Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,

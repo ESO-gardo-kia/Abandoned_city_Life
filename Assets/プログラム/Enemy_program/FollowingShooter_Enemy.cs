@@ -90,6 +90,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
                 && other.GetComponent<Bullet_System>().target_tag == "Enemy")
             {
                 TakeDmage(other.GetComponent<Bullet_System>().damage, other.GetComponent<Bullet_System>());
+                other.GetComponent<Bullet_System>().BulletDestroy();
             }
             if (other.gameObject.CompareTag("Attack_Obj"))
             {
@@ -115,7 +116,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
         isdeath = false;
         //ステータス反映
         //StatusはScriptableObjectにて改変する事
-        var e_l = enemy_List.Status[2];
+        var e_l = enemy_List.Status[3];
         Ename = e_l.name;
         exp = e_l.exp;
         hp = e_l.hp;
@@ -211,7 +212,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
     }
     void Deathfunction()
     {
-        em.ParentEnemyDeath();
+        em.ParentEnemyDeath(transform.position);
         Destroy(gameObject);
     }
 }

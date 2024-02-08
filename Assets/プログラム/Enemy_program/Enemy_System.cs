@@ -219,7 +219,7 @@ public class Enemy_System : MonoBehaviour
     }
     void Deathfunction()
     {
-        em.ParentEnemyDeath();
+        em.ParentEnemyDeath(transform.position);
         Destroy(gameObject);
     }
 }

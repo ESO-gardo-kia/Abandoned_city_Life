@@ -19,6 +19,7 @@ public class Bullet_System : MonoBehaviour
         split,
     }
     public Bullet_Type type;
+    public GameObject hitparticle;
     public string target_tag;
     public float damage;
     public float speed;
@@ -75,7 +76,6 @@ public class Bullet_System : MonoBehaviour
         Vector3[] vec = new Vector3[num];
         for(int i = 0;i < vec.Length; i++)
         {
-            Debug.Log("•ª—ô");
             GameObject shotObj = Instantiate(SPLITOBJ, transform.position, Quaternion.identity);
             Rigidbody rb = shotObj.GetComponent<Rigidbody>();
             Bullet_System bs = shotObj.GetComponent<Bullet_System>();
@@ -101,9 +101,25 @@ public class Bullet_System : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.CompareTag("Floor"))
         {
+            GameObject par = Instantiate(hitparticle,transform.position ,Quaternion.identity,transform.transform.parent = null);
             Destroy(gameObject);
         }
+        if(target_tag == "Player" && other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(hitparticle, transform);
+            Destroy(gameObject);
+        }
+        if (target_tag == "Enemy" && other.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(hitparticle, transform);
+        }
+    }
+    public void BulletDestroy()
+    {
+        GameObject par = Instantiate(hitparticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+        Destroy(gameObject);
     }
 }

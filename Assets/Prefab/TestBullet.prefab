@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351777115570929094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.3}
+  m_LocalPosition: {x: 0, y: 0, z: -0.876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -224,6 +224,8 @@ MonoBehaviour:
   rb: {fileID: 2594642818979987878}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
   type: 0
+  hitparticle: {fileID: 3790719704686666019, guid: 312799478f0bfd8438b5860149c36661,
+    type: 3}
   target_tag: Player
   damage: 10
   speed: 0

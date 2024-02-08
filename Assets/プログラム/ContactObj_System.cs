@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,13 +15,18 @@ public class ContactObj_System : MonoBehaviour
     public string contact_text;
     public GameObject Panel;
     public GameObject WPanel;
+    public GameObject idlepos;
     private GameObject[] WPanel_List;
+    
 
     //Production_Table—p
     [SerializeField] public Gun_List gl;
 
+    public CinemachineVirtualCamera VC;
+
     private void Start()
     {
+        
         switch (Cont)
         {
             case Contact_Type.None:
@@ -59,6 +65,7 @@ public class ContactObj_System : MonoBehaviour
     }
     public void Gun_ReadIn()
     {
+        VC.Priority = 100;
         string ObjectsPass = "Canvas/Panel/ScrollView/Viewport/Content";
         int wpn = transform.Find(ObjectsPass).childCount;
         if(wpn != 0) for (int i = 0; i < wpn; i++) Destroy(transform.Find(ObjectsPass).GetChild(i).gameObject);
@@ -66,17 +73,23 @@ public class ContactObj_System : MonoBehaviour
         {
             GameObject wp = Instantiate(WPanel, Vector3.zero, Quaternion.identity, transform.Find(ObjectsPass));
             wp.name = WPanel.name + i.ToString();
+            wp.transform.Find("WeaponImage").GetComponent<Image>().sprite = gl.Data[i].sprite_id;
 
             Text Wtext = wp.transform.Find("WeaponData").gameObject.GetComponent<Text>();
-            if(gl.Data[i].name != null) Wtext.text = "" +
-                "Name:"+ gl.Data[i].name +
-                "\r\nDamage:" +gl.Data[i].bullet_damage.ToString() +
-                "\r\nRate:" + gl.Data[i].rapid_fire_rate.ToString() +
-                "\r\nloaded_bullets:" + gl.Data[i].loaded_bullets.ToString() +
-                "\r\nreload_speed:" + gl.Data[i].reload_speed.ToString() +
-                "\r\nRange:" + gl.Data[i].bullet_range.ToString() +
-                "\r\nSpeed:" + gl.Data[i].bullet_speed.ToString();
-
+            if(gl.Data[i].name != null)
+            {
+                var Guns = gl.Data[i];
+                Wtext.text =
+                "Name:" + Guns.name +
+                "\r\ndamage:" + Guns.bullet_damage.ToString() +
+                "\r\nRate:" + Guns.rapid_fire_rate.ToString() +
+                "\r\nloaded_bullets:" + Guns.loaded_bullets.ToString() +
+                "\r\nreload_speed:" + Guns.reload_speed.ToString() +
+                "\r\nRange:" + Guns.bullet_range.ToString() +
+                "\r\nSpeed:" + Guns.bullet_speed.ToString() +
+                "\r\nmulti_bullet:" + Guns.multi_bullet.ToString() +
+                "\r\ndiffusion:" + Guns.diffusion__chance.ToString();
+            }
             Button_Equip Wbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
             Wbutton.Enum = i;
         }

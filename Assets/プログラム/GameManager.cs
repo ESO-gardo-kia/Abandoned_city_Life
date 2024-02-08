@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         //プレイヤーや敵の行動停止
         Player_System.move_permit = false;
         Enemy_Manager.enemies_move_permit = false;
+        em.StopCoroutine("Enemies_Spawn_Function");
         //カーソル非表示
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
                             break;
                         case stage_information.TransitionScene.Main://Main
                             ps.Player_Reset(true);
-                            
+                            em.stagetype = si.data[sn].stagetype;
                             List<int[]> wave = new List<int[]>
                             {
                                 si.data[sn].enemies_num1,
@@ -167,22 +168,55 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("ゲームオーバー");
+        //フェードパネル表示
+        FeedPanel.SetActive(true);
+        //プレイヤーや敵の行動停止
         Player_System.move_permit = false;
         Enemy_Manager.enemies_move_permit = false;
+        em.StopCoroutine("Enemies_Spawn_Function");
+        //カーソル非表示
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        ps.CVC.Priority = 100;
         DOTween.Sequence()
-        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f).SetDelay(1f)
+        /*
+         * フェードアウトが完了したら
+         * 移動したいシーンへ移動
+         * プレイヤーリセット
+         * スポーンポイントに移動
+         */
+        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f * num).SetDelay(0f)//フェードアウト
         .OnComplete(() =>
         {
+            AS.Stop();
+            sm.Load_Scene(1);//シーン移動
+            em.Enemy_Manager_Reset();//エネミーマネージャーリセット
+            ps.Player_Reset(false);//プレイヤーの情報をリセットさせる
+            transform.Find("Player_Manager/Player_System").gameObject.transform.position = si.data[1].spawn_pos;
         }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f).SetDelay(1f)
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * num).SetDelay(0.5f)//フェードイン
+                .OnComplete(() => {
+                    AS.PlayOneShot(si.data[1].BGM);
+                    Sc_Text.GetComponent<Text>().text = si.data[1].name;//ステージ名表示
+                }))
+        .Append(Sc_Text.transform.DOScale(Vector3.one * 1, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
         .OnComplete(() => {
-            Debug.Log(si.data[0].name);
-            Sc_Text.GetComponent<Text>().text = si.data[0].name;
             Player_System.move_permit = true;
             Enemy_Manager.enemies_move_permit = true;
         }))
+        .Append(Sc_Text.transform.DOScale(Vector3.zero, 0.5f * num).SetEase(Ease.InQuart).SetDelay(0.5f)
+                .OnComplete(() => {
+                    ps.CVC.Priority = 1;
+                    Debug.Log(si.data[1].name);
+                    Sc_Text.transform.localScale = Vector3.one;
+                    Enemy_Manager.enemies_move_permit = true;
+                    Sc_Text.GetComponent<Text>().text = "";
+                    FeedPanel.SetActive(false);
+                    ps.Player_Reset(true);
+                }))
         .Play();
+
     }
     [Serializable]
     public class SaveData

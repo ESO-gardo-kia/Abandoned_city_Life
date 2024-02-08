@@ -4487,7 +4487,7 @@ MonoBehaviour:
   bullet_damage: 6
   rapid_fire_rate: 5
   bullet_range: 100
-  bullet_speed: 30
+  bullet_speed: 20
   diffusion_chance: 1
   rate_count: 0
   SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
@@ -4513,7 +4513,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7216383993853507424}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
