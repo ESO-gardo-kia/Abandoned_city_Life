@@ -11,11 +11,15 @@ public class Player_Manager : MonoBehaviour
 
     private void Start()
     {
-        isWeapon = new bool[4];
+        isWeapon = new bool[8];
         isWeapon[0] = true;
         isWeapon[1] = false;
         isWeapon[2] = false;
         isWeapon[3] = false;
+        isWeapon[4] = false;
+        isWeapon[5] = false;
+        isWeapon[6] = false;
+        isWeapon[7] = false;
     }
     private void Update()
     {

@@ -35,6 +35,7 @@ public class Player_System : MonoBehaviour
     private Slider CollectGage;
 
     private GameObject MenuPanel;
+    private Slider AimSlider;
 
     public GameObject GamePanel;
     private Slider ReloadSlider;
@@ -45,7 +46,7 @@ public class Player_System : MonoBehaviour
     private Image WeaponImage;
     private Text BulletText;
 
-    private GameObject money_text;
+    public GameObject money_text;
     [Space(10)]
     [SerializeField]
     [Header("--- ƒTƒEƒ“ƒh ---")]
@@ -116,6 +117,7 @@ public class Player_System : MonoBehaviour
         CollectGage = ContactPanel.transform.Find("CollectGage").gameObject.GetComponent<Slider>();
 
         MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
+        AimSlider = MenuPanel.transform.Find("AimSlider").gameObject.GetComponent<Slider>();
 
         GamePanel = transform.Find("PCanvas/GamePanel").gameObject;
         ReloadSlider = GamePanel.transform.Find("ReloadSlider").gameObject.GetComponent<Slider>();
@@ -341,7 +343,7 @@ public class Player_System : MonoBehaviour
         if (currenthp <= 0)
         {
             player_isdeath = true;
-            GameObject.Find("EnemyManager").GetComponent<Enemy_Manager>().Player_Death();
+            GameObject.Find("Enemy_Manager").GetComponent<Enemy_Manager>().Player_Death();
         }
     }
     IEnumerator JunpMove()
@@ -508,7 +510,7 @@ public class Player_System : MonoBehaviour
             {
                 case Contact_Type.Production_Table:
                     money_text.SetActive(true);
-                    money_text.GetComponent<Text>().text = GameManager.Money.ToString();
+                    money_text.GetComponent<Text>().text = "MONEY:" + GameManager.Money.ToString();
                     rb.useGravity = false;
                     rb.velocity = Vector3.zero;
                     transform.position = ConObj.idlepos.transform.position;

@@ -43,7 +43,7 @@ public class Bullet_System : MonoBehaviour
                 break;
             case Bullet_Type.following:
                 rb.velocity = transform.forward * speed;
-                if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) < 7)
+                if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) < 4)
                 {
                     Debug.Log("追尾解除");
                     isfollow = false;
@@ -61,7 +61,7 @@ public class Bullet_System : MonoBehaviour
                 if(transform.position.y >= target_pos.y)
                 {
                     Debug.Log("トウタツ");
-                    cluster_Down(10);
+                    cluster_Down(15);
                 }
                 break;
             case Bullet_Type.split:

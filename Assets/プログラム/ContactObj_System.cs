@@ -94,6 +94,7 @@ public class ContactObj_System : MonoBehaviour
             EQbutton.Enum = i;
             Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
             BUbutton.Enum = i;
+            BUbutton.transform.Find("Text").GetComponent<Text>().text = "BUY:" + gl.Data[i].price.ToString();
         }
     }
     public void Wepon_creating()

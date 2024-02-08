@@ -4487,7 +4487,7 @@ MonoBehaviour:
   bullet_damage: 6
   rapid_fire_rate: 5
   bullet_range: 100
-  bullet_speed: 20
+  bullet_speed: 25
   diffusion_chance: 1
   rate_count: 0
   SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}

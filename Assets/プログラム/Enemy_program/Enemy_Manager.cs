@@ -34,6 +34,7 @@ public class Enemy_Manager : MonoBehaviour
 
     public int[] destroy_enemy = new int[3];
     public float getmoney;
+    public int endlesswave;
     void Start()
     {
         gm = transform.parent.GetComponent<GameManager>();
@@ -99,22 +100,21 @@ public class Enemy_Manager : MonoBehaviour
                 //----------------------------------------
 
             case StageType.endless:
-                //wave[敵のID,敵の数]
                 WAVEText.SetActive(true);
                 Text W2 = WAVEText.GetComponent<Text>();
-                if(current_wave == 0) W2.color = Color.clear;
-            DOTween.Sequence()
-                .Append(W2.DOFade(0, 0.6f).SetEase(Ease.InQuart))
-                .Append(W2.DOFade(1, 0.6f).SetEase(Ease.InQuart)
+                if (endlesswave == 0) W2.color = Color.clear;
+                DOTween.Sequence()
+                .Append(W2.DOFade(0, 0.5f).SetEase(Ease.InQuart)
                 .OnComplete(() => {
                     Debug.Log("起動１");
-                    W2.text = "WAVE" + (1 + current_wave).ToString();
+                    W2.text = "WAVE" + (1 + endlesswave).ToString();
                 }))
+                .Append(W2.DOFade(1, 0.5f).SetEase(Ease.InQuart))
             .Play();
 
                 for (int i = 0; i < wave.Length; i++)
                 {
-                    int num = Random.Range(1, current_wave + 1);
+                    int num = Random.Range(1, endlesswave + 1);
                     wave[i] = num;
                     current_enemies_count += num;
                 }
@@ -130,8 +130,8 @@ public class Enemy_Manager : MonoBehaviour
                         yield return new WaitForSeconds(spawn_interval);
                     }
                 }
-
-                Debug.Log("ウェーブ" + current_wave + "終了");
+                endlesswave++;
+                Debug.Log("ウェーブ" + endlesswave + "終了");
                 enemies_move_permit = true;
                 break;
 
@@ -211,6 +211,7 @@ public class Enemy_Manager : MonoBehaviour
         }
         WAVEText.SetActive(false);
         enemies_move_permit = false;
+        endlesswave = 0;
         current_enemies_count = 0;
         current_wave = 0;
         iscompletion = false;

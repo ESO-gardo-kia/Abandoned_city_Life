@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        Money = 10000;
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
         AS = GetComponent<AudioSource>();
