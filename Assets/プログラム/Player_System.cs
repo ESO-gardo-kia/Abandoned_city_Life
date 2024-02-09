@@ -276,7 +276,7 @@ public class Player_System : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Saw")&& adi_time >= adi_time_max)
+        if (other.gameObject.CompareTag("Saw")&& adi_time >= adi_time_max && !player_isdeath)
         {
             adi_time = 0;
             TakeDmage(other.GetComponent<Assault_Enemy>().currentatk);
@@ -305,7 +305,7 @@ public class Player_System : MonoBehaviour
         if (move_permit)
         {
             if (other.gameObject.CompareTag("Bullet")
-                && other.GetComponent<Bullet_System>().target_tag == "Player")
+                && other.GetComponent<Bullet_System>().target_tag == "Player" && !player_isdeath)
             {
                 TakeDmage(other.GetComponent<Bullet_System>().damage);
                 other.GetComponent<Bullet_System>().BulletDestroy();
@@ -429,7 +429,7 @@ public class Player_System : MonoBehaviour
         HPSlider.value = currenthp;
         ENSlider.maxValue = en;
         ENSlider.value = currenten;
-        transform.eulerAngles = Vector3.zero;
+        transform.localRotation = new Quaternion(0,0,0,0);
         rb.velocity = Vector3.zero;
         Wepon_Reset(player_weapon_id);
         Debug.Log("プレイヤー情報がリセットしおわりました");
