@@ -52,6 +52,9 @@ public class ContactObj_System : MonoBehaviour
             case Contact_Type.Production_Table:
                 Gun_ReadIn();
                 break;
+            case Contact_Type.StageSelect:
+                Stage_Select();
+                break;
         }
     }
     public void Canvas_Close()
@@ -62,6 +65,10 @@ public class ContactObj_System : MonoBehaviour
     {
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         gm.Scene_Transition_Process(num);
+    }
+    public void Stage_Select()
+    {
+        VC.Priority = 100;
     }
     public void Gun_ReadIn()
     {
