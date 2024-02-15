@@ -17,6 +17,8 @@ public class ContactObj_System : MonoBehaviour
     public GameObject WPanel;
     public GameObject idlepos;
     private GameObject[] WPanel_List;
+    public Animator anime;
+    
     
 
     //Production_Tableóp
@@ -53,7 +55,7 @@ public class ContactObj_System : MonoBehaviour
                 Gun_ReadIn();
                 break;
             case Contact_Type.StageSelect:
-                Stage_Select();
+                anime.SetTrigger("open");
                 break;
         }
     }
@@ -65,10 +67,6 @@ public class ContactObj_System : MonoBehaviour
     {
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         gm.Scene_Transition_Process(num);
-    }
-    public void Stage_Select()
-    {
-        VC.Priority = 100;
     }
     public void Gun_ReadIn()
     {
@@ -88,20 +86,20 @@ public class ContactObj_System : MonoBehaviour
                 var Guns = gl.Data[i];
                 Wtext.text =
                 "Name:" + Guns.name +
-                "\r\ndamage:" + Guns.bullet_damage.ToString() +
-                "\r\nRate:" + Guns.rapid_fire_rate.ToString() +
-                "\r\nloaded_bullets:" + Guns.loaded_bullets.ToString() +
-                "\r\nreload_speed:" + Guns.reload_speed.ToString() +
-                "\r\nRange:" + Guns.bullet_range.ToString() +
-                "\r\nSpeed:" + Guns.bullet_speed.ToString() +
-                "\r\nmulti_bullet:" + Guns.multi_bullet.ToString() +
-                "\r\ndiffusion:" + Guns.diffusion__chance.ToString();
+                "\r\nçUåÇóÕ:" + Guns.bullet_damage.ToString() +
+                "\r\nòAéÀë¨ìx:" + Guns.rapid_fire_rate.ToString() +
+                "\r\nëïíeêî:" + Guns.loaded_bullets.ToString() +
+                //"\r\nreload_speed:" + Guns.reload_speed.ToString() +
+                //"\r\nRange:" + Guns.bullet_range.ToString() +
+                //"\r\nSpeed:" + Guns.bullet_speed.ToString() +
+                "\r\nî≠éÀíeêî:" + Guns.multi_bullet.ToString() +
+                "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
             }
             Button_Equip EQbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
             EQbutton.Enum = i;
             Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
             BUbutton.Enum = i;
-            BUbutton.transform.Find("Text").GetComponent<Text>().text = "BUY:" + gl.Data[i].price.ToString();
+            BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gl.Data[i].price.ToString();
         }
     }
     public void Wepon_creating()

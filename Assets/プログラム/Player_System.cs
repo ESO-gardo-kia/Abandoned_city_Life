@@ -518,6 +518,11 @@ public class Player_System : MonoBehaviour
                     ConObj.VC.Priority = 100;
                     break;
                 case Contact_Type.StageSelect:
+                    rb.useGravity = false;
+                    rb.velocity = Vector3.zero;
+                    transform.position = ConObj.idlepos.transform.position;
+                    transform.localEulerAngles = ConObj.idlepos.transform.localEulerAngles;
+                    ConObj.VC.Priority = 100;
                     break;
             }
 
@@ -548,7 +553,7 @@ public class Player_System : MonoBehaviour
               @.OnComplete(() => {
                   rb.useGravity = true;
                   money_text.SetActive(false);
-                  if (Contact_Type.Production_Table == ConObj.Cont) ConObj.VC.Priority = 1;
+                  ConObj.VC.Priority = 1;
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;
                   //brain.enabled = true;
