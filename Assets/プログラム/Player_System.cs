@@ -431,6 +431,7 @@ public class Player_System : MonoBehaviour
         ENSlider.value = currenten;
         transform.localRotation = new Quaternion(0,0,0,0);
         rb.velocity = Vector3.zero;
+        rb.useGravity = true;
         Wepon_Reset(player_weapon_id);
         Debug.Log("プレイヤー情報がリセットしおわりました");
     }
