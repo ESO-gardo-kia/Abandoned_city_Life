@@ -22,6 +22,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: "SelectGround\u7D20\u6750.png"
+    second: {fileID: 2100000, guid: ac3ef560f0f1a9148a6c2377098de315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "SelectGround\u7D20\u6750v2.png"
+    second: {fileID: 2100000, guid: e064959b8fb515b4797700f014e35985, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: "Shooter3DModel\u7D20\u6750.png"
     second: {fileID: 2100000, guid: 000c5f0b192b53a45bafbc2f7defa5c1, type: 2}
   - first:
