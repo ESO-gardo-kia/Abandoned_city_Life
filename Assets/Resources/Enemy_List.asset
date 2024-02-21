@@ -45,3 +45,11 @@ MonoBehaviour:
     agi: 15
     exp: 10
     price: 80
+  - name: AirBorne
+    Enemy_Model: {fileID: 7216383993853507424, guid: ad19161e59f34a74dadc29a022bb0a79,
+      type: 3}
+    hp: 300
+    atk: 10
+    agi: 15
+    exp: 10
+    price: 80

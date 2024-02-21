@@ -169,6 +169,11 @@ public class Enemy_Manager : MonoBehaviour
                 FollowingE.em = this;
                 FollowingE.Enemy_Reset();
                 break;
+            case 4:
+                Airborne_Enemy AirborneE = eo.GetComponent<Airborne_Enemy>();
+                AirborneE.em = this;
+                AirborneE.Enemy_Reset();
+                break;
         }
     }
     public void ParentEnemyDeath(int i)
@@ -176,8 +181,9 @@ public class Enemy_Manager : MonoBehaviour
         getmoney += el.Status[i].price;
         destroy_enemy[i]++;
         current_enemies_count--;
-        Debug.Log(current_enemies_count);
-        Debug.Log(current_enemies_count <= 0 && current_wave == 3);
+        
+        //Debug.Log(current_enemies_count);
+        //Debug.Log(current_enemies_count <= 0 && current_wave == 3);
         switch (stagetype)
         {
             case StageType.NomalStage:

@@ -2028,7 +2028,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288739091}
-  m_LocalRotation: {x: 0.09853762, y: -0.000000004280661, z: 4.238689e-10, w: 0.99513334}
+  m_LocalRotation: {x: 0.098537624, y: 0.0000000042806607, z: -4.238689e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2946,7 +2946,7 @@ PrefabInstance:
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1880
+      value: 667.669
       objectReference: {fileID: 0}
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
@@ -10839,7 +10839,7 @@ PrefabInstance:
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1880
+      value: 667.669
       objectReference: {fileID: 0}
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
@@ -10932,7 +10932,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807169885}
-  m_LocalRotation: {x: 0.062324416, y: -0.000000017306572, z: 0.000000001080723, w: 0.998056}
+  m_LocalRotation: {x: 0.062324416, y: 0.000000017306572, z: -0.000000001080723, w: 0.998056}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11307,7 +11307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: -590.831, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1854755114
@@ -11341,7 +11341,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -11612,7 +11612,7 @@ PrefabInstance:
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1880
+      value: 667.669
       objectReference: {fileID: 0}
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
@@ -12064,7 +12064,7 @@ PrefabInstance:
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1880
+      value: 667.669
       objectReference: {fileID: 0}
     - target: {fileID: 6670328908727948517, guid: 814967818d80fd3488b708541a583ddb,
         type: 3}
