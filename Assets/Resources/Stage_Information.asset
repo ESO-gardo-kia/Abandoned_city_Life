@@ -63,7 +63,7 @@ MonoBehaviour:
     tran_scene: 2
     name: endless
     spawn_pos: {x: 0, y: 1, z: 0}
-    enemies_num1: 01000000040000000500000007000000
+    enemies_num1: 0600000005000000030000000400000004000000
     enemies_num2: 
     enemies_num3: 
     time_limit: 0
