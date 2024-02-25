@@ -28,7 +28,6 @@ public class ContactObj_System : MonoBehaviour
 
     private void Start()
     {
-        
         switch (Cont)
         {
             case Contact_Type.None:
@@ -45,6 +44,7 @@ public class ContactObj_System : MonoBehaviour
                 Panel.transform.localScale = Vector3.zero;
                 break;
         }
+        anime.SetTrigger("open");
     }
     public void Canvas_Open()
     {
@@ -61,7 +61,18 @@ public class ContactObj_System : MonoBehaviour
     }
     public void Canvas_Close()
     {
-        Panel.SetActive(false);
+        Panel.SetActive(true);
+        switch (Cont)
+        {
+            case Contact_Type.Production_Table:
+                Gun_ReadIn();
+                break;
+            case Contact_Type.StageSelect:
+                Panel.SetActive(false);
+                anime.SetTrigger("close");
+                break;
+        }
+        
     }
     public void Button_System(int num)
     {
