@@ -23,6 +23,7 @@ public class ContactObj_System : MonoBehaviour
 
     //Production_Tableóp
     [SerializeField] public Gun_List gl;
+    [SerializeField] public GameObject StarObj;
 
     public CinemachineVirtualCamera VC;
 
@@ -44,7 +45,6 @@ public class ContactObj_System : MonoBehaviour
                 Panel.transform.localScale = Vector3.zero;
                 break;
         }
-        anime.SetTrigger("open");
     }
     public void Canvas_Open()
     {
@@ -61,6 +61,7 @@ public class ContactObj_System : MonoBehaviour
     }
     public void Canvas_Close()
     {
+        VC.Priority = 1;
         Panel.SetActive(true);
         switch (Cont)
         {
@@ -92,25 +93,29 @@ public class ContactObj_System : MonoBehaviour
             wp.transform.Find("WeaponImage").GetComponent<Image>().sprite = gl.Data[i].sprite_id;
 
             Text Wtext = wp.transform.Find("WeaponData").gameObject.GetComponent<Text>();
-            if(gl.Data[i].name != null)
-            {
-                var Guns = gl.Data[i];
-                Wtext.text =
-                "Name:" + Guns.name +
-                "\r\nçUåÇóÕ:" + Guns.bullet_damage.ToString() +
-                "\r\nòAéÀë¨ìx:" + Guns.rapid_fire_rate.ToString() +
-                "\r\nëïíeêî:" + Guns.loaded_bullets.ToString() +
-                //"\r\nreload_speed:" + Guns.reload_speed.ToString() +
-                //"\r\nRange:" + Guns.bullet_range.ToString() +
-                //"\r\nSpeed:" + Guns.bullet_speed.ToString() +
-                "\r\nî≠éÀíeêî:" + Guns.multi_bullet.ToString() +
-                "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
-            }
+            //if (gl.Data[i].name != null)
+            var Guns = gl.Data[i];
+            Wtext.text =
+            "Name:" + Guns.name +
+            "\r\nçUåÇóÕ:" + Guns.bullet_damage.ToString() +
+            "\r\nòAéÀë¨ìx:" + Guns.rapid_fire_rate.ToString() +
+            "\r\nëïíeêî:" + Guns.loaded_bullets.ToString() +
+            //"\r\nreload_speed:" + Guns.reload_speed.ToString() +
+            //"\r\nRange:" + Guns.bullet_range.ToString() +
+            //"\r\nSpeed:" + Guns.bullet_speed.ToString() +
+            "\r\nî≠éÀíeêî:" + Guns.multi_bullet.ToString() +
+            "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
+
             Button_Equip EQbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
             EQbutton.Enum = i;
             Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
             BUbutton.Enum = i;
             BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gl.Data[i].price.ToString();
+            Debug.Log("ÉåÉAìx"+Guns.rarity);
+            for (int a = 1;a < Guns.rarity;a++)
+            {
+                GameObject star = Instantiate(StarObj, wp.transform.Find("starlist"));
+            }
         }
     }
     public void Wepon_creating()

@@ -33,5 +33,6 @@ public class Gun_List : ScriptableObject
             split
         }
         public Bullet_Type type;
+        public float rarity;
     }
 }

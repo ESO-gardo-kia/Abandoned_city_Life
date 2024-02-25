@@ -29,6 +29,7 @@ MonoBehaviour:
     diffusion__chance: 3
     multi_bullet: 4
     type: 0
+    rarity: 1
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -45,6 +46,7 @@ MonoBehaviour:
     diffusion__chance: 4
     multi_bullet: 5
     type: 0
+    rarity: 3
   - shot_sound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -61,6 +63,7 @@ MonoBehaviour:
     diffusion__chance: 2
     multi_bullet: 2
     type: 0
+    rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -77,6 +80,7 @@ MonoBehaviour:
     diffusion__chance: 3
     multi_bullet: 3
     type: 0
+    rarity: 4
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -93,6 +97,7 @@ MonoBehaviour:
     diffusion__chance: 0
     multi_bullet: 5
     type: 0
+    rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -109,6 +114,7 @@ MonoBehaviour:
     diffusion__chance: 0
     multi_bullet: 3
     type: 0
+    rarity: 4
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -125,6 +131,7 @@ MonoBehaviour:
     diffusion__chance: 20
     multi_bullet: 10
     type: 0
+    rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
     ispossession: 1
@@ -141,3 +148,4 @@ MonoBehaviour:
     diffusion__chance: 15
     multi_bullet: 15
     type: 0
+    rarity: 4
