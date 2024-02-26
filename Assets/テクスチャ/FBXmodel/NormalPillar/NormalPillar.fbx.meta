@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 984d92cbc2366da408877eecc2831bcf
+guid: cfa66df537e6c7841ac015262b559f02
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,63 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "1Shooter3DModel\u7D20\u6750.png"
-    second: {fileID: 2100000, guid: fea29cdf9fd01884a9d06b3ca9111503, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "3Shooter3DModel\u7D20\u6750.png"
-    second: {fileID: 2100000, guid: b66ddb4fd697ee042979f0584f4b87eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: "ClusterCatapult3DModel\u7D20\u6750.png"
-    second: {fileID: 2100000, guid: 666068ede40c085478c27c91a5f4b90f, type: 2}
+    second: {fileID: 2100000, guid: 27cdee82d46cb774f91e142b513a69cd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light.png
-    second: {fileID: 2100000, guid: 699581a216a0a754fbb9f1a9b60b4dc9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u5E8A\u7D20\u6750var2.png"
-    second: {fileID: 2100000, guid: 5d0296f8032011b46baceab5a7a3aa0d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u9244\u306E\u68D2.png"
-    second: {fileID: 2100000, guid: 1bbb30912faff4c4abf141dcae1e7c02, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "1Shooter3DModel\u7D20\u6750"
-    second: {fileID: 2800000, guid: 9353a96b0c96047489932168f39f5024, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "3Shooter3DModel\u7D20\u6750"
-    second: {fileID: 2800000, guid: 5be03a4f8c1639742a2d2eccf395c390, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "ClusterCatapult3DModel\u7D20\u6750"
-    second: {fileID: 2800000, guid: 9139eb69686ebf5498fee403f9dec5ef, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Light
-    second: {fileID: 2800000, guid: 19508f63a18b07a4faf804a9db19d5c7, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "\u5E8A\u7D20\u6750var2"
-    second: {fileID: 2800000, guid: 36445cae54e42594c9b65045f9f413e0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "\u9244\u306E\u68D2"
-    second: {fileID: 2800000, guid: f46de15b790c8734aa9d7fdffb0868ab, type: 3}
+      name: "SelectGround\u7D20\u6750v2.png"
+    second: {fileID: 2100000, guid: db598c7f729e95541a07816090634bcc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

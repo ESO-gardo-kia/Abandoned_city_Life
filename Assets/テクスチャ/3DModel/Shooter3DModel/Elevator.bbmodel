@@ -865,6 +865,91 @@
 			},
 			"type": "mesh",
 			"uuid": "093988e4-ccee-c0dc-0b21-6851abfe0545"
+		},
+		{
+			"name": "cuboid",
+			"color": 0,
+			"origin": [-16, 0, 0],
+			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"x2fc": [40, 27, 8.75],
+				"lJTr": [40, 27, 8.25],
+				"qCyN": [40, -3, 8.75],
+				"SWyZ": [40, -3, 8.25],
+				"u3Gi": [24, 27, 8.75],
+				"0KfP": [24, 27, 8.25],
+				"lLj0": [24, -3, 8.75],
+				"kpzZ": [24, -3, 8.25]
+			},
+			"faces": {
+				"g8dKMIMN": {
+					"uv": {
+						"x2fc": [0, 0],
+						"qCyN": [0, 8],
+						"lJTr": [16, 0],
+						"SWyZ": [16, 8]
+					},
+					"vertices": ["x2fc", "qCyN", "lJTr", "SWyZ"],
+					"texture": 0
+				},
+				"YyFrCTRg": {
+					"uv": {
+						"u3Gi": [16, 0],
+						"0KfP": [0, 0],
+						"lLj0": [16, 8],
+						"kpzZ": [0, 8]
+					},
+					"vertices": ["u3Gi", "0KfP", "lLj0", "kpzZ"],
+					"texture": 0
+				},
+				"0XqN8NmV": {
+					"uv": {
+						"x2fc": [16, 16],
+						"lJTr": [16, 0],
+						"u3Gi": [0, 16],
+						"0KfP": [0, 0]
+					},
+					"vertices": ["x2fc", "lJTr", "u3Gi", "0KfP"],
+					"texture": 0
+				},
+				"1xkfqcdd": {
+					"uv": {
+						"qCyN": [16, 0],
+						"lLj0": [0, 0],
+						"SWyZ": [16, 16],
+						"kpzZ": [0, 16]
+					},
+					"vertices": ["qCyN", "lLj0", "SWyZ", "kpzZ"],
+					"texture": 0
+				},
+				"DikisUHC": {
+					"uv": {
+						"x2fc": [16, 0],
+						"u3Gi": [0, 0],
+						"qCyN": [16, 8],
+						"lLj0": [0, 8]
+					},
+					"vertices": ["x2fc", "u3Gi", "qCyN", "lLj0"],
+					"texture": 0
+				},
+				"Yfej7ipf": {
+					"uv": {
+						"lJTr": [0, 0],
+						"SWyZ": [0, 8],
+						"0KfP": [16, 0],
+						"kpzZ": [16, 8]
+					},
+					"vertices": ["lJTr", "SWyZ", "0KfP", "kpzZ"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "0d3d28ad-9102-1bd2-c8ef-7639d1ea7bef"
 		}
 	],
 	"outliner": [
@@ -883,11 +968,14 @@
 			"children": [
 				"e95e6b38-67a4-67c4-9689-4e4f75cbcd5f",
 				"3f41aaac-a8e0-c9be-df5a-6115415370c8",
+				"0d3d28ad-9102-1bd2-c8ef-7639d1ea7bef",
 				"e139fd81-f61f-ce03-fc2c-bb7b49e6e2ba",
 				"e1c1c829-e793-1e65-52b0-8f5c82e8e019",
 				"54e0bedb-00f8-cc03-1791-787170fee549",
 				"6821adc2-145c-b956-57ff-8dd66d2d7206",
 				"c4331c0e-be6e-cfec-f908-23bd7339dd26",
+				"588bee37-c69d-acd6-3110-af4e0dfe5ca4",
+				"093988e4-ccee-c0dc-0b21-6851abfe0545",
 				{
 					"name": "bone",
 					"origin": [0, 0, 0],
@@ -900,9 +988,7 @@
 					"visibility": true,
 					"autouv": 0,
 					"children": ["afb9c4c0-c17d-42ee-5e48-4c19d2224d10"]
-				},
-				"588bee37-c69d-acd6-3110-af4e0dfe5ca4",
-				"093988e4-ccee-c0dc-0b21-6851abfe0545"
+				}
 			]
 		}
 	],
