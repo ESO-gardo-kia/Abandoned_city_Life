@@ -4,15 +4,54 @@ using UnityEngine;
 
 public class FollowingBulletSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] Gun_List gunList;
+    public enum BulletType
     {
-        
+        Normal,
+        Following,
+        Parabola,
+        Split,
     }
-
-    // Update is called once per frame
-    void Update()
+    public BulletType bulletType;
+    public GameObject hitParticle;
+    public string targetTag;
+    public float bulletDamage;
+    public float bulletSpeed;
+    public float deathDistance = 1;
+    public Vector3 firstPosition;
+    public bool isfollowing = true;
+    public GameObject targetObj;
+    void Updata()
     {
-        
+        rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime;
+        if (isfollowing && Vector3.Distance(targetObj.transform.position, transform.position) < 4)
+        {
+            isfollowing = false;
+        }
+        if (isfollowing)
+        {
+            if (Vector3.Distance(firstPosition, transform.position) >= deathDistance) Destroy(gameObject);
+            transform.localRotation = Quaternion.RotateTowards(transform.rotation
+                , Quaternion.LookRotation((targetObj.transform.position + Vector3.up) - transform.position)
+                , 10);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+            Destroy(gameObject);
+        }
+        if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+            Destroy(gameObject);
+        }
+        if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(hitParticle, transform);
+        }
     }
 }

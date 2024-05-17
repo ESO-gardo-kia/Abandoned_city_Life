@@ -4,47 +4,46 @@ using UnityEngine;
 
 public class NormalBulletSystem : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
-    [SerializeField] Gun_List gunlist;
-    public enum Bullet_Type
+    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] Gun_List gunList;
+    public enum BulletType
     {
         Normal,
         Following,
         Parabola,
         Split,
     }
-    public Bullet_Type type;
-    public GameObject hitparticle;
-    public string target_tag;
-    public float damage;
-    public float speed;
-    public Vector3 dire;
-    public float death_dis = 1;
+    public BulletType bulletType;
+    public GameObject hitParticle;
+    public string targetTag;
+    public float bulletDamage;
+    public float bulletSpeed;
+    public float deathDistance = 1;
+    public Vector3 firstPosition;
     //Normal
     public Vector3 firstpos;
     void FixedUpdate()
     {
-        if (Vector3.Distance(firstpos, transform.position) >= death_dis)
+        if (Vector3.Distance(firstpos, transform.position) >= deathDistance)
         {
             Destroy(gameObject);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.CompareTag("Floor"))
         {
-            Instantiate(hitparticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
             Destroy(gameObject);
         }
-        if (target_tag == "Player" && other.gameObject.CompareTag("Player"))
+        if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
         {
-            Instantiate(hitparticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
             Destroy(gameObject);
         }
-        if (target_tag == "Enemy" && other.gameObject.CompareTag("Enemy"))
+        if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(hitparticle, transform);
+            Instantiate(hitParticle, transform);
         }
     }
 }

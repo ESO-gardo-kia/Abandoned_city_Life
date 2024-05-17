@@ -23,7 +23,6 @@ public class Bullet_System : MonoBehaviour
     public string target_tag;
     public float damage;
     public float speed;
-    public Vector3 dire;
     public float death_dis = 1;
     //Normal
     public Vector3 firstpos;
