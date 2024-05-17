@@ -167,7 +167,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
 
-        bs.type = Bullet_System.Bullet_Type.following;
+        bs.type = Bullet_System.Bullet_Type.Following;
         bs.target_tag = "Player";
         bs.damage = bullet_damage;
         bs.death_dis = bullet_range / 1.5f;

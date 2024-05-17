@@ -176,7 +176,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
 
         Vector3 targetpos = Player.transform.position + Vector3.up * 30;
 
-        bs.type = Bullet_System.Bullet_Type.parabola;
+        bs.type = Bullet_System.Bullet_Type.Parabola;
         bs.target_tag = "Player";
         bs.damage = bullet_damage;
         bs.shot_power = bullet_speed;

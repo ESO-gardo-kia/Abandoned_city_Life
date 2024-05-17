@@ -14,9 +14,9 @@ public class Bullet_System : MonoBehaviour
     public enum Bullet_Type
     {
         Normal,
-        following,
-        parabola,
-        split,
+        Following,
+        Parabola,
+        Split,
     }
     public Bullet_Type type;
     public GameObject hitparticle;
@@ -41,7 +41,7 @@ public class Bullet_System : MonoBehaviour
             case Bullet_Type.Normal:
                 if(Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
                 break;
-            case Bullet_Type.following:
+            case Bullet_Type.Following:
                 rb.velocity = transform.forward * speed;
                 if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) < 4)
                 {
@@ -57,14 +57,14 @@ public class Bullet_System : MonoBehaviour
                 }
 
                 break;
-            case Bullet_Type.parabola:
+            case Bullet_Type.Parabola:
                 if(transform.position.y >= target_pos.y)
                 {
-                    Debug.Log("トウタツ");
+                    Debug.Log("目標地点到達");
                     cluster_Down(15);
                 }
                 break;
-            case Bullet_Type.split:
+            case Bullet_Type.Split:
                 float dis = Vector3.Distance(firstpos, transform.position);
                 if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
                 break;
@@ -77,8 +77,8 @@ public class Bullet_System : MonoBehaviour
         for(int i = 0;i < vec.Length; i++)
         {
             GameObject shotObj = Instantiate(SPLITOBJ, transform.position, Quaternion.identity);
-            Rigidbody rb = shotObj.GetComponent<Rigidbody>();
-            Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+            Rigidbody rigitbody = shotObj.GetComponent<Rigidbody>();
+            Bullet_System bulletsystem = shotObj.GetComponent<Bullet_System>();
 
             shotObj.transform.localEulerAngles = Vector3.right * 90;
             vec[i] = new Vector3(Random.Range(-20, 20)
@@ -87,15 +87,15 @@ public class Bullet_System : MonoBehaviour
             //shotObj.transform.LookAt(targetobj.transform);
             shotObj.transform.localEulerAngles += vec[i];
 
-            bs.type = Bullet_Type.split;
-            bs.target_tag = "Player";
-            bs.damage = damage;
-            bs.shot_power = shot_power;
-            bs.death_dis = 100;
-            bs.firstpos = transform.position;
-            bs.target_pos = target_pos;
+            bulletsystem.type = Bullet_Type.Split;
+            bulletsystem.target_tag = "Player";
+            bulletsystem.damage = damage;
+            bulletsystem.shot_power = shot_power;
+            bulletsystem.death_dis = 100;
+            bulletsystem.firstpos = transform.position;
+            bulletsystem.target_pos = target_pos;
 
-            rb.velocity = shotObj.transform.forward * 80;
+            rigitbody.velocity = shotObj.transform.forward * 80;
         }
         Destroy(gameObject);
     }
@@ -104,7 +104,7 @@ public class Bullet_System : MonoBehaviour
         
         if (other.gameObject.CompareTag("Floor"))
         {
-            GameObject par = Instantiate(hitparticle,transform.position ,Quaternion.identity,transform.transform.parent = null);
+            Instantiate(hitparticle,transform.position ,Quaternion.identity,transform.transform.parent = null);
             Destroy(gameObject);
         }
         if(target_tag == "Player" && other.gameObject.CompareTag("Player"))
@@ -119,7 +119,7 @@ public class Bullet_System : MonoBehaviour
     }
     public void BulletDestroy()
     {
-        GameObject par = Instantiate(hitparticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+        Instantiate(hitparticle, transform.position, Quaternion.identity, transform.transform.parent = null);
         Destroy(gameObject);
     }
 }
