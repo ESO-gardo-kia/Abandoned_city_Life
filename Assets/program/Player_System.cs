@@ -83,8 +83,6 @@ public class Player_System : MonoBehaviour
     private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumping_running = false;//ジャンプ処理中か否か
 
-
-
     public bool isPanel;//何かの画面を開いているか否か
 
     [Tooltip("移動速度")]
@@ -304,11 +302,28 @@ public class Player_System : MonoBehaviour
         }
         if (move_permit)
         {
-            if (other.gameObject.CompareTag("Bullet")
-                && other.GetComponent<Bullet_System>().target_tag == "Player" && !player_isdeath)
+            if (other.gameObject.CompareTag("Bullet") && !player_isdeath)
             {
-                TakeDmage(other.GetComponent<Bullet_System>().damage);
-                other.GetComponent<Bullet_System>().BulletDestroy();
+                if (other.GetComponent<NormalBulletSystem>() != null && other.GetComponent<NormalBulletSystem>().targetTag == "Player")
+                {
+                    TakeDmage(other.GetComponent<NormalBulletSystem>().bulletDamage);
+                    other.GetComponent<NormalBulletSystem>().BulletDestroy();
+                }
+                else if (other.GetComponent<FollowingBulletSystem>() != null && other.GetComponent<FollowingBulletSystem>().targetTag == "Player")
+                {
+                    TakeDmage(other.GetComponent<FollowingBulletSystem>().bulletDamage);
+                    other.GetComponent<FollowingBulletSystem>().BulletDestroy();
+                }
+                else if (other.GetComponent<ParabolaBulletSystem>() != null && other.GetComponent<ParabolaBulletSystem>().targetTag == "Player")
+                {
+                    TakeDmage(other.GetComponent<ParabolaBulletSystem>().bulletDamage);
+                    other.GetComponent<ParabolaBulletSystem>().BulletDestroy();
+                }
+                else if (other.GetComponent<SplitBulletSystem>() != null && other.GetComponent<SplitBulletSystem>().targetTag == "Player")
+                {
+                    TakeDmage(other.GetComponent<SplitBulletSystem>().bulletDamage);
+                    other.GetComponent<SplitBulletSystem>().BulletDestroy();
+                }
             }
         }
     }
@@ -385,10 +400,10 @@ public class Player_System : MonoBehaviour
             Rigidbody rb = shotObj.GetComponent<Rigidbody>();
             Bullet_System bs = shotObj.GetComponent<Bullet_System>();
 
-            bs.type = (Bullet_System.Bullet_Type)Guns.type;
+            bs.bulletType = (Bullet_System.BulletType)Guns.type;
             bs.target_tag = "Enemy";
             bs.damage = Guns.bullet_damage;
-            bs.death_dis = Guns.bullet_range;
+            bs.deathDistance = Guns.bullet_range;
             bs.firstpos = SHOTPOS.transform.position;
             shotObj.transform.eulerAngles = CAMERA.transform.eulerAngles;
             shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
@@ -464,7 +479,6 @@ public class Player_System : MonoBehaviour
                 .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
                 .OnComplete(() => {
-                    //brain.enabled = false;
                     move_permit = false;
                     isPanel = true;
                     Panel.SetActive(true);
@@ -486,11 +500,9 @@ public class Player_System : MonoBehaviour
               .OnComplete(() => {
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;
-                  //brain.enabled = true;
                   move_permit = true;
                   isPanel = false;
                   Panel.SetActive(false);
-                  Debug.Log("終了");
               }))
                 .Play();
         }

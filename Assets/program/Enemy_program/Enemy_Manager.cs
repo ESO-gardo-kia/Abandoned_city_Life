@@ -156,7 +156,7 @@ public class Enemy_Manager : MonoBehaviour
                 break;
             case 1:
                 Assault_Enemy AssaultE = eo.GetComponent<Assault_Enemy>();
-                AssaultE.em = this;
+                AssaultE.enemyManager = this;
                 AssaultE.Enemy_Reset();
                 break;
             case 2:

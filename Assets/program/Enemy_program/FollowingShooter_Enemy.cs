@@ -23,7 +23,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
 
     [Header("--- 装備品 ---")]
     public AudioClip shotsound;
-    public float bullet_damage;//ダメージ
+    public float bulletDamage;//ダメージ
     public float rapid_fire_rate;//連射速度
     public float bullet_range;//射程
     public float bullet_speed;//弾速
@@ -167,12 +167,12 @@ public class FollowingShooter_Enemy : MonoBehaviour
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         Bullet_System bs = shotObj.GetComponent<Bullet_System>();
 
-        bs.type = Bullet_System.Bullet_Type.Following;
+        bs.bulletType = Bullet_System.BulletType.Following;
         bs.target_tag = "Player";
-        bs.damage = bullet_damage;
-        bs.death_dis = bullet_range / 1.5f;
+        bs.damage = bulletDamage;
+        bs.deathDistance = bullet_range / 1.5f;
         bs.firstpos = SHOTPOS.transform.position;
-        bs.speed = bullet_speed;
+        bs.bulletSpeed = bullet_speed;
         bs.targetobj = Player;
         shotObj.transform.eulerAngles = transform.eulerAngles;
         shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusion_chance, diffusion_chance)

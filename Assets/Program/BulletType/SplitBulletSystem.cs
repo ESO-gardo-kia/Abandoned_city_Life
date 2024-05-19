@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class SplitBulletSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject hitParticle;
+    public string targetTag;
+    public float bulletDamage;
+    public float deathDistance;
+    public Vector3 firstPosition;
     void Update()
     {
-        
+        if (Vector3.Distance(firstPosition, transform.position) >= deathDistance) Destroy(gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+            Destroy(gameObject);
+        }
+        if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(hitParticle, transform);
+            Destroy(gameObject);
+        }
+        if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(hitParticle, transform);
+        }
+    }
+    public void BulletDestroy()
+    {
+        Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+        Destroy(gameObject);
     }
 }

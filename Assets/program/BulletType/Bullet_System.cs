@@ -11,19 +11,19 @@ public class Bullet_System : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] Gun_List gunlist;
-    public enum Bullet_Type
+    public enum BulletType
     {
         Normal,
         Following,
         Parabola,
         Split,
     }
-    public Bullet_Type type;
+    public BulletType bulletType;
     public GameObject hitparticle;
     public string target_tag;
     public float damage;
-    public float speed;
-    public float death_dis = 1;
+    public float bulletSpeed;
+    public float deathDistance = 1;
     //Normal
     public Vector3 firstpos;
     //following
@@ -35,13 +35,13 @@ public class Bullet_System : MonoBehaviour
     public GameObject SPLITOBJ;
     void FixedUpdate()
     {
-        switch(type)
+        switch(bulletType)
         {
-            case Bullet_Type.Normal:
-                if(Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+            case BulletType.Normal:
+                if(Vector3.Distance(firstpos, transform.position) >= deathDistance) Destroy(gameObject);
                 break;
-            case Bullet_Type.Following:
-                rb.velocity = transform.forward * speed;
+            case BulletType.Following:
+                rb.velocity = transform.forward * bulletSpeed;
                 if (isfollow && Vector3.Distance(targetobj.transform.position, transform.position) < 4)
                 {
                     Debug.Log("追尾解除");
@@ -49,23 +49,23 @@ public class Bullet_System : MonoBehaviour
                 }
                 if (isfollow)
                 {
-                    if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+                    if (Vector3.Distance(firstpos, transform.position) >= deathDistance) Destroy(gameObject);
                     transform.localRotation = Quaternion.RotateTowards(transform.rotation
                         , Quaternion.LookRotation((targetobj.transform.position + Vector3.up) - transform.position)
                         , 10);
                 }
 
                 break;
-            case Bullet_Type.Parabola:
+            case BulletType.Parabola:
                 if(transform.position.y >= target_pos.y)
                 {
                     Debug.Log("目標地点到達");
                     cluster_Down(15);
                 }
                 break;
-            case Bullet_Type.Split:
+            case BulletType.Split:
                 float dis = Vector3.Distance(firstpos, transform.position);
-                if (Vector3.Distance(firstpos, transform.position) >= death_dis) Destroy(gameObject);
+                if (Vector3.Distance(firstpos, transform.position) >= deathDistance) Destroy(gameObject);
                 break;
         }
     }
@@ -86,11 +86,11 @@ public class Bullet_System : MonoBehaviour
             //shotObj.transform.LookAt(targetobj.transform);
             shotObj.transform.localEulerAngles += vec[i];
 
-            bulletsystem.type = Bullet_Type.Split;
+            bulletsystem.bulletType = BulletType.Split;
             bulletsystem.target_tag = "Player";
             bulletsystem.damage = damage;
             bulletsystem.shot_power = shot_power;
-            bulletsystem.death_dis = 100;
+            bulletsystem.deathDistance = 100;
             bulletsystem.firstpos = transform.position;
             bulletsystem.target_pos = target_pos;
 

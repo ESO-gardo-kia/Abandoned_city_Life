@@ -4484,7 +4484,7 @@ MonoBehaviour:
   wheel: {fileID: 4807374465367338613}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   shotsound: {fileID: 0}
-  bullet_damage: 6
+  bulletDamage: 6
   rapid_fire_rate: 5
   bullet_range: 100
   bullet_speed: 25

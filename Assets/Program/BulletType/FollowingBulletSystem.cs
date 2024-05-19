@@ -5,15 +5,6 @@ using UnityEngine;
 public class FollowingBulletSystem : MonoBehaviour
 {
     [SerializeField] Rigidbody rigidBody;
-    [SerializeField] Gun_List gunList;
-    public enum BulletType
-    {
-        Normal,
-        Following,
-        Parabola,
-        Split,
-    }
-    public BulletType bulletType;
     public GameObject hitParticle;
     public string targetTag;
     public float bulletDamage;
@@ -22,7 +13,7 @@ public class FollowingBulletSystem : MonoBehaviour
     public Vector3 firstPosition;
     public bool isfollowing = true;
     public GameObject targetObj;
-    void Updata()
+    void Update()
     {
         rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime;
         if (isfollowing && Vector3.Distance(targetObj.transform.position, transform.position) < 4)
@@ -53,5 +44,10 @@ public class FollowingBulletSystem : MonoBehaviour
         {
             Instantiate(hitParticle, transform);
         }
+    }
+    public void BulletDestroy()
+    {
+        Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+        Destroy(gameObject);
     }
 }

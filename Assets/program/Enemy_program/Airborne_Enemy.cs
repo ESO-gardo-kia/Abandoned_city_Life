@@ -171,7 +171,7 @@ public class Airborne_Enemy : MonoBehaviour
 
         bs.target_tag = "Player";
         bs.damage = bullet_damage;
-        bs.death_dis = bullet_range / 1.5f;
+        bs.deathDistance = bullet_range / 1.5f;
         bs.firstpos = SHOTPOS.transform.position;
         shotObj.transform.eulerAngles = SHOTBORNE.transform.eulerAngles;
         shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusion_chance, diffusion_chance)

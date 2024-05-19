@@ -20,7 +20,7 @@ public class Enemy_Accession : MonoBehaviour
 
         bs.target_tag = "Player";
         bs.damage = Guns[type].bullet_damage;
-        bs.death_dis = Guns[type].bullet_range;
+        bs.deathDistance = Guns[type].bullet_range;
         bs.firstpos = SHOTPOS.transform.position;
         rb.velocity = this.transform.forward * Guns[type].bullet_speed;
         shotObj.transform.eulerAngles = this.transform.eulerAngles;

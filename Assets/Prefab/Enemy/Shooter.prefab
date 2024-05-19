@@ -4484,13 +4484,13 @@ MonoBehaviour:
   wheel: {fileID: 4807374465367338613}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   shotsound: {fileID: 0}
-  bullet_damage: 5
+  bulletDamage: 5
   rapid_fire_rate: 3
   bullet_range: 200
   bullet_speed: 80
   diffusion_chance: 3
   rate_count: 0
-  SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
+  SHOTOBJ: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20, type: 3}
   enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
 --- !u!65 &7216383993853507428
 BoxCollider:

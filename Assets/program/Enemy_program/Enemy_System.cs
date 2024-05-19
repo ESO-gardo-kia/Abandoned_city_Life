@@ -181,7 +181,7 @@ public class Enemy_System : MonoBehaviour
 
         bs.target_tag = "Player";
         bs.damage = Guns[1].bullet_damage;
-        bs.death_dis = Guns[1].bullet_range;
+        bs.deathDistance = Guns[1].bullet_range;
         rb.velocity = this.transform.forward * Guns[1].bullet_speed;
         shotObj.transform.eulerAngles = this.transform.eulerAngles;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);

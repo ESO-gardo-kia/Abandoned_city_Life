@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class Assault_Enemy : MonoBehaviour
 {
-    public Enemy_Manager em;
+    public Enemy_Manager enemyManager;
     [SerializeField] public GameObject Player;
     [SerializeField] public Gun_List gunlist;
     public GameObject wheel;
 
     private GameObject EnemyCanvas;
-    private UnityEngine.UI.Slider HPSlider;
+    private Slider HPSlider;
     [SerializeField] public GameObject TEXTOBJ;
     private GameObject TEXTPOS;
-    private GameObject old_dt;
+    private GameObject oldDamageText;
     private float old_damage;
 
     private NavMeshAgent NMA;
@@ -79,19 +80,21 @@ public class Assault_Enemy : MonoBehaviour
             }
             if (other.gameObject.CompareTag("Attack_Obj"))
             {
+                /*
                 //攻撃出来る状態かつ攻撃対象はエネミーの時
                 if (other.GetComponent<Attack_System>().isAttack && other.GetComponent<Attack_System>().attack_subject == Attack_System.Attack_Subject.Enemy)
                 {
                     TakeDmage(other.GetComponent<Attack_System>().damage, other, other.GetComponent<Attack_System>());
                 }
+                */
             }
         }
     }
     public void Enemy_Reset()
     {
         //Debug.Log("敵の情報をリセットする");
-        em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        Player = em.player_system;
+        enemyManager = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
+        Player = enemyManager.player_system;
         TEXTPOS = transform.Find("TEXTPOS").gameObject;
         EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
@@ -118,22 +121,22 @@ public class Assault_Enemy : MonoBehaviour
     }
     void TakeDmage(float damage, Bullet_System BS)
     {
-        if (old_dt == null)
+        if (oldDamageText == null)
         {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
-            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
-            Damage_Text dts = dt.GetComponent<Damage_Text>();
-            old_dt = dt;
+            GameObject damagetext = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
+            Text t = damagetext.GetComponent<UnityEngine.UI.Text>();
+            Damage_Text dts = damagetext.GetComponent<Damage_Text>();
+            oldDamageText = damagetext;
 
             t.text = BS.damage.ToString();
             old_damage = BS.damage;
         }
-        else if (old_dt != null)
+        else if (oldDamageText != null)
         {
             old_damage += BS.damage;
-            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            old_dt.GetComponent<Damage_Text>().TextReset();
-            old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
+            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
+            oldDamageText.GetComponent<Damage_Text>().TextReset();
+            oldDamageText.transform.localEulerAngles = new Vector3(0, 180, 180);
         }
         if (currenthp > 0)
         {
@@ -145,25 +148,26 @@ public class Assault_Enemy : MonoBehaviour
             isdeath = true;
         }
     }
-    void TakeDmage(float damage, Collider other, Attack_System AS)
+    /*
+    void TakeDmage(float damage, Collider other)
     {
-        if (old_dt == null)
+        if (oldDamageText == null)
         {
             GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
             UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
             Bullet_System bs = other.GetComponent<Bullet_System>();
             Damage_Text dts = dt.GetComponent<Damage_Text>();
-            old_dt = dt;
+            oldDamageText = dt;
 
             dt.transform.localEulerAngles = new Vector3(0, 180, 180);
             t.text = bs.damage.ToString();
             old_damage = bs.damage;
         }
-        else if (old_dt != null)
+        else if (oldDamageText != null)
         {
             old_damage += other.GetComponent<Bullet_System>().damage;
-            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            old_dt.GetComponent<Damage_Text>().TextReset();
+            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
+            oldDamageText.GetComponent<Damage_Text>().TextReset();
 
         }
         if (currenthp > 0)
@@ -176,10 +180,11 @@ public class Assault_Enemy : MonoBehaviour
             isdeath = true;
         }
     }
+    */
     void Deathfunction()
     {
         Debug.Log("死亡");
-        em.ParentEnemyDeath(enemy_number);
+        enemyManager.ParentEnemyDeath(enemy_number);
         Destroy(gameObject);
     }
 }

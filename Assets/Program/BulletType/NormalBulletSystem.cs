@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class NormalBulletSystem : MonoBehaviour
 {
-    [SerializeField] Rigidbody rigidBody;
-    [SerializeField] Gun_List gunList;
-    public enum BulletType
-    {
-        Normal,
-        Following,
-        Parabola,
-        Split,
-    }
-    public BulletType bulletType;
     public GameObject hitParticle;
     public string targetTag;
     public float bulletDamage;
@@ -22,7 +12,7 @@ public class NormalBulletSystem : MonoBehaviour
     public Vector3 firstPosition;
     //Normal
     public Vector3 firstpos;
-    void FixedUpdate()
+    void Update()
     {
         if (Vector3.Distance(firstpos, transform.position) >= deathDistance)
         {
@@ -45,5 +35,10 @@ public class NormalBulletSystem : MonoBehaviour
         {
             Instantiate(hitParticle, transform);
         }
+    }
+    public void BulletDestroy()
+    {
+        Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
+        Destroy(gameObject);
     }
 }

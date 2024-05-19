@@ -23,7 +23,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
 
     [Header("--- 装備品 ---")]
     public AudioClip shotsound;
-    public float bullet_damage;//ダメージ
+    public float bulletDamage;//ダメージ
     public float rapid_fire_rate;//連射速度
     public float bullet_range;//射程
     public float bullet_speed;//弾速
@@ -176,11 +176,11 @@ public class ClusterCatapult_Enemy : MonoBehaviour
 
         Vector3 targetpos = Player.transform.position + Vector3.up * 30;
 
-        bs.type = Bullet_System.Bullet_Type.Parabola;
+        bs.bulletType = Bullet_System.BulletType.Parabola;
         bs.target_tag = "Player";
-        bs.damage = bullet_damage;
+        bs.damage = bulletDamage;
         bs.shot_power = bullet_speed;
-        bs.death_dis = bullet_range;
+        bs.deathDistance = bullet_range;
         bs.target_pos = targetpos;
         bs.targetobj = Player;
         bs.SPLITOBJ = SPLITOBJ;

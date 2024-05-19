@@ -22,7 +22,7 @@ public class Shooter_Enemy: MonoBehaviour
 
     [Header("--- 装備品 ---")]
     public AudioClip shotsound;
-    public float bullet_damage;//ダメージ
+    public float bulletDamage;//ダメージ
     public float rapid_fire_rate;//連射速度
     public float bullet_range;//射程
     public float bullet_speed;//弾速
@@ -163,17 +163,17 @@ public class Shooter_Enemy: MonoBehaviour
     {
         GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
-        Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+        NormalBulletSystem normalBulletSystem = shotObj.GetComponent<NormalBulletSystem>();
 
-        bs.target_tag = "Player";
-        bs.damage = bullet_damage;
-        bs.death_dis = bullet_range / 1.5f;
-        bs.firstpos = SHOTPOS.transform.position;
+        normalBulletSystem.targetTag = "Player";
+        normalBulletSystem.bulletDamage = bulletDamage;
+        normalBulletSystem.deathDistance = bullet_range / 1.5f;
+        normalBulletSystem.firstpos = SHOTPOS.transform.position;
         shotObj.transform.eulerAngles = transform.eulerAngles;
         shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusion_chance, diffusion_chance)
                             , Random.Range(-diffusion_chance, diffusion_chance)
                             , Random.Range(diffusion_chance, diffusion_chance));
-        rb.velocity = bs.transform.forward * bullet_speed;
+        rb.velocity = normalBulletSystem.transform.forward * bullet_speed;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
     void TakeDmage(float damage, Collider other, Attack_System AS)

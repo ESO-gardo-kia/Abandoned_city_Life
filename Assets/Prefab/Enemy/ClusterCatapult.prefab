@@ -1605,7 +1605,7 @@ MonoBehaviour:
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
   TEXTOBJ: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059, type: 3}
   shotsound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
-  bullet_damage: 3
+  bulletDamage: 3
   rapid_fire_rate: 10
   bullet_range: 50
   bullet_speed: 150
