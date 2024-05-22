@@ -6,25 +6,25 @@ using UnityEngine.UI;
 public class Buy_Button : MonoBehaviour
 {
     public int Enum;
-    public Gun_List gl;
-    [SerializeField]public AudioSource AC;
-    [SerializeField] public AudioClip ac1;
-    [SerializeField] public AudioClip ac2;
+    public Gun_List gunList;
+    [SerializeField]public AudioSource audioSource;
+    [SerializeField] public AudioClip buySound;
+    [SerializeField] public AudioClip notBuySound;
     public void OnButtonClick()
     {
         //GameManager.Money <= gl.Data[Enum].price &&
-        Debug.Log(GameManager.Money);
-        if (GameManager.Money >= gl.Data[Enum].price && Player_Manager.isWeapon[Enum] == false)
+        Debug.Log(GameManager.playerMoney);
+        if (GameManager.playerMoney >= gunList.Data[Enum].price && Player_Manager.isWeapon[Enum] == false)
         {
-            AC.PlayOneShot(ac1);
+            audioSource.PlayOneShot(buySound);
             Debug.Log("ïêäÌÇîÉÇ¢Ç‹ÇµÇΩ");
-            GameManager.Money -= gl.Data[Enum].price;
-            GameObject.Find("Player_System").GetComponent<Player_System>().money_text.GetComponent<Text>().text = "MONEY:" + GameManager.Money.ToString();
+            GameManager.playerMoney -= gunList.Data[Enum].price;
+            GameObject.Find("Player_System").GetComponent<Player_System>().moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
             Player_Manager.isWeapon[Enum] = true;
         }
         else
         {
-            AC.PlayOneShot(ac2);
+            audioSource.PlayOneShot(notBuySound);
             Debug.Log("Ç®ã‡Ç™ë´ÇÁÇ»Ç¢");
         }
     }

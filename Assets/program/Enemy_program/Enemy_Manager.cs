@@ -87,7 +87,7 @@ public class Enemy_Manager : MonoBehaviour
                 {
                     for (int i = 0; i < wave[id]; i++)
                     {
-                        if (!Player_System.move_permit && !enemies_move_permit) yield break;
+                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
                         Spawn_Function(id);
                         yield return new WaitForSeconds(spawn_interval);
                     }
@@ -125,7 +125,7 @@ public class Enemy_Manager : MonoBehaviour
                 {
                     for (int i = 0; i < wave[id]; i++)
                     {
-                        if (!Player_System.move_permit && !enemies_move_permit) yield break;
+                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
                         Spawn_Function(id);
                         yield return new WaitForSeconds(spawn_interval);
                     }
@@ -151,7 +151,7 @@ public class Enemy_Manager : MonoBehaviour
         {
             case 0:
                 Shooter_Enemy ShooterE = eo.GetComponent<Shooter_Enemy>();
-                ShooterE.em = this;
+                ShooterE.enemyManager = this;
                 ShooterE.Enemy_Reset();
                 break;
             case 1:

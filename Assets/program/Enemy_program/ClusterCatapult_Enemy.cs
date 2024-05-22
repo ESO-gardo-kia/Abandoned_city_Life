@@ -60,7 +60,7 @@ public class ClusterCatapult_Enemy : MonoBehaviour
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
                 if (Player == null) Debug.Log("‰½‚à“ü‚Á‚Ä‚È‚¢");
                 NMA.destination = Player.transform.position;

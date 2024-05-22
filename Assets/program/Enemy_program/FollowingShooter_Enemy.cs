@@ -60,7 +60,7 @@ public class FollowingShooter_Enemy : MonoBehaviour
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
                 NMA.destination = Player.transform.position;
 

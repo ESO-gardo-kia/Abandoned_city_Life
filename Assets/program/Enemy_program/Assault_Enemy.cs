@@ -55,7 +55,7 @@ public class Assault_Enemy : MonoBehaviour
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
                 NMA.destination = Player.transform.position;
 
@@ -116,7 +116,7 @@ public class Assault_Enemy : MonoBehaviour
         HPSlider.value = currenthp;
         enemy_number = 1;
 
-        NMA.speed = agi;
+        NMA.speed = currentagi;
         NMA.stoppingDistance = 0;
     }
     void TakeDmage(float damage, Bullet_System BS)

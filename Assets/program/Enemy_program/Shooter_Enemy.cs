@@ -1,42 +1,39 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Shooter_Enemy: MonoBehaviour
 {
-    public Enemy_Manager em;
-    [SerializeField] public GameObject Player;
-    [SerializeField] public Gun_List gunlist;
-    private GameObject SHOTPOS;
-    public GameObject wheel;
+    [System.NonSerialized] public Enemy_Manager enemyManager;
+    private GameObject playerObject;
+    [SerializeField] private Gun_List gunList;
+    [SerializeField] private GameObject shotPosition;
+    [SerializeField] private GameObject wheel;
 
-    private GameObject EnemyCanvas;
-    private UnityEngine.UI.Slider HPSlider;
-    [SerializeField] public GameObject TEXTOBJ;
-    private GameObject TEXTPOS;
-    private GameObject old_dt;
-    private float old_damage;
+    [SerializeField] private GameObject enemyCanvas;
+    [SerializeField] private Slider hpSlider;
+    [SerializeField] public GameObject damageTextObject;
+    [SerializeField] private GameObject damageTextPosition;
+    private GameObject oldDamageText;
+     private float oldDamage;
 
-    private NavMeshAgent NMA;
-    private Rigidbody rb;
+    private NavMeshAgent navMeshAgent;
+    private Rigidbody rigitBody;
 
     [Header("--- ëïîıïi ---")]
-    public AudioClip shotsound;
+    public AudioClip shotSound;
     public float bulletDamage;//É_ÉÅÅ[ÉW
-    public float rapid_fire_rate;//òAéÀë¨ìx
-    public float bullet_range;//éÀíˆ
-    public float bullet_speed;//íeë¨
-    public float diffusion_chance;//ägéUó¶
-    public float rate_count = 0;
+    public float rapidFireRate;//òAéÀë¨ìx
+    public float bulletRange;//éÀíˆ
+    public float bulletSpeed;//íeë¨
+    public float diffusionChance;//ägéUó¶
+    public float rateCount = 0;
     [SerializeField] public GameObject SHOTOBJ;
 
     [Header("--- ÉXÉeÅ[É^ÉX ---")]
     [SerializeField] private Enemy_List enemy_List;
     private int enemy_number;
     private bool isdeath;
-
-    private string Ename;
-    private float exp;
 
     private float hp;
     private float currenthp;
@@ -50,36 +47,36 @@ public class Shooter_Enemy: MonoBehaviour
         Enemy_Reset();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (rb.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up,rb.velocity.magnitude * 3);
+        WheelAnimation();
         if (Enemy_Manager.enemies_move_permit == true)
         {
+            hpSlider.value = currenthp;
             if (isdeath)
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
-                NMA.destination = Player.transform.position;
-
-                transform.localRotation = Quaternion.RotateTowards(transform.rotation
-                    , Quaternion.LookRotation(Player.transform.position - transform.position)
-                    , 3);
+                navMeshAgent.destination = playerObject.transform.position;
+                transform.localRotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(playerObject.transform.position - transform.position), 3);
             }
-            EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
-
-            HPSlider.value = currenthp;
+            enemyCanvas.transform.LookAt(playerObject.transform, Vector3.down * 180);
             //èeä÷åW
-            if (rate_count >= rapid_fire_rate
-                && NMA.destination != null)
+            if (rateCount >= rapidFireRate&& navMeshAgent.destination != null)
             {
                 NomalShot();
-                rate_count = 0;
             }
-            if (rate_count < rapid_fire_rate) rate_count += 0.2f;
+            if (rateCount < rapidFireRate) rateCount += Time.deltaTime;
         }
     }
+
+    private void WheelAnimation()
+    {
+        if (rigitBody.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up, rigitBody.velocity.magnitude * 3);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (Enemy_Manager.enemies_move_permit == true)
@@ -103,51 +100,49 @@ public class Shooter_Enemy: MonoBehaviour
     public void Enemy_Reset()
     {
         //Debug.Log("ìGÇÃèÓïÒÇÉäÉZÉbÉgÇ∑ÇÈ");
-        em = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        Player = em.player_system;
-        SHOTPOS = transform.Find("SHOTPOS").gameObject;
-        TEXTPOS = transform.Find("TEXTPOS").gameObject;
-        EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
-        HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        NMA = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
+        if(enemyManager == null)enemyManager = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
+        if (playerObject == null) playerObject = enemyManager.player_system;
+        shotPosition = transform.Find("SHOTPOS").gameObject;
+        damageTextPosition = transform.Find("TEXTPOS").gameObject;
+        enemyCanvas = transform.Find("EnemyCanvas").gameObject;
+        hpSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        rigitBody = GetComponent<Rigidbody>();
         isdeath = false;
         //ÉXÉeÅ[É^ÉXîΩâf
         //StatusÇÕScriptableObjectÇ…Çƒâ¸ïœÇ∑ÇÈéñ
         var e_l = enemy_List.Status[0];
-        Ename = e_l.name;
-        exp = e_l.exp;
-        hp = e_l.hp;
-        atk = e_l.atk;
-        agi = e_l.agi;
+        hp = enemy_List.Status[0].hp;
+        atk = enemy_List.Status[0].atk;
+        agi = enemy_List.Status[0].agi;
         currenthp = hp;
         currentatk = atk;
         currentagi = agi;
-        HPSlider.maxValue = hp;
-        HPSlider.value = currenthp;
+        hpSlider.maxValue = hp;
+        hpSlider.value = currenthp;
         enemy_number = 0;
 
-        NMA.speed = agi;
-        NMA.stoppingDistance = 20;
+        navMeshAgent.speed = currentagi;
+        navMeshAgent.stoppingDistance = 20;
     }
     void TakeDmage(float damage, Bullet_System BS)
     {
-        if (old_dt == null)
+        if (oldDamageText == null)
         {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
-            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
+            GameObject dt = Instantiate(damageTextObject, damageTextPosition.transform.position, hpSlider.transform.rotation, transform.Find("EnemyCanvas"));
+            Text t = dt.GetComponent<UnityEngine.UI.Text>();
             Damage_Text dts = dt.GetComponent<Damage_Text>();
-            old_dt = dt;
+            oldDamageText = dt;
 
             t.text = BS.damage.ToString();
-            old_damage = BS.damage;
+            oldDamage = BS.damage;
         }
-        else if (old_dt != null)
+        else if (oldDamageText != null)
         {
-            old_damage += BS.damage;
-            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            old_dt.GetComponent<Damage_Text>().TextReset();
-            old_dt.transform.localEulerAngles = new Vector3(0, 180, 180);
+            oldDamage += BS.damage;
+            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = oldDamage.ToString();
+            oldDamageText.GetComponent<Damage_Text>().TextReset();
+            oldDamageText.transform.localEulerAngles = new Vector3(0, 180, 180);
         }
         if (currenthp > 0)
         {
@@ -161,40 +156,41 @@ public class Shooter_Enemy: MonoBehaviour
     }
     public void NomalShot()
     {
-        GameObject shotObj = Instantiate(SHOTOBJ, SHOTPOS.transform.position, Quaternion.identity);
+        GameObject shotObj = Instantiate(SHOTOBJ, shotPosition.transform.position, Quaternion.identity);
         Rigidbody rb = shotObj.GetComponent<Rigidbody>();
         NormalBulletSystem normalBulletSystem = shotObj.GetComponent<NormalBulletSystem>();
 
         normalBulletSystem.targetTag = "Player";
         normalBulletSystem.bulletDamage = bulletDamage;
-        normalBulletSystem.deathDistance = bullet_range / 1.5f;
-        normalBulletSystem.firstpos = SHOTPOS.transform.position;
+        normalBulletSystem.deathDistance = bulletRange / 1.5f;
+        normalBulletSystem.firstpos = shotPosition.transform.position;
         shotObj.transform.eulerAngles = transform.eulerAngles;
-        shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusion_chance, diffusion_chance)
-                            , Random.Range(-diffusion_chance, diffusion_chance)
-                            , Random.Range(diffusion_chance, diffusion_chance));
-        rb.velocity = normalBulletSystem.transform.forward * bullet_speed;
+        shotObj.transform.eulerAngles += new Vector3(Random.Range(-diffusionChance, diffusionChance)
+                            , Random.Range(-diffusionChance, diffusionChance)
+                            , Random.Range(diffusionChance, diffusionChance));
+        rb.velocity = normalBulletSystem.transform.forward * bulletSpeed;
+        rateCount = 0;
         //shotObj.transform.eulerAngles = this.transform.eulerAngles + new Vector3(0, 0, -90);
     }
     void TakeDmage(float damage, Collider other, Attack_System AS)
     {
-        if (old_dt == null)
+        if (oldDamageText == null)
         {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
+            GameObject dt = Instantiate(damageTextObject, damageTextPosition.transform.position, hpSlider.transform.rotation, transform.Find("EnemyCanvas"));
             UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
             Bullet_System bs = other.GetComponent<Bullet_System>();
             Damage_Text dts = dt.GetComponent<Damage_Text>();
-            old_dt = dt;
+            oldDamageText = dt;
 
             dt.transform.localEulerAngles = new Vector3(0, 180, 180);
             t.text = bs.damage.ToString();
-            old_damage = bs.damage;
+            oldDamage = bs.damage;
         }
-        else if (old_dt != null)
+        else if (oldDamageText != null)
         {
-            old_damage += other.GetComponent<Bullet_System>().damage;
-            old_dt.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            old_dt.GetComponent<Damage_Text>().TextReset();
+            oldDamage += other.GetComponent<Bullet_System>().damage;
+            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = oldDamage.ToString();
+            oldDamageText.GetComponent<Damage_Text>().TextReset();
 
         }
         if (currenthp > 0)
@@ -210,7 +206,7 @@ public class Shooter_Enemy: MonoBehaviour
     void Deathfunction()
     {
         Debug.Log("éÄñS");
-        em.ParentEnemyDeath(enemy_number);
+        enemyManager.ParentEnemyDeath(enemy_number);
         Destroy(gameObject);
     }
 }

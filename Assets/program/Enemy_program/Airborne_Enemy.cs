@@ -39,7 +39,7 @@ public class Airborne_Enemy : MonoBehaviour
     private int enemy_number;
     private bool isdeath;
 
-    private string Ename;
+    private string enemyName;
     private float exp;
 
     private float hp;
@@ -63,7 +63,7 @@ public class Airborne_Enemy : MonoBehaviour
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
                 float dir = Vector3.Distance(transform.position, Player.transform.position);
                 transform.localRotation = Quaternion.RotateTowards(transform.rotation
@@ -78,7 +78,7 @@ public class Airborne_Enemy : MonoBehaviour
             HPSlider.value = currenthp;
             //eŠÖŒW
             if (rate_count >= rapid_fire_rate
-                && !Player_System.player_isdeath)
+                && !Player_System.playerIsDeath)
             {
                 NomalShot();
                 rate_count = 0;
@@ -122,8 +122,6 @@ public class Airborne_Enemy : MonoBehaviour
         transform.position += Vector3.up * height;
         Debug.Log(transform.position);
         var e_l = enemy_List.Status[0];
-        Ename = e_l.name;
-        exp = e_l.exp;
         hp = e_l.hp;
         atk = e_l.atk;
         agi = e_l.agi;

@@ -61,7 +61,7 @@ public class Enemy_System : MonoBehaviour
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.player_isdeath)
+            else if (!isdeath && !Player_System.playerIsDeath)
             {
                 Quaternion.RotateTowards(
                     transform.rotation

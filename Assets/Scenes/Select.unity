@@ -3692,7 +3692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: test
 --- !u!222 &582941424
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4347,7 +4347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8863772b61a408d4dbcb907cf792531d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  I_I: {fileID: 11400000, guid: 7aca2613cc97fc34fadbc68d578df391, type: 2}
+  itemInfomation: {fileID: 11400000, guid: 7aca2613cc97fc34fadbc68d578df391, type: 2}
 --- !u!1 &691706783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,11 +6456,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246ce8a86f1c97243988a8dab074450d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 1
-  si: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0, type: 2}
+  feedTime: 1
+  audioSource: {fileID: 0}
+  enemyManager: {fileID: 0}
+  sceneManager: {fileID: 0}
+  playerSystem: {fileID: 0}
+  stageInfomation: {fileID: 0}
   stage_number: 0
-  start_count: 1
-  end_count: 0
+  stageStartCount: 0
+  endCount: 0
 --- !u!4 &926192964
 Transform:
   m_ObjectHideFlags: 0
@@ -10168,30 +10172,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bo: 1
-  brain: {fileID: 783276252}
+  cinemachinBrain: {fileID: 0}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  CAMERA: {fileID: 1421905486}
-  CVC: {fileID: 1488489828}
+  playerCamera: {fileID: 0}
+  cinemachineVirtualCamera: {fileID: 0}
   wheel: {fileID: 405067198}
-  GamePanel: {fileID: 0}
-  money_text: {fileID: 0}
-  AS: {fileID: 0}
-  panel_sound: {fileID: 8300000, guid: 40724cd685409f04d80652f27bdd35d1, type: 3}
-  damage_sound: {fileID: 8300000, guid: 39880007b9bc092408613372be26d973, type: 3}
-  isen: 0
-  en_recovery_max: 10
+  battleInfomationPanel: {fileID: 0}
+  moneyText: {fileID: 0}
+  audioSource: {fileID: 1578907278}
+  panelSound: {fileID: 0}
+  shotSound: {fileID: 0}
+  damageSound: {fileID: 0}
+  isEnergyRecovery: 0
+  energyRecoveryTime: 0
   hp: 100
   en: 100
   atk: 100
   agi: 100
   adi_time: 0
   adi_time_max: 0.1
-  jumpforce: 160
-  jump_num: 1
-  jump_second: 0.02
+  jumpForce: 6
+  jumpNum: 100
+  jumpRepeatSecond: 0.1
   isPanel: 0
-  walk_speed: 15
-  dash_speed: 25
+  walkSpeed: 10
+  dashSpeed: 15
   SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
 --- !u!23 &1578907282
 MeshRenderer:
@@ -11378,7 +11383,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807169885}
-  m_LocalRotation: {x: 0.062324416, y: -0.000000017306572, z: 0.000000001080723, w: 0.998056}
+  m_LocalRotation: {x: 0.062324416, y: 0.000000017306572, z: -0.000000001080723, w: 0.998056}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
