@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class ContactObj_System : MonoBehaviour
 {
     public enum Contact_Type{None,StageSelect,Production_Table }
-    public Contact_Type Cont;
+    public Contact_Type contactType;
     public string contact_text;
     public GameObject Panel;
     public GameObject WPanel;
@@ -19,17 +19,15 @@ public class ContactObj_System : MonoBehaviour
     private GameObject[] WPanel_List;
     public Animator anime;
     
-    
-
     //Production_Table—p
     [SerializeField] public Gun_List gl;
     [SerializeField] public GameObject StarObj;
 
-    public CinemachineVirtualCamera VC;
+    public CinemachineVirtualCamera cinemachineVirtualCamera;
 
     private void Start()
     {
-        switch (Cont)
+        switch (contactType)
         {
             case Contact_Type.None:
 
@@ -49,7 +47,7 @@ public class ContactObj_System : MonoBehaviour
     public void Canvas_Open()
     {
         Panel.SetActive(true);
-        switch (Cont)
+        switch (contactType)
         {
             case Contact_Type.Production_Table:
                 Gun_ReadIn();
@@ -61,9 +59,9 @@ public class ContactObj_System : MonoBehaviour
     }
     public void Canvas_Close()
     {
-        VC.Priority = 1;
+        cinemachineVirtualCamera.Priority = 1;
         Panel.SetActive(true);
-        switch (Cont)
+        switch (contactType)
         {
             case Contact_Type.Production_Table:
                 Gun_ReadIn();
@@ -82,7 +80,7 @@ public class ContactObj_System : MonoBehaviour
     }
     public void Gun_ReadIn()
     {
-        VC.Priority = 100;
+        cinemachineVirtualCamera.Priority = 100;
         string ObjectsPass = "Canvas/Panel/ScrollView/Viewport/Content";
         int wpn = transform.Find(ObjectsPass).childCount;
         if(wpn != 0) for (int i = 0; i < wpn; i++) Destroy(transform.Find(ObjectsPass).GetChild(i).gameObject);

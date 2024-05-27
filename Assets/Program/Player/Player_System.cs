@@ -80,7 +80,7 @@ public class Player_System : MonoBehaviour
     private bool isJumping = false;//ジャンプ出来るか否か
     private bool isJumpingRunning = false;//ジャンプ処理中か否か
 
-    public bool isPanel;//何かの画面を開いているか否か
+    public static bool isPanelOpen;
 
     [Tooltip("移動速度")]
     public float walkSpeed = 10;
@@ -129,7 +129,7 @@ public class Player_System : MonoBehaviour
     }
     void Update()
     {
-        if(!isPanel) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
+        if(!isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (movePermit)
         {
@@ -185,16 +185,16 @@ public class Player_System : MonoBehaviour
         bulletText.text = current_loaded_bullets.ToString();
         if (contactObjGetPanel)
         {
-            if (Input.GetKeyDown(KeyCode.E) && contactObjSystem != null && !contactObjGetPanel.activeSelf && !isPanel)
+            if (Input.GetKeyDown(KeyCode.E) && contactObjSystem != null && !contactObjGetPanel.activeSelf && !isPanelOpen)
             {
                 Canvas_Transition(contactObjSystem,contactObjGetPanel, true);
             }
-            else if (Input.GetKeyDown(KeyCode.E) && contactObjGetPanel.activeSelf && isPanel)
+            else if (Input.GetKeyDown(KeyCode.E) && contactObjGetPanel.activeSelf && isPanelOpen)
             {
                 Canvas_Transition(contactObjSystem,contactObjGetPanel, false);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && movePermit && !isPanel)
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && movePermit && !isPanelOpen)
         {
             Canvas_Transition(MenuPanel, true);
         }
@@ -270,7 +270,6 @@ public class Player_System : MonoBehaviour
     }
     void OnTriggerStay(Collider other)
     {
-
         if (other.gameObject.CompareTag("Saw")&& adi_time >= adi_time_max && !playerIsDeath)
         {
             adi_time = 0;
@@ -336,7 +335,7 @@ public class Player_System : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Contact"))
         {
-            if (Contact_Type.Production_Table == contactObjSystem.Cont) contactObjSystem.VC.Priority = 1;
+            if (Contact_Type.Production_Table == contactObjSystem.contactType) contactObjSystem.cinemachineVirtualCamera.Priority = 1;
             if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
             contactPanel.SetActive(false);
             contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
@@ -426,7 +425,7 @@ public class Player_System : MonoBehaviour
             cinemachinBrain.enabled = true;
             battleInfomationPanel.SetActive(true);
         }
-        isPanel = false;
+        isPanelOpen = false;
         MenuPanel.transform.localScale = Vector3.zero;
         contactPanel.SetActive(false);
         MenuPanel.SetActive(false);
@@ -470,14 +469,14 @@ public class Player_System : MonoBehaviour
             audioSource.PlayOneShot(panelSound);
             //brain.enabled = false;
             movePermit = false;
-            isPanel = true;
+            isPanelOpen = true;
             Panel.SetActive(true);
             DOTween.Sequence()
                 .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
                 .OnComplete(() => {
                     movePermit = false;
-                    isPanel = true;
+                    isPanelOpen = true;
                     Panel.SetActive(true);
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.Confined;
@@ -498,7 +497,7 @@ public class Player_System : MonoBehaviour
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;
                   movePermit = true;
-                  isPanel = false;
+                  isPanelOpen = false;
                   Panel.SetActive(false);
               }))
                 .Play();
@@ -512,27 +511,18 @@ public class Player_System : MonoBehaviour
          */
         if (IS)
         {
-            //brain.enabled = false;
             movePermit = false;
-            isPanel = true;
+            isPanelOpen = true;
             audioSource.PlayOneShot(panelSound);
-            switch (contactObjSystem.Cont)
+            switch (contactObjSystem.contactType)
             {
                 case Contact_Type.Production_Table:
                     moneyText.SetActive(true);
                     moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
-                    rigidBody.useGravity = false;
-                    rigidBody.velocity = Vector3.zero;
-                    transform.position = contactObjSystem.idlepos.transform.position;
-                    transform.localEulerAngles = contactObjSystem.idlepos.transform.localEulerAngles;
-                    contactObjSystem.VC.Priority = 100;
+                    PlayerMoveStop();
                     break;
                 case Contact_Type.StageSelect:
-                    rigidBody.useGravity = false;
-                    rigidBody.velocity = Vector3.zero;
-                    transform.position = contactObjSystem.idlepos.transform.position;
-                    transform.localEulerAngles = contactObjSystem.idlepos.transform.localEulerAngles;
-                    contactObjSystem.VC.Priority = 100;
+                    PlayerMoveStop();
                     break;
             }
 
@@ -543,7 +533,7 @@ public class Player_System : MonoBehaviour
                 .OnComplete(() => {
                     //brain.enabled = false;
                     movePermit = false;
-                    isPanel = true;
+                    isPanelOpen = true;
                     Panel.SetActive(true);
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.Confined;
@@ -555,7 +545,6 @@ public class Player_System : MonoBehaviour
             audioSource.PlayOneShot(panelSound);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            //brain.enabled = true;
             movePermit = true;
             DOTween.Sequence()
                 .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
@@ -563,16 +552,22 @@ public class Player_System : MonoBehaviour
               　.OnComplete(() => {
                   rigidBody.useGravity = true;
                   moneyText.SetActive(false);
-                  contactObjSystem.VC.Priority = 1;
-                  Cursor.visible = false;
-                  Cursor.lockState = CursorLockMode.Locked;
+                  contactObjSystem.cinemachineVirtualCamera.Priority = 1;
                   //brain.enabled = true;
                   movePermit = true;
-                  isPanel = false;
+                  isPanelOpen = false;
                   con.Canvas_Close();
                   Debug.Log("終了");
                 }))
                 .Play();
         }
+    }
+
+    private void PlayerMoveStop()
+    {
+        movePermit = false;
+        rigidBody.velocity = Vector3.zero;
+        transform.position = contactObjSystem.idlepos.transform.position;
+        transform.localEulerAngles = contactObjSystem.idlepos.transform.localEulerAngles;
     }
 }
