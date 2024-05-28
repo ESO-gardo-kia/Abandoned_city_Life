@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class Button_Equip : MonoBehaviour
 {
-    public int Enum;
-    [SerializeField] public AudioSource AC;
-    [SerializeField] public AudioClip ac1;
-    [SerializeField] public AudioClip ac2;
+    public int weponeNumber;
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioClip equipSound;
+    [SerializeField] public AudioClip notEquipSound;
     public void OnButtonClick()
     {
-        if (Player_Manager.isWeapon[Enum] == true)
+        if (Player_Manager.isWeapon[weponeNumber] == true)
         {
-            AC.PlayOneShot(ac1);
+            audioSource.PlayOneShot(equipSound);
             Debug.Log("ïêäÌÇïœÇ¶Ç‹ÇµÇΩ");
-            Player_System.player_weapon_id = Enum;
-            GameObject.Find("Player_System").gameObject.transform.GetComponent<Player_System>().Wepon_Reset(Enum);
+            Player_System.player_weapon_id = weponeNumber;
+            GameObject.Find("Player_System").gameObject.transform.GetComponent<Player_System>().Wepon_Reset(weponeNumber);
         }
         else
         {
             Debug.Log("ÇªÇÃïêäÌÇÕÇ‡Ç¡ÇƒÇ¢Ç‹ÇπÇÒ");
-            AC.PlayOneShot(ac2);
+            audioSource.PlayOneShot(notEquipSound);
         }
     }
 }

@@ -2,6 +2,7 @@ using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using static ContactObj_System;
@@ -27,54 +28,62 @@ public class EquipmentManagementSystem : MonoBehaviour
     private void Start()
     {
         cinemachineVirtualCamera.Priority = 0;
-        PanelReset();
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
+        Debug.Log("aoasndoasndo");
         if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
         {
+            if (!mainCanvas.activeSelf)
+            {
+                PanelReset();
+                Canvas_Transition(true);
+                Gun_ReadIn();
+            }
+            else
+            {
+                Canvas_Transition(false);
+            }
 
         }
     }
-    public void Canvas_Transition(GameObject Panel, bool IS)
+    public void Canvas_Transition(bool isOpen)
     {
         /*
          * trueÇ™âÊñ ÇäJÇ≠éûÇÃèàóù
          * falseÇ™âÊñ Çï¬Ç∂ÇÈéûÇÃèàóù
          */
-        if (IS)
+        if (isOpen)
         {
-            audioSource.PlayOneShot(panelSound);
 
+            audioSource.PlayOneShot(panelSound);
+            mainCanvas.SetActive(true);
+            Player_System.movePermit = false;
+            Player_System.isPanelOpen = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            cinemachineVirtualCamera.Priority = 10;
             DOTween.Sequence()
-                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
+                .Append(mainCanvas.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
                 .OnComplete(() => {
                     //brain.enabled = false;
-                    Player_System.movePermit = false;
-                    Player_System.isPanelOpen = true;
-                    Panel.SetActive(true);
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.Confined;
                 }))
                 .Play();
         }
         else
         {
             audioSource.PlayOneShot(panelSound);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Player_System.movePermit = true;
             DOTween.Sequence()
-                .Append(Panel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
+                .Append(mainCanvas.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
                 .SetEase(Ease.OutCirc)
               .OnComplete(() => {
-                  rigidBody.useGravity = true;
-                  moneyText.SetActive(false);
-                  contactObjSystem.cinemachineVirtualCamera.Priority = 1;
-                  //brain.enabled = true;
+                  mainCanvas.SetActive(false);
                   Player_System.movePermit = true;
                   Player_System.isPanelOpen = false;
+                  Cursor.visible = false;
+                  Cursor.lockState = CursorLockMode.Locked;
+                  cinemachineVirtualCamera.Priority = 0;
                   Debug.Log("èIóπ");
               }))
                 .Play();
@@ -82,16 +91,15 @@ public class EquipmentManagementSystem : MonoBehaviour
     }
     public void Gun_ReadIn()
     {
-        cinemachineVirtualCamera.Priority = 10;
+        
         PanelReset();
         for (int i = 0; i < gunList.Data.Count; i++)
         {
-            GameObject wp = Instantiate(weaponPanel, Vector3.zero, Quaternion.identity, itemLineupPassObj);
-            wp.name = weaponPanel.name + i.ToString();
-            wp.transform.Find("WeaponImage").GetComponent<Image>().sprite = gunList.Data[i].sprite_id;
+            GameObject weaponepanel = Instantiate(weaponPanel, Vector3.zero, Quaternion.identity, itemLineupPassObj);
+            weaponepanel.name = weaponPanel.name + i.ToString();
+            weaponepanel.transform.Find("WeaponImage").GetComponent<Image>().sprite = gunList.Data[i].sprite_id;
 
-            Text Wtext = wp.transform.Find("WeaponData").gameObject.GetComponent<Text>();
-            //if (gl.Data[i].name != null)
+            Text Wtext = weaponepanel.transform.Find("WeaponData").gameObject.GetComponent<Text>();
             var Guns = gunList.Data[i];
             Wtext.text =
             "Name:" + Guns.name +
@@ -100,17 +108,20 @@ public class EquipmentManagementSystem : MonoBehaviour
             "\r\nëïíeêî:" + Guns.loaded_bullets.ToString() +
             "\r\nî≠éÀíeêî:" + Guns.multi_bullet.ToString() +
             "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
+            ButtonCreation(i, weaponepanel);
+        }
+    }
 
-            Button_Equip EQbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
-            EQbutton.Enum = i;
-            Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
-            BUbutton.Enum = i;
-            BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gunList.Data[i].price.ToString();
-            Debug.Log("ÉåÉAìx" + Guns.rarity);
-            for (int a = 1; a < Guns.rarity; a++)
-            {
-                GameObject star = Instantiate(StarObj, wp.transform.Find("starlist"));
-            }
+    private void ButtonCreation(int i, GameObject panel)
+    {
+        Button_Equip EQbutton = panel.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
+        EQbutton.weponeNumber = i;
+        Buy_Button BUbutton = panel.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
+        BUbutton.weaponNumber = i;
+        BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gunList.Data[i].price.ToString();
+        for (int a = 1; a < gunList.Data[i].rarity; a++)
+        {
+            GameObject star = Instantiate(StarObj, panel.transform.Find("starlist"));
         }
     }
 

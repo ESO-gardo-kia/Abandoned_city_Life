@@ -336,7 +336,7 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Contact"))
         {
             if (Contact_Type.Production_Table == contactObjSystem.contactType) contactObjSystem.cinemachineVirtualCamera.Priority = 1;
-            if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
+            //if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
             contactPanel.SetActive(false);
             contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
             contactObjSystem = null;

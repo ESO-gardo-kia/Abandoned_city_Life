@@ -105,9 +105,9 @@ public class ContactObj_System : MonoBehaviour
             "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
 
             Button_Equip EQbutton = wp.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
-            EQbutton.Enum = i;
+            EQbutton.weponeNumber = i;
             Buy_Button BUbutton = wp.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
-            BUbutton.Enum = i;
+            BUbutton.weaponNumber = i;
             BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gl.Data[i].price.ToString();
             Debug.Log("ÉåÉAìx"+Guns.rarity);
             for (int a = 1;a < Guns.rarity;a++)
