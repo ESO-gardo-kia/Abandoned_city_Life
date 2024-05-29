@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
         GameOverPanel.SetActive(false);
         audioSource.PlayOneShot(stageInfomation.data[0].BGM);
+
+        playerMoney = 10000;
         //ÉJÅ[É\Éãä÷åW
         /*
         Cursor.visible = false;

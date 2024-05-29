@@ -9,11 +9,11 @@ using static ContactObj_System;
 
 public class EquipmentManagementSystem : MonoBehaviour
 {
-    [SerializeField] public string contact_text;
-    [SerializeField] public GameObject mainCanvas;
-    [SerializeField] public GameObject weaponPanel;
-    [SerializeField] public GameObject playerIdlePositionObject;
-    [SerializeField] public Transform itemLineupPassObj;
+    [SerializeField] private string contact_text;
+    [SerializeField] private GameObject mainCanvas;
+    [SerializeField] private GameObject weaponPanel;
+    [SerializeField] private GameObject playerIdlePositionObject;
+    [SerializeField] private Transform itemLineupPassObj;
     private int weaponPanelnumber;
     private GameObject[] weaponPanelList;
 
@@ -21,8 +21,8 @@ public class EquipmentManagementSystem : MonoBehaviour
     [SerializeField] private AudioClip panelSound;
 
     //Production_Table—p
-    [SerializeField] public Gun_List gunList;
-    [SerializeField] public GameObject StarObj;
+    [SerializeField] private Gun_List gunList;
+    [SerializeField] private GameObject StarObj;
 
     public CinemachineVirtualCamera cinemachineVirtualCamera;
     private void Start()
@@ -31,12 +31,10 @@ public class EquipmentManagementSystem : MonoBehaviour
     }
     private void OnTriggerStay(Collider collision)
     {
-        Debug.Log("aoasndoasndo");
         if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
         {
             if (!mainCanvas.activeSelf)
             {
-                PanelReset();
                 Canvas_Transition(true);
                 Gun_ReadIn();
             }
@@ -44,7 +42,13 @@ public class EquipmentManagementSystem : MonoBehaviour
             {
                 Canvas_Transition(false);
             }
-
+        }
+    }
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.transform.CompareTag("Player") && mainCanvas.activeSelf)
+        {
+            Canvas_Transition(false);
         }
     }
     public void Canvas_Transition(bool isOpen)
@@ -55,7 +59,6 @@ public class EquipmentManagementSystem : MonoBehaviour
          */
         if (isOpen)
         {
-
             audioSource.PlayOneShot(panelSound);
             mainCanvas.SetActive(true);
             Player_System.movePermit = false;
@@ -91,7 +94,6 @@ public class EquipmentManagementSystem : MonoBehaviour
     }
     public void Gun_ReadIn()
     {
-        
         PanelReset();
         for (int i = 0; i < gunList.Data.Count; i++)
         {
@@ -111,7 +113,6 @@ public class EquipmentManagementSystem : MonoBehaviour
             ButtonCreation(i, weaponepanel);
         }
     }
-
     private void ButtonCreation(int i, GameObject panel)
     {
         Button_Equip EQbutton = panel.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
@@ -124,7 +125,6 @@ public class EquipmentManagementSystem : MonoBehaviour
             GameObject star = Instantiate(StarObj, panel.transform.Find("starlist"));
         }
     }
-
     private void PanelReset()
     {
         weaponPanelnumber = itemLineupPassObj.childCount;

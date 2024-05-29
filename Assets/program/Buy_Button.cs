@@ -7,13 +7,13 @@ public class Buy_Button : MonoBehaviour
 {
     public int weaponNumber;
     public Gun_List gunList;
-    [SerializeField]public AudioSource audioSource;
+    [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip buySound;
     [SerializeField] public AudioClip notBuySound;
     public void OnButtonClick()
     {
-        Debug.Log(GameManager.playerMoney);
-        if (GameManager.playerMoney >= gunList.Data[weaponNumber].price && Player_Manager.isWeapon[weaponNumber] == false)
+        if (GameManager.playerMoney >= gunList.Data[weaponNumber].price 
+            && Player_Manager.isWeapon[weaponNumber] == false)
         {
             audioSource.PlayOneShot(buySound);
             Debug.Log("•Ší‚ğ”ƒ‚¢‚Ü‚µ‚½");

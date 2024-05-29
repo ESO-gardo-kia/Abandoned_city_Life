@@ -129,7 +129,9 @@ public class Player_System : MonoBehaviour
     }
     void Update()
     {
-        if(!isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
+        moneyText.SetActive(true);
+        moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
+        if (!isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (movePermit)
         {
@@ -290,11 +292,13 @@ public class Player_System : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Contact"))
         {
+            /*
             contactPanel.SetActive(true);
             contactPanel.GetComponent<Image>().color = new UnityEngine.Color(255, 255, 255, 50);
             contactObjSystem = other.GetComponent<ContactObj_System>();
             if (contactObjSystem.contact_text != null) contactText.text = contactObjSystem.contact_text;
             contactObjGetPanel = contactObjSystem.Panel;
+            */
         }
         if (movePermit)
         {
@@ -335,7 +339,7 @@ public class Player_System : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Contact"))
         {
-            if (Contact_Type.Production_Table == contactObjSystem.contactType) contactObjSystem.cinemachineVirtualCamera.Priority = 1;
+            //if (Contact_Type.Production_Table == contactObjSystem.contactType) contactObjSystem.cinemachineVirtualCamera.Priority = 1;
             //if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
             contactPanel.SetActive(false);
             contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
