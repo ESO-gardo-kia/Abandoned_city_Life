@@ -4,31 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Scene_Manager : MonoBehaviour
+public class SceneTransitionSystem : MonoBehaviour
 {
-    private GameManager gm;
-    public Stage_Information si;
+    private GameManager gameManager;
+    public Stage_Information stageInfomation;
 
     private void Start()
     {
-        gm = transform.GetComponent<GameManager>();
+        gameManager = transform.GetComponent<GameManager>();
     }
-    /*
     public void SM_Title_Transfer()
     {
-        SceneManager.LoadScene(si.data[0].name);
+        SceneManager.LoadScene(stageInfomation.data[0].name);
     }
     public void SM_Test_Transfer()
     {
-        SceneManager.LoadScene(si.data[2].name);
+        SceneManager.LoadScene(stageInfomation.data[2].name);
     }
     public void SM_Select_Transfer()
     {
-        SceneManager.LoadScene(si.data[1].name);
+        SceneManager.LoadScene(stageInfomation.data[1].name);
     }
     public void SM_Main_Transfer()
     {
-        SceneManager.LoadScene(si.data[2].name);
+        SceneManager.LoadScene(stageInfomation.data[2].name);
     }
     public void SM_Replay_Transfer()
     {
@@ -42,7 +41,6 @@ public class Scene_Manager : MonoBehaviour
         Application.Quit();//ゲームプレイ終了
 #endif
     }
-    */
 
     public void Load_Scene(int stage_number)
     {
@@ -50,7 +48,7 @@ public class Scene_Manager : MonoBehaviour
         else
         {
             Debug.Log("移動" + stage_number);
-            SceneManager.LoadScene((int)si.data[stage_number].tran_scene);
+            SceneManager.LoadScene((int)stageInfomation.data[stage_number].tran_scene);
         }
     }
 }

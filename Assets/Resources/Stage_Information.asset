@@ -14,18 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
-    stagetype: 0
+    stagetype: 3
     tran_scene: 0
     name: Title
+    stagenumber: 0
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 
     enemies_num2: 
     enemies_num3: 
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
-    stagetype: 1
+    stagetype: 3
     tran_scene: 1
     name: Select
+    stagenumber: 0
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 
     enemies_num2: 
@@ -34,7 +36,8 @@ MonoBehaviour:
   - BGM: {fileID: 8300000, guid: 8b8e1765cbb567e4f82e13b1f89dc3db, type: 3}
     stagetype: 0
     tran_scene: 2
-    name: Stage1
+    name: "\u4FB5\u5165\u53E3\u6383\u8A0E\u6226"
+    stagenumber: 1
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0100000000000000000000000000000000000000
     enemies_num2: 0100000000000000
@@ -43,7 +46,8 @@ MonoBehaviour:
   - BGM: {fileID: 8300000, guid: 6e8ecef07460a624ca40031bc4705bb8, type: 3}
     stagetype: 0
     tran_scene: 2
-    name: Stage2
+    name: "\u7B2C\u4E00\u5C64\u3000\u59CB\u307E\u308A"
+    stagenumber: 2
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0200000001000000
     enemies_num2: 020000000200000001000000
@@ -53,6 +57,7 @@ MonoBehaviour:
     stagetype: 0
     tran_scene: 2
     name: Stage3
+    stagenumber: 3
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0100000002000000000000000100000001000000
     enemies_num2: 0200000000000000020000000100000002000000
@@ -62,6 +67,7 @@ MonoBehaviour:
     stagetype: 1
     tran_scene: 2
     name: endless
+    stagenumber: 4
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0600000005000000030000000400000004000000
     enemies_num2: 
@@ -71,6 +77,7 @@ MonoBehaviour:
     stagetype: 1
     tran_scene: 2
     name: endless
+    stagenumber: 5
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 01000000000000000000000000000000
     enemies_num2: 

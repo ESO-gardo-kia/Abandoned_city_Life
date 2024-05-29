@@ -17,6 +17,8 @@ public class Stage_Information: ScriptableObject
             endless,
             //ボス戦
             boss,
+
+            Safe
         }
         public enum TransitionScene
         {
@@ -27,6 +29,7 @@ public class Stage_Information: ScriptableObject
         public StageType stagetype;
         public TransitionScene tran_scene;
         public string name;
+        public int stagenumber;
         public Vector3 spawn_pos;
         //3ウェーブ固定
         public int[] enemies_num1;

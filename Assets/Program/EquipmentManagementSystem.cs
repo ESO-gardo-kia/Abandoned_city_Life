@@ -97,7 +97,7 @@ public class EquipmentManagementSystem : MonoBehaviour
         PanelReset();
         for (int i = 0; i < gunList.Data.Count; i++)
         {
-            GameObject weaponepanel = Instantiate(weaponPanel, Vector3.zero, Quaternion.identity, itemLineupPassObj);
+            GameObject weaponepanel = Instantiate(weaponPanel, itemLineupPassObj);
             weaponepanel.name = weaponPanel.name + i.ToString();
             weaponepanel.transform.Find("WeaponImage").GetComponent<Image>().sprite = gunList.Data[i].sprite_id;
 

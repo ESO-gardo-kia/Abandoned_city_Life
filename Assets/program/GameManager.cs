@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int feedTime = 1;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
-    [SerializeField] private Scene_Manager sceneManager;
+    [SerializeField] private SceneTransitionSystem sceneManager;
     [SerializeField] private Player_System playerSystem;
     private string SavePath;
     public static GameManager instance;
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
         audioSource = GetComponent<AudioSource>();
-        sceneManager = transform.GetComponent<Scene_Manager>();
+        sceneManager = transform.GetComponent<SceneTransitionSystem>();
         enemyManager = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
         playerSystem = transform.Find("Player_Manager/Player_System").GetComponent<Player_System>();
         //Stage_Information
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             //GameOver();
         }
     }
-    public void Scene_Transition_Process(int sn)
+    public void Scene_Transition_Process(int transitionSceneNumber)
     {
         //フェードパネル表示
         FeedPanel.SetActive(true);
@@ -94,31 +94,31 @@ public class GameManager : MonoBehaviour
         .OnComplete(() =>
         {
             audioSource.Stop();
-            sceneManager.Load_Scene(sn);//シーン移動
+            sceneManager.Load_Scene(transitionSceneNumber);//シーン移動
             enemyManager.Enemy_Manager_Reset();//エネミーマネージャーリセット
             playerSystem.Player_Reset(false);//プレイヤーの情報をリセットさせる
-            transform.Find("Player_Manager/Player_System").gameObject.transform.position = stageInfomation.data[sn].spawn_pos;
+            transform.Find("Player_Manager/Player_System").gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
         }))
         .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * feedTime).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
-                    audioSource.PlayOneShot(stageInfomation.data[sn].BGM);
-                    stageStartCountText.GetComponent<Text>().text = stageInfomation.data[sn].name;//ステージ名表示
+                    audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
+                    stageStartCountText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;//ステージ名表示
                 }))
         .Append(stageStartCountText.transform.DOScale(Vector3.one * 1, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
         .OnComplete(() => {
             Player_System.movePermit = true;
             Enemy_Manager.enemies_move_permit = true;
-            if(sn == 2)stageStartCountText.GetComponent<Text>().text = "Start!";
+            if(transitionSceneNumber == 2)stageStartCountText.GetComponent<Text>().text = "Start!";
         }))
         .Append(stageStartCountText.transform.DOScale(Vector3.zero, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
-                    Debug.Log(stageInfomation.data[sn].name);
+                    Debug.Log(stageInfomation.data[transitionSceneNumber].name);
                     stageStartCountText.transform.localScale = Vector3.one;
                     Enemy_Manager.enemies_move_permit = true;
                     stageStartCountText.GetComponent<Text>().text = "";
                     FeedPanel.SetActive(false);
                     GameOverPanel.SetActive(false);
-                    switch (stageInfomation.data[sn].tran_scene)
+                    switch (stageInfomation.data[transitionSceneNumber].tran_scene)
                     {
                         case stage_information.TransitionScene.Title://タイトル
                             playerSystem.Player_Reset(false);
@@ -128,12 +128,12 @@ public class GameManager : MonoBehaviour
                             break;
                         case stage_information.TransitionScene.Main://Main
                             playerSystem.Player_Reset(true);
-                            enemyManager.stagetype = stageInfomation.data[sn].stagetype;
+                            enemyManager.stagetype = stageInfomation.data[transitionSceneNumber].stagetype;
                             List<int[]> wave = new List<int[]>
                             {
-                                stageInfomation.data[sn].enemies_num1,
-                                stageInfomation.data[sn].enemies_num2,
-                                stageInfomation.data[sn].enemies_num3
+                                stageInfomation.data[transitionSceneNumber].enemies_num1,
+                                stageInfomation.data[transitionSceneNumber].enemies_num2,
+                                stageInfomation.data[transitionSceneNumber].enemies_num3
                             };
                             enemyManager.all_wave = wave;
                             StartCoroutine(enemyManager.Enemies_Spawn_Function(wave[0]));
