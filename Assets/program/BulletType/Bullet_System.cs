@@ -100,7 +100,6 @@ public class Bullet_System : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.gameObject.CompareTag("Floor"))
         {
             Instantiate(hitparticle,transform.position ,Quaternion.identity,transform.transform.parent = null);

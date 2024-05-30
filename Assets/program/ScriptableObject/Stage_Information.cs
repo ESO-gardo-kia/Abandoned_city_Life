@@ -29,6 +29,8 @@ public class Stage_Information: ScriptableObject
         public StageType stagetype;
         public TransitionScene tran_scene;
         public string name;
+        public int fixationReward;
+        public string stageDescription;
         public int stagenumber;
         public Vector3 spawn_pos;
         //3ウェーブ固定

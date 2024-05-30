@@ -187,6 +187,7 @@ public class Player_System : MonoBehaviour
         bulletText.text = current_loaded_bullets.ToString();
         if (contactObjGetPanel)
         {
+            /*
             if (Input.GetKeyDown(KeyCode.E) && contactObjSystem != null && !contactObjGetPanel.activeSelf && !isPanelOpen)
             {
                 Canvas_Transition(contactObjSystem,contactObjGetPanel, true);
@@ -195,14 +196,15 @@ public class Player_System : MonoBehaviour
             {
                 Canvas_Transition(contactObjSystem,contactObjGetPanel, false);
             }
+            */
         }
         if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && movePermit && !isPanelOpen)
         {
-            Canvas_Transition(MenuPanel, true);
+            //Canvas_Transition(MenuPanel, true);
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && MenuPanel.activeSelf)
         {
-            Canvas_Transition(MenuPanel,false);
+            //Canvas_Transition(MenuPanel,false);
         }
     }
     void FixedUpdate()
@@ -462,12 +464,9 @@ public class Player_System : MonoBehaviour
         reload_speed = Guns.reload_speed;
         reloadSlider.maxValue = reload_speed;
     }
+    /*
     public void Canvas_Transition(GameObject Panel, bool IS)
     {
-        /*
-         * true‚ª‰æ–Ê‚ğŠJ‚­‚Ìˆ—
-         * false‚ª‰æ–Ê‚ğ•Â‚¶‚é‚Ìˆ—
-         */
         if (IS)
         {
             audioSource.PlayOneShot(panelSound);
@@ -509,10 +508,6 @@ public class Player_System : MonoBehaviour
     }
     public void Canvas_Transition(ContactObj_System con,GameObject Panel,bool IS)
     {
-        /*
-         * true‚ª‰æ–Ê‚ğŠJ‚­‚Ìˆ—
-         * false‚ª‰æ–Ê‚ğ•Â‚¶‚é‚Ìˆ—
-         */
         if (IS)
         {
             movePermit = false;
@@ -566,7 +561,7 @@ public class Player_System : MonoBehaviour
                 .Play();
         }
     }
-
+*/
     private void PlayerMoveStop()
     {
         movePermit = false;

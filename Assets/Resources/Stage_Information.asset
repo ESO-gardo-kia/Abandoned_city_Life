@@ -17,6 +17,8 @@ MonoBehaviour:
     stagetype: 3
     tran_scene: 0
     name: Title
+    fixationReward: 0
+    stageDescription: 
     stagenumber: 0
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 
@@ -27,6 +29,8 @@ MonoBehaviour:
     stagetype: 3
     tran_scene: 1
     name: Select
+    fixationReward: 0
+    stageDescription: 
     stagenumber: 0
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 
@@ -37,6 +41,8 @@ MonoBehaviour:
     stagetype: 0
     tran_scene: 2
     name: "\u4FB5\u5165\u53E3\u6383\u8A0E\u6226"
+    fixationReward: 300
+    stageDescription: "\u30C6\u30B9\u30C8\u7528\uFF11"
     stagenumber: 1
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0100000000000000000000000000000000000000
@@ -47,6 +53,8 @@ MonoBehaviour:
     stagetype: 0
     tran_scene: 2
     name: "\u7B2C\u4E00\u5C64\u3000\u59CB\u307E\u308A"
+    fixationReward: 500
+    stageDescription: "\u30C6\u30B9\u30C8\u7528\uFF12"
     stagenumber: 2
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0200000001000000
@@ -57,6 +65,8 @@ MonoBehaviour:
     stagetype: 0
     tran_scene: 2
     name: Stage3
+    fixationReward: 0
+    stageDescription: "\u30C6\u30B9\u30C8\u7528\uFF13"
     stagenumber: 3
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0100000002000000000000000100000001000000
@@ -67,6 +77,8 @@ MonoBehaviour:
     stagetype: 1
     tran_scene: 2
     name: endless
+    fixationReward: 0
+    stageDescription: "\u30C6\u30B9\u30C8\u7528\uFF14"
     stagenumber: 4
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 0600000005000000030000000400000004000000
@@ -77,6 +89,8 @@ MonoBehaviour:
     stagetype: 1
     tran_scene: 2
     name: endless
+    fixationReward: 0
+    stageDescription: 
     stagenumber: 5
     spawn_pos: {x: 0, y: 1, z: 0}
     enemies_num1: 01000000000000000000000000000000

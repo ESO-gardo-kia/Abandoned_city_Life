@@ -7,13 +7,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Gun_List;
 
-public class StageSelectSystem : MonoBehaviour
+public class StageSelectManagementSystem : MonoBehaviour
 {
     public string contact_text;
     [SerializeField] private Stage_Information stageInformation;
-    [SerializeField] private GameObject mainCanvas;
-    [SerializeField] private GameObject idlepos;
-    [SerializeField] private GameObject stageSelectPanelObj;
+    [SerializeField] private GameObject mainPanel;
+    [SerializeField] private GameObject playerIdlepos;
+    [SerializeField] private GameObject stageSelectPanelPrefab;
+    [SerializeField] private StageStartButtonSystem stageStartButton;
+    [SerializeField] private Text FixationRewardText;
+    [SerializeField] private Text StageDescriptionText;
     [SerializeField] private Transform itemLineupPassObj;
     [SerializeField] private Animator anime;
 
@@ -23,15 +26,14 @@ public class StageSelectSystem : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
     private void Start()
     {
-        mainCanvas = transform.Find("Canvas/Panel").gameObject;
-        mainCanvas.SetActive(false);
-        mainCanvas.transform.localScale = Vector3.zero;
+        mainPanel.SetActive(false);
+        mainPanel.transform.localScale = Vector3.zero;
     }
     private void OnTriggerStay(Collider collision)
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
         {
-            if (!mainCanvas.activeSelf)
+            if (!mainPanel.activeSelf)
             {
                 cinemachineVirtualCamera.Priority = 10;
                 anime.SetTrigger("open");
@@ -48,7 +50,7 @@ public class StageSelectSystem : MonoBehaviour
     }
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.transform.CompareTag("Player") && mainCanvas.activeSelf)
+        if (collision.transform.CompareTag("Player") && mainPanel.activeSelf)
         {
             cinemachineVirtualCamera.Priority = 0;
             Canvas_Transition(false);
@@ -63,13 +65,13 @@ public class StageSelectSystem : MonoBehaviour
         if (isOpen)
         {
             audioSource.PlayOneShot(panelSound);
-            mainCanvas.SetActive(true);
+            mainPanel.SetActive(true);
             Player_System.movePermit = false;
             Player_System.isPanelOpen = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
             DOTween.Sequence()
-                .Append(mainCanvas.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
+                .Append(mainPanel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
                 .OnComplete(() => {
                     //brain.enabled = false;
@@ -80,10 +82,10 @@ public class StageSelectSystem : MonoBehaviour
         {
             audioSource.PlayOneShot(panelSound);
             DOTween.Sequence()
-                .Append(mainCanvas.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
+                .Append(mainPanel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
                 .SetEase(Ease.OutCirc)
               .OnComplete(() => {
-                  mainCanvas.SetActive(false);
+                  mainPanel.SetActive(false);
                   Player_System.movePermit = true;
                   Player_System.isPanelOpen = false;
                   Cursor.visible = false;
@@ -101,8 +103,13 @@ public class StageSelectSystem : MonoBehaviour
         {
             if ((int)Data[i].stagetype != 3)
             {
-                var stageselectpanelobj = Instantiate(stageSelectPanelObj, itemLineupPassObj);
+                var stageselectpanelobj = Instantiate(stageSelectPanelPrefab, itemLineupPassObj);
+                StageSelectSignalButtonSystem stageSelectSignalButtonSystem = stageselectpanelobj.GetComponent<StageSelectSignalButtonSystem>();
                 stageselectpanelobj.transform.Find("StageName").GetComponent<Text>().text = "MISSION " + Data[i].stagenumber + " :" + Data[i].name;
+                stageSelectSignalButtonSystem.stageNumber = i;
+                stageSelectSignalButtonSystem.stageStartButton = stageStartButton;
+                stageSelectSignalButtonSystem.FixationRewardText = FixationRewardText;
+                stageSelectSignalButtonSystem.StageDescriptionText = StageDescriptionText;
             }
         }
     }

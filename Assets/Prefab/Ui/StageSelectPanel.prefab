@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2330438432421541852}
   - component: {fileID: 1118369195119470280}
   - component: {fileID: 2330438432421541854}
+  - component: {fileID: 936188219117127814}
   m_Layer: 5
   m_Name: StageSelectPanel
   m_TagString: Untagged
@@ -123,7 +124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2330438432421541852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 936188219117127814}
+        m_TargetAssemblyTypeName: StageSelectSignalButtonSystem, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2330438432421541854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +152,23 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 0.58218247, b: 0, a: 1}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!114 &936188219117127814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330438432421541850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8934dcc1209c8e41a421b263192e3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage_Information: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0, type: 2}
+  stageStartButton: {fileID: 0}
+  FixationRewardText: {fileID: 0}
+  StageDescriptionText: {fileID: 0}
+  stageNumber: 0
 --- !u!1 &7056896986558099860
 GameObject:
   m_ObjectHideFlags: 0
