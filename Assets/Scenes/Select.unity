@@ -1770,8 +1770,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138305092}
   m_HandleRect: {fileID: 138305091}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999982
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2144,7 +2144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288739091}
-  m_LocalRotation: {x: 0.09853762, y: -0.000000004280661, z: 4.238689e-10, w: 0.99513334}
+  m_LocalRotation: {x: 0.098537624, y: 0.0000000042806607, z: -4.238689e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9015,7 +9015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -9.999868}
+  m_AnchoredPosition: {x: 0, y: -10.000085}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1474471589
@@ -9814,7 +9814,7 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
   damageSound: {fileID: 8300000, guid: 39880007b9bc092408613372be26d973, type: 3}
   isEnergyRecovery: 0
-  energyRecoveryTime: 0
+  energyRecoveryTime: 10
   hp: 100
   en: 100
   atk: 100

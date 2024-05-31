@@ -246,11 +246,7 @@ public class Player_System : MonoBehaviour
                     isEnergyRecovery = false;
                     currentEn--;
                 }
-                float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
-                float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
-                Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z).normalized; // 正規化
-                Player_movedir = this.transform.forward * z + this.transform.right * x;
-                rigidBody.velocity = new Vector3(Player_movedir.x * dashSpeed, rigidBody.velocity.y, Player_movedir.z * dashSpeed);
+                PlayerMove(dashSpeed);
             }
             else
             {
@@ -264,11 +260,7 @@ public class Player_System : MonoBehaviour
                         isEnergyRecovery = true;
                     }
                 }
-                float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
-                float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
-                Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z).normalized; // 正規化
-                Player_movedir = this.transform.forward * z + this.transform.right * x;
-                rigidBody.velocity = new Vector3(Player_movedir.x * walkSpeed, rigidBody.velocity.y, Player_movedir.z * walkSpeed);
+                PlayerMove(walkSpeed);
             }
         }
     }
@@ -363,6 +355,15 @@ public class Player_System : MonoBehaviour
             GameObject.Find("Enemy_Manager").GetComponent<Enemy_Manager>().Player_Death();
         }
     }
+    private void PlayerMove(float speed)
+    {
+        float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
+        float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
+        Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z); // 正規化
+        Player_movedir = this.transform.forward * z + this.transform.right * x;
+        Player_movedir = Player_movedir.normalized;
+        rigidBody.velocity = new Vector3(Player_movedir.x * speed, rigidBody.velocity.y, Player_movedir.z * speed);
+    }
     IEnumerator JunpMove()
     {
         rigidBody.velocity = Vector3.zero;
@@ -382,14 +383,6 @@ public class Player_System : MonoBehaviour
                 rigidBody.AddForce(Vector3.up * (ju_fo), ForceMode.Impulse);
                 yield return new WaitForSeconds(jumpRepeatSecond);
             }
-        }
-    }
-    IEnumerator DashMove()
-    {
-        for(int i = 0 ; i < 3 ; i++)
-        {
-            rigidBody.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
-            yield return new WaitForSeconds(0.01f);
         }
     }
     public void NomalShot()

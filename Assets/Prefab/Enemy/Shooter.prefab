@@ -4488,10 +4488,10 @@ MonoBehaviour:
   damageTextPosition: {fileID: 7216383994118821451}
   shotSound: {fileID: 0}
   bulletDamage: 5
-  rapidFireRate: 0
-  bulletRange: 0
-  bulletSpeed: 0
-  diffusionChance: 0
+  rapidFireRate: 5
+  bulletRange: 50
+  bulletSpeed: 5
+  diffusionChance: 3
   rateCount: 0
   SHOTOBJ: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20, type: 3}
   enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}

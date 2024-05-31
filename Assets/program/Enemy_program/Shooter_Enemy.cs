@@ -27,7 +27,7 @@ public class Shooter_Enemy: MonoBehaviour
     public float bulletRange;//射程
     public float bulletSpeed;//弾速
     public float diffusionChance;//拡散率
-    public float rateCount = 0;
+    private float rateCount = 0;
     [SerializeField] public GameObject SHOTOBJ;
 
     [Header("--- ステータス ---")]
@@ -102,10 +102,6 @@ public class Shooter_Enemy: MonoBehaviour
         //Debug.Log("敵の情報をリセットする");
         if(enemyManager == null)enemyManager = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
         if (playerObject == null) playerObject = enemyManager.player_system;
-        shotPosition = transform.Find("SHOTPOS").gameObject;
-        damageTextPosition = transform.Find("TEXTPOS").gameObject;
-        enemyCanvas = transform.Find("EnemyCanvas").gameObject;
-        hpSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rigitBody = GetComponent<Rigidbody>();
         isdeath = false;
