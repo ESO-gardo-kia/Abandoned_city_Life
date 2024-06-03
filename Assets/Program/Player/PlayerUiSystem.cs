@@ -4,14 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 
-public class PlayerCanvasSystem : MonoBehaviour
+public class PlayerUiSystem : MonoBehaviour
 {
     public void Canvas_Transition(
-        ContactObj_System contactObjSystem1
-        , ContactObj_System contactObjSystem2
-        , GameObject Panel
+         GameObject Panel
         , bool IS
         , Rigidbody rigidbody
         , GameObject moneyText

@@ -4478,23 +4478,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c57ef830ca31154682c9e33fa4a6b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunList: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  shotPosition: {fileID: 7216383993900139212}
-  wheel: {fileID: 4807374465367338613}
+  enemyList: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
   enemyCanvas: {fileID: 7216383995216182548}
   hpSlider: {fileID: 7216383993608546364}
   damageTextObject: {fileID: 8442327590783285883, guid: 66de18366f8255b46a42cc5bb9564059,
     type: 3}
   damageTextPosition: {fileID: 7216383994118821451}
+  navMeshAgent: {fileID: 7216383993853507430}
+  rigidBody: {fileID: 7216383993853507431}
+  wheelObject: {fileID: 4807374465367338613}
+  wheelRotationSpeed: 2
+  shotPosition: {fileID: 7216383993900139212}
   shotSound: {fileID: 0}
   bulletDamage: 5
-  rapidFireRate: 5
-  bulletRange: 50
-  bulletSpeed: 5
+  rapidFireRate: 0.3
+  bulletRange: 100
+  bulletSpeed: 300
   diffusionChance: 3
-  rateCount: 0
   SHOTOBJ: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20, type: 3}
-  enemy_List: {fileID: 11400000, guid: ea03235bef6992c479805139ed9054bc, type: 2}
+  enemy_number: 0
 --- !u!65 &7216383993853507428
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -143,7 +143,6 @@ public class Enemy_Manager : MonoBehaviour
     }
     public void Spawn_Function(int i)
     {
-        Debug.Log("ê∂ê¨ÇµÇΩìGÇÃID:"+i);
         GameObject eo = Instantiate(el.Status[i].Enemy_Model
             , SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(Random.Range(-spawn_range, spawn_range), 3f, Random.Range(-spawn_range, spawn_range))
             , Quaternion.identity, transform.Find("Enemy_ObjList"));
@@ -152,27 +151,27 @@ public class Enemy_Manager : MonoBehaviour
             case 0:
                 Shooter_Enemy ShooterE = eo.GetComponent<Shooter_Enemy>();
                 ShooterE.enemyManager = this;
-                ShooterE.Enemy_Reset();
+                ShooterE.Start();
                 break;
             case 1:
                 Assault_Enemy AssaultE = eo.GetComponent<Assault_Enemy>();
                 AssaultE.enemyManager = this;
-                AssaultE.Enemy_Reset();
+                AssaultE.Start();
                 break;
             case 2:
                 ClusterCatapult_Enemy ClusterE = eo.GetComponent<ClusterCatapult_Enemy>();
-                ClusterE.em = this;
-                ClusterE.Enemy_Reset();
+                ClusterE.enemyManager = this;
+                ClusterE.Start();
                 break;
             case 3:
                 FollowingShooter_Enemy FollowingE = eo.GetComponent<FollowingShooter_Enemy>();
-                FollowingE.em = this;
-                FollowingE.Enemy_Reset();
+                FollowingE.enemyManager = this;
+                FollowingE.Start();
                 break;
             case 4:
                 Airborne_Enemy AirborneE = eo.GetComponent<Airborne_Enemy>();
-                AirborneE.em = this;
-                AirborneE.Enemy_Reset();
+                AirborneE.enemyManager = this;
+                AirborneE.Start();
                 break;
         }
     }
@@ -225,5 +224,5 @@ public class Enemy_Manager : MonoBehaviour
     public void Player_Death()
     {
         StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
-    } 
+    }
 }

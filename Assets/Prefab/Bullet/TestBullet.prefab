@@ -201,7 +201,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6149490793626288295}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -223,14 +223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2594642818979987878}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  type: 0
+  bulletType: 0
   hitparticle: {fileID: 3790719704686666019, guid: 312799478f0bfd8438b5860149c36661,
     type: 3}
   target_tag: Player
   damage: 10
-  speed: 0
-  dire: {x: 0, y: 0, z: 0}
-  death_dis: 33.333332
+  bulletSpeed: 0
+  deathDistance: 1
   firstpos: {x: 67.730354, y: 1.9724827, z: 66.05079}
   isfollow: 1
   targetobj: {fileID: 0}

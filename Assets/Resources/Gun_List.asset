@@ -21,9 +21,9 @@ MonoBehaviour:
     sprite_id: {fileID: 21300000, guid: 0fdf58accac91e54e8ec7d35c170a0bf, type: 3}
     price: 100
     bullet_damage: 3
-    rapid_fire_rate: 3
+    rapid_fire_rate: 2
     loaded_bullets: 8
-    reload_speed: 3
+    reload_speed: 1
     bullet_range: 50
     bullet_speed: 100
     diffusion__chance: 3
@@ -40,7 +40,7 @@ MonoBehaviour:
     bullet_damage: 6
     rapid_fire_rate: 1.5
     loaded_bullets: 10
-    reload_speed: 4
+    reload_speed: 1
     bullet_range: 50
     bullet_speed: 100
     diffusion__chance: 4
@@ -57,7 +57,7 @@ MonoBehaviour:
     bullet_damage: 4
     rapid_fire_rate: 1.3
     loaded_bullets: 25
-    reload_speed: 6
+    reload_speed: 2
     bullet_range: 150
     bullet_speed: 200
     diffusion__chance: 2
@@ -74,11 +74,11 @@ MonoBehaviour:
     bullet_damage: 9
     rapid_fire_rate: 1.2
     loaded_bullets: 40
-    reload_speed: 4
+    reload_speed: 3.5
     bullet_range: 150
     bullet_speed: 100
     diffusion__chance: 3
-    multi_bullet: 3
+    multi_bullet: 1
     type: 0
     rarity: 4
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
@@ -88,14 +88,14 @@ MonoBehaviour:
     name: SR-1
     sprite_id: {fileID: 21300000, guid: 0fdf58accac91e54e8ec7d35c170a0bf, type: 3}
     price: 300
-    bullet_damage: 9
+    bullet_damage: 100
     rapid_fire_rate: 5
     loaded_bullets: 10
-    reload_speed: 10
+    reload_speed: 3.5
     bullet_range: 500
     bullet_speed: 300
     diffusion__chance: 0
-    multi_bullet: 5
+    multi_bullet: 1
     type: 0
     rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
@@ -105,14 +105,14 @@ MonoBehaviour:
     name: SR-2
     sprite_id: {fileID: 21300000, guid: 0fdf58accac91e54e8ec7d35c170a0bf, type: 3}
     price: 700
-    bullet_damage: 25
+    bullet_damage: 150
     rapid_fire_rate: 5
     loaded_bullets: 8
-    reload_speed: 12
+    reload_speed: 3
     bullet_range: 500
     bullet_speed: 300
     diffusion__chance: 0
-    multi_bullet: 3
+    multi_bullet: 0
     type: 0
     rarity: 4
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
@@ -125,7 +125,7 @@ MonoBehaviour:
     bullet_damage: 3
     rapid_fire_rate: 1.5
     loaded_bullets: 10
-    reload_speed: 12
+    reload_speed: 3
     bullet_range: 50
     bullet_speed: 100
     diffusion__chance: 20
@@ -140,9 +140,9 @@ MonoBehaviour:
     sprite_id: {fileID: 21300000, guid: 0fdf58accac91e54e8ec7d35c170a0bf, type: 3}
     price: 1000
     bullet_damage: 3
-    rapid_fire_rate: 1.5
-    loaded_bullets: 10
-    reload_speed: 12
+    rapid_fire_rate: 2.5
+    loaded_bullets: 15
+    reload_speed: 3.5
     bullet_range: 50
     bullet_speed: 100
     diffusion__chance: 15

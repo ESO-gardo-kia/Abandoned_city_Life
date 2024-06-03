@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class ParabolaBulletSystem : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rigidBody;
     public GameObject hitParticle;
     public string targetTag;
     public float bulletDamage;
     public float bulletSpeed;
     public float deathDistance;
+    public int ClusterSplitAmount;
     public Vector3 firstPosition;
-    public float shotPower;
     public Vector3 targetPosition;
     public GameObject SPLITOBJ;
     void Update()
     {
-        if (transform.position.y >= targetPosition.y)
+        rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime * 10;
+        if (Vector3.Distance(firstPosition, transform.position) >= deathDistance)
         {
-            Debug.Log("目標地点到達");
-            cluster_Down(15);
+            BulletDestroy();
         }
     }
     public void cluster_Down(int num)
@@ -44,27 +45,25 @@ public class ParabolaBulletSystem : MonoBehaviour
 
             rigitbody.velocity = shotObj.transform.forward * 80;
         }
-        Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(hitParticle, transform);
+            BulletDestroy();
         }
     }
     public void BulletDestroy()
     {
+        cluster_Down(ClusterSplitAmount);
         Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
         Destroy(gameObject);
     }

@@ -8,7 +8,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static ContactObj_System;
 using static Stage_Information;
 //using static System.Net.Mime.MediaTypeNames;
 

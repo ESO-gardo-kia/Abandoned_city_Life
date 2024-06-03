@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
-using static ContactObj_System;
 
 public class EquipmentManagementSystem : MonoBehaviour
 {
@@ -29,6 +28,13 @@ public class EquipmentManagementSystem : MonoBehaviour
     {
         cinemachineVirtualCamera.Priority = 0;
     }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Player_System.contactText.text = contact_text;
+        }
+    }
     private void OnTriggerStay(Collider collision)
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
@@ -48,6 +54,7 @@ public class EquipmentManagementSystem : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && mainCanvas.activeSelf)
         {
+            Player_System.contactText.text = null;
             Canvas_Transition(false);
         }
     }

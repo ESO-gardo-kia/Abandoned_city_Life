@@ -4,7 +4,6 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using static ContactObj_System;
 
 public class Player_System : MonoBehaviour
 {
@@ -15,25 +14,20 @@ public class Player_System : MonoBehaviour
     [Header("--- GetComponent ---")]
     [SerializeField] private CinemachineBrain cinemachinBrain;
     [SerializeField] public Gun_List gunlist;
-    private Rigidbody rigidBody;
+    [SerializeField] private Rigidbody rigidBody;
     [SerializeField] public GameObject playerCamera;
     [SerializeField] public CinemachineVirtualCamera cinemachineVirtualCamera;
-    private GameObject shotPosition;
-    public GameObject wheel;
+    [SerializeField] private GameObject shotPosition;
+    [SerializeField] public GameObject wheel;
 
-    private GameObject contactObjGetPanel;
-
-    private GameObject playerCanvas;
-
-    private ContactObj_System contactObjSystem;
     private CollectObj_System collectObjSystem;
 
-    private GameObject contactPanel;
-    private Text contactText;
+    [SerializeField] private GameObject contactPanel;
+    [SerializeField] public static Text contactText;
     [SerializeField] private Slider CollectGage;
 
-    private GameObject MenuPanel;
-    private Slider AimSlider;
+    [SerializeField] private GameObject MenuPanel;
+    [SerializeField] private Slider AimSlider;
 
     [SerializeField] private GameObject battleInfomationPanel;
     [SerializeField] private Slider reloadSlider;
@@ -41,7 +35,7 @@ public class Player_System : MonoBehaviour
     [SerializeField] private Text hpText;
     [SerializeField] private Slider enSlider;
     [SerializeField] private Text enText;
-    private Image weaponImage;
+    [SerializeField] private Image weaponImagePanel;
     [SerializeField] private Text bulletText;
 
     public GameObject moneyText;
@@ -59,20 +53,14 @@ public class Player_System : MonoBehaviour
     private float energyRecoveryCount;
 
     public float hp;
-    private float currentHp;
+    public float currentHp;
     public float en;
-    private float currentEn;
+    public float currentEn;
     public float atk;
-    private float currentatk;
+    public float currentatk;
     public float agi;
-    private float currentagi;
-    [Space(10)]
-    [SerializeField]
+    public float currentagi;
     [Header("--- 基本動作 ---")]
-    //近接攻撃の無敵時間
-    private float adi_time;
-    public float adi_time_max;
-
     public float jumpForce = 6f;
     public float jumpNum = 100;
     public float jumpRepeatSecond = 0.1f;
@@ -87,28 +75,27 @@ public class Player_System : MonoBehaviour
     public float dashSpeed = 15;
 
     [Header("--- 装備品 ---")]
-    private GameObject MeleeWeapon;
-
-    public static int player_weapon_id;
+    [SerializeField] public static int player_weapon_id;
     private float rate_count = 0;
-    private float loaded_bullets = 0;//弾の最大値
-    private float current_loaded_bullets = 0;//現在の残弾
-    private float reload_speed = 0;//リロード完了値
+    private float loadedBullets = 0;//弾の最大値
+    private float currentLoadedBullets = 0;//現在の残弾
+    private float reloadSpeed = 0;//リロード完了値
     private float reload_count = 0;//リロードカウント
     private bool isReloadPossible;
     [SerializeField] public GameObject SHOTOBJ;
 
     private void Start()
     {
+        player_weapon_id = 0;
+        contactText = contactPanel.transform.Find("ContactText").gameObject.GetComponent<Text>();
+        /*
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
 
         shotPosition = transform.Find("SHOTPOS").gameObject;
-
-        playerCanvas = transform.Find("PCanvas").gameObject;
         
         contactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
-        contactText = contactPanel.transform.Find("ContactText").gameObject.GetComponent<Text>();
+
         CollectGage = contactPanel.transform.Find("CollectGage").gameObject.GetComponent<Slider>();
 
         MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
@@ -124,79 +111,23 @@ public class Player_System : MonoBehaviour
         weaponImage = battleInfomationPanel.transform.Find("WeaponImage").gameObject.GetComponent<Image>();
 
         moneyText = transform.Find("PCanvas/money_text").gameObject;
-
+        */
         Player_Reset(bo);
     }
     void Update()
     {
-        moneyText.SetActive(true);
         moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
         if (!isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
         if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
         if (movePermit)
         {
-            //if (Input.GetKeyDown(KeyCode.LeftShift)) StartCoroutine("DashMove");
-
-            if (Input.GetKeyUp(KeyCode.Space)) isJumpingRunning = false;
-            if (Input.GetKey(KeyCode.Space) //buttonが押されていて
-            && !isJumpingRunning//ジャンプ処理中ではない場合で
-            && isJumping)//接地している場合
-            {
-                StartCoroutine("JunpMove");
-                isJumping = false;
-            }
-
-            Ray downray = new Ray(gameObject.transform.position,Vector3.down);
-            RaycastHit hit;
-            if (Physics.Raycast(downray, out hit, 10.0f))
-            {
-                var n = hit.point.y - gameObject.transform.position.y + 0.5f;
-                if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumpingRunning) isJumping = true;
-                else isJumping = false;
-            }else isJumping = false;
-            //Debug.DrawRay(downray.origin, downray.direction * 10, UnityEngine.Color.red, 5);
-
-
+            WheelAnimation();
+            SsignmentStatsUi();
+            IsJumpJudg();
             if (Input.GetKey(KeyCode.Q))
             {
-
-
-                if (collectObjSystem != null && CollectGage.value != CollectGage.maxValue) CollectGage.value += 0.02f;
-                else if (collectObjSystem != null && CollectGage.value == CollectGage.maxValue) 
-                {
-                    Player_Manager.Item_Inventory[collectObjSystem.collect_item_id] += collectObjSystem.collect_item_num;
-                    Debug.Log(Player_Manager.Item_Inventory[collectObjSystem.collect_item_id]);
-                    
-                    contactPanel.SetActive(false);
-                    contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
-                    CollectGage.value = 0;
-                    collectObjSystem.CollectObj_function();
-                    collectObjSystem = null;
-                    contactText.text = null;
-                }
+                DropItemCollect();
             }
-            if (rigidBody.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up, rigidBody.velocity.magnitude * 2);
-        }
-
-        //以下UI関係
-        reloadSlider.value = reload_count;
-        hpSlider.value = currentHp;
-        hpText.text = currentHp.ToString();
-        enSlider.value = currentEn;
-        enText.text = currentEn.ToString();
-        bulletText.text = current_loaded_bullets.ToString();
-        if (contactObjGetPanel)
-        {
-            /*
-            if (Input.GetKeyDown(KeyCode.E) && contactObjSystem != null && !contactObjGetPanel.activeSelf && !isPanelOpen)
-            {
-                Canvas_Transition(contactObjSystem,contactObjGetPanel, true);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && contactObjGetPanel.activeSelf && isPanelOpen)
-            {
-                Canvas_Transition(contactObjSystem,contactObjGetPanel, false);
-            }
-            */
         }
         if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && movePermit && !isPanelOpen)
         {
@@ -207,39 +138,63 @@ public class Player_System : MonoBehaviour
             //Canvas_Transition(MenuPanel,false);
         }
     }
+
+    private void DropItemCollect()
+    {
+        if (collectObjSystem != null && CollectGage.value != CollectGage.maxValue) CollectGage.value += 0.02f;
+        else if (collectObjSystem != null && CollectGage.value == CollectGage.maxValue)
+        {
+            Player_Manager.Item_Inventory[collectObjSystem.collect_item_id] += collectObjSystem.collect_item_num;
+            Debug.Log(Player_Manager.Item_Inventory[collectObjSystem.collect_item_id]);
+
+            contactPanel.SetActive(false);
+            contactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            CollectGage.value = 0;
+            collectObjSystem.CollectObj_function();
+            collectObjSystem = null;
+            contactText.text = null;
+        }
+    }
+    private void IsJumpJudg()
+    {
+        if (Input.GetKeyUp(KeyCode.Space)) isJumpingRunning = false;
+        if (Input.GetKey(KeyCode.Space)&& !isJumpingRunning&& isJumping)
+        {
+            StartCoroutine("JunpMove");
+            isJumping = false;
+        }
+        Ray downray = new Ray(gameObject.transform.position, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(downray, out hit, 10.0f))
+        {
+            var n = hit.point.y - gameObject.transform.position.y + 0.5f;
+            if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumpingRunning) isJumping = true;
+            else isJumping = false;
+        }
+        else isJumping = false;
+    }
+    private void WheelAnimation()
+    {
+        wheel.transform.Rotate(Vector3.up, rigidBody.velocity.magnitude * 2);
+    }
+    private void SsignmentStatsUi()
+    {
+        reloadSlider.value = reload_count;
+        hpSlider.value = currentHp;
+        hpText.text = currentHp.ToString();
+        enSlider.value = currentEn;
+        enText.text = currentEn.ToString();
+        bulletText.text = currentLoadedBullets.ToString();
+    }
+
     void FixedUpdate()
     {
         if (movePermit)
         {
-            if (adi_time < adi_time_max) adi_time += 0.02f;
-            //銃関係
-            if (rate_count >= gunlist.Data[player_weapon_id].rapid_fire_rate && current_loaded_bullets > 0 && !isReloadPossible&& Input.GetMouseButton(0))
-            {
-                //Debug.Log("発射しました");
-                NomalShot();
-                current_loaded_bullets--;
-                rate_count = 0;
-            }
-            if ((current_loaded_bullets < loaded_bullets && Input.GetKey(KeyCode.R))
-                || (current_loaded_bullets < loaded_bullets && current_loaded_bullets == 0 && Input.GetMouseButton(0)))
-            {
-                isReloadPossible = true;
-                reloadSlider.gameObject.SetActive(true);
-            }
-            if (isReloadPossible)
-            {
-                reload_count += 0.2f;
-                if (reload_count >= reload_speed)
-                {
-                    reloadSlider.gameObject.SetActive(false);
-                    current_loaded_bullets = loaded_bullets;
-                    reload_count = 0;
-                    isReloadPossible = false;
-                }
-            }
-            else if(rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate) rate_count += 0.2f;
+            NomalShot();
+            GunReloadSystem();
             //移動処理
-            if (Input.GetKey(KeyCode.LeftShift)&& currentEn > 0)
+            if (Input.GetKey(KeyCode.LeftShift) && currentEn > 0)
             {
                 if (0 < currentEn)
                 {
@@ -250,26 +205,9 @@ public class Player_System : MonoBehaviour
             }
             else
             {
-                if(enSlider.maxValue > currentEn && isEnergyRecovery) currentEn++;
-                if (!isEnergyRecovery)
-                {
-                    energyRecoveryCount += 0.2f;
-                    if (energyRecoveryCount >= energyRecoveryTime)
-                    {
-                        energyRecoveryCount = 0;
-                        isEnergyRecovery = true;
-                    }
-                }
+                EnergyRecovery();
                 PlayerMove(walkSpeed);
             }
-        }
-    }
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Saw")&& adi_time >= adi_time_max && !playerIsDeath)
-        {
-            adi_time = 0;
-            TakeDmage(other.GetComponent<Assault_Enemy>().currentatk);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -283,16 +221,6 @@ public class Player_System : MonoBehaviour
             contactText.text = collectObjSystem.collect_text;
             CollectGage.maxValue = collectObjSystem.collect_time;
             CollectGage.value = 0;
-        }
-        if (other.gameObject.CompareTag("Contact"))
-        {
-            /*
-            contactPanel.SetActive(true);
-            contactPanel.GetComponent<Image>().color = new UnityEngine.Color(255, 255, 255, 50);
-            contactObjSystem = other.GetComponent<ContactObj_System>();
-            if (contactObjSystem.contact_text != null) contactText.text = contactObjSystem.contact_text;
-            contactObjGetPanel = contactObjSystem.Panel;
-            */
         }
         if (movePermit)
         {
@@ -337,12 +265,46 @@ public class Player_System : MonoBehaviour
             //if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
             contactPanel.SetActive(false);
             contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
-            contactObjSystem = null;
             contactText.text = null;
-            contactObjGetPanel = null;
         }
     }
-    void TakeDmage(float damage)
+    private void EnergyRecovery()
+    {
+        if (en > currentEn && isEnergyRecovery)
+        {
+            currentEn++;
+        }
+        if (!isEnergyRecovery)
+        {
+            energyRecoveryCount += Time.deltaTime;
+            if (energyRecoveryCount >= energyRecoveryTime)
+            {
+                energyRecoveryCount = 0;
+                isEnergyRecovery = true;
+            }
+        }
+    }
+    private void GunReloadSystem()
+    {
+        if ((currentLoadedBullets < loadedBullets && Input.GetKey(KeyCode.R))
+            || (currentLoadedBullets < loadedBullets && currentLoadedBullets == 0 && Input.GetMouseButton(0)))
+        {
+            isReloadPossible = true;
+            reloadSlider.gameObject.SetActive(true);
+        }
+        if (isReloadPossible)
+        {
+            reload_count += Time.deltaTime;
+            if (reload_count >= reloadSpeed)
+            {
+                reloadSlider.gameObject.SetActive(false);
+                currentLoadedBullets = loadedBullets;
+                reload_count = 0;
+                isReloadPossible = false;
+            }
+        }
+    }
+    public void TakeDmage(float damage)
     {
         if (currentHp > 0)
         {
@@ -387,24 +349,34 @@ public class Player_System : MonoBehaviour
     }
     public void NomalShot()
     {
-        audioSource.PlayOneShot(shotSound);
-        var Guns = gunlist.Data[player_weapon_id];
-        for (int i = 0 ; i < Guns.multi_bullet ; i++)
+        if (rate_count >= gunlist.Data[player_weapon_id].rapid_fire_rate && currentLoadedBullets > 0 && !isReloadPossible && Input.GetMouseButton(0))
         {
-            GameObject shotObj = Instantiate(SHOTOBJ, shotPosition.transform.position, Quaternion.identity);
-            Rigidbody rb = shotObj.GetComponent<Rigidbody>();
-            Bullet_System bs = shotObj.GetComponent<Bullet_System>();
+            //Debug.Log("発射しました");
+            audioSource.PlayOneShot(shotSound);
+            var Guns = gunlist.Data[player_weapon_id];
+            for (int i = 0; i < Guns.multi_bullet; i++)
+            {
+                GameObject shotObj = Instantiate(SHOTOBJ, shotPosition.transform.position, Quaternion.identity);
+                Rigidbody rb = shotObj.GetComponent<Rigidbody>();
+                Bullet_System bs = shotObj.GetComponent<Bullet_System>();
 
-            bs.bulletType = (Bullet_System.BulletType)Guns.type;
-            bs.target_tag = "Enemy";
-            bs.damage = Guns.bullet_damage;
-            bs.deathDistance = Guns.bullet_range;
-            bs.firstpos = shotPosition.transform.position;
-            shotObj.transform.eulerAngles = playerCamera.transform.eulerAngles;
-            shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
-                                , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
-                                , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance));
-            rb.velocity = bs.transform.forward * Guns.bullet_speed;
+                bs.bulletType = (Bullet_System.BulletType)Guns.type;
+                bs.target_tag = "Enemy";
+                bs.damage = Guns.bullet_damage;
+                bs.deathDistance = Guns.bullet_range;
+                bs.firstpos = shotPosition.transform.position;
+                shotObj.transform.eulerAngles = playerCamera.transform.eulerAngles;
+                shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                    , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                    , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance));
+                rb.velocity = bs.transform.forward * Guns.bullet_speed;
+            }
+            currentLoadedBullets--;
+            rate_count = 0;
+        }
+        else if (rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate)
+        {
+            rate_count += 0.2f;
         }
     }
     public void Player_Reset(bool IS)
@@ -450,12 +422,12 @@ public class Player_System : MonoBehaviour
         isReloadPossible = false;
         reload_count = 0;
         var Guns = gunlist.Data[num];
-        weaponImage.sprite = Guns.sprite_id;
+        weaponImagePanel.sprite = Guns.sprite_id;
         shotSound = Guns.shot_sound;
-        loaded_bullets = Guns.loaded_bullets;
-        current_loaded_bullets = Guns.loaded_bullets;
-        reload_speed = Guns.reload_speed;
-        reloadSlider.maxValue = reload_speed;
+        loadedBullets = Guns.loaded_bullets;
+        currentLoadedBullets = Guns.loaded_bullets;
+        reloadSpeed = Guns.reload_speed;
+        reloadSlider.maxValue = reloadSpeed;
     }
     /*
     public void Canvas_Transition(GameObject Panel, bool IS)
@@ -555,11 +527,4 @@ public class Player_System : MonoBehaviour
         }
     }
 */
-    private void PlayerMoveStop()
-    {
-        movePermit = false;
-        rigidBody.velocity = Vector3.zero;
-        transform.position = contactObjSystem.idlepos.transform.position;
-        transform.localEulerAngles = contactObjSystem.idlepos.transform.localEulerAngles;
-    }
 }

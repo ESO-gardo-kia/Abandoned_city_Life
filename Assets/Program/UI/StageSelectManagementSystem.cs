@@ -15,6 +15,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     [SerializeField] private GameObject playerIdlepos;
     [SerializeField] private GameObject stageSelectPanelPrefab;
     [SerializeField] private StageStartButtonSystem stageStartButton;
+    [SerializeField] private Image stageSpritePanel;
     [SerializeField] private Text FixationRewardText;
     [SerializeField] private Text StageDescriptionText;
     [SerializeField] private Transform itemLineupPassObj;
@@ -28,6 +29,13 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         mainPanel.SetActive(false);
         mainPanel.transform.localScale = Vector3.zero;
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Player_System.contactText.text = contact_text;
+        }
     }
     private void OnTriggerStay(Collider collision)
     {
@@ -52,6 +60,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && mainPanel.activeSelf)
         {
+            Player_System.contactText.text = null;
             cinemachineVirtualCamera.Priority = 0;
             Canvas_Transition(false);
         }
@@ -108,8 +117,9 @@ public class StageSelectManagementSystem : MonoBehaviour
                 stageselectpanelobj.transform.Find("StageName").GetComponent<Text>().text = "MISSION " + Data[i].stagenumber + " :" + Data[i].name;
                 stageSelectSignalButtonSystem.stageNumber = i;
                 stageSelectSignalButtonSystem.stageStartButton = stageStartButton;
-                stageSelectSignalButtonSystem.FixationRewardText = FixationRewardText;
-                stageSelectSignalButtonSystem.StageDescriptionText = StageDescriptionText;
+                stageSelectSignalButtonSystem.stageSpritePanel = stageSpritePanel;
+                stageSelectSignalButtonSystem.fixationRewardText = FixationRewardText;
+                stageSelectSignalButtonSystem.stageDescriptionText = StageDescriptionText;
             }
         }
     }

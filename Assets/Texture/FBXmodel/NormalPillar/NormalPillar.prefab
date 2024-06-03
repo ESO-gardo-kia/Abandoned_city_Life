@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4012222042185383234}
   m_Layer: 0
   m_Name: cuboid_12
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 8454734864817162554}
   m_Layer: 0
   m_Name: groundplane2
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 9156678707122492594}
   m_Layer: 0
   m_Name: cuboid_9
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 6017974180196126014}
   m_Layer: 0
   m_Name: cuboid_14
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 8378056552548713205}
   m_Layer: 0
   m_Name: cuboid_11
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 4779961641311300636}
   m_Layer: 0
   m_Name: cuboid_13
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 7209204627165054848}
   m_Layer: 0
   m_Name: cuboid_10
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 8066771168639714291}
   m_Layer: 0
   m_Name: cuboid_8
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

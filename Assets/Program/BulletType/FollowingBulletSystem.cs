@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowingBulletSystem : MonoBehaviour
 {
-    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] private Rigidbody rigidBody;
     public GameObject hitParticle;
     public string targetTag;
     public float bulletDamage;
@@ -15,14 +15,17 @@ public class FollowingBulletSystem : MonoBehaviour
     public GameObject targetObj;
     void Update()
     {
-        rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime;
+        rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime*10;
+        if (Vector3.Distance(firstPosition, transform.position) >= deathDistance)
+        {
+            BulletDestroy();
+        }
         if (isfollowing && Vector3.Distance(targetObj.transform.position, transform.position) < 4)
         {
             isfollowing = false;
         }
         if (isfollowing)
         {
-            if (Vector3.Distance(firstPosition, transform.position) >= deathDistance) Destroy(gameObject);
             transform.localRotation = Quaternion.RotateTowards(transform.rotation
                 , Quaternion.LookRotation((targetObj.transform.position + Vector3.up) - transform.position)
                 , 10);
@@ -32,13 +35,11 @@ public class FollowingBulletSystem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
         {

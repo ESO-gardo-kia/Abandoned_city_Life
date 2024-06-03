@@ -4,32 +4,30 @@ using UnityEngine;
 
 public class NormalBulletSystem : MonoBehaviour
 {
+    [SerializeField] private Rigidbody rigidBody;
     public GameObject hitParticle;
     public string targetTag;
     public float bulletDamage;
     public float bulletSpeed;
-    public float deathDistance = 1;
+    public float deathDistance;
     public Vector3 firstPosition;
-    //Normal
-    public Vector3 firstpos;
     void Update()
     {
-        if (Vector3.Distance(firstpos, transform.position) >= deathDistance)
+        rigidBody.velocity = (transform.forward * bulletSpeed) * Time.deltaTime * 10;
+        if (Vector3.Distance(firstPosition, transform.position) >= deathDistance)
         {
-            Destroy(gameObject);
+            BulletDestroy();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Player" && other.gameObject.CompareTag("Player"))
         {
-            Instantiate(hitParticle, transform.position, Quaternion.identity, transform.transform.parent = null);
-            Destroy(gameObject);
+            BulletDestroy();
         }
         if (targetTag == "Enemy" && other.gameObject.CompareTag("Enemy"))
         {

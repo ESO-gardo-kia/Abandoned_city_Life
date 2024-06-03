@@ -2144,7 +2144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288739091}
-  m_LocalRotation: {x: 0.098537624, y: 0.0000000042806607, z: -4.238689e-10, w: 0.99513334}
+  m_LocalRotation: {x: 0.09853762, y: -0.000000004280661, z: 4.238689e-10, w: 0.99513334}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3493,6 +3493,7 @@ MonoBehaviour:
   stageSelectPanelPrefab: {fileID: 2330438432421541850, guid: 10330476c0d4b2346bdba1571e47a733,
     type: 3}
   stageStartButton: {fileID: 1945848224732584732}
+  stageSpritePanel: {fileID: 1899980207}
   FixationRewardText: {fileID: 656361930}
   StageDescriptionText: {fileID: 200697101}
   itemLineupPassObj: {fileID: 1474471588}
@@ -5277,7 +5278,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57e7720cbc3ac9940a8bd951527b3eae, type: 2}
+  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7321,7 +7322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57e7720cbc3ac9940a8bd951527b3eae, type: 2}
+  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8454,7 +8455,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57e7720cbc3ac9940a8bd951527b3eae, type: 2}
+  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9015,7 +9016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10.000085}
+  m_AnchoredPosition: {x: 0.000030517578, y: -10.000246}
   m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1474471589
@@ -9797,16 +9798,22 @@ MonoBehaviour:
   bo: 1
   cinemachinBrain: {fileID: 783276252}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
+  rigidBody: {fileID: 1578907280}
   playerCamera: {fileID: 783276251}
   cinemachineVirtualCamera: {fileID: 288739093}
+  shotPosition: {fileID: 178470519}
   wheel: {fileID: 405067198}
+  contactPanel: {fileID: 1390794331}
   CollectGage: {fileID: 115105392}
+  MenuPanel: {fileID: 1633185205}
+  AimSlider: {fileID: 2088753704}
   battleInfomationPanel: {fileID: 1555175330}
   reloadSlider: {fileID: 1766071410}
   hpSlider: {fileID: 1661302609}
   hpText: {fileID: 41727060}
   enSlider: {fileID: 1231243472}
   enText: {fileID: 1692084559}
+  weaponImagePanel: {fileID: 345045990}
   bulletText: {fileID: 604621498}
   moneyText: {fileID: 582941420}
   audioSource: {fileID: 1578907278}
@@ -9814,18 +9821,20 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
   damageSound: {fileID: 8300000, guid: 39880007b9bc092408613372be26d973, type: 3}
   isEnergyRecovery: 0
-  energyRecoveryTime: 10
+  energyRecoveryTime: 1
   hp: 100
-  en: 100
+  currentHp: 0
+  en: 200
+  currentEn: 0
   atk: 100
+  currentatk: 0
   agi: 100
-  adi_time: 0
-  adi_time_max: 0.1
+  currentagi: 0
   jumpForce: 150
   jumpNum: 10
   jumpRepeatSecond: 0.02
-  walkSpeed: 10
-  dashSpeed: 15
+  walkSpeed: 12
+  dashSpeed: 18
   SHOTOBJ: {fileID: 6149490793626288295, guid: 9092eee474a3b4a49bebdac7d199234a, type: 3}
 --- !u!23 &1578907282
 MeshRenderer:
@@ -10977,7 +10986,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807169885}
-  m_LocalRotation: {x: 0.062324416, y: 0.000000017306572, z: -0.000000001080723, w: 0.998056}
+  m_LocalRotation: {x: 0.062324416, y: -0.000000017306572, z: 0.000000001080723, w: 0.998056}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11718,6 +11727,7 @@ GameObject:
   - component: {fileID: 1899980206}
   - component: {fileID: 1899980208}
   - component: {fileID: 1899980207}
+  - component: {fileID: 1899980209}
   m_Layer: 5
   m_Name: StageImage
   m_TagString: Untagged
@@ -11765,8 +11775,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11783,6 +11793,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899980205}
   m_CullTransparentMesh: 1
+--- !u!114 &1899980209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899980205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.5754717, g: 0, b: 0.022567447, a: 1}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1916780242
 GameObject:
   m_ObjectHideFlags: 0
@@ -11944,7 +11969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57e7720cbc3ac9940a8bd951527b3eae, type: 2}
+  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

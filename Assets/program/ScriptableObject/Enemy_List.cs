@@ -16,6 +16,7 @@ public class Enemy_List : ScriptableObject
         public float atk = 5;
         public float agi = 5;
         public float exp = 1;
+        public float stoppingDistance = 1;
         public float price;
     }
 }

@@ -1,186 +1,101 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class Assault_Enemy : MonoBehaviour
+public class Assault_Enemy : EnemyDefaultSystem
 {
-    public Enemy_Manager enemyManager;
-    [SerializeField] public GameObject Player;
-    [SerializeField] public Gun_List gunlist;
-    public GameObject wheel;
-
-    private GameObject EnemyCanvas;
-    private Slider HPSlider;
-    [SerializeField] public GameObject TEXTOBJ;
-    private GameObject TEXTPOS;
+    [System.NonSerialized] public Enemy_Manager enemyManager;
+    private GameObject playerObject;
+    [Header("--- UI関係 ---")]
+    [SerializeField] private GameObject enemyCanvas;
+    [SerializeField] private Slider hpSlider;
+    [SerializeField] private GameObject damageTextObject;
+    [SerializeField] private GameObject damageTextPosition;
     private GameObject oldDamageText;
-    private float old_damage;
+    private float oldDamage;
 
-    private NavMeshAgent NMA;
-    private Rigidbody rb;
+    [SerializeField] public NavMeshAgent navMeshAgent;
+    [SerializeField] private Rigidbody rigidBody;
 
     [Header("--- 装備品 ---")]
-    public AudioClip shotsound;
-    public GameObject circular_saw;
-    public float attack_damage;
+    [SerializeField] private GameObject wheel;
+    public float wheelRotationSpeed;
+    [SerializeField] private GameObject circularSaw;
+    public float circularSawRotationSpeed;
+    [SerializeField] private float attack_damage;
+    public float rapidFireRate;//連射速度
+    private float rateCount = 0;
+    private bool isRateCount;
     [Header("--- ステータス ---")]
     [SerializeField] private Enemy_List enemy_List;
-    private int enemy_number;
-    private bool isdeath;
-
-    private string Ename;
-    private float exp;
+    public int enemy_number;
+    private bool isDeath;
 
     private float hp;
     private float currenthp;
     private float atk;
-    public float currentatk;
+    private float currentatk;
     private float agi;
     private float currentagi;
 
-    void Start()
+    public void Start()
     {
-        Enemy_Reset();
+        Enemy_Reset(ref isDeath, enemy_number, ref hp, ref atk, ref agi, ref currenthp, ref currentatk, ref currentagi, ref hpSlider, ref enemyManager, ref playerObject);
+        NavMeshAgentReset(enemy_number, currentagi, ref navMeshAgent);
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        circular_saw.transform.Rotate(Vector3.up,5);
-        if (rb.velocity != Vector3.zero) wheel.transform.Rotate(Vector3.up, rb.velocity.magnitude * 3);
         if (Enemy_Manager.enemies_move_permit == true)
         {
-            if (isdeath)
+
+            if (isDeath)
             {
                 Deathfunction();
             }
-            else if (!isdeath && !Player_System.playerIsDeath)
+            else if (!isDeath && !Player_System.playerIsDeath)
             {
-                NMA.destination = Player.transform.position;
+                //rigidBody.velocity = Vector3.zero;
+                navMeshAgent.destination = playerObject.transform.position;
+                //transform.localRotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(playerObject.transform.position - transform.position), 3);
+                WheelAnimation();
+                enemyCanvas.transform.LookAt(playerObject.transform, Vector3.down * 180);
+                hpSlider.value = currenthp;
 
-                transform.localRotation = Quaternion.RotateTowards(transform.rotation
-                    , Quaternion.LookRotation(Player.transform.position - transform.position)
-                    , 3);
             }
-            EnemyCanvas.transform.LookAt(Player.transform, Vector3.down * 180);
-
-            HPSlider.value = currenthp;
         }
     }
     void OnTriggerEnter(Collider other)
     {
         if (Enemy_Manager.enemies_move_permit == true)
         {
-            if (other.gameObject.CompareTag("Bullet")
-                && other.GetComponent<Bullet_System>().target_tag == "Enemy")
+            if (other.GetComponent<Bullet_System>() != null)
             {
-                TakeDmage(other.GetComponent<Bullet_System>().damage, other.GetComponent<Bullet_System>());
-                other.GetComponent<Bullet_System>().BulletDestroy();
-            }
-            if (other.gameObject.CompareTag("Attack_Obj"))
-            {
-                /*
-                //攻撃出来る状態かつ攻撃対象はエネミーの時
-                if (other.GetComponent<Attack_System>().isAttack && other.GetComponent<Attack_System>().attack_subject == Attack_System.Attack_Subject.Enemy)
-                {
-                    TakeDmage(other.GetComponent<Attack_System>().damage, other, other.GetComponent<Attack_System>());
-                }
-                */
+                TakeDamage(other.GetComponent<Bullet_System>(), other, damageTextPosition.transform.position, this.transform, hpSlider.transform.rotation, other.GetComponent<Bullet_System>().damage,
+                    ref oldDamageText, ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
             }
         }
     }
-    public void Enemy_Reset()
+    void OnTriggerStay(Collider other)
     {
-        //Debug.Log("敵の情報をリセットする");
-        enemyManager = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        Player = enemyManager.player_system;
-        TEXTPOS = transform.Find("TEXTPOS").gameObject;
-        EnemyCanvas = transform.Find("EnemyCanvas").gameObject;
-        HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
-        NMA = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
-        isdeath = false;
-        //ステータス反映
-        //StatusはScriptableObjectにて改変する事
-        var e_l = enemy_List.Status[1];
-        Ename = e_l.name;
-        exp = e_l.exp;
-        hp = e_l.hp;
-        atk = e_l.atk;
-        agi = e_l.agi;
-        currenthp = hp;
-        currentatk = atk;
-        currentagi = agi;
-        HPSlider.maxValue = hp;
-        HPSlider.value = currenthp;
-        enemy_number = 1;
-
-        NMA.speed = currentagi;
-        NMA.stoppingDistance = 0;
-    }
-    void TakeDmage(float damage, Bullet_System BS)
-    {
-        if (oldDamageText == null)
+        if (other.gameObject.CompareTag("Player"))
         {
-            GameObject damagetext = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
-            Text t = damagetext.GetComponent<UnityEngine.UI.Text>();
-            Damage_Text dts = damagetext.GetComponent<Damage_Text>();
-            oldDamageText = damagetext;
-
-            t.text = BS.damage.ToString();
-            old_damage = BS.damage;
+            if (rateCount >= rapidFireRate)
+            {
+                playerObject.GetComponent<Player_System>().TakeDmage(attack_damage);
+                rateCount = 0;
+            }
         }
-        else if (oldDamageText != null)
+        if (rateCount < rapidFireRate)
         {
-            old_damage += BS.damage;
-            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            oldDamageText.GetComponent<Damage_Text>().TextReset();
-            oldDamageText.transform.localEulerAngles = new Vector3(0, 180, 180);
-        }
-        if (currenthp > 0)
-        {
-            Debug.Log(damage);
-            currenthp -= damage;
-        }
-        if (currenthp <= 0)
-        {
-            isdeath = true;
+            rateCount += Time.deltaTime;
         }
     }
-    /*
-    void TakeDmage(float damage, Collider other)
+    private void WheelAnimation()
     {
-        if (oldDamageText == null)
-        {
-            GameObject dt = Instantiate(TEXTOBJ, TEXTPOS.transform.position, HPSlider.transform.rotation, transform.Find("EnemyCanvas"));
-            UnityEngine.UI.Text t = dt.GetComponent<UnityEngine.UI.Text>();
-            Bullet_System bs = other.GetComponent<Bullet_System>();
-            Damage_Text dts = dt.GetComponent<Damage_Text>();
-            oldDamageText = dt;
-
-            dt.transform.localEulerAngles = new Vector3(0, 180, 180);
-            t.text = bs.damage.ToString();
-            old_damage = bs.damage;
-        }
-        else if (oldDamageText != null)
-        {
-            old_damage += other.GetComponent<Bullet_System>().damage;
-            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = old_damage.ToString();
-            oldDamageText.GetComponent<Damage_Text>().TextReset();
-
-        }
-        if (currenthp > 0)
-        {
-            Debug.Log(damage);
-            currenthp -= damage;
-        }
-        if (currenthp <= 0)
-        {
-            isdeath = true;
-        }
+        wheel.transform.Rotate(Vector3.up, navMeshAgent.velocity.magnitude * -wheelRotationSpeed);
+        circularSaw.transform.Rotate(Vector3.up, circularSawRotationSpeed);
     }
-    */
     void Deathfunction()
     {
         Debug.Log("死亡");
