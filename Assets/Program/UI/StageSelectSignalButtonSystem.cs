@@ -14,7 +14,7 @@ public class StageSelectSignalButtonSystem : MonoBehaviour
     {
         stageStartButton.stageNumber = stageNumber;
         stageSpritePanel.sprite = stage_Information.data[stageNumber].stageSprite;
-        fixationRewardText.text = stage_Information.data[stageNumber].fixationReward.ToString();
+        fixationRewardText.text = "ïÒèVÅF"+stage_Information.data[stageNumber].fixationReward.ToString()+"MONEY";
         stageDescriptionText.text = stage_Information.data[stageNumber].stageDescription;
     }
 }

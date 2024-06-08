@@ -6,15 +6,15 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using DG.Tweening;
 using static Stage_Information.stage_information;
-using static Stage_Information;
-using UnityEngine.UIElements;
 
 public class Enemy_Manager : MonoBehaviour
 {
     public StageType stagetype;
+    [SerializeField] private Stage_Information stageInformation;
+    [SerializeField] private Enemy_List enemyList;
     public bool Debug_Mode;
     static public bool enemies_move_permit;
-    public List<int[]> all_wave;
+    public List<int[]> normalWaveEnemyList;
     [SerializeField] private GameManager gm;
     [SerializeField] private GameObject Enemy_Obj;
     [SerializeField] public GameObject player_system;
@@ -29,8 +29,7 @@ public class Enemy_Manager : MonoBehaviour
     public int spawn_range = 20;
     public float spawn_interval = 2;
     public int current_enemies_count;
-    public bool iscompletion;//今のウェーブが終わったかどうか
-    public int current_wave = 0;
+    public int currentWave = 0;
 
     public int[] destroy_enemy = new int[3];
     public float getmoney;
@@ -60,145 +59,147 @@ public class Enemy_Manager : MonoBehaviour
                 //GameOver(destroy_enemy, "Completed", getmoney);
         }
     }
-    public IEnumerator Enemies_Spawn_Function(int[] wave)
+
+    public IEnumerator Enemies_Spawn_Function(int transitionSceneNumber)
     {
-        Debug.Log("ゲーム開始");
+        StartWaveUiFanction();
         switch (stagetype)
         {
             case StageType.NomalStage:
-                WAVEText.SetActive(true);
-                Text W1 = WAVEText.GetComponent<Text>();
-                if(current_wave == 0) W1.color = Color.clear;
-                DOTween.Sequence()
-                .Append(W1.DOFade(0, 0.5f).SetEase(Ease.InQuart)
-                .OnComplete(() => {
-                    Debug.Log("起動１");
-                    W1.text = "WAVE" + (1 + current_wave).ToString();
-                }))
-                .Append(W1.DOFade(1, 0.5f).SetEase(Ease.InQuart))
-            .Play();
-
-                //wave1[敵のID,敵の数]
-                iscompletion = false;
                 yield return new WaitForSeconds(1f);
-
-                foreach (var i in wave) current_enemies_count += i;// 現ウェーブの敵の総数を数える
-                for (int id = 0; id < wave.Length; id++)
+                Debug.Log(currentWave + "ウェーブ目開始");
+                Debug.Log(normalWaveEnemyList[currentWave].Length);
+                for (int spawnEnemyId = 0; spawnEnemyId < normalWaveEnemyList[currentWave].Length; spawnEnemyId++)
                 {
-                    for (int i = 0; i < wave[id]; i++)
+                    for (int i = 0; i < normalWaveEnemyList[currentWave][spawnEnemyId]; i++)
                     {
-                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
-                        Spawn_Function(id);
+                        Spawn_Function(spawnEnemyId);
                         yield return new WaitForSeconds(spawn_interval);
                     }
                 }
-                Debug.Log("ウェーブ" + current_wave + "終了");
-                enemies_move_permit = true;
-                current_wave++;//次のウェーブへ数字を進める
+                currentWave++;
                 break;
-
-                //----------------------------------------
-
             case StageType.endless:
-                WAVEText.SetActive(true);
-                Text W2 = WAVEText.GetComponent<Text>();
-                if (endlesswave == 0) W2.color = Color.clear;
-                DOTween.Sequence()
-                .Append(W2.DOFade(0, 0.5f).SetEase(Ease.InQuart)
-                .OnComplete(() => {
-                    Debug.Log("起動１");
-                    W2.text = "WAVE" + (1 + endlesswave).ToString();
-                }))
-                .Append(W2.DOFade(1, 0.5f).SetEase(Ease.InQuart))
-            .Play();
-
-                for (int i = 0; i < wave.Length; i++)
-                {
-                    int num = Random.Range(1, endlesswave + 1);
-                    wave[i] = num;
-                    current_enemies_count += num;
-                }
-
                 yield return new WaitForSeconds(1f);
-
-                for (int id = 0; id < wave.Length; id++)
+                for (int spawnEnemyId = 0; spawnEnemyId < enemyList.Status.Count; spawnEnemyId++)
                 {
-                    for (int i = 0; i < wave[id]; i++)
+                    for (int i = 0; i < Random.Range(1, currentWave + 1); i++)
                     {
-                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
-                        Spawn_Function(id);
+                        Spawn_Function(spawnEnemyId);
                         yield return new WaitForSeconds(spawn_interval);
                     }
                 }
-                endlesswave++;
-                Debug.Log("ウェーブ" + endlesswave + "終了");
-                enemies_move_permit = true;
+                /*
+                for (int 出現する敵のID = 0; 出現する敵のID < 敵の種類の数; 出現する敵のID++)
+                {
+                    for (int i = 0; i < 出現する敵の数; i++)
+                    {
+                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
+                        スポーンする時の関数(出現する敵のID);
+                        yield return new WaitForSeconds(spawn_interval);
+                    }
+                }
+                */
+                currentWave++;
                 break;
-
-                //----------------------------------------
-
             case StageType.boss:
                 break;
         }
     }
-    public void Spawn_Function(int i)
+    private void StartWaveUiFanction()
     {
-        GameObject eo = Instantiate(el.Status[i].Enemy_Model
+        WAVEText.SetActive(true);
+        Text waveText = WAVEText.GetComponent<Text>();
+        if (currentWave == 0) waveText.color = Color.clear;
+
+        DOTween.Sequence()
+        .Append(waveText.DOFade(0, 0.5f).SetEase(Ease.InQuart)
+        .OnComplete(() =>
+        {
+            waveText.text = "WAVE" + (1 + currentWave).ToString();
+        }))
+        .Append(waveText.DOFade(1, 0.5f).SetEase(Ease.InQuart))
+    .Play();
+    }
+    public void GetCurrentWaveEnemy(int transitionSceneNumber)
+    {
+        //normalWaveEnemyList.Clear();
+        normalWaveEnemyList = new List<int[]>
+        {
+            stageInformation.data[transitionSceneNumber].enemies_num1,
+            stageInformation.data[transitionSceneNumber].enemies_num2,
+            stageInformation.data[transitionSceneNumber].enemies_num3
+        };
+        /*
+        Debug.Log(stageInformation.data[2].enemies_num1.Length);
+        Debug.Log(stageInformation.data[2].enemies_num2.Length);
+        Debug.Log(stageInformation.data[2].enemies_num3.Length);
+        Debug.Log(normalWaveEnemyList[1][0]);
+        Debug.Log(stageInformation.data[transitionSceneNumber].enemies_num2.Length);
+        Debug.Log(stageInformation.data[transitionSceneNumber].enemies_num3.Length);
+        */
+    }
+
+    public void Spawn_Function(int enemyId)
+    {
+        current_enemies_count++;
+        GameObject enemyObject = Instantiate(el.Status[enemyId].Enemy_Model
             , SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(Random.Range(-spawn_range, spawn_range), 3f, Random.Range(-spawn_range, spawn_range))
             , Quaternion.identity, transform.Find("Enemy_ObjList"));
-        switch (i)
+        switch (enemyId)
         {
             case 0:
-                Shooter_Enemy ShooterE = eo.GetComponent<Shooter_Enemy>();
+                Shooter_Enemy ShooterE = enemyObject.GetComponent<Shooter_Enemy>();
                 ShooterE.enemyManager = this;
                 ShooterE.Start();
                 break;
             case 1:
-                Assault_Enemy AssaultE = eo.GetComponent<Assault_Enemy>();
+                Assault_Enemy AssaultE = enemyObject.GetComponent<Assault_Enemy>();
                 AssaultE.enemyManager = this;
                 AssaultE.Start();
                 break;
             case 2:
-                ClusterCatapult_Enemy ClusterE = eo.GetComponent<ClusterCatapult_Enemy>();
+                ClusterCatapult_Enemy ClusterE = enemyObject.GetComponent<ClusterCatapult_Enemy>();
                 ClusterE.enemyManager = this;
                 ClusterE.Start();
                 break;
             case 3:
-                FollowingShooter_Enemy FollowingE = eo.GetComponent<FollowingShooter_Enemy>();
+                FollowingShooter_Enemy FollowingE = enemyObject.GetComponent<FollowingShooter_Enemy>();
                 FollowingE.enemyManager = this;
                 FollowingE.Start();
                 break;
             case 4:
-                Airborne_Enemy AirborneE = eo.GetComponent<Airborne_Enemy>();
+                Airborne_Enemy AirborneE = enemyObject.GetComponent<Airborne_Enemy>();
                 AirborneE.enemyManager = this;
                 AirborneE.Start();
                 break;
         }
     }
-    public void ParentEnemyDeath(int i)
+    public void ParentEnemyDeath(int enemyId)
     {
-        getmoney += el.Status[i].price;
-        destroy_enemy[i]++;
+        destroy_enemy[enemyId]++;
         current_enemies_count--;
-        
-        //Debug.Log(current_enemies_count);
-        //Debug.Log(current_enemies_count <= 0 && current_wave == 3);
         switch (stagetype)
         {
             case StageType.NomalStage:
                 //現在のウェーブの敵が0になったら次のウェーブに移行
-                if (current_enemies_count <= 0 && current_wave != 3) StartCoroutine(Enemies_Spawn_Function(all_wave[current_wave]));
-                //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
-                if (current_enemies_count <= 0 && current_wave == 3)
+                if (current_enemies_count <= 0 && currentWave != 3)
                 {
+                    StartCoroutine(Enemies_Spawn_Function(enemyId));
+                }
+                //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
+                if (current_enemies_count <= 0 && currentWave == 3)
+                {
+                    Debug.Log("え？");
                     StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
                 }
                 break;
             case StageType.endless:
-                //現在のウェーブの敵が0になったら次のウェーブに移行
-                if (current_enemies_count <= 0 && current_wave != 100) StartCoroutine(Enemies_Spawn_Function(all_wave[0]));
-                //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
-                if (current_enemies_count == 0 && current_wave == 100)
+                if (current_enemies_count <= 0 && currentWave != 100)
+                {
+                    StartCoroutine(Enemies_Spawn_Function(enemyId));
+                }
+                if (current_enemies_count == 0 && currentWave == 100)
                 {
                     StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
                 }
@@ -206,7 +207,6 @@ public class Enemy_Manager : MonoBehaviour
             case StageType.boss:
                 break;
         }
-
     }
     public void Enemy_Manager_Reset()
     {
@@ -218,8 +218,7 @@ public class Enemy_Manager : MonoBehaviour
         enemies_move_permit = false;
         endlesswave = 0;
         current_enemies_count = 0;
-        current_wave = 0;
-        iscompletion = false;
+        currentWave = 0;
     }
     public void Player_Death()
     {

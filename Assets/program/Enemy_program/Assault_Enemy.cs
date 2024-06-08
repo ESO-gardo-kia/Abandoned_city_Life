@@ -40,7 +40,7 @@ public class Assault_Enemy : EnemyDefaultSystem
 
     public void Start()
     {
-        Enemy_Reset(ref isDeath, enemy_number, ref hp, ref atk, ref agi, ref currenthp, ref currentatk, ref currentagi, ref hpSlider, ref enemyManager, ref playerObject);
+        EnemyStatsReset(ref isDeath, enemy_number, ref hp, ref atk, ref agi, ref currenthp, ref currentatk, ref currentagi, ref hpSlider, ref enemyManager, ref playerObject);
         NavMeshAgentReset(enemy_number, currentagi, ref navMeshAgent);
     }
 

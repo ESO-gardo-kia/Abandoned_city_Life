@@ -88,30 +88,6 @@ public class Player_System : MonoBehaviour
     {
         player_weapon_id = 0;
         contactText = contactPanel.transform.Find("ContactText").gameObject.GetComponent<Text>();
-        /*
-        rigidBody = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-
-        shotPosition = transform.Find("SHOTPOS").gameObject;
-        
-        contactPanel = transform.Find("PCanvas/ContactPanel").gameObject;
-
-        CollectGage = contactPanel.transform.Find("CollectGage").gameObject.GetComponent<Slider>();
-
-        MenuPanel = transform.Find("PCanvas/MenuPanel").gameObject;
-        AimSlider = MenuPanel.transform.Find("AimSlider").gameObject.GetComponent<Slider>();
-
-        battleInfomationPanel = transform.Find("PCanvas/GamePanel").gameObject;
-        reloadSlider = battleInfomationPanel.transform.Find("ReloadSlider").gameObject.GetComponent<Slider>();
-        hpSlider = battleInfomationPanel.transform.Find("HPSlider").gameObject.GetComponent<Slider>();
-        hpText = battleInfomationPanel.transform.Find("HPText").gameObject.GetComponent<Text>();
-        enSlider = battleInfomationPanel.transform.Find("ENSlider").gameObject.GetComponent<Slider>();
-        enText = battleInfomationPanel.transform.Find("ENText").gameObject.GetComponent<Text>();
-        bulletText = battleInfomationPanel.transform.Find("BulletText").gameObject.GetComponent<Text>();
-        weaponImage = battleInfomationPanel.transform.Find("WeaponImage").gameObject.GetComponent<Image>();
-
-        moneyText = transform.Find("PCanvas/money_text").gameObject;
-        */
         Player_Reset(bo);
     }
     void Update()
@@ -138,55 +114,6 @@ public class Player_System : MonoBehaviour
             //Canvas_Transition(MenuPanel,false);
         }
     }
-
-    private void DropItemCollect()
-    {
-        if (collectObjSystem != null && CollectGage.value != CollectGage.maxValue) CollectGage.value += 0.02f;
-        else if (collectObjSystem != null && CollectGage.value == CollectGage.maxValue)
-        {
-            Player_Manager.Item_Inventory[collectObjSystem.collect_item_id] += collectObjSystem.collect_item_num;
-            Debug.Log(Player_Manager.Item_Inventory[collectObjSystem.collect_item_id]);
-
-            contactPanel.SetActive(false);
-            contactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-            CollectGage.value = 0;
-            collectObjSystem.CollectObj_function();
-            collectObjSystem = null;
-            contactText.text = null;
-        }
-    }
-    private void IsJumpJudg()
-    {
-        if (Input.GetKeyUp(KeyCode.Space)) isJumpingRunning = false;
-        if (Input.GetKey(KeyCode.Space)&& !isJumpingRunning&& isJumping)
-        {
-            StartCoroutine("JunpMove");
-            isJumping = false;
-        }
-        Ray downray = new Ray(gameObject.transform.position, Vector3.down);
-        RaycastHit hit;
-        if (Physics.Raycast(downray, out hit, 10.0f))
-        {
-            var n = hit.point.y - gameObject.transform.position.y + 0.5f;
-            if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumpingRunning) isJumping = true;
-            else isJumping = false;
-        }
-        else isJumping = false;
-    }
-    private void WheelAnimation()
-    {
-        wheel.transform.Rotate(Vector3.up, rigidBody.velocity.magnitude * 2);
-    }
-    private void SsignmentStatsUi()
-    {
-        reloadSlider.value = reload_count;
-        hpSlider.value = currentHp;
-        hpText.text = currentHp.ToString();
-        enSlider.value = currentEn;
-        enText.text = currentEn.ToString();
-        bulletText.text = currentLoadedBullets.ToString();
-    }
-
     void FixedUpdate()
     {
         if (movePermit)
@@ -194,7 +121,8 @@ public class Player_System : MonoBehaviour
             NomalShot();
             GunReloadSystem();
             //ˆÚ“®ˆ—
-            if (Input.GetKey(KeyCode.LeftShift) && currentEn > 0)
+            if ((Input.GetKey(KeyCode.LeftShift) && currentEn > 0) &&
+                (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
             {
                 if (0 < currentEn)
                 {
@@ -222,30 +150,15 @@ public class Player_System : MonoBehaviour
             CollectGage.maxValue = collectObjSystem.collect_time;
             CollectGage.value = 0;
         }
-        if (movePermit)
+        if (other.gameObject.CompareTag("Contact"))
+        {
+            contactPanel.SetActive(true);
+        }
+            if (movePermit)
         {
             if (other.gameObject.CompareTag("Bullet") && !playerIsDeath)
             {
-                if (other.GetComponent<NormalBulletSystem>() != null && other.GetComponent<NormalBulletSystem>().targetTag == "Player")
-                {
-                    TakeDmage(other.GetComponent<NormalBulletSystem>().bulletDamage);
-                    other.GetComponent<NormalBulletSystem>().BulletDestroy();
-                }
-                else if (other.GetComponent<FollowingBulletSystem>() != null && other.GetComponent<FollowingBulletSystem>().targetTag == "Player")
-                {
-                    TakeDmage(other.GetComponent<FollowingBulletSystem>().bulletDamage);
-                    other.GetComponent<FollowingBulletSystem>().BulletDestroy();
-                }
-                else if (other.GetComponent<ParabolaBulletSystem>() != null && other.GetComponent<ParabolaBulletSystem>().targetTag == "Player")
-                {
-                    TakeDmage(other.GetComponent<ParabolaBulletSystem>().bulletDamage);
-                    other.GetComponent<ParabolaBulletSystem>().BulletDestroy();
-                }
-                else if (other.GetComponent<SplitBulletSystem>() != null && other.GetComponent<SplitBulletSystem>().targetTag == "Player")
-                {
-                    TakeDmage(other.GetComponent<SplitBulletSystem>().bulletDamage);
-                    other.GetComponent<SplitBulletSystem>().BulletDestroy();
-                }
+                IsBulletTypeJuge(other);
             }
         }
     }
@@ -255,7 +168,7 @@ public class Player_System : MonoBehaviour
         if (other.gameObject.CompareTag("Collect"))
         {
             contactPanel.SetActive(false);
-            contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+            contactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
             collectObjSystem = null;
             contactText.text = null;
         }
@@ -264,8 +177,78 @@ public class Player_System : MonoBehaviour
             //if (Contact_Type.Production_Table == contactObjSystem.contactType) contactObjSystem.cinemachineVirtualCamera.Priority = 1;
             //if (contactObjGetPanel.activeSelf) Canvas_Transition(contactObjGetPanel, false);
             contactPanel.SetActive(false);
-            contactPanel.GetComponent<Image>().color = new UnityEngine.Color(0, 0, 0, 0);
+            //contactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
             contactText.text = null;
+        }
+    }
+    private void DropItemCollect()
+    {
+        if (collectObjSystem != null && CollectGage.value != CollectGage.maxValue) CollectGage.value += 0.02f;
+        else if (collectObjSystem != null && CollectGage.value == CollectGage.maxValue)
+        {
+            Player_Manager.Item_Inventory[collectObjSystem.collect_item_id] += collectObjSystem.collect_item_num;
+            Debug.Log(Player_Manager.Item_Inventory[collectObjSystem.collect_item_id]);
+
+            contactPanel.SetActive(false);
+            contactPanel.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+            CollectGage.value = 0;
+            collectObjSystem.CollectObj_function();
+            collectObjSystem = null;
+            contactText.text = null;
+        }
+    }
+    private void IsJumpJudg()
+    {
+        if (Input.GetKeyUp(KeyCode.Space)) isJumpingRunning = false;
+        if (Input.GetKey(KeyCode.Space) && !isJumpingRunning && isJumping)
+        {
+            StartCoroutine("JunpMove");
+            isJumping = false;
+        }
+        Ray downray = new Ray(gameObject.transform.position, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(downray, out hit, 10.0f))
+        {
+            var n = hit.point.y - gameObject.transform.position.y + 0.5f;
+            if (Mathf.Round(n) == 0 && n < 0.1f && 0.1f > n && !isJumpingRunning) isJumping = true;
+            else isJumping = false;
+        }
+        else isJumping = false;
+    }
+    private void WheelAnimation()
+    {
+        wheel.transform.Rotate(Vector3.up, rigidBody.velocity.magnitude * 2);
+    }
+    private void SsignmentStatsUi()
+    {
+        reloadSlider.value = reload_count;
+        hpSlider.value = currentHp;
+        hpText.text = currentHp.ToString();
+        enSlider.value = currentEn;
+        enText.text = currentEn.ToString();
+        bulletText.text = currentLoadedBullets.ToString();
+    }
+    private void IsBulletTypeJuge(Collider other)
+    {
+        if (other.GetComponent<NormalBulletSystem>() != null && other.GetComponent<NormalBulletSystem>().targetTag == "Player")
+        {
+            TakeDmage(other.GetComponent<NormalBulletSystem>().bulletDamage);
+            other.GetComponent<NormalBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<FollowingBulletSystem>() != null && other.GetComponent<FollowingBulletSystem>().targetTag == "Player")
+        {
+            TakeDmage(other.GetComponent<FollowingBulletSystem>().bulletDamage);
+            other.GetComponent<FollowingBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<ParabolaBulletSystem>() != null && other.GetComponent<ParabolaBulletSystem>().targetTag == "Player")
+        {
+            TakeDmage(other.GetComponent<ParabolaBulletSystem>().bulletDamage);
+            other.GetComponent<ParabolaBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<SplitBulletSystem>() != null && other.GetComponent<SplitBulletSystem>().targetTag == "Player")
+        {
+            TakeDmage(other.GetComponent<SplitBulletSystem>().bulletDamage);
+            other.GetComponent<SplitBulletSystem>().BulletDestroy();
         }
     }
     private void EnergyRecovery()

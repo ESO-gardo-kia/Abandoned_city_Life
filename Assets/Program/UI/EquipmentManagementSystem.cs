@@ -24,9 +24,16 @@ public class EquipmentManagementSystem : MonoBehaviour
     [SerializeField] private GameObject StarObj;
 
     public CinemachineVirtualCamera cinemachineVirtualCamera;
+
+    [SerializeField] private float canvasOpenCoolDown;
+    private float canvasOpenCoolDownCount;
     private void Start()
     {
         cinemachineVirtualCamera.Priority = 0;
+    }
+    private void Update()
+    {
+        if(canvasOpenCoolDownCount < canvasOpenCoolDown) canvasOpenCoolDownCount += Time.deltaTime;
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -37,16 +44,19 @@ public class EquipmentManagementSystem : MonoBehaviour
     }
     private void OnTriggerStay(Collider collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player")
+            && canvasOpenCoolDownCount >= canvasOpenCoolDown)
         {
             if (!mainCanvas.activeSelf)
             {
                 Canvas_Transition(true);
                 Gun_ReadIn();
+                canvasOpenCoolDownCount = 0;
             }
             else
             {
                 Canvas_Transition(false);
+                canvasOpenCoolDownCount = 0;
             }
         }
     }

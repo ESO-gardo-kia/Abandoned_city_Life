@@ -25,10 +25,20 @@ public class StageSelectManagementSystem : MonoBehaviour
     [SerializeField] private AudioClip panelSound;
 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+
+    [SerializeField] private float canvasOpenCoolDown;
+    private float canvasOpenCoolDownCount;
     private void Start()
     {
         mainPanel.SetActive(false);
         mainPanel.transform.localScale = Vector3.zero;
+        cinemachineVirtualCamera.Priority = 0;
+        anime.SetTrigger("close");
+        Canvas_Transition(false);
+    }
+    private void Update()
+    {
+        if (canvasOpenCoolDownCount < canvasOpenCoolDown) canvasOpenCoolDownCount += Time.deltaTime;
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -39,7 +49,8 @@ public class StageSelectManagementSystem : MonoBehaviour
     }
     private void OnTriggerStay(Collider collision)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player") 
+            && canvasOpenCoolDownCount >= canvasOpenCoolDown)
         {
             if (!mainPanel.activeSelf)
             {
@@ -47,12 +58,14 @@ public class StageSelectManagementSystem : MonoBehaviour
                 anime.SetTrigger("open");
                 StageSelectButtonReadIn();
                 Canvas_Transition(true);
+                canvasOpenCoolDownCount = 0;
             }
             else
             {
                 cinemachineVirtualCamera.Priority = 0;
                 anime.SetTrigger("close");
                 Canvas_Transition(false);
+                canvasOpenCoolDownCount = 0;
             }
         }
     }
@@ -74,15 +87,12 @@ public class StageSelectManagementSystem : MonoBehaviour
         if (isOpen)
         {
             audioSource.PlayOneShot(panelSound);
-            mainPanel.SetActive(true);
-            Player_System.movePermit = false;
-            Player_System.isPanelOpen = true;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            CanvasOpenWhenPlayerProcessing();
             DOTween.Sequence()
                 .Append(mainPanel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
-                .OnComplete(() => {
+                .OnComplete(() =>
+                {
                     //brain.enabled = false;
                 }))
                 .Play();
@@ -93,24 +103,37 @@ public class StageSelectManagementSystem : MonoBehaviour
             DOTween.Sequence()
                 .Append(mainPanel.GetComponent<RectTransform>().DOScale(Vector3.zero, 0.25f)
                 .SetEase(Ease.OutCirc)
-              .OnComplete(() => {
-                  mainPanel.SetActive(false);
-                  Player_System.movePermit = true;
-                  Player_System.isPanelOpen = false;
-                  Cursor.visible = false;
-                  Cursor.lockState = CursorLockMode.Locked;
+              .OnComplete(() =>
+              {
+                  CanvasCloseWhenPlayerProcessing();
                   Debug.Log("èIóπ");
               }))
                 .Play();
         }
     }
-    public void StageSelectButtonReadIn()
+    private void CanvasOpenWhenPlayerProcessing()
+    {
+        mainPanel.SetActive(true);
+        Player_System.movePermit = false;
+        Player_System.isPanelOpen = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+    void CanvasCloseWhenPlayerProcessing()
+    {
+        mainPanel.SetActive(false);
+        Player_System.movePermit = true;
+        Player_System.isPanelOpen = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    private void StageSelectButtonReadIn()
     {
         PanelReset();
         var Data = stageInformation.data;
         for (int i = 0; i < stageInformation.data.Count; i++)
         {
-            if ((int)Data[i].stagetype != 3)
+            if (Data[i].stagenumber > 0)
             {
                 var stageselectpanelobj = Instantiate(stageSelectPanelPrefab, itemLineupPassObj);
                 StageSelectSignalButtonSystem stageSelectSignalButtonSystem = stageselectpanelobj.GetComponent<StageSelectSignalButtonSystem>();
@@ -126,7 +149,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     public void Button_System(int transitionSceneNumber)
     {
         GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.Scene_Transition_Process(transitionSceneNumber);
+        gameManager.SceneTransitionProcess(transitionSceneNumber);
     }
     private void PanelReset()
     {

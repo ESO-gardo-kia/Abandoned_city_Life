@@ -27,7 +27,6 @@ public class EnemyDefaultSystem : MonoBehaviour
             }
             if (currenthp > 0)
             {
-                Debug.Log(damage);
                 currenthp -= damage;
             }
             if (currenthp <= 0)
@@ -37,7 +36,7 @@ public class EnemyDefaultSystem : MonoBehaviour
             bulleySystem.BulletDestroy();
         }
     }
-    public void Enemy_Reset(ref bool isDeath, int enemy_number, ref float hp, ref float atk, ref float agi, ref float currenthp, ref float currentatk, ref float currentagi,
+    public void EnemyStatsReset(ref bool isDeath, int enemy_number, ref float hp, ref float atk, ref float agi, ref float currenthp, ref float currentatk, ref float currentagi,
         ref Slider hpSlider , ref Enemy_Manager enemyManager , ref GameObject playerObject)
     {
         if (enemyManager == null) enemyManager = transform.parent.parent.GetComponent<Enemy_Manager>();

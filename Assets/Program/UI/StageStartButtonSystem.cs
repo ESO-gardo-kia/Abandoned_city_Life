@@ -7,6 +7,9 @@ public class StageStartButtonSystem : MonoBehaviour
     public int stageNumber;
     public void OnButtonClick()
     {
-        FindObjectsOfType<GameManager>()[0].Scene_Transition_Process(stageNumber);
+        if(stageNumber != 0)
+        {
+            FindObjectsOfType<GameManager>()[0].SceneTransitionProcess(stageNumber);
+        }
     }
 }

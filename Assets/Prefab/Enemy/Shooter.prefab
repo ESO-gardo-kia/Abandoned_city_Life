@@ -4493,7 +4493,7 @@ MonoBehaviour:
   bulletDamage: 5
   rapidFireRate: 0.3
   bulletRange: 100
-  bulletSpeed: 300
+  bulletSpeed: 400
   diffusionChance: 3
   SHOTOBJ: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20, type: 3}
   enemy_number: 0

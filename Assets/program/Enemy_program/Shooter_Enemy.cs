@@ -43,7 +43,7 @@ public class Shooter_Enemy: EnemyDefaultSystem
 
     public void Start()
     {
-        Enemy_Reset(ref isDeath, enemy_number, ref hp, ref atk, ref agi, ref currenthp, ref currentatk, ref currentagi, ref hpSlider, ref enemyManager, ref playerObject);
+        EnemyStatsReset(ref isDeath, enemy_number, ref hp, ref atk, ref agi, ref currenthp, ref currentatk, ref currentagi, ref hpSlider, ref enemyManager, ref playerObject);
         NavMeshAgentReset(enemy_number, currentagi, ref navMeshAgent);
     }
 
@@ -78,27 +78,6 @@ public class Shooter_Enemy: EnemyDefaultSystem
             }
         }
     }
-    /*
-    public void Enemy_Reset()
-    {
-        //Debug.Log("“G‚Ìî•ñ‚ğƒŠƒZƒbƒg‚·‚é");
-        if (enemyManager == null) enemyManager = transform.parent.transform.parent.GetComponent<Enemy_Manager>();
-        if (playerObject == null) playerObject = enemyManager.player_system;
-        isDeath = false;
-        hp = enemy_List.Status[0].hp;
-        atk = enemy_List.Status[0].atk;
-        agi = enemy_List.Status[0].agi;
-        currenthp = hp;
-        currentatk = atk;
-        currentagi = agi;
-        hpSlider.maxValue = hp;
-        hpSlider.value = currenthp;
-        enemy_number = 0;
-
-        navMeshAgent.speed = currentagi;
-        navMeshAgent.stoppingDistance = 20;
-    }
-    */
     public void NomalShot()
     {
         if (rateCount >= rapidFireRate)

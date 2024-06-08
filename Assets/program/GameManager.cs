@@ -1,12 +1,8 @@
-using Cinemachine;
 using DG.Tweening;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Stage_Information;
 //using static System.Net.Mime.MediaTypeNames;
@@ -19,129 +15,100 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Enemy_Manager enemyManager;
     [SerializeField] private SceneTransitionSystem sceneManager;
     [SerializeField] private Player_System playerSystem;
-    private string SavePath;
     public static GameManager instance;
+    private string SavePath;
 
     public Stage_Information stageInfomation;
     public int stage_number;
 
-    private GameObject GameOverPanel;
-    private Text GameOverText;
-    private GameObject FeedPanel;
-    public int stageStartCount;//ステージ開始までのカウントダウン
-    private GameObject stageStartCountText;
-    public int endCount;//ステージ終了までのカウントダウン
-    private GameObject endText;
+    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private Text GameOverText;
+    [SerializeField] private GameObject FeedPanel;
+    [SerializeField] public int stageStartCount;//ステージ開始までのカウントダウン
+    [SerializeField] private GameObject stageStartCountText;
+    [SerializeField] public int endCount;//ステージ終了までのカウントダウン
+    [SerializeField] private GameObject endText;
     private void Awake()
     {
     }
     private void Start()
     {
-        DontDestroyOnLoad(this);
-        Application.targetFrameRate = 60;
-        audioSource = GetComponent<AudioSource>();
-        sceneManager = transform.GetComponent<SceneTransitionSystem>();
-        enemyManager = transform.Find("Enemy_Manager").GetComponent<Enemy_Manager>();
-        playerSystem = transform.Find("Player_Manager/Player_System").GetComponent<Player_System>();
-        //Stage_Information
-        GameOverPanel = transform.Find("System_Canvas/GameOverPanel").gameObject;
-        GameOverText = GameOverPanel.transform.Find("GameOverText").GetComponent<Text>();
-
-        FeedPanel = transform.Find("System_Canvas/FeedPanel").gameObject;
-        stageStartCountText = transform.Find("System_Canvas/Sc_Text").gameObject;
-        endText = transform.Find("System_Canvas/Ec_Text").gameObject;
-
-        GameOverPanel.SetActive(false);
-        audioSource.PlayOneShot(stageInfomation.data[0].BGM);
-
-        playerMoney = 10000;
-        //カーソル関係
         /*
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        */
-        //セーブ関係
-        SavePath = Application.persistentDataPath + "/SaveData.json";
-        Application.targetFrameRate = 60;
-    }
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            //GameOver();
-        }
-    }
-    public void Scene_Transition_Process(int transitionSceneNumber)
-    {
-        //フェードパネル表示
-        FeedPanel.SetActive(true);
-        //プレイヤーや敵の行動停止
         Player_System.movePermit = false;
         Enemy_Manager.enemies_move_permit = false;
-        enemyManager.StopCoroutine("Enemies_Spawn_Function");
-        //カーソル非表示
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        */
+        DontDestroyOnLoad(this);
+        Application.targetFrameRate = 60;
+        GameOverPanel.SetActive(false);
+        audioSource.PlayOneShot(stageInfomation.data[0].BGM);
+        SavePath = Application.persistentDataPath + "/SaveData.json";
+        Application.targetFrameRate = 60;
+        playerMoney = 10000;
+    }
+    public void SceneTransitionProcess(int transitionSceneNumber)
+    {
+        FeedPanel.SetActive(true);
+        Player_System.movePermit = false;
+        Enemy_Manager.enemies_move_permit = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         DOTween.Sequence()
-        /*
-         * フェードアウトが完了したら
-         * 移動したいシーンへ移動
-         * プレイヤーリセット
-         * スポーンポイントに移動
-         */
-        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f*feedTime).SetDelay(0f)//フェードアウト
-        .OnComplete(() =>
-        {
-            audioSource.Stop();
-            sceneManager.Load_Scene(transitionSceneNumber);//シーン移動
-            enemyManager.Enemy_Manager_Reset();//エネミーマネージャーリセット
-            playerSystem.Player_Reset(false);//プレイヤーの情報をリセットさせる
-            transform.Find("Player_Manager/Player_System").gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
-        }))
-        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1.0f * feedTime).SetDelay(0.5f)//フェードイン
+        .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f* feedTime).SetDelay(0f)//フェードアウト
+                .OnComplete(() =>
+                {
+                    SceneTransitionPreprocessing(transitionSceneNumber);
+                }))
+        .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1 * feedTime).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
                     audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
                     stageStartCountText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;//ステージ名表示
                 }))
         .Append(stageStartCountText.transform.DOScale(Vector3.one * 1, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
-        .OnComplete(() => {
-            Player_System.movePermit = true;
-            Enemy_Manager.enemies_move_permit = true;
-            if(transitionSceneNumber == 2)stageStartCountText.GetComponent<Text>().text = "Start!";
-        }))
-        .Append(stageStartCountText.transform.DOScale(Vector3.zero, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
-                    Debug.Log(stageInfomation.data[transitionSceneNumber].name);
-                    stageStartCountText.transform.localScale = Vector3.one;
-                    Enemy_Manager.enemies_move_permit = true;
-                    stageStartCountText.GetComponent<Text>().text = "";
-                    FeedPanel.SetActive(false);
-                    GameOverPanel.SetActive(false);
-                    switch (stageInfomation.data[transitionSceneNumber].tran_scene)
-                    {
-                        case stage_information.TransitionScene.Title://タイトル
-                            playerSystem.Player_Reset(false);
-                            break;
-                        case stage_information.TransitionScene.Select://セレクト
-                            playerSystem.Player_Reset(true);
-                            break;
-                        case stage_information.TransitionScene.Main://Main
-                            playerSystem.Player_Reset(true);
-                            enemyManager.stagetype = stageInfomation.data[transitionSceneNumber].stagetype;
-                            List<int[]> wave = new List<int[]>
-                            {
-                                stageInfomation.data[transitionSceneNumber].enemies_num1,
-                                stageInfomation.data[transitionSceneNumber].enemies_num2,
-                                stageInfomation.data[transitionSceneNumber].enemies_num3
-                            };
-                            enemyManager.all_wave = wave;
-                            StartCoroutine(enemyManager.Enemies_Spawn_Function(wave[0]));
-
-                            break;
-                    }
+                    Player_System.movePermit = true;
+                     Enemy_Manager.enemies_move_permit = true;
+                    if(transitionSceneNumber == 2) stageStartCountText.GetComponent<Text>().text = "Start!";
+                }))
+        .Append(stageStartCountText.transform.DOScale(Vector3.zero, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
+                .OnComplete(() =>
+                {
+                    SceneTransitionCompletedFunction(transitionSceneNumber);
                 }))
         .Play();
 
+    }
+    private void SceneTransitionPreprocessing(int transitionSceneNumber)
+    {
+        audioSource.Stop();
+        enemyManager.Enemy_Manager_Reset();
+        playerSystem.Player_Reset(false);
+        sceneManager.Load_Scene(transitionSceneNumber);//シーン移動
+        playerSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
+    }
+    private void SceneTransitionCompletedFunction(int transitionSceneNumber)
+    {
+        stageStartCountText.transform.localScale = Vector3.one;
+        Enemy_Manager.enemies_move_permit = true;
+        stageStartCountText.GetComponent<Text>().text = "";
+        FeedPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+        switch (stageInfomation.data[transitionSceneNumber].tran_scene)
+        {
+            case stage_information.TransitionScene.Title:
+                playerSystem.Player_Reset(false);
+                break;
+            case stage_information.TransitionScene.Select:
+                playerSystem.Player_Reset(true);
+                break;
+            case stage_information.TransitionScene.Main:
+                playerSystem.Player_Reset(true);
+                enemyManager.stagetype = stageInfomation.data[transitionSceneNumber].stagetype;
+                enemyManager.GetCurrentWaveEnemy(transitionSceneNumber);
+                StartCoroutine(enemyManager.Enemies_Spawn_Function(transitionSceneNumber));
+                break;
+        }
     }
     public void GameStart()
     {
@@ -210,7 +177,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         playerSystem.cinemachineVirtualCamera.Priority = 1;
         GameOverPanel.SetActive(false);
-        Scene_Transition_Process(1);
+        SceneTransitionProcess(1);
     }
     [Serializable]
     public class SaveData
