@@ -55,7 +55,7 @@ public class Enemy_System : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
             if (isdeath)
             {
@@ -100,7 +100,7 @@ public class Enemy_System : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
             if (other.gameObject.CompareTag("Bullet")
                 && other.GetComponent<Bullet_System>().target_tag == "Enemy")

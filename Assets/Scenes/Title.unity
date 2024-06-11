@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1913,7 +1913,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1573941628}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Scene_Transition_Process
+        m_MethodName: SceneTransitionProcess
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7956,7 +7956,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999253524}
-  m_LocalRotation: {x: 0.062324416, y: -0.000000017306572, z: 0.000000001080723, w: 0.998056}
+  m_LocalRotation: {x: 0.062324416, y: 0.000000017306572, z: -0.000000001080723, w: 0.998056}
   m_LocalPosition: {x: 0, y: -0.099999905, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

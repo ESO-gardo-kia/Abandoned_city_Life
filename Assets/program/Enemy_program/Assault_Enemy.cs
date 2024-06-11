@@ -46,7 +46,7 @@ public class Assault_Enemy : EnemyDefaultSystem
 
     void Update()
     {
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
 
             if (isDeath)
@@ -67,7 +67,7 @@ public class Assault_Enemy : EnemyDefaultSystem
     }
     void OnTriggerEnter(Collider other)
     {
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
             if (other.GetComponent<Bullet_System>() != null)
             {

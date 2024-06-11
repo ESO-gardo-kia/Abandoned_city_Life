@@ -1,14 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMoveSystem : MonoBehaviour
 {
-    /*
-    // Start is called before the first frame update
-    private void IsJumpJudg()
+
+    [SerializeField] public Rigidbody rigidBody;
+    [SerializeField] public GameObject wheel;
+    [Header("--- 基本動作 ---")]
+    public float jumpForce = 6f;
+    public float jumpNum = 100;
+    public float jumpRepeatSecond = 0.1f;
+
+    private bool isJumping = false;//ジャンプ出来るか否か
+    private bool isJumpingRunning = false;//ジャンプ処理中か否か
+
+    [Tooltip("移動速度")]
+    public float walkSpeed = 10;
+    public float dashSpeed = 15;
+
+    private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) isJumpingRunning = false;
+
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor")) isJumpingRunning = false;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor")) isJumping = false;
+    }
+    public void IsJumpJudg()
+    {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumpingRunning = false;
+        }
         if (Input.GetKey(KeyCode.Space) && !isJumpingRunning && isJumping)
         {
             StartCoroutine("JunpMove");
@@ -24,16 +53,25 @@ public class PlayerMoveSystem : MonoBehaviour
         }
         else isJumping = false;
     }
-    private void PlayerMove(float speed, ref Rigidbody rigidBody)
+    public void PlayerWalkMove()
     {
         float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
         float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
         Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z); // 正規化
         Player_movedir = this.transform.forward * z + this.transform.right * x;
         Player_movedir = Player_movedir.normalized;
-        rigidBody.velocity = new Vector3(Player_movedir.x * speed, rigidBody.velocity.y, Player_movedir.z * speed);
+        rigidBody.velocity = new Vector3(Player_movedir.x * walkSpeed, rigidBody.velocity.y, Player_movedir.z * walkSpeed);
     }
-    IEnumerator JunpMove(ref Rigidbody rigidBody,)
+    public void PlayerRunMove()
+    {
+        float x = Input.GetAxisRaw("Horizontal"); // x方向のキー入力
+        float z = Input.GetAxisRaw("Vertical"); // z方向のキー入力
+        Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z);
+        Player_movedir = this.transform.forward * z + this.transform.right * x;
+        Player_movedir = Player_movedir.normalized;
+        rigidBody.velocity = new Vector3(Player_movedir.x * dashSpeed, rigidBody.velocity.y, Player_movedir.z * dashSpeed);
+    }
+    IEnumerator JunpMove()
     {
         rigidBody.velocity = Vector3.zero;
         isJumpingRunning = true;
@@ -54,5 +92,8 @@ public class PlayerMoveSystem : MonoBehaviour
             }
         }
     }
-    */
+    private void WheelAnimation()
+    {
+        wheel.transform.Rotate(Vector3.up, rigidBody.velocity.magnitude * 2);
+    }
 }

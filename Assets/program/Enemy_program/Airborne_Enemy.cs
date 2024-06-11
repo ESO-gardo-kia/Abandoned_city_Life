@@ -55,7 +55,7 @@ public class Airborne_Enemy : EnemyDefaultSystem
     void FixedUpdate()
     {
         wheelObject.transform.Rotate(Vector3.up, 4);
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
             if (isDeath)
             {
@@ -80,7 +80,7 @@ public class Airborne_Enemy : EnemyDefaultSystem
     }
     void OnTriggerEnter(Collider other)
     {
-        if (Enemy_Manager.enemies_move_permit == true)
+        if (Enemy_Manager.enemiesMovePermit == true)
         {
             if (other.GetComponent<Bullet_System>() != null)
             {

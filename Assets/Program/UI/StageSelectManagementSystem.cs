@@ -44,7 +44,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            Player_System.contactText.text = contact_text;
+            collision.gameObject.GetComponent<PlayerUiSystem>().contactText.text = contact_text;
         }
     }
     private void OnTriggerStay(Collider collision)
@@ -73,7 +73,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && mainPanel.activeSelf)
         {
-            Player_System.contactText.text = null;
+            collision.gameObject.GetComponent<PlayerUiSystem>().contactText.text = null;
             cinemachineVirtualCamera.Priority = 0;
             Canvas_Transition(false);
         }
@@ -115,7 +115,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         mainPanel.SetActive(true);
         Player_System.movePermit = false;
-        Player_System.isPanelOpen = true;
+        PlayerUiSystem.isPanelOpen = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -123,7 +123,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     {
         mainPanel.SetActive(false);
         Player_System.movePermit = true;
-        Player_System.isPanelOpen = false;
+        PlayerUiSystem.isPanelOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

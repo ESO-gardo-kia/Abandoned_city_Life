@@ -18,7 +18,7 @@ public class Buy_Button : MonoBehaviour
             audioSource.PlayOneShot(buySound);
             Debug.Log("ïêäÌÇîÉÇ¢Ç‹ÇµÇΩ");
             GameManager.playerMoney -= gunList.Data[weaponNumber].price;
-            GameObject.Find("Player_System").GetComponent<Player_System>().moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
+            GameObject.Find("Player_System").GetComponent<PlayerUiSystem>().moneyText.GetComponent<Text>().text = "MONEY:" + GameManager.playerMoney.ToString();
             Player_Manager.isWeapon[weaponNumber] = true;
         }
         else

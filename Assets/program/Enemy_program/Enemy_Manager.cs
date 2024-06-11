@@ -13,7 +13,7 @@ public class Enemy_Manager : MonoBehaviour
     [SerializeField] private Stage_Information stageInformation;
     [SerializeField] private Enemy_List enemyList;
     public bool Debug_Mode;
-    static public bool enemies_move_permit;
+    static public bool enemiesMovePermit;
     public List<int[]> normalWaveEnemyList;
     [SerializeField] private GameManager gm;
     [SerializeField] private GameObject Enemy_Obj;
@@ -47,8 +47,8 @@ public class Enemy_Manager : MonoBehaviour
         {
             SPL[i] = transform.Find("SpawnPoint_List").GetChild(i).gameObject;
         }
-        if(Debug_Mode) enemies_move_permit = true;
-        else enemies_move_permit = false;
+        if(Debug_Mode) enemiesMovePermit = true;
+        else enemiesMovePermit = false;
     }
     private void Update()
     {
@@ -215,7 +215,7 @@ public class Enemy_Manager : MonoBehaviour
             Destroy(transform.Find("Enemy_ObjList").GetChild(i).gameObject);
         }
         WAVEText.SetActive(false);
-        enemies_move_permit = false;
+        enemiesMovePermit = false;
         endlesswave = 0;
         current_enemies_count = 0;
         currentWave = 0;

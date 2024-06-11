@@ -229,9 +229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weponeNumber: 0
-  audioSource: {fileID: 0}
-  equipSound: {fileID: 0}
-  notEquipSound: {fileID: 0}
+  audioSource: {fileID: 7822013088385951931}
+  equipSound: {fileID: 8300000, guid: 4cf42253a28636744ae3d4bfc2948da3, type: 3}
+  notEquipSound: {fileID: 8300000, guid: 4cf42253a28636744ae3d4bfc2948da3, type: 3}
 --- !u!82 &7822013088385951931
 AudioSource:
   m_ObjectHideFlags: 0
@@ -732,9 +732,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponNumber: 0
   gunList: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  audioSource: {fileID: 0}
-  buySound: {fileID: 0}
-  notBuySound: {fileID: 0}
+  audioSource: {fileID: 4169784202043186783}
+  buySound: {fileID: 8300000, guid: 9c086fc48744b764dbe59f54898b1e58, type: 3}
+  notBuySound: {fileID: 8300000, guid: b43c29840c3fb2545bd8b5df0cd82680, type: 3}
 --- !u!82 &4169784202043186783
 AudioSource:
   m_ObjectHideFlags: 0
