@@ -78,7 +78,7 @@ public class EquipmentManagementSystem : MonoBehaviour
         {
             audioSource.PlayOneShot(panelSound);
             mainCanvas.SetActive(true);
-            Player_System.movePermit = false;
+            PlayerMainSystem.movePermit = false;
             PlayerUiSystem.isPanelOpen = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
@@ -99,7 +99,7 @@ public class EquipmentManagementSystem : MonoBehaviour
                 .SetEase(Ease.OutCirc)
               .OnComplete(() => {
                   mainCanvas.SetActive(false);
-                  Player_System.movePermit = true;
+                  PlayerMainSystem.movePermit = true;
                   PlayerUiSystem.isPanelOpen = false;
                   Cursor.visible = false;
                   Cursor.lockState = CursorLockMode.Locked;

@@ -61,7 +61,7 @@ public class Airborne_Enemy : EnemyDefaultSystem
             {
                 Deathfunction();
             }
-            else if (!isDeath && !Player_System.playerIsDeath)
+            else if (!isDeath && !PlayerMainSystem.playerIsDeath)
             {
                 float dir = Vector3.Distance(transform.position, playerObject.transform.position);
                 transform.localRotation = Quaternion.RotateTowards(transform.rotation

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
     [SerializeField] private SceneTransitionSystem sceneManager;
-    [SerializeField] private Player_System playerSystem;
+    [SerializeField] private PlayerMainSystem playerSystem;
     public static GameManager instance;
     private string SavePath;
 
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public void SceneTransitionProcess(int transitionSceneNumber)
     {
         FeedPanel.SetActive(true);
-        Player_System.movePermit = false;
+        PlayerMainSystem.movePermit = false;
         Enemy_Manager.enemiesMovePermit = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -94,21 +94,21 @@ public class GameManager : MonoBehaviour
         switch (stageInfomation.data[transitionSceneNumber].tran_scene)
         {
             case stage_information.TransitionScene.Title:
-                Player_System.movePermit = false;
+                PlayerMainSystem.movePermit = false;
                 Enemy_Manager.enemiesMovePermit = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
                 playerSystem.Player_Reset(false);
                 break;
             case stage_information.TransitionScene.Select:
-                Player_System.movePermit = true;
+                PlayerMainSystem.movePermit = true;
                 Enemy_Manager.enemiesMovePermit = false;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 playerSystem.Player_Reset(true);
                 break;
             case stage_information.TransitionScene.Main:
-                Player_System.movePermit = true;
+                PlayerMainSystem.movePermit = true;
                 Enemy_Manager.enemiesMovePermit = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator GameOver(int[] num,string str,float money)
     {
         FeedPanel.SetActive(true);
-        Player_System.movePermit = false;
+        PlayerMainSystem.movePermit = false;
         Enemy_Manager.enemiesMovePermit = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

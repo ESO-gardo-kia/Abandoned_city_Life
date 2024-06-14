@@ -15,8 +15,8 @@ public class Button_Equip : MonoBehaviour
         {
             audioSource.PlayOneShot(equipSound);
             Debug.Log("•Ší‚ğ•Ï‚¦‚Ü‚µ‚½");
-            Player_System.player_weapon_id = weponeNumber;
-            GameObject.Find("Player_System").gameObject.transform.GetComponent<Player_System>().Wepon_Reset(weponeNumber);
+            PlayerWeaponSystem.player_weapon_id = weponeNumber;
+            GameObject.Find("Player_System").gameObject.transform.GetComponent<PlayerWeaponSystem>().WeponChange();
         }
         else
         {

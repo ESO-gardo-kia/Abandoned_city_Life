@@ -114,7 +114,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     private void CanvasOpenWhenPlayerProcessing()
     {
         mainPanel.SetActive(true);
-        Player_System.movePermit = false;
+        PlayerMainSystem.movePermit = false;
         PlayerUiSystem.isPanelOpen = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -122,7 +122,7 @@ public class StageSelectManagementSystem : MonoBehaviour
     void CanvasCloseWhenPlayerProcessing()
     {
         mainPanel.SetActive(false);
-        Player_System.movePermit = true;
+        PlayerMainSystem.movePermit = true;
         PlayerUiSystem.isPanelOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

@@ -39,7 +39,7 @@ public class PlayerUiSystem : MonoBehaviour
         {
             DropItemCollect();
         }
-        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && Player_System.movePermit && !isPanelOpen)
+        if (Input.GetKeyDown(KeyCode.Tab) && !MenuPanel.activeSelf && PlayerMainSystem.movePermit && !isPanelOpen)
         {
             //Canvas_Transition(MenuPanel, true);
         }

@@ -55,7 +55,7 @@ public class Shooter_Enemy: EnemyDefaultSystem
             {
                 Deathfunction();
             }
-            else if (!isDeath && !Player_System.playerIsDeath)
+            else if (!isDeath && !PlayerMainSystem.playerIsDeath)
             {
                 rigidBody.velocity = Vector3.zero;
                 navMeshAgent.destination = playerObject.transform.position;

@@ -53,7 +53,7 @@ public class Assault_Enemy : EnemyDefaultSystem
             {
                 Deathfunction();
             }
-            else if (!isDeath && !Player_System.playerIsDeath)
+            else if (!isDeath && !PlayerMainSystem.playerIsDeath)
             {
                 //rigidBody.velocity = Vector3.zero;
                 navMeshAgent.destination = playerObject.transform.position;
@@ -82,7 +82,7 @@ public class Assault_Enemy : EnemyDefaultSystem
         {
             if (rateCount >= rapidFireRate)
             {
-                playerObject.GetComponent<Player_System>().TakeDmage(attack_damage);
+                playerObject.GetComponent<PlayerMainSystem>().TakeDmage(attack_damage);
                 rateCount = 0;
             }
         }

@@ -20,10 +20,6 @@ public class PlayerMoveSystem : MonoBehaviour
     public float walkSpeed = 10;
     public float dashSpeed = 15;
 
-    private void Update()
-    {
-
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor")) isJumpingRunning = false;
