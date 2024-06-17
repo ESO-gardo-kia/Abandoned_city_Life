@@ -37,12 +37,12 @@ public class PlayerWeaponSystem : MonoBehaviour
             }
         }
     }
-    public void NomalShot(GameObject Camera)
+    public void NomalShot(GameObject Camera, AudioSource audioSource)
     {
         if (rate_count >= gunlist.Data[player_weapon_id].rapid_fire_rate && currentLoadedBullets > 0 && !isReloadPossible && Input.GetMouseButton(0))
         {
             //Debug.Log("”­ŽË‚µ‚Ü‚µ‚½");
-            //audioSource.PlayOneShot(shotSound);
+            audioSource.PlayOneShot(shotSound);
             var Guns = gunlist.Data[player_weapon_id];
             for (int i = 0; i < Guns.multi_bullet; i++)
             {
@@ -55,6 +55,38 @@ public class PlayerWeaponSystem : MonoBehaviour
                 bs.damage = Guns.bullet_damage;
                 bs.deathDistance = Guns.bullet_range;
                 bs.firstpos = shotPosition.transform.position;
+                shotObj.transform.eulerAngles = Camera.transform.eulerAngles;
+                shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                    , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
+                                    , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance));
+                rb.velocity = bs.transform.forward * Guns.bullet_speed;
+            }
+            currentLoadedBullets--;
+            rate_count = 0;
+        }
+        else if (rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate)
+        {
+            rate_count += 0.2f;
+        }
+    }
+    public void BulletShotSystem(GameObject Camera, AudioSource audioSource)
+    {
+        if (rate_count >= gunlist.Data[player_weapon_id].rapid_fire_rate && currentLoadedBullets > 0 && !isReloadPossible && Input.GetMouseButton(0))
+        {
+            //Debug.Log("”­ŽË‚µ‚Ü‚µ‚½");
+            audioSource.PlayOneShot(shotSound);
+            var Guns = gunlist.Data[player_weapon_id];
+            for (int i = 0; i < Guns.multi_bullet; i++)
+            {
+                GameObject shotObj = Instantiate(SHOTOBJ, shotPosition.transform.position, Quaternion.identity);
+                Rigidbody rb = shotObj.GetComponent<Rigidbody>();
+                NormalBulletSystem bs = shotObj.GetComponent<NormalBulletSystem>();
+
+                bs.targetTag = "Enemy";
+                bs.bulletDamage = Guns.bullet_damage;
+                bs.bulletSpeed = Guns.bullet_speed;
+                bs.deathDistance = Guns.bullet_range;
+                bs.firstPosition = shotPosition.transform.position;
                 shotObj.transform.eulerAngles = Camera.transform.eulerAngles;
                 shotObj.transform.eulerAngles += new Vector3(Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)
                                     , Random.Range(-Guns.diffusion__chance, Guns.diffusion__chance)

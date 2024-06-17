@@ -11,13 +11,13 @@ public class PlayerMainSystem : MonoBehaviour
     public bool bo = true;
     static public bool movePermit = true;//移動可能か否か
     static public bool playerIsDeath = true;//
-    [Header("--- GetComponent ---")]
+    [Header("--- Component ---")]
     [SerializeField] private PlayerUiSystem playerUiSystem;
     [SerializeField] private PlayerMoveSystem playerMoveSystem;
     [SerializeField] private PlayerWeaponSystem playerWeaponSystem;
     [SerializeField] private CinemachineBrain cinemachinBrain;
-    [SerializeField] public GameObject playerCamera;
     [SerializeField] public CinemachineVirtualCamera cinemachineVirtualCamera;
+    [SerializeField] public GameObject playerCamera;
 
     [Header("--- サウンド ---")]
     [SerializeField] private AudioSource audioSource;
@@ -25,18 +25,18 @@ public class PlayerMainSystem : MonoBehaviour
     [SerializeField] private AudioClip damageSound;
     [SerializeField]
     [Header("--- ステータス ---")]
-    public bool isEnergyRecovery;
-    public float energyRecoveryTime;
-    private float energyRecoveryCount;
-
     public float hp;
     public float currentHp;
     public float en;
     public float currentEn;
-    public float atk;
-    public float currentatk;
-    public float agi;
-    public float currentagi;
+
+    public bool isEnergyRecovery;
+    public float energyRecoveryTime;
+    private float energyRecoveryCount;
+
+    public float jumpForce = 100;
+    public float walkSpeed = 10;
+    public float dashSpeed = 15;
 
     private void Start()
     {
@@ -49,15 +49,13 @@ public class PlayerMainSystem : MonoBehaviour
         {
             if (!PlayerUiSystem.isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
             playerUiSystem.SsignmentStatsUi(playerWeaponSystem.reload_count,currentHp,currentEn, playerWeaponSystem.currentLoadedBullets);
-            playerMoveSystem.IsJumpJudg();
-        }
-    }
-    void FixedUpdate()
-    {
-        if (movePermit)
-        {
-            playerWeaponSystem.NomalShot(playerCamera);
+            playerMoveSystem.IsJumpJudg(jumpForce);
+
+            playerMoveSystem.WheelAnimation();
+
+            playerWeaponSystem.BulletShotSystem(playerCamera, audioSource);
             playerWeaponSystem.GunReloadSystem(ref playerUiSystem);
+
             //移動処理
             if ((Input.GetKey(KeyCode.LeftShift) && currentEn > 0) &&
                 (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
@@ -67,12 +65,12 @@ public class PlayerMainSystem : MonoBehaviour
                     isEnergyRecovery = false;
                     currentEn--;
                 }
-                playerMoveSystem.PlayerRunMove();
+                playerMoveSystem.PlayerMovement(dashSpeed);
             }
             else
             {
                 EnergyRecovery();
-                playerMoveSystem.PlayerWalkMove();
+                playerMoveSystem.PlayerMovement(walkSpeed);
             }
         }
     }
@@ -144,8 +142,6 @@ public class PlayerMainSystem : MonoBehaviour
 
         currentHp = hp;
         currentEn = en;
-        currentatk = atk;
-        currentagi = agi;
 
         transform.localRotation = new Quaternion(0,0,0,0);
         //rigidBody.velocity = Vector3.zero;
