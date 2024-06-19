@@ -1,8 +1,5 @@
 using Cinemachine;
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 using static Gun_List;
@@ -12,12 +9,13 @@ public class StageSelectManagementSystem : MonoBehaviour
     public string contact_text;
     [SerializeField] private Stage_Information stageInformation;
     [SerializeField] private GameObject mainPanel;
-    [SerializeField] private GameObject playerIdlepos;
+    [SerializeField] private Transform playerIdlepos;
+    private Vector3 playerOldpos;
     [SerializeField] private GameObject stageSelectPanelPrefab;
     [SerializeField] private StageStartButtonSystem stageStartButton;
     [SerializeField] private Image stageSpritePanel;
-    [SerializeField] private Text FixationRewardText;
-    [SerializeField] private Text StageDescriptionText;
+    [SerializeField] private Text fixationRewardText;
+    [SerializeField] private Text stageDescriptionText;
     [SerializeField] private Transform itemLineupPassObj;
     [SerializeField] private Animator anime;
 
@@ -34,7 +32,6 @@ public class StageSelectManagementSystem : MonoBehaviour
         mainPanel.transform.localScale = Vector3.zero;
         cinemachineVirtualCamera.Priority = 0;
         anime.SetTrigger("close");
-        Canvas_Transition(false);
     }
     private void Update()
     {
@@ -47,9 +44,9 @@ public class StageSelectManagementSystem : MonoBehaviour
             collision.gameObject.GetComponent<PlayerUiSystem>().contactText.text = contact_text;
         }
     }
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collision.transform.CompareTag("Player") 
+        if (Input.GetKeyDown(KeyCode.E) && other.transform.CompareTag("Player") 
             && canvasOpenCoolDownCount >= canvasOpenCoolDown)
         {
             if (!mainPanel.activeSelf)
@@ -57,28 +54,28 @@ public class StageSelectManagementSystem : MonoBehaviour
                 cinemachineVirtualCamera.Priority = 10;
                 anime.SetTrigger("open");
                 StageSelectButtonReadIn();
-                Canvas_Transition(true);
+                Canvas_Transition(true, other.GetComponent<PlayerMainSystem>());
                 canvasOpenCoolDownCount = 0;
             }
             else
             {
                 cinemachineVirtualCamera.Priority = 0;
                 anime.SetTrigger("close");
-                Canvas_Transition(false);
+                Canvas_Transition(false, other.GetComponent<PlayerMainSystem>());
                 canvasOpenCoolDownCount = 0;
             }
         }
     }
-    private void OnTriggerExit(Collider collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.transform.CompareTag("Player") && mainPanel.activeSelf)
+        if (other.transform.CompareTag("Player") && mainPanel.activeSelf)
         {
-            collision.gameObject.GetComponent<PlayerUiSystem>().contactText.text = null;
+            other.gameObject.GetComponent<PlayerUiSystem>().contactText.text = null;
             cinemachineVirtualCamera.Priority = 0;
-            Canvas_Transition(false);
+            Canvas_Transition(false, other.GetComponent<PlayerMainSystem>());
         }
     }
-    public void Canvas_Transition(bool isOpen)
+    public void Canvas_Transition(bool isOpen, PlayerMainSystem playerMainSystem)
     {
         /*
          * trueÇ™âÊñ ÇäJÇ≠éûÇÃèàóù
@@ -87,13 +84,12 @@ public class StageSelectManagementSystem : MonoBehaviour
         if (isOpen)
         {
             audioSource.PlayOneShot(panelSound);
-            CanvasOpenWhenPlayerProcessing();
+            CanvasOpenWhenPlayerProcessing(playerMainSystem);
             DOTween.Sequence()
                 .Append(mainPanel.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
                 .SetEase(Ease.OutCirc)
                 .OnComplete(() =>
                 {
-                    //brain.enabled = false;
                 }))
                 .Play();
         }
@@ -105,27 +101,30 @@ public class StageSelectManagementSystem : MonoBehaviour
                 .SetEase(Ease.OutCirc)
               .OnComplete(() =>
               {
-                  CanvasCloseWhenPlayerProcessing();
+                  CanvasCloseWhenPlayerProcessing(playerMainSystem);
                   Debug.Log("èIóπ");
               }))
                 .Play();
         }
     }
-    private void CanvasOpenWhenPlayerProcessing()
+    private void CanvasOpenWhenPlayerProcessing(PlayerMainSystem playerMainSystem)
     {
         mainPanel.SetActive(true);
         PlayerMainSystem.movePermit = false;
         PlayerUiSystem.isPanelOpen = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+        playerOldpos = playerMainSystem.transform.position;
+        playerMainSystem.transform.position = playerIdlepos.position;
     }
-    void CanvasCloseWhenPlayerProcessing()
+    void CanvasCloseWhenPlayerProcessing(PlayerMainSystem playerMainSystem)
     {
         mainPanel.SetActive(false);
         PlayerMainSystem.movePermit = true;
         PlayerUiSystem.isPanelOpen = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        playerMainSystem.transform.position = playerOldpos;
     }
     private void StageSelectButtonReadIn()
     {
@@ -141,8 +140,8 @@ public class StageSelectManagementSystem : MonoBehaviour
                 stageSelectSignalButtonSystem.stageNumber = i;
                 stageSelectSignalButtonSystem.stageStartButton = stageStartButton;
                 stageSelectSignalButtonSystem.stageSpritePanel = stageSpritePanel;
-                stageSelectSignalButtonSystem.fixationRewardText = FixationRewardText;
-                stageSelectSignalButtonSystem.stageDescriptionText = StageDescriptionText;
+                stageSelectSignalButtonSystem.fixationRewardText = fixationRewardText;
+                stageSelectSignalButtonSystem.stageDescriptionText = stageDescriptionText;
             }
         }
     }

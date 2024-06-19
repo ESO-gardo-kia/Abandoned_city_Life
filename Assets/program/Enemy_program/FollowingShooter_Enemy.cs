@@ -73,9 +73,9 @@ public class FollowingShooter_Enemy : EnemyDefaultSystem
     {
         if (Enemy_Manager.enemiesMovePermit == true)
         {
-            if (other.GetComponent<Bullet_System>() != null)
+            if (other.CompareTag("Bullet"))
             {
-                TakeDamage(other.GetComponent<Bullet_System>(), other, damageTextPosition.transform.position, this.transform, hpSlider.transform.rotation, other.GetComponent<Bullet_System>().damage,
+                IsBulletTypeJuge(other, damageTextPosition.transform.position, this.transform, hpSlider.transform.rotation,
                     ref oldDamageText, ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
             }
         }

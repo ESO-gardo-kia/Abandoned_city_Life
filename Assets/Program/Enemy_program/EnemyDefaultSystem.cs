@@ -6,34 +6,31 @@ using static Enemy_List;
 public class EnemyDefaultSystem : MonoBehaviour
 {
     [SerializeField]private Enemy_List enemyList;
-    public void TakeDamage(Bullet_System bulleySystem, Collider other, Vector3 damageTextPosition, Transform thisObject, Quaternion hpSliderQuaternion, float damage,
+    public void TakeDamage(Collider other, Vector3 damageTextPosition, Transform thisObject, Quaternion hpSliderQuaternion, float damage,
         ref GameObject oldDamageText, ref GameObject damageTextObject, ref float oldDamage, ref float currenthp, ref bool isDeath)
     {
-        if (other.gameObject.CompareTag("Bullet") && other.GetComponent<Bullet_System>().target_tag == "Enemy")
+        Debug.Log("‹N“®‚Q");
+        if (oldDamageText == null)
         {
-            if (oldDamageText == null)
-            {
-                GameObject damageText = Instantiate(damageTextObject, damageTextPosition, hpSliderQuaternion, thisObject.transform.Find("EnemyCanvas"));
-                oldDamageText = damageText;
-                damageText.GetComponent<Text>().text = bulleySystem.damage.ToString();
-                oldDamage = bulleySystem.damage;
-            }
-            else if (oldDamageText != null)
-            {
-                oldDamage += bulleySystem.damage;
-                oldDamageText.GetComponent<UnityEngine.UI.Text>().text = oldDamage.ToString();
-                oldDamageText.GetComponent<Damage_Text>().TextReset();
-                oldDamageText.transform.localEulerAngles = new Vector3(0, 180, 180);
-            }
-            if (currenthp > 0)
-            {
-                currenthp -= damage;
-            }
-            if (currenthp <= 0)
-            {
-                isDeath = true;
-            }
-            bulleySystem.BulletDestroy();
+            GameObject damageText = Instantiate(damageTextObject, damageTextPosition, hpSliderQuaternion, thisObject.transform.Find("EnemyCanvas"));
+            oldDamageText = damageText;
+            damageText.GetComponent<Text>().text = damage.ToString();
+            oldDamage = damage;
+        }
+        else if (oldDamageText != null)
+        {
+            oldDamage += damage;
+            oldDamageText.GetComponent<UnityEngine.UI.Text>().text = oldDamage.ToString();
+            oldDamageText.GetComponent<Damage_Text>().TextReset();
+            oldDamageText.transform.localEulerAngles = new Vector3(0, 180, 180);
+        }
+        if (currenthp > 0)
+        {
+            currenthp -= damage;
+        }
+        if (currenthp <= 0)
+        {
+            isDeath = true;
         }
     }
     public void EnemyStatsReset(ref bool isDeath, int enemy_number, ref float hp, ref float atk, ref float agi, ref float currenthp, ref float currentatk, ref float currentagi,
@@ -57,5 +54,30 @@ public class EnemyDefaultSystem : MonoBehaviour
         navMeshAgent.acceleration = currentagi / 2;
         navMeshAgent.angularSpeed = currentagi * 10;
         navMeshAgent.stoppingDistance = enemyList.Status[enemy_number].stoppingDistance;
+    }
+    public void IsBulletTypeJuge(Collider other, Vector3 damageTextPosition, Transform thisObject, Quaternion hpSliderQuaternion,
+        ref GameObject oldDamageText, ref GameObject damageTextObject, ref float oldDamage, ref float currenthp, ref bool isDeath)
+    {
+        Debug.Log("‹N“®‚P");
+        if (other.GetComponent<NormalBulletSystem>() != null && other.GetComponent<NormalBulletSystem>().targetTag == "Enemy")
+        {
+            TakeDamage(other,damageTextPosition,thisObject,hpSliderQuaternion, other.GetComponent<NormalBulletSystem>().bulletDamage,ref oldDamageText,ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
+            other.GetComponent<NormalBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<FollowingBulletSystem>() != null && other.GetComponent<FollowingBulletSystem>().targetTag == "Enemy")
+        {
+            TakeDamage(other, damageTextPosition, thisObject, hpSliderQuaternion, other.GetComponent<FollowingBulletSystem>().bulletDamage, ref oldDamageText, ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
+            other.GetComponent<NormalBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<ParabolaBulletSystem>() != null && other.GetComponent<ParabolaBulletSystem>().targetTag == "Enemy")
+        {
+            TakeDamage(other, damageTextPosition, thisObject, hpSliderQuaternion, other.GetComponent<ParabolaBulletSystem>().bulletDamage, ref oldDamageText, ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
+            other.GetComponent<NormalBulletSystem>().BulletDestroy();
+        }
+        else if (other.GetComponent<SplitBulletSystem>() != null && other.GetComponent<SplitBulletSystem>().targetTag == "Enemy")
+        {
+            TakeDamage(other, damageTextPosition, thisObject, hpSliderQuaternion, other.GetComponent<SplitBulletSystem>().bulletDamage, ref oldDamageText, ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
+            other.GetComponent<NormalBulletSystem>().BulletDestroy();
+        }
     }
 }

@@ -28,12 +28,13 @@ MonoBehaviour:
     bullet_speed: 700
     diffusion__chance: 3
     multi_bullet: 1
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 1
   - shot_sound: {fileID: 8300000, guid: caa5ba8848cc0ba4099795a527c7c7e3, type: 3}
     reload: {fileID: 0}
     ispossession: 1
-    id: 500
+    id: 0
     name: HG-2
     sprite_id: {fileID: 21300000, guid: 0fdf58accac91e54e8ec7d35c170a0bf, type: 3}
     price: 600
@@ -45,7 +46,8 @@ MonoBehaviour:
     bullet_speed: 700
     diffusion__chance: 4
     multi_bullet: 5
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 3
   - shot_sound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
@@ -62,7 +64,8 @@ MonoBehaviour:
     bullet_speed: 1000
     diffusion__chance: 2
     multi_bullet: 1
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 2
   - shot_sound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
     reload: {fileID: 0}
@@ -79,7 +82,8 @@ MonoBehaviour:
     bullet_speed: 1000
     diffusion__chance: 3
     multi_bullet: 1
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 1
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
@@ -96,7 +100,8 @@ MonoBehaviour:
     bullet_speed: 2000
     diffusion__chance: 0
     multi_bullet: 1
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
@@ -113,7 +118,8 @@ MonoBehaviour:
     bullet_speed: 2000
     diffusion__chance: 0
     multi_bullet: 1
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 4
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
@@ -130,7 +136,8 @@ MonoBehaviour:
     bullet_speed: 1000
     diffusion__chance: 20
     multi_bullet: 10
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 2
   - shot_sound: {fileID: 8300000, guid: c2e7ffaa58e12c64b8e708a3681cf2dd, type: 3}
     reload: {fileID: 0}
@@ -147,5 +154,6 @@ MonoBehaviour:
     bullet_speed: 1000
     diffusion__chance: 15
     multi_bullet: 20
-    type: 0
+    bullet_Object: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20,
+      type: 3}
     rarity: 4

@@ -25,14 +25,7 @@ public class Gun_List : ScriptableObject
         public float bullet_speed;//’e‘¬
         public float diffusion__chance;//ŠgŽU—¦
         public float multi_bullet;//
-
-        public enum Bullet_Type
-        {
-            Normal,
-            parabola,
-            split
-        }
-        public Bullet_Type type;
+        public GameObject bullet_Object;
         public float rarity;
     }
 }

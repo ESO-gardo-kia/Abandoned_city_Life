@@ -2508,7 +2508,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 927303668}
   - {fileID: 1873519310}
   - {fileID: 840373054}
   m_Father: {fileID: 582218435}
@@ -3458,6 +3457,7 @@ Transform:
   - {fileID: 366776747}
   - {fileID: 543450651657649978}
   - {fileID: 690888696}
+  - {fileID: 927303668}
   m_Father: {fileID: 1600591539}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3476,13 +3476,13 @@ MonoBehaviour:
   contact_text: Open with "E"
   stageInformation: {fileID: 11400000, guid: 7bff2301b0288b34ab47cf9a6acbead0, type: 2}
   mainPanel: {fileID: 840373053}
-  playerIdlepos: {fileID: 927303667}
+  playerIdlepos: {fileID: 927303668}
   stageSelectPanelPrefab: {fileID: 2330438432421541850, guid: 10330476c0d4b2346bdba1571e47a733,
     type: 3}
   stageStartButton: {fileID: 1945848224732584732}
   stageSpritePanel: {fileID: 1899980207}
-  FixationRewardText: {fileID: 656361930}
-  StageDescriptionText: {fileID: 200697101}
+  fixationRewardText: {fileID: 656361930}
+  stageDescriptionText: {fileID: 200697101}
   itemLineupPassObj: {fileID: 1474471588}
   anime: {fileID: 370909002}
   audioSource: {fileID: 582218439}
@@ -3595,10 +3595,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: -10}
+  m_Center: {x: 0, y: 0, z: -1.01}
 --- !u!1 &582941420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,7 +4322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &690888696
 Transform:
   m_ObjectHideFlags: 0
@@ -4331,8 +4331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690888695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.56, z: -10}
-  m_LocalScale: {x: 1, y: 0.2, z: 5}
+  m_LocalPosition: {x: 0, y: 0.24, z: -3.75}
+  m_LocalScale: {x: 3, y: 1, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 582218435}
@@ -5569,7 +5569,7 @@ RectTransform:
   - {fileID: 1876576450}
   - {fileID: 434881688}
   m_Father: {fileID: 366776747}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6293,13 +6293,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927303667}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -960, y: -538.795, z: 16.220001}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 366776747}
-  m_RootOrder: 0
+  m_Father: {fileID: 582218435}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &953853895
 PrefabInstance:
@@ -10260,9 +10260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotSound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
-  currentLoadedBullets: 0
-  reload_count: 0
-  SHOTOBJ: {fileID: 6149490793626288295, guid: 1b93901f8744b66438bbac8e2ba15c20, type: 3}
   shotPosition: {fileID: 178470519}
 --- !u!114 &1578907288
 MonoBehaviour:
@@ -11890,7 +11887,7 @@ Transform:
   m_Children:
   - {fileID: 2061891413}
   m_Father: {fileID: 366776747}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1873519311
 MonoBehaviour:
