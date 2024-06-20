@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionSystem : MonoBehaviour
 {
-    private GameManager gameManager;
+    public Scene_List sceneList;
     public Stage_Information stageInfomation;
 
-    private void Start()
-    {
-        gameManager = transform.GetComponent<GameManager>();
-    }
     public void SM_Title_Transfer()
     {
         SceneManager.LoadScene(stageInfomation.data[0].name);
@@ -44,11 +40,7 @@ public class SceneTransitionSystem : MonoBehaviour
 
     public void Load_Scene(int stage_number)
     {
-        if (stage_number == 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else
-        {
-            Debug.Log("移動" + stage_number);
-            SceneManager.LoadScene((int)stageInfomation.data[stage_number].tran_scene);
-        }
+        Debug.Log("移動" + stage_number);
+        SceneManager.LoadScene(sceneList.data[stage_number].sceneName);
     }
 }

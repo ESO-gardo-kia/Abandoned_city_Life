@@ -24,22 +24,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private Text GameOverText;
     [SerializeField] private GameObject FeedPanel;
-    [SerializeField] public int stageStartCount;//ステージ開始までのカウントダウン
-    [SerializeField] private GameObject stageStartCountText;
-    [SerializeField] public int endCount;//ステージ終了までのカウントダウン
-    [SerializeField] private GameObject endText;
+    [SerializeField] private GameObject stageNameText;
     private void Awake()
     {
     }
     private void Start()
     {
-        /*
-        Player_System.movePermit = false;
-        Enemy_Manager.enemies_move_permit = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-        */
         DontDestroyOnLoad(this);
+        SceneStartFunction(1);
         Application.targetFrameRate = 60;
         GameOverPanel.SetActive(false);
         audioSource.PlayOneShot(stageInfomation.data[0].BGM);
@@ -55,27 +47,27 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         DOTween.Sequence()
+
         .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f* feedTime).SetDelay(0f)//フェードアウト
-                .OnComplete(() =>
-                {
+                .OnComplete(() =>{
                     SceneTransitionPreProcessing(transitionSceneNumber);
                 }))
+
         .Append(FeedPanel.GetComponent<Image>().DOFade(0, 1 * feedTime).SetDelay(0.5f)//フェードイン
                 .OnComplete(() => {
-                    audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
-                    stageStartCountText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
                 }))
-        .Append(stageStartCountText.transform.DOScale(Vector3.one * 1, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
+
+        .Append(stageNameText.transform.DOScale(Vector3.one * 1, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() => {
-                    if(transitionSceneNumber == 2) stageStartCountText.GetComponent<Text>().text = "GO!";
+                    if(transitionSceneNumber == 2) stageNameText.GetComponent<Text>().text = "GO!";
                 }))
-        .Append(stageStartCountText.transform.DOScale(Vector3.zero, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
+        .Append(stageNameText.transform.DOScale(Vector3.zero, 0.5f * feedTime).SetEase(Ease.InQuart).SetDelay(0.5f)
                 .OnComplete(() =>
                 {
-                    stageStartCountText.transform.localScale = Vector3.one;
+                    stageNameText.transform.localScale = Vector3.one;
                     Enemy_Manager.enemiesMovePermit = true;
-                    stageStartCountText.GetComponent<Text>().text = "";
-                    SceneTransitionCompletedFunction(transitionSceneNumber);
+                    stageNameText.GetComponent<Text>().text = "";
+                    SceneStartFunction(transitionSceneNumber);
                 }))
         .Play();
     }
@@ -85,9 +77,11 @@ public class GameManager : MonoBehaviour
         enemyManager.Enemy_Manager_Reset();
         playerSystem.Player_Reset(false);
         sceneManager.Load_Scene(transitionSceneNumber);
+        audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
+        stageNameText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
         playerSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
     }
-    private void SceneTransitionCompletedFunction(int transitionSceneNumber)
+    private void SceneStartFunction(int transitionSceneNumber)
     {
         FeedPanel.SetActive(false);
         GameOverPanel.SetActive(false);
