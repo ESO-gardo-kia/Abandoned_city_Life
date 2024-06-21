@@ -85,10 +85,7 @@ public class EquipmentManagementSystem : MonoBehaviour
             cinemachineVirtualCamera.Priority = 10;
             DOTween.Sequence()
                 .Append(mainCanvas.GetComponent<RectTransform>().DOScale(Vector3.one, 0.25f)
-                .SetEase(Ease.OutCirc)
-                .OnComplete(() => {
-                    //brain.enabled = false;
-                }))
+                .SetEase(Ease.OutCirc))
                 .Play();
         }
         else

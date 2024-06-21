@@ -25,6 +25,8 @@ public class PlayerMainSystem : MonoBehaviour
     [SerializeField] private AudioClip damageSound;
     [SerializeField]
     [Header("--- ステータス ---")]
+    public MainBody_List mainBodyList;
+    public static int playerBodyId; 
     public float hp;
     public float currentHp;
     public float en;
@@ -135,6 +137,19 @@ public class PlayerMainSystem : MonoBehaviour
             playerIsDeath = true;
             GameObject.Find("Enemy_Manager").GetComponent<Enemy_Manager>().Player_Death();
         }
+    }
+    public void StatsInitialization()
+    {
+        var data = mainBodyList.data;
+        hp = data[playerBodyId].hp;
+        currentHp = data[playerBodyId].hp;
+        en = data[playerBodyId].en;
+        currentEn = data[playerBodyId].en;
+        energyRecoveryTime = data[playerBodyId].energyRecoveryTime;
+        energyRecoveryCount = 0;
+        jumpForce = data[playerBodyId].jumpForce;
+        walkSpeed = data[playerBodyId].walkSpeed;
+        dashSpeed = data[playerBodyId].dashSpeed;
     }
     public void Player_Reset(bool IS)
     {
