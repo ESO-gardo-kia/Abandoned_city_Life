@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Stage_Information;
 //using static System.Net.Mime.MediaTypeNames;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int feedTime = 1;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
-    [SerializeField] private SceneTransitionSystem sceneManager;
+    [SerializeField] private SceneTransitionSystem sceneTransitionSystem;
     [SerializeField] private PlayerMainSystem playerSystem;
     public static GameManager instance;
     private string SavePath;
@@ -31,12 +32,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-        SceneStartFunction(1);
+        SceneStartFunction(SceneManager.GetActiveScene().buildIndex);
         Application.targetFrameRate = 60;
         GameOverPanel.SetActive(false);
         audioSource.PlayOneShot(stageInfomation.data[0].BGM);
         SavePath = Application.persistentDataPath + "/SaveData.json";
-        Application.targetFrameRate = 60;
         playerMoney = 10000;
     }
     public void SceneTransitionProcess(int transitionSceneNumber)
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         Enemy_Manager.enemiesMovePermit = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log(playerSystem.gameObject.transform.position);
         DOTween.Sequence()
 
         .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f* feedTime).SetDelay(0f)//フェードアウト
@@ -76,16 +77,17 @@ public class GameManager : MonoBehaviour
         audioSource.Stop();
         enemyManager.Enemy_Manager_Reset();
         playerSystem.Player_Reset(false);
-        sceneManager.Load_Scene(transitionSceneNumber);
+        sceneTransitionSystem.Load_Scene(transitionSceneNumber);
         audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
         stageNameText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
         playerSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
+        Debug.Log(playerSystem.gameObject.transform.position);
     }
-    private void SceneStartFunction(int transitionSceneNumber)
+    private void SceneStartFunction(int currentSceneNumber)
     {
         FeedPanel.SetActive(false);
         GameOverPanel.SetActive(false);
-        switch (stageInfomation.data[transitionSceneNumber].tran_scene)
+        switch (stageInfomation.data[currentSceneNumber].tran_scene)
         {
             case stage_information.TransitionScene.Title:
                 PlayerMainSystem.movePermit = false;
@@ -108,9 +110,9 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 playerSystem.Player_Reset(true);
 
-                enemyManager.stagetype = stageInfomation.data[transitionSceneNumber].stagetype;
-                enemyManager.GetCurrentWaveEnemy(transitionSceneNumber);
-                StartCoroutine(enemyManager.Enemies_Spawn_Function(transitionSceneNumber));
+                enemyManager.stagetype = stageInfomation.data[currentSceneNumber].stagetype;
+                enemyManager.GetCurrentWaveEnemy(currentSceneNumber);
+                StartCoroutine(enemyManager.Enemies_Spawn_Function(currentSceneNumber));
                 break;
         }
     }

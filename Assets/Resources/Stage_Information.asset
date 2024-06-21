@@ -47,7 +47,7 @@ MonoBehaviour:
     stageDescription: Stage1
     stagenumber: 1
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
-    spawn_pos: {x: 0, y: 1, z: 0}
+    spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 01000000000000000000000000000000
     enemies_num2: 0200000001000000010000000100000001000000
     enemies_num3: 030000000100000001000000
@@ -60,7 +60,7 @@ MonoBehaviour:
     stageDescription: Stage2
     stagenumber: 2
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
-    spawn_pos: {x: 0, y: 1, z: 0}
+    spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 010000000100000001000000
     enemies_num2: 020000000200000001000000
     enemies_num3: 02000000030000000200000001000000
@@ -73,7 +73,7 @@ MonoBehaviour:
     stageDescription: Stage3
     stagenumber: 3
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
-    spawn_pos: {x: 0, y: 1, z: 0}
+    spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 0100000002000000000000000100000001000000
     enemies_num2: 0200000000000000020000000100000002000000
     enemies_num3: 0200000003000000020000000200000002000000
@@ -86,7 +86,7 @@ MonoBehaviour:
     stageDescription: Endless
     stagenumber: 4
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
-    spawn_pos: {x: 0, y: 1, z: 0}
+    spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 0100000001000000010000000100000001000000
     enemies_num2: 
     enemies_num3: 
@@ -99,7 +99,7 @@ MonoBehaviour:
     stageDescription: 
     stagenumber: 0
     stageSprite: {fileID: 21300000, guid: 7cf9dc95d66824a4eb4aebf7e9abae64, type: 3}
-    spawn_pos: {x: 0, y: 1, z: 0}
+    spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 01000000010000000100000001000000
     enemies_num2: 
     enemies_num3: 
