@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class EquipmentManagementSystem : MonoBehaviour
 {
+    [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
     [SerializeField] private string contact_text;
     [SerializeField] private GameObject mainCanvas;
-    [SerializeField] private GameObject weaponPanel;
+    [SerializeField] private GameObject weaponPanelObject;
+    [SerializeField] private WeaponEquipButton weaponEquipButton;
+    [SerializeField] private WeaponBuyButton weaponBuyButton;
     [SerializeField] private GameObject playerIdlePositionObject;
     [SerializeField] private Transform itemLineupPassObj;
-    private int weaponPanelnumber;
     private GameObject[] weaponPanelList;
 
     [SerializeField] private AudioSource audioSource;
@@ -22,9 +23,6 @@ public class EquipmentManagementSystem : MonoBehaviour
     //Production_Tableóp
     [SerializeField] private Gun_List gunList;
     [SerializeField] private GameObject StarObj;
-
-    public CinemachineVirtualCamera cinemachineVirtualCamera;
-
     [SerializeField] private float canvasOpenCoolDown;
     private float canvasOpenCoolDownCount;
     private void Start()
@@ -111,7 +109,10 @@ public class EquipmentManagementSystem : MonoBehaviour
         PanelReset();
         for (int i = 0; i < gunList.Data.Count; i++)
         {
-            GameObject weaponepanel = Instantiate(weaponPanel, itemLineupPassObj);
+            
+            GameObject weaponepanel = Instantiate(weaponPanelObject, itemLineupPassObj);
+            weaponepanel.GetComponent<WeaponSelectButtonSystem>().PanelInfomationInitialaization(i,ref weaponEquipButton);
+            /*
             weaponepanel.name = weaponPanel.name + i.ToString();
             weaponepanel.transform.Find("WeaponImage").GetComponent<Image>().sprite = gunList.Data[i].sprite_id;
 
@@ -125,13 +126,14 @@ public class EquipmentManagementSystem : MonoBehaviour
             "\r\nî≠éÀíeêî:" + Guns.multi_bullet.ToString() +
             "\r\nägéUìx:" + Guns.diffusion__chance.ToString();
             ButtonCreation(i, weaponepanel);
+            */
         }
     }
     private void ButtonCreation(int i, GameObject panel)
     {
-        Button_Equip EQbutton = panel.transform.Find("EQUIP").gameObject.GetComponent<Button_Equip>();
+        WeaponEquipButton EQbutton = panel.transform.Find("EQUIP").gameObject.GetComponent<WeaponEquipButton>();
         EQbutton.weponeNumber = i;
-        Buy_Button BUbutton = panel.transform.Find("BUY").gameObject.GetComponent<Buy_Button>();
+        WeaponBuyButton BUbutton = panel.transform.Find("BUY").gameObject.GetComponent<WeaponBuyButton>();
         BUbutton.weaponNumber = i;
         BUbutton.transform.Find("Text").GetComponent<Text>().text = "ã‡äz:" + gunList.Data[i].price.ToString();
         for (int a = 1; a < gunList.Data[i].rarity; a++)
@@ -141,10 +143,12 @@ public class EquipmentManagementSystem : MonoBehaviour
     }
     private void PanelReset()
     {
-        weaponPanelnumber = itemLineupPassObj.childCount;
-        if (weaponPanelnumber != 0) for (int i = 0; i < weaponPanelnumber; i++)
+        if (itemLineupPassObj.childCount != 0)
+        {
+            for (int i = 0; i < itemLineupPassObj.childCount; i++)
             {
                 Destroy(itemLineupPassObj.GetChild(i).gameObject);
             }
+        }
     }
 }

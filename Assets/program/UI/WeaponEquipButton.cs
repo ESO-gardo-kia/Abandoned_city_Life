@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Button_Equip : MonoBehaviour
+public class WeaponEquipButton : MonoBehaviour
 {
     public int weponeNumber;
     [SerializeField] public AudioSource audioSource;
