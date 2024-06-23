@@ -113,10 +113,12 @@ public class PlayerUiSystem : MonoBehaviour
         if (!IS)
         {
             battleInfomationPanel.SetActive(false);
+            moneyText.SetActive(false);
         }
         else
         {
             battleInfomationPanel.SetActive(true);
+            moneyText.SetActive(true);
         }
         MenuPanel.transform.localScale = Vector3.zero;
         contactPanel.SetActive(false);

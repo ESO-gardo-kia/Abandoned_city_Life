@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
   - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
     stagetype: 3
-    tran_scene: 0
+    transitionSceneNumber: 0
     name: Title
     fixationReward: 0
     stageDescription: 
@@ -28,7 +28,7 @@ MonoBehaviour:
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
     stagetype: 3
-    tran_scene: 1
+    transitionSceneNumber: 0
     name: Select
     fixationReward: 0
     stageDescription: 
@@ -41,7 +41,7 @@ MonoBehaviour:
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 8b8e1765cbb567e4f82e13b1f89dc3db, type: 3}
     stagetype: 0
-    tran_scene: 2
+    transitionSceneNumber: 0
     name: "\u4FB5\u5165\u53E3\u6383\u8A0E\u6226"
     fixationReward: 300
     stageDescription: Stage1
@@ -49,12 +49,12 @@ MonoBehaviour:
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
     spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 01000000000000000000000000000000
-    enemies_num2: 0200000001000000010000000100000001000000
-    enemies_num3: 030000000100000001000000
+    enemies_num2: 0200000000000000000000000000000000000000
+    enemies_num3: 03000000000000000000000000000000
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 6e8ecef07460a624ca40031bc4705bb8, type: 3}
     stagetype: 0
-    tran_scene: 2
+    transitionSceneNumber: 0
     name: Stage2
     fixationReward: 500
     stageDescription: Stage2
@@ -67,7 +67,7 @@ MonoBehaviour:
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 83985b0905529524da7e959f8504b61d, type: 3}
     stagetype: 0
-    tran_scene: 2
+    transitionSceneNumber: 0
     name: Stage3
     fixationReward: 0
     stageDescription: Stage3
@@ -80,7 +80,7 @@ MonoBehaviour:
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 83985b0905529524da7e959f8504b61d, type: 3}
     stagetype: 1
-    tran_scene: 2
+    transitionSceneNumber: 0
     name: endless
     fixationReward: 0
     stageDescription: Endless
@@ -93,7 +93,7 @@ MonoBehaviour:
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 83985b0905529524da7e959f8504b61d, type: 3}
     stagetype: 1
-    tran_scene: 2
+    transitionSceneNumber: 0
     name: endless
     fixationReward: 0
     stageDescription: 

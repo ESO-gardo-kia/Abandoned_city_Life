@@ -12,49 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b1ad04a0fe8b64a9ba1f279f9bc3ec, type: 3}
   m_Name: Enemy_List
   m_EditorClassIdentifier: 
-  Status:
+  data:
   - name: Shooter
     Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,
       type: 3}
-    hp: 120
-    atk: 5
-    agi: 7
-    exp: 10
-    stoppingDistance: 20
-    price: 30
+    hp: 100
+    atk: 0
+    agi: 10
+    exp: 0
+    stoppingDistance: 10
+    price: 10
   - name: Assault
     Enemy_Model: {fileID: 7216383993853507424, guid: 265fc38bddb3dad4e84734283549bc33,
       type: 3}
-    hp: 90
-    atk: 1
+    hp: 100
+    atk: 0
     agi: 10
-    exp: 10
-    stoppingDistance: 1
-    price: 10
-  - name: ClusterCatapult
+    exp: 0
+    stoppingDistance: 10
+    price: 5
+  - name: CulusterCatapult
     Enemy_Model: {fileID: 2662304819684148828, guid: ffb986583b3653743914cfccc1806d63,
       type: 3}
-    hp: 80
-    atk: 5
-    agi: 5
-    exp: 10
-    stoppingDistance: 50
-    price: 40
+    hp: 100
+    atk: 0
+    agi: 10
+    exp: 0
+    stoppingDistance: 10
+    price: 15
+  - name: Airborne
+    Enemy_Model: {fileID: 7216383993853507424, guid: ad19161e59f34a74dadc29a022bb0a79,
+      type: 3}
+    hp: 100
+    atk: 0
+    agi: 10
+    exp: 0
+    stoppingDistance: 10
+    price: 15
   - name: FollowingShooter
     Enemy_Model: {fileID: 7216383993853507424, guid: 12b9de1976d3171479daac88e3e618bb,
       type: 3}
-    hp: 200
-    atk: 5
+    hp: 100
+    atk: 0
     agi: 10
-    exp: 10
-    stoppingDistance: 40
-    price: 80
-  - name: AirBorne
-    Enemy_Model: {fileID: 7216383993853507424, guid: ad19161e59f34a74dadc29a022bb0a79,
-      type: 3}
-    hp: 150
-    atk: 10
-    agi: 15
-    exp: 10
-    stoppingDistance: 50
-    price: 80
+    exp: 0
+    stoppingDistance: 10
+    price: 30

@@ -221,7 +221,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7968601474639130420}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4132169252476280889}
+        m_TargetAssemblyTypeName: WeaponSelectButtonSystem, Assembly-CSharp
+        m_MethodName: EquipmentWeaponChenge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4132169252476280889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +247,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun_list: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
+  equipmentButton: {fileID: 0}
+  buyButton: {fileID: 0}
   spriteRenderer: {fileID: 7968601475092155014}
   nameText: {fileID: 7968601474513016280}
+  weaponNunber: 0
 --- !u!1 &7968601475092155008
 GameObject:
   m_ObjectHideFlags: 0

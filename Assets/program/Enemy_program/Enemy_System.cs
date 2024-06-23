@@ -130,7 +130,7 @@ public class Enemy_System : MonoBehaviour
         HPSlider = transform.Find("EnemyCanvas/HPSlider").gameObject.GetComponent<UnityEngine.UI.Slider>();
         navMeshAgent = this.GetComponent<NavMeshAgent>();
         isdeath = false;
-        var e_l = enemy_List.Status[1];
+        var e_l = enemy_List.data[1];
         Ename = e_l.name;
         exp = e_l.exp;
         hp = e_l.hp;

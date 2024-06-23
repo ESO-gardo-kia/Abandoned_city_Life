@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class PlayerMainSystem : MonoBehaviour
 {
-    public bool bo = true;
     static public bool movePermit = true;//移動可能か否か
     static public bool playerIsDeath = true;//
     [Header("--- Component ---")]
@@ -16,7 +15,7 @@ public class PlayerMainSystem : MonoBehaviour
     [SerializeField] private PlayerMoveSystem playerMoveSystem;
     [SerializeField] private PlayerWeaponSystem playerWeaponSystem;
     [SerializeField] private CinemachineBrain cinemachinBrain;
-    [SerializeField] public CinemachineVirtualCamera cinemachineVirtualCamera;
+    [SerializeField] public CinemachineVirtualCamera resultCamera;
     [SerializeField] public GameObject playerCamera;
 
     [Header("--- サウンド ---")]
@@ -40,13 +39,13 @@ public class PlayerMainSystem : MonoBehaviour
     public float walkSpeed = 10;
     public float dashSpeed = 15;
 
-    private void Start()
-    {
-        Player_Reset(bo);
-    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) this.transform.position = Vector3.zero;
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
         if (movePermit)
         {
             if (!PlayerUiSystem.isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
@@ -173,6 +172,5 @@ public class PlayerMainSystem : MonoBehaviour
             playerUiSystem.PlayerUiReset(IS,hp, currentHp, en, currentEn);
         }
         playerWeaponSystem.WeponChange();
-        Debug.Log("プレイヤー情報リセット終了");
     }
 }

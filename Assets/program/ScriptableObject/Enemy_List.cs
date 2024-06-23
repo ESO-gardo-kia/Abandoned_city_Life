@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "ScriptableObject/EnemyList")]
 public class Enemy_List : ScriptableObject
 {
-    public List<EnemyList> Status;
+    public List<EnemyList> data;
     [System.Serializable]
     public class EnemyList
     {

@@ -40,7 +40,6 @@ public class SceneTransitionSystem : MonoBehaviour
 
     public void Load_Scene(int stage_number)
     {
-        Debug.Log("移動" + stage_number);
         SceneManager.LoadScene(sceneList.data[stage_number].sceneName);
     }
 }

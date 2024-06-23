@@ -21,14 +21,8 @@ public class Stage_Information: ScriptableObject
 
             Safe
         }
-        public enum TransitionScene
-        {
-            Title,
-            Select,
-            Main
-        }
         public StageType stagetype;
-        public TransitionScene tran_scene;
+        public int transitionSceneNumber;
         public string name;
         public int fixationReward;
         public string stageDescription;

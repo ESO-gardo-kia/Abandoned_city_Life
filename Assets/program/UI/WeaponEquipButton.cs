@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class WeaponEquipButton : MonoBehaviour
 {
-    public int weponeNumber;
+    public int weaponNumber;
     [SerializeField] public AudioSource audioSource;
     [SerializeField] public AudioClip equipSound;
     [SerializeField] public AudioClip notEquipSound;
     public void OnButtonClick()
     {
-        if (Player_Manager.isWeapon[weponeNumber] == true)
+        if (Player_Manager.isWeapon[weaponNumber] == true)
         {
             audioSource.PlayOneShot(equipSound);
             Debug.Log("ïêäÌÇïœÇ¶Ç‹ÇµÇΩ");
-            PlayerWeaponSystem.player_weapon_id = weponeNumber;
+            PlayerWeaponSystem.player_weapon_id = weaponNumber;
             GameObject.Find("Player_System").gameObject.transform.GetComponent<PlayerWeaponSystem>().WeponChange();
         }
         else

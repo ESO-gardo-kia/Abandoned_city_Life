@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.IO;
@@ -15,7 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
     [SerializeField] private SceneTransitionSystem sceneTransitionSystem;
-    [SerializeField] private PlayerMainSystem playerSystem;
+    [SerializeField] private PlayerMainSystem playerMainSystem;
+    [SerializeField] private Enemy_List enemyList;
     public static GameManager instance;
     private string SavePath;
 
@@ -23,21 +25,18 @@ public class GameManager : MonoBehaviour
     public int stage_number;
 
     [SerializeField] private GameObject GameOverPanel;
-    [SerializeField] private Text GameOverText;
+    [SerializeField] private Text ResultInfomationText;
+    [SerializeField] private GameObject ClearText;
+    [SerializeField] private GameObject GameOverText;
     [SerializeField] private GameObject FeedPanel;
     [SerializeField] private GameObject stageNameText;
-    private void Awake()
-    {
-    }
     private void Start()
     {
         DontDestroyOnLoad(this);
         SceneStartFunction(SceneManager.GetActiveScene().buildIndex);
         Application.targetFrameRate = 60;
-        GameOverPanel.SetActive(false);
         audioSource.PlayOneShot(stageInfomation.data[0].BGM);
         SavePath = Application.persistentDataPath + "/SaveData.json";
-        playerMoney = 10000;
     }
     public void SceneTransitionProcess(int transitionSceneNumber)
     {
@@ -46,7 +45,7 @@ public class GameManager : MonoBehaviour
         Enemy_Manager.enemiesMovePermit = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log(playerSystem.gameObject.transform.position);
+        Debug.Log(playerMainSystem.gameObject.transform.position);
         DOTween.Sequence()
 
         .Append(FeedPanel.GetComponent<Image>().DOFade(1, 1.0f* feedTime).SetDelay(0f)//フェードアウト
@@ -76,39 +75,41 @@ public class GameManager : MonoBehaviour
     {
         audioSource.Stop();
         enemyManager.Enemy_Manager_Reset();
-        playerSystem.Player_Reset(false);
+        playerMainSystem.Player_Reset(false);
         sceneTransitionSystem.Load_Scene(transitionSceneNumber);
         audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
         stageNameText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
-        playerSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
-        Debug.Log(playerSystem.gameObject.transform.position);
+        playerMainSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
     }
     private void SceneStartFunction(int currentSceneNumber)
     {
         FeedPanel.SetActive(false);
         GameOverPanel.SetActive(false);
-        switch (stageInfomation.data[currentSceneNumber].tran_scene)
+        ClearText.SetActive(false);
+        GameOverText.SetActive(false);
+        switch (currentSceneNumber)
         {
-            case stage_information.TransitionScene.Title:
+            case 0:
+                Debug.Log("koko");
                 PlayerMainSystem.movePermit = false;
                 Enemy_Manager.enemiesMovePermit = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
-                playerSystem.Player_Reset(false);
+                playerMainSystem.Player_Reset(false);
                 break;
-            case stage_information.TransitionScene.Select:
+            case 1:
                 PlayerMainSystem.movePermit = true;
                 Enemy_Manager.enemiesMovePermit = false;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                playerSystem.Player_Reset(true);
+                playerMainSystem.Player_Reset(true);
                 break;
-            case stage_information.TransitionScene.Main:
+            case 2:
                 PlayerMainSystem.movePermit = true;
                 Enemy_Manager.enemiesMovePermit = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                playerSystem.Player_Reset(true);
+                playerMainSystem.Player_Reset(true);
 
                 enemyManager.stagetype = stageInfomation.data[currentSceneNumber].stagetype;
                 enemyManager.GetCurrentWaveEnemy(currentSceneNumber);
@@ -116,8 +117,9 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    public IEnumerator GameOver(int[] num,string str,float money)
+    public IEnumerator GameOver(int[] enemyKillList,float money,bool isClear)
     {
+        Debug.Log(enemyKillList);
         FeedPanel.SetActive(true);
         PlayerMainSystem.movePermit = false;
         Enemy_Manager.enemiesMovePermit = false;
@@ -125,20 +127,54 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         enemyManager.StopCoroutine("Enemies_Spawn_Function");
         playerMoney += money;
+        //enemyKillList = new int [enemyList.data.Count];
         int total = 0;
-        foreach (int i in num) total = i;
-        playerSystem.cinemachineVirtualCamera.Priority = 100;
+        foreach (int i in enemyKillList) total = i;
+        playerMainSystem.resultCamera.Priority = 10;
         GameOverPanel.SetActive(true);
-        GameOverText.text =
-            "Stage1 : " + str +
-            "\r\nGet Money : " + money.ToString() +
-            "\r\n\r\nDestroyed Enemyes" + 
-            "\r\nShooter:" + num[0].ToString() +
-            "\r\nAssault:" + num[1].ToString() +
-            "\r\nClusterCatapult:" + num[2].ToString() +
-            "\r\nFollowingShooter:" + num[3].ToString();
+        if (isClear)
+        {
+            ClearText.SetActive(true);
+            ResultInfomationText.text =
+        "\nBattle Time : " + money.ToString() +
+        "\nGet Money : " + money.ToString() +
+
+        "\n\nDestroyed Enemyes" + total.ToString();
+        for (int i = 0;i < enemyList.data.Count; i++)
+            {
+                if (enemyKillList[i] > 0)
+                {
+                    ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
+                }
+            }
+        }
+        else
+        {
+            GameOverText.SetActive(true);
+            ResultInfomationText.text =
+        "\nGet Money : " + money.ToString() +
+
+        "\n\nDestroyed Enemyes" + total.ToString();
+            for (int i = 0; i > enemyList.data.Count; i++)
+            {
+                ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
+                if (enemyKillList[i] >= 0)
+                {
+                    
+                }
+            }
+            /*
+            "\n\nDestroyed Enemyes" + total.ToString() +
+            "\nShooter:" + enemyKillList[0].ToString() +
+            "\nAssault:" + enemyKillList[1].ToString() +
+            "\nClusterCatapult:" + enemyKillList[2].ToString() +
+            "\nFollowingShooter:" + enemyKillList[3].ToString();
+            */
+        }
         yield return new WaitForSeconds(5);
-        playerSystem.cinemachineVirtualCamera.Priority = 1;
+        if (isClear) ClearText.SetActive(false);
+        else GameOverText.SetActive(false);
+        playerMainSystem.resultCamera.Priority = 1;
         GameOverPanel.SetActive(false);
         SceneTransitionProcess(1);
     }

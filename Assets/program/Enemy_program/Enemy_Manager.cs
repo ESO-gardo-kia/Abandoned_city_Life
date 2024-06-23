@@ -22,42 +22,37 @@ public class Enemy_Manager : MonoBehaviour
     public GameObject[] SPL;//SpawnPoint_List
     public GameObject deathparticle;
 
-    private GameObject EMCanvas;
-    private GameObject WAVEText;
-    private GameObject SYSTEMText;
+    [SerializeField] private GameObject EMCanvas;
+    [SerializeField] private GameObject WAVEText;
+    [SerializeField] private GameObject SYSTEMText;
 
     public int spawn_range = 20;
     public float spawn_interval = 2;
     public int current_enemies_count;
     public int currentWave = 0;
 
-    public int[] destroy_enemy = new int[3];
-    public float getmoney;
-    public int endlesswave;
+    public int[] destroyEnemy;
+    public float getMoney;
+    public int endlessWave;
     void Start()
     {
-        gm = transform.parent.GetComponent<GameManager>();
-
-        EMCanvas = transform.Find("EMCanvas").gameObject;
-        WAVEText = EMCanvas.transform.Find("WAVEText").gameObject;
-        SYSTEMText = EMCanvas.transform.Find("SYSTEMText").gameObject;
-
-        SPL = new GameObject[transform.Find("SpawnPoint_List").childCount];
-        for(int i = 0; i < transform.Find("SpawnPoint_List").childCount; i++)
-        {
-            SPL[i] = transform.Find("SpawnPoint_List").GetChild(i).gameObject;
-        }
-        if(Debug_Mode) enemiesMovePermit = true;
+        GetSpawnPoint();
+        destroyEnemy = new int[enemyList.data.Count];
+        if (Debug_Mode) enemiesMovePermit = true;
         else enemiesMovePermit = false;
+
+        void GetSpawnPoint()
+        {
+            SPL = new GameObject[transform.Find("SpawnPoint_List").childCount];
+            for (int i = 0; i < transform.Find("SpawnPoint_List").childCount; i++)
+            {
+                SPL[i] = transform.Find("SpawnPoint_List").GetChild(i).gameObject;
+            }
+        }
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Z))
-        {
-            Debug.Log("Z");
-            StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
-                //GameOver(destroy_enemy, "Completed", getmoney);
-        }
+
     }
 
     public IEnumerator Enemies_Spawn_Function(int transitionSceneNumber)
@@ -67,8 +62,8 @@ public class Enemy_Manager : MonoBehaviour
         {
             case StageType.NomalStage:
                 yield return new WaitForSeconds(1f);
-                Debug.Log(currentWave + "ウェーブ目開始");
-                Debug.Log(normalWaveEnemyList[currentWave].Length);
+                //Debug.Log(currentWave + "ウェーブ目開始");
+                //Debug.Log(normalWaveEnemyList[currentWave].Length);
                 for (int spawnEnemyId = 0; spawnEnemyId < normalWaveEnemyList[currentWave].Length; spawnEnemyId++)
                 {
                     for (int i = 0; i < normalWaveEnemyList[currentWave][spawnEnemyId]; i++)
@@ -81,7 +76,7 @@ public class Enemy_Manager : MonoBehaviour
                 break;
             case StageType.endless:
                 yield return new WaitForSeconds(1f);
-                for (int spawnEnemyId = 0; spawnEnemyId < enemyList.Status.Count; spawnEnemyId++)
+                for (int spawnEnemyId = 0; spawnEnemyId < enemyList.data.Count; spawnEnemyId++)
                 {
                     for (int i = 0; i < Random.Range(1, currentWave + 1); i++)
                     {
@@ -89,17 +84,6 @@ public class Enemy_Manager : MonoBehaviour
                         yield return new WaitForSeconds(spawn_interval);
                     }
                 }
-                /*
-                for (int 出現する敵のID = 0; 出現する敵のID < 敵の種類の数; 出現する敵のID++)
-                {
-                    for (int i = 0; i < 出現する敵の数; i++)
-                    {
-                        if (!Player_System.movePermit && !enemies_move_permit) yield break;
-                        スポーンする時の関数(出現する敵のID);
-                        yield return new WaitForSeconds(spawn_interval);
-                    }
-                }
-                */
                 currentWave++;
                 break;
             case StageType.boss:
@@ -143,7 +127,7 @@ public class Enemy_Manager : MonoBehaviour
     public void Spawn_Function(int enemyId)
     {
         current_enemies_count++;
-        GameObject enemyObject = Instantiate(el.Status[enemyId].Enemy_Model
+        GameObject enemyObject = Instantiate(el.data[enemyId].Enemy_Model
             , SPL[Random.Range(0, SPL.Length)].transform.position + new Vector3(Random.Range(-spawn_range, spawn_range), 3f, Random.Range(-spawn_range, spawn_range))
             , Quaternion.identity, transform.Find("Enemy_ObjList"));
         switch (enemyId)
@@ -164,21 +148,22 @@ public class Enemy_Manager : MonoBehaviour
                 ClusterE.Start();
                 break;
             case 3:
-                FollowingShooter_Enemy FollowingE = enemyObject.GetComponent<FollowingShooter_Enemy>();
-                FollowingE.enemyManager = this;
-                FollowingE.Start();
-                break;
-            case 4:
                 Airborne_Enemy AirborneE = enemyObject.GetComponent<Airborne_Enemy>();
                 AirborneE.enemyManager = this;
                 AirborneE.Start();
+                break;
+            case 4:
+                FollowingShooter_Enemy FollowingE = enemyObject.GetComponent<FollowingShooter_Enemy>();
+                FollowingE.enemyManager = this;
+                FollowingE.Start();
                 break;
         }
     }
     public void ParentEnemyDeath(int enemyId)
     {
-        destroy_enemy[enemyId]++;
+        destroyEnemy[enemyId]++;
         current_enemies_count--;
+        getMoney += enemyList.data[enemyId].price;
         switch (stagetype)
         {
             case StageType.NomalStage:
@@ -188,10 +173,9 @@ public class Enemy_Manager : MonoBehaviour
                     StartCoroutine(Enemies_Spawn_Function(enemyId));
                 }
                 //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
-                if (current_enemies_count <= 0 && currentWave == 3)
+                if (current_enemies_count <= 0 && currentWave >= 3)
                 {
-                    Debug.Log("え？");
-                    StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
+                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, true));
                 }
                 break;
             case StageType.endless:
@@ -201,7 +185,7 @@ public class Enemy_Manager : MonoBehaviour
                 }
                 if (current_enemies_count == 0 && currentWave == 100)
                 {
-                    StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
+                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, true));
                 }
                 break;
             case StageType.boss:
@@ -216,12 +200,12 @@ public class Enemy_Manager : MonoBehaviour
         }
         WAVEText.SetActive(false);
         enemiesMovePermit = false;
-        endlesswave = 0;
+        endlessWave = 0;
         current_enemies_count = 0;
         currentWave = 0;
     }
     public void Player_Death()
     {
-        StartCoroutine(gm.GameOver(destroy_enemy, "Completed", getmoney));
+        StartCoroutine(gm.GameOver(destroyEnemy, getMoney, false));
     }
 }

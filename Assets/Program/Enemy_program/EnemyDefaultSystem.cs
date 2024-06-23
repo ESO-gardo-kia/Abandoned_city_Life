@@ -39,9 +39,9 @@ public class EnemyDefaultSystem : MonoBehaviour
         if (enemyManager == null) enemyManager = transform.parent.parent.GetComponent<Enemy_Manager>();
         if (playerObject == null) playerObject = enemyManager.player_system;
         isDeath = false;
-        hp = enemyList.Status[enemy_number].hp;
-        atk = enemyList.Status[enemy_number].atk;
-        agi = enemyList.Status[enemy_number].agi;
+        hp = enemyList.data[enemy_number].hp;
+        atk = enemyList.data[enemy_number].atk;
+        agi = enemyList.data[enemy_number].agi;
         currenthp = hp;
         currentatk = atk;
         currentagi = agi;
@@ -53,12 +53,11 @@ public class EnemyDefaultSystem : MonoBehaviour
         navMeshAgent.speed = currentagi;
         navMeshAgent.acceleration = currentagi / 2;
         navMeshAgent.angularSpeed = currentagi * 10;
-        navMeshAgent.stoppingDistance = enemyList.Status[enemy_number].stoppingDistance;
+        navMeshAgent.stoppingDistance = enemyList.data[enemy_number].stoppingDistance;
     }
     public void IsBulletTypeJuge(Collider other, Vector3 damageTextPosition, Transform thisObject, Quaternion hpSliderQuaternion,
         ref GameObject oldDamageText, ref GameObject damageTextObject, ref float oldDamage, ref float currenthp, ref bool isDeath)
     {
-        Debug.Log("‹N“®‚P");
         if (other.GetComponent<NormalBulletSystem>() != null && other.GetComponent<NormalBulletSystem>().targetTag == "Enemy")
         {
             TakeDamage(other,damageTextPosition,thisObject,hpSliderQuaternion, other.GetComponent<NormalBulletSystem>().bulletDamage,ref oldDamageText,ref damageTextObject, ref oldDamage, ref currenthp, ref isDeath);
