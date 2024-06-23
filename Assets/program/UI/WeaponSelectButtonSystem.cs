@@ -34,6 +34,7 @@ public class WeaponSelectButtonSystem : MonoBehaviour
         "Å~" + Guns.multi_bullet.ToString() + "SHOT" +
         "\nFIRE RATE:" + Guns.rapid_fire_rate.ToString() +
         "\nLOADED BULLET:" + Guns.loaded_bullets.ToString() +
-        "\nDEFFUSION CHANCE:" + Guns.diffusion__chance.ToString();
+        "\nDEFFUSION CHANCE:" + Guns.diffusion__chance.ToString() +
+        "\nPRICE:" + Guns.price.ToString();
     }
 }

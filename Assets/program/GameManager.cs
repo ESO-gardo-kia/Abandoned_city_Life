@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
     private void SceneStartFunction(int currentSceneNumber)
     {
         FeedPanel.SetActive(false);
-        GameOverPanel.SetActive(false);
         ClearText.SetActive(false);
+        GameOverPanel.SetActive(false);
         GameOverText.SetActive(false);
         switch (currentSceneNumber)
         {
@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         enemyManager.StopCoroutine("Enemies_Spawn_Function");
         playerMoney += money;
-        //enemyKillList = new int [enemyList.data.Count];
         int total = 0;
         foreach (int i in enemyKillList) total = i;
         playerMainSystem.resultCamera.Priority = 10;
@@ -154,22 +153,14 @@ public class GameManager : MonoBehaviour
             ResultInfomationText.text =
         "\nGet Money : " + money.ToString() +
 
-        "\n\nDestroyed Enemyes" + total.ToString();
+        "\n\nDestroyed Enemyes : " + total.ToString();
             for (int i = 0; i > enemyList.data.Count; i++)
             {
-                ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
                 if (enemyKillList[i] >= 0)
                 {
-                    
+                    ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
                 }
             }
-            /*
-            "\n\nDestroyed Enemyes" + total.ToString() +
-            "\nShooter:" + enemyKillList[0].ToString() +
-            "\nAssault:" + enemyKillList[1].ToString() +
-            "\nClusterCatapult:" + enemyKillList[2].ToString() +
-            "\nFollowingShooter:" + enemyKillList[3].ToString();
-            */
         }
         yield return new WaitForSeconds(5);
         if (isClear) ClearText.SetActive(false);

@@ -113,7 +113,6 @@ public class EquipmentManagementSystem : MonoBehaviour
         PanelReset();
         for (int i = 0; i < gunList.Data.Count; i++)
         {
-            
             GameObject weaponepanel = Instantiate(weaponPanelObject, itemLineupPassObj);
             weaponepanel.GetComponent<WeaponSelectButtonSystem>().PanelInfomationInitialaization
                 (i,ref weaponEquipButton,ref weaponBuyButton,ref weaponDescriptionText);
@@ -124,7 +123,8 @@ public class EquipmentManagementSystem : MonoBehaviour
             "\nDAMAGE:" +
             "\nFIRE RATE:"+
             "\nLOADED BULLET:"+
-            "\nDEFFUSION CHANCE:";
+            "\nDEFFUSION CHANCE:"+
+            "\nPRICE:";
         }
     }
     private void PanelReset()
