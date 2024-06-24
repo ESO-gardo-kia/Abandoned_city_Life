@@ -4,8 +4,8 @@
 ### UnityVersion：2021.3.0f1  
 ## 外部アセット  
 ### 「使用」  
-DoToIn
-Cinemachine
+DoToIn  
+Cinemachine  
 ### 「BGM」  
 Machine Fighter：https://youtu.be/Adff90rYW-E?si=-Rm_dQr_T0T_ZkY8  
 Hello World：https://youtu.be/XketVHTThVI?si=BKp5_PMGaJ-2ZDgS  
