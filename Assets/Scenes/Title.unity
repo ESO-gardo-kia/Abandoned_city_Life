@@ -1977,7 +1977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
+  - {fileID: 2100000, guid: 5ac699d388ab8344790b7a4acd5d2988, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5596,7 +5596,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
+  - {fileID: 2100000, guid: 5ac699d388ab8344790b7a4acd5d2988, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6761,7 +6761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e5ccd5b7aa6eb429a2f8c108f2deea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSound: {fileID: 8300000, guid: aa0666eefb3a85b43aaf2cb746a11ae4, type: 3}
   gunlist: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
   shotPosition: {fileID: 1932473625}
 --- !u!114 &1686296410
@@ -6960,7 +6959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
+  - {fileID: 2100000, guid: 5ac699d388ab8344790b7a4acd5d2988, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7141,7 +7140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa2367119d99def4da75847d39e4c06b, type: 2}
+  - {fileID: 2100000, guid: 5ac699d388ab8344790b7a4acd5d2988, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7806,7 +7805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246ce8a86f1c97243988a8dab074450d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedTime: 0
+  feedTime: 0.5
   audioSource: {fileID: 1884245248}
   enemyManager: {fileID: 313032321}
   sceneTransitionSystem: {fileID: 1884245249}

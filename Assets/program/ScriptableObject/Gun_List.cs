@@ -9,8 +9,8 @@ public class Gun_List : ScriptableObject
     [System.Serializable]
     public class GunList
     {
-        public AudioClip shot_sound;
-        public AudioClip reload;
+        public AudioClip shotSound;
+        public AudioClip reloadSound;
         public bool ispossession;
         public int id;
         public string name = null;

@@ -3,9 +3,8 @@ using static Gun_List;
 
 public class PlayerWeaponSystem : MonoBehaviour
 {
-    [SerializeField] private AudioClip shotSound;
     [SerializeField] private Gun_List gunlist;
-    [SerializeField] public static int player_weapon_id = 0;
+    [SerializeField] public static int player_weapon_id = 1;
     private float rate_count = 0;
     private float loadedBullets = 0;//弾の最大値
     [System.NonSerialized] public float currentLoadedBullets = 0;//現在の残弾
@@ -13,12 +12,16 @@ public class PlayerWeaponSystem : MonoBehaviour
     [System.NonSerialized] public float reload_count = 0;//リロードカウント
     private bool isReloadPossible;
     [SerializeField] private GameObject shotPosition;
-    public void GunReloadSystem(ref PlayerUiSystem playerUiSystem)
+    private AudioClip shotSound;
+    private AudioClip reloadSound;
+    public void GunReloadSystem(ref PlayerUiSystem playerUiSystem, AudioSource audioSource)
     {
-        if ((currentLoadedBullets < loadedBullets && Input.GetKey(KeyCode.R))
-            || (currentLoadedBullets < loadedBullets && currentLoadedBullets == 0 && Input.GetMouseButton(0)))
+        if (((currentLoadedBullets < loadedBullets && Input.GetKeyDown(KeyCode.R))
+            || (currentLoadedBullets < loadedBullets && currentLoadedBullets == 0 && Input.GetMouseButtonDown(0)))
+            && !isReloadPossible)
         {
             isReloadPossible = true;
+            audioSource.PlayOneShot(reloadSound);
             playerUiSystem.reloadSlider.gameObject.SetActive(true);
         }
         if (isReloadPossible)
@@ -62,7 +65,7 @@ public class PlayerWeaponSystem : MonoBehaviour
         }
         else if (rate_count < gunlist.Data[player_weapon_id].rapid_fire_rate)
         {
-            rate_count += 0.2f;
+            rate_count += Time.deltaTime;
         }
     }
     public void WeponChange()
@@ -71,7 +74,8 @@ public class PlayerWeaponSystem : MonoBehaviour
         reload_count = 0;
         var Guns = gunlist.Data[player_weapon_id];
         GetComponent<PlayerUiSystem>().weaponImagePanel.sprite = Guns.sprite_id;
-        shotSound = Guns.shot_sound;
+        shotSound = Guns.shotSound;
+        reloadSound = Guns.reloadSound;
         loadedBullets = Guns.loaded_bullets;
         currentLoadedBullets = Guns.loaded_bullets;
         reloadSpeed = Guns.reload_speed;

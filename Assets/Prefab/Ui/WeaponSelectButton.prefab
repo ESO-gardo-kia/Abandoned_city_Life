@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 7968601474639130423}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7968601474513016281
 CanvasRenderer:
@@ -71,18 +71,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 312d755d12d6f284985a9118ab33cc21, type: 3}
     m_FontSize: 120
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 140
     m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TESTGUN
-
-'
+  m_Text: TESTGUN
 --- !u!114 &7968601474513016286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +247,7 @@ MonoBehaviour:
   gun_list: {fileID: 11400000, guid: 0ec8cb6d2f74e1648801692390ef3eeb, type: 2}
   equipmentButton: {fileID: 0}
   buyButton: {fileID: 0}
+  weaponDescriptionText: {fileID: 0}
   spriteRenderer: {fileID: 7968601475092155014}
   nameText: {fileID: 7968601474513016280}
   weaponNunber: 0

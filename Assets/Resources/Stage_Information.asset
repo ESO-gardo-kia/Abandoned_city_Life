@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stage_Information
   m_EditorClassIdentifier: 
   data:
-  - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
+  - BGM: {fileID: 8300000, guid: a5751a53ed3c2044f9f671f26a1e8369, type: 3}
     stagetype: 3
     transitionSceneNumber: 0
     name: Title
@@ -26,9 +26,9 @@ MonoBehaviour:
     enemies_num2: 
     enemies_num3: 
     time_limit: 0
-  - BGM: {fileID: 8300000, guid: 8ca719f82aa0fd14ba1c8818d66fcf92, type: 3}
+  - BGM: {fileID: 8300000, guid: a5751a53ed3c2044f9f671f26a1e8369, type: 3}
     stagetype: 3
-    transitionSceneNumber: 0
+    transitionSceneNumber: 1
     name: Select
     fixationReward: 0
     stageDescription: 
@@ -42,22 +42,22 @@ MonoBehaviour:
   - BGM: {fileID: 8300000, guid: 8b8e1765cbb567e4f82e13b1f89dc3db, type: 3}
     stagetype: 0
     transitionSceneNumber: 2
-    name: "\u4FB5\u5165\u53E3\u6383\u8A0E\u6226"
-    fixationReward: 300
-    stageDescription: Stage1
+    name: Stage1
+    fixationReward: 100
+    stageDescription: 
     stagenumber: 1
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
     spawn_pos: {x: 0, y: 2, z: 0}
     enemies_num1: 01000000000000000000000000000000
-    enemies_num2: 0200000000000000000000000000000000000000
-    enemies_num3: 03000000000000000000000000000000
+    enemies_num2: 0100000002000000000000000000000000000000
+    enemies_num3: 02000000020000000000000000000000
     time_limit: 0
   - BGM: {fileID: 8300000, guid: 6e8ecef07460a624ca40031bc4705bb8, type: 3}
     stagetype: 0
     transitionSceneNumber: 2
     name: Stage2
-    fixationReward: 500
-    stageDescription: Stage2
+    fixationReward: 200
+    stageDescription: 
     stagenumber: 2
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
     spawn_pos: {x: 0, y: 2, z: 0}
@@ -69,8 +69,8 @@ MonoBehaviour:
     stagetype: 0
     transitionSceneNumber: 2
     name: Stage3
-    fixationReward: 0
-    stageDescription: Stage3
+    fixationReward: 500
+    stageDescription: 
     stagenumber: 3
     stageSprite: {fileID: 21300000, guid: e497cb6ed3126f644a1903199025714d, type: 3}
     spawn_pos: {x: 0, y: 2, z: 0}

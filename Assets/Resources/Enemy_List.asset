@@ -16,16 +16,16 @@ MonoBehaviour:
   - name: Shooter
     Enemy_Model: {fileID: 7216383993853507424, guid: 7e52ad12ceb6490408108423b1e272f5,
       type: 3}
-    hp: 100
+    hp: 80
     atk: 0
     agi: 10
     exp: 0
-    stoppingDistance: 10
+    stoppingDistance: 50
     price: 10
   - name: Assault
     Enemy_Model: {fileID: 7216383993853507424, guid: 265fc38bddb3dad4e84734283549bc33,
       type: 3}
-    hp: 100
+    hp: 50
     atk: 0
     agi: 10
     exp: 0
@@ -34,27 +34,27 @@ MonoBehaviour:
   - name: CulusterCatapult
     Enemy_Model: {fileID: 2662304819684148828, guid: ffb986583b3653743914cfccc1806d63,
       type: 3}
-    hp: 100
+    hp: 120
     atk: 0
     agi: 10
     exp: 0
-    stoppingDistance: 10
+    stoppingDistance: 100
     price: 15
   - name: Airborne
     Enemy_Model: {fileID: 7216383993853507424, guid: ad19161e59f34a74dadc29a022bb0a79,
       type: 3}
-    hp: 100
+    hp: 90
     atk: 0
     agi: 10
     exp: 0
-    stoppingDistance: 10
+    stoppingDistance: 80
     price: 15
   - name: FollowingShooter
     Enemy_Model: {fileID: 7216383993853507424, guid: 12b9de1976d3171479daac88e3e618bb,
       type: 3}
-    hp: 100
+    hp: 150
     atk: 0
     agi: 10
     exp: 0
-    stoppingDistance: 10
+    stoppingDistance: 70
     price: 30

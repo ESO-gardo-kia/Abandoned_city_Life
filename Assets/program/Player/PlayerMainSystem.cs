@@ -41,6 +41,7 @@ public class PlayerMainSystem : MonoBehaviour
 
     void Update()
     {
+        playerUiSystem.SsignmentStatsUi(playerWeaponSystem.reload_count, currentHp, currentEn, playerWeaponSystem.currentLoadedBullets);
         if (Input.GetKeyDown(KeyCode.P))
         {
             Cursor.visible = true;
@@ -49,13 +50,11 @@ public class PlayerMainSystem : MonoBehaviour
         if (movePermit)
         {
             if (!PlayerUiSystem.isPanelOpen) transform.eulerAngles = new Vector3(0, playerCamera.transform.eulerAngles.y, 0);
-            playerUiSystem.SsignmentStatsUi(playerWeaponSystem.reload_count,currentHp,currentEn, playerWeaponSystem.currentLoadedBullets);
             playerMoveSystem.IsJumpJudg(jumpForce);
-
             playerMoveSystem.WheelAnimation();
 
             playerWeaponSystem.BulletShotSystem(playerCamera, audioSource);
-            playerWeaponSystem.GunReloadSystem(ref playerUiSystem);
+            playerWeaponSystem.GunReloadSystem(ref playerUiSystem, audioSource);
 
             //ˆÚ“®ˆ—
             if ((Input.GetKey(KeyCode.LeftShift) && currentEn > 0) &&
@@ -131,7 +130,7 @@ public class PlayerMainSystem : MonoBehaviour
             audioSource.PlayOneShot(damageSound);
             currentHp -= damage;
         }
-        if (currentHp <= 0)
+        if (currentHp <= 0 && !playerIsDeath)
         {
             playerIsDeath = true;
             GameObject.Find("Enemy_Manager").GetComponent<Enemy_Manager>().Player_Death();

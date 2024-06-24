@@ -35,8 +35,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
         SceneStartFunction(SceneManager.GetActiveScene().buildIndex,0);
         Application.targetFrameRate = 60;
-        audioSource.PlayOneShot(stageInfomation.data[0].BGM);
         SavePath = Application.persistentDataPath + "/SaveData.json";
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            playerMoney += 100;
+        }
     }
     public void SceneTransitionProcess(int transitionSceneNumber, int stageNumber)
     {
@@ -77,7 +83,6 @@ public class GameManager : MonoBehaviour
         enemyManager.Enemy_Manager_Reset();
         playerMainSystem.Player_Reset(false);
         sceneTransitionSystem.Load_Scene(transitionSceneNumber);
-        audioSource.PlayOneShot(stageInfomation.data[transitionSceneNumber].BGM);
         stageNameText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
         playerMainSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
     }
@@ -87,6 +92,8 @@ public class GameManager : MonoBehaviour
         ClearText.SetActive(false);
         GameOverPanel.SetActive(false);
         GameOverText.SetActive(false);
+        audioSource.clip = stageInfomation.data[stageNumber].BGM;
+        audioSource.Play();
         switch (currentSceneNumber)
         {
             case 0:
@@ -134,33 +141,21 @@ public class GameManager : MonoBehaviour
         if (isClear)
         {
             ClearText.SetActive(true);
-            ResultInfomationText.text =
-        "\nBattle Time : " + Math.Round(totalTime).ToString() + "second" +
-        "\nGet Money : " + money.ToString() +
-
-        "\n\nDestroyed Enemyes" + total.ToString();
-        for (int i = 0;i < enemyList.data.Count; i++)
-            {
-                if (enemyKillList[i] > 0)
-                {
-                    ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
-                }
-            }
         }
         else
         {
             GameOverText.SetActive(true);
-            ResultInfomationText.text =
+        }
+        ResultInfomationText.text =
         "\nBattle Time : " + Math.Round(totalTime).ToString() + "second" +
         "\nGet Money : " + money.ToString() +
 
         "\n\nDestroyed Enemyes : " + total.ToString();
-            for (int i = 0; i > enemyList.data.Count; i++)
+        for (int i = 0; i < enemyList.data.Count; i++)
+        {
+            if (enemyKillList[i] > 0)
             {
-                if (enemyKillList[i] >= 0)
-                {
-                    ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
-                }
+                ResultInfomationText.text += "\n" + enemyList.data[i].name + ":" + enemyKillList[i].ToString();
             }
         }
         yield return new WaitForSeconds(5);

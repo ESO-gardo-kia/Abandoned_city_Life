@@ -19,7 +19,7 @@ MonoBehaviour:
     en: 200
     energyRecoveryTime: 0.3
     jumpForce: 150
-    walkSpeed: 12
+    walkSpeed: 40
     dashSpeed: 17
   - bodyModel: {fileID: 0}
     bodyName: 

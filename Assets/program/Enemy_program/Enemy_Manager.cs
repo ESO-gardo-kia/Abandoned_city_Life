@@ -111,21 +111,12 @@ public class Enemy_Manager : MonoBehaviour
     }
     public void GetCurrentWaveEnemy(int transitionSceneNumber)
     {
-        //normalWaveEnemyList.Clear();
         normalWaveEnemyList = new List<int[]>
         {
             stageInformation.data[transitionSceneNumber].enemies_num1,
             stageInformation.data[transitionSceneNumber].enemies_num2,
             stageInformation.data[transitionSceneNumber].enemies_num3
         };
-        /*
-        Debug.Log(stageInformation.data[2].enemies_num1.Length);
-        Debug.Log(stageInformation.data[2].enemies_num2.Length);
-        Debug.Log(stageInformation.data[2].enemies_num3.Length);
-        Debug.Log(normalWaveEnemyList[1][0]);
-        Debug.Log(stageInformation.data[transitionSceneNumber].enemies_num2.Length);
-        Debug.Log(stageInformation.data[transitionSceneNumber].enemies_num3.Length);
-        */
     }
     public void Spawn_Function(int enemyId)
     {
@@ -203,6 +194,7 @@ public class Enemy_Manager : MonoBehaviour
             Destroy(transform.Find("Enemy_ObjList").GetChild(i).gameObject);
         }
         WAVEText.SetActive(false);
+        getMoney = 0;
         enemiesMovePermit = false;
         endlessWave = 0;
         current_enemies_count = 0;
