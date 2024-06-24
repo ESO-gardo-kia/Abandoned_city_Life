@@ -132,12 +132,13 @@ public class StageSelectManagementSystem : MonoBehaviour
         var Data = stageInformation.data;
         for (int i = 0; i < stageInformation.data.Count; i++)
         {
-            if (Data[i].stagenumber > 0)
+            if (i > 1)
             {
                 var stageselectpanelobj = Instantiate(stageSelectPanelPrefab, itemLineupPassObj);
                 StageSelectSignalButtonSystem stageSelectSignalButtonSystem = stageselectpanelobj.GetComponent<StageSelectSignalButtonSystem>();
                 stageselectpanelobj.transform.Find("StageName").GetComponent<Text>().text = "MISSION " + Data[i].stagenumber + " :" + Data[i].name;
                 stageSelectSignalButtonSystem.stageNumber = i;
+                stageSelectSignalButtonSystem.transitionSceneNumber = Data[i].transitionSceneNumber;
                 stageSelectSignalButtonSystem.stageStartButton = stageStartButton;
                 stageSelectSignalButtonSystem.stageSpritePanel = stageSpritePanel;
                 stageSelectSignalButtonSystem.fixationRewardText = fixationRewardText;
@@ -145,10 +146,10 @@ public class StageSelectManagementSystem : MonoBehaviour
             }
         }
     }
-    public void Button_System(int transitionSceneNumber)
+    public void StageStartButton(int transitionSceneNumber)
     {
         GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.SceneTransitionProcess(transitionSceneNumber);
+        gameManager.SceneTransitionProcess(transitionSceneNumber, transitionSceneNumber);
     }
     private void PanelReset()
     {

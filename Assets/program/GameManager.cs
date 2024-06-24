@@ -12,7 +12,7 @@ using static Stage_Information;
 public class GameManager : MonoBehaviour
 {
     public static float playerMoney;
-    public int feedTime = 1;
+    public float feedTime = 1;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
     [SerializeField] private SceneTransitionSystem sceneTransitionSystem;
@@ -33,12 +33,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-        SceneStartFunction(SceneManager.GetActiveScene().buildIndex);
+        SceneStartFunction(SceneManager.GetActiveScene().buildIndex,0);
         Application.targetFrameRate = 60;
         audioSource.PlayOneShot(stageInfomation.data[0].BGM);
         SavePath = Application.persistentDataPath + "/SaveData.json";
     }
-    public void SceneTransitionProcess(int transitionSceneNumber)
+    public void SceneTransitionProcess(int transitionSceneNumber, int stageNumber)
     {
         FeedPanel.SetActive(true);
         PlayerMainSystem.movePermit = false;
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
                     stageNameText.transform.localScale = Vector3.one;
                     Enemy_Manager.enemiesMovePermit = true;
                     stageNameText.GetComponent<Text>().text = "";
-                    SceneStartFunction(transitionSceneNumber);
+                    SceneStartFunction(transitionSceneNumber, stageNumber);
                 }))
         .Play();
     }
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         stageNameText.GetComponent<Text>().text = stageInfomation.data[transitionSceneNumber].name;
         playerMainSystem.gameObject.transform.position = stageInfomation.data[transitionSceneNumber].spawn_pos;
     }
-    private void SceneStartFunction(int currentSceneNumber)
+    private void SceneStartFunction(int currentSceneNumber, int stageNumber)
     {
         FeedPanel.SetActive(false);
         ClearText.SetActive(false);
@@ -111,13 +111,13 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 playerMainSystem.Player_Reset(true);
 
-                enemyManager.stagetype = stageInfomation.data[currentSceneNumber].stagetype;
-                enemyManager.GetCurrentWaveEnemy(currentSceneNumber);
-                StartCoroutine(enemyManager.Enemies_Spawn_Function(currentSceneNumber));
+                enemyManager.stagetype = stageInfomation.data[stageNumber].stagetype;
+                enemyManager.GetCurrentWaveEnemy(stageNumber);
+                StartCoroutine(enemyManager.Enemies_Spawn_Function(stageNumber));
                 break;
         }
     }
-    public IEnumerator GameOver(int[] enemyKillList,float money,bool isClear)
+    public IEnumerator GameOver(int[] enemyKillList,float money,float totalTime ,bool isClear)
     {
         Debug.Log(enemyKillList);
         FeedPanel.SetActive(true);
@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
         {
             ClearText.SetActive(true);
             ResultInfomationText.text =
-        "\nBattle Time : " + money.ToString() +
+        "\nBattle Time : " + Math.Round(totalTime).ToString() + "second" +
         "\nGet Money : " + money.ToString() +
 
         "\n\nDestroyed Enemyes" + total.ToString();
@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
         {
             GameOverText.SetActive(true);
             ResultInfomationText.text =
+        "\nBattle Time : " + Math.Round(totalTime).ToString() + "second" +
         "\nGet Money : " + money.ToString() +
 
         "\n\nDestroyed Enemyes : " + total.ToString();
@@ -167,7 +168,7 @@ public class GameManager : MonoBehaviour
         else GameOverText.SetActive(false);
         playerMainSystem.resultCamera.Priority = 1;
         GameOverPanel.SetActive(false);
-        SceneTransitionProcess(1);
+        SceneTransitionProcess(1,0);
     }
     [Serializable]
     public class SaveData

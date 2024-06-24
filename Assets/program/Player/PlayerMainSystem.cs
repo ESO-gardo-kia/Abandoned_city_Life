@@ -153,14 +153,11 @@ public class PlayerMainSystem : MonoBehaviour
     public void Player_Reset(bool IS)
     {
         playerIsDeath = false;
-
+        playerWeaponSystem.WeponChange();
+        StatsInitialization();
         currentHp = hp;
         currentEn = en;
-
         transform.localRotation = new Quaternion(0,0,0,0);
-        //rigidBody.velocity = Vector3.zero;
-        //rigidBody.useGravity = true;
-
         if (!IS)
         {
             cinemachinBrain.enabled = false;
@@ -171,6 +168,5 @@ public class PlayerMainSystem : MonoBehaviour
             cinemachinBrain.enabled = true;
             playerUiSystem.PlayerUiReset(IS,hp, currentHp, en, currentEn);
         }
-        playerWeaponSystem.WeponChange();
     }
 }

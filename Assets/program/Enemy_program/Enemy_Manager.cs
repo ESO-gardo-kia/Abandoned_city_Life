@@ -14,6 +14,7 @@ public class Enemy_Manager : MonoBehaviour
     [SerializeField] private Enemy_List enemyList;
     public bool Debug_Mode;
     static public bool enemiesMovePermit;
+    public float battleDuration;
     public List<int[]> normalWaveEnemyList;
     [SerializeField] private GameManager gm;
     [SerializeField] private GameObject Enemy_Obj;
@@ -52,7 +53,10 @@ public class Enemy_Manager : MonoBehaviour
     }
     private void Update()
     {
-
+        if (enemiesMovePermit)
+        {
+            battleDuration += Time.deltaTime;
+        }
     }
 
     public IEnumerator Enemies_Spawn_Function(int transitionSceneNumber)
@@ -123,7 +127,6 @@ public class Enemy_Manager : MonoBehaviour
         Debug.Log(stageInformation.data[transitionSceneNumber].enemies_num3.Length);
         */
     }
-
     public void Spawn_Function(int enemyId)
     {
         current_enemies_count++;
@@ -175,7 +178,8 @@ public class Enemy_Manager : MonoBehaviour
                 //現在のウェーブの敵が0になり、かつ全ウェーブが終了していればゲームクリア
                 if (current_enemies_count <= 0 && currentWave >= 3)
                 {
-                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, true));
+                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, battleDuration, true));
+
                 }
                 break;
             case StageType.endless:
@@ -185,7 +189,7 @@ public class Enemy_Manager : MonoBehaviour
                 }
                 if (current_enemies_count == 0 && currentWave == 100)
                 {
-                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, true));
+                    StartCoroutine(gm.GameOver(destroyEnemy, getMoney, battleDuration, true));
                 }
                 break;
             case StageType.boss:
@@ -206,6 +210,6 @@ public class Enemy_Manager : MonoBehaviour
     }
     public void Player_Death()
     {
-        StartCoroutine(gm.GameOver(destroyEnemy, getMoney, false));
+        StartCoroutine(gm.GameOver(destroyEnemy, getMoney,battleDuration, false));
     }
 }

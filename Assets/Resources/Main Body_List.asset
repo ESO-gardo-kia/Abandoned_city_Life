@@ -16,11 +16,11 @@ MonoBehaviour:
   - bodyModel: {fileID: 0}
     bodyName: EARLY MODEL
     hp: 100
-    en: 100
-    energyRecoveryTime: 1
+    en: 200
+    energyRecoveryTime: 0.3
     jumpForce: 150
-    walkSpeed: 0
-    dashSpeed: 0
+    walkSpeed: 12
+    dashSpeed: 17
   - bodyModel: {fileID: 0}
     bodyName: 
     hp: 0

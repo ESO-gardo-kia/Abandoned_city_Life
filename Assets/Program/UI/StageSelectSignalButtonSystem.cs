@@ -10,9 +10,11 @@ public class StageSelectSignalButtonSystem : MonoBehaviour
     public Text fixationRewardText;
     public Text stageDescriptionText;
     public int stageNumber;
+    public int transitionSceneNumber;
     public void OnButtonClick()
     {
         stageStartButton.stageNumber = stageNumber;
+        stageStartButton.transitionSceneNumber = transitionSceneNumber;
         stageSpritePanel.sprite = stage_Information.data[stageNumber].stageSprite;
         fixationRewardText.text = "ïÒèVÅF"+stage_Information.data[stageNumber].fixationReward.ToString()+"MONEY";
         stageDescriptionText.text = stage_Information.data[stageNumber].stageDescription;

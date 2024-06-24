@@ -11,6 +11,6 @@ public class TitleButton : MonoBehaviour
     }
     public void GameStart()
     {
-        Manager.SceneTransitionProcess(1);
+        Manager.SceneTransitionProcess(1,0);
     }
 }
