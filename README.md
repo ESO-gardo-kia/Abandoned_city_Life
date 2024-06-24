@@ -1,7 +1,7 @@
 # Machine_Battle
-ゲームジャンル：
-UnityVersion：2021.3.0f1
-外部アセット
+ゲームジャンル：#br
+UnityVersion：2021.3.0f1#br
+外部アセット#br
 「BGM」
 Machine Fighter\n
 https://youtu.be/Adff90rYW-E?si=-Rm_dQr_T0T_ZkY8
