@@ -1,4 +1,5 @@
-# Machine_Battle
+# 基本情報
+### ゲームタイトル：Machine_Battle  
 ### ゲームジャンル：  
 ### UnityVersion：2021.3.0f1  
 ## 外部アセット  
