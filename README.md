@@ -16,5 +16,6 @@ On-Jin ～音人～
 https://on-jin.com/kiyaku.php  
 武器リロード音  
 武器発射音  
+UIの効果音等
 ## 「説明」  
 ファイル内にある3DModel及びTextrueは自分で制作した物です  
