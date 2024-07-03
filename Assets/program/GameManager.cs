@@ -12,13 +12,13 @@ using static Stage_Information;
 public class GameManager : MonoBehaviour
 {
     public static float playerMoney;
+    public static GameManager GameManagerInstance;
     public float feedTime = 1;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Enemy_Manager enemyManager;
     [SerializeField] private SceneTransitionSystem sceneTransitionSystem;
     [SerializeField] private PlayerMainSystem playerMainSystem;
     [SerializeField] private Enemy_List enemyList;
-    public static GameManager instance;
     private string SavePath;
 
     public Stage_Information stageInfomation;
@@ -30,6 +30,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject GameOverText;
     [SerializeField] private GameObject FeedPanel;
     [SerializeField] private GameObject stageNameText;
+    private void Awake()
+    {
+        if(GameManagerInstance == null)
+        {
+            GameManagerInstance = this;
+        }
+        else if(GameManagerInstance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         DontDestroyOnLoad(this);
