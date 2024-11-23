@@ -1,0 +1,3835 @@
+{
+	"meta": {
+		"format_version": "4.10",
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "FieldMain",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": {
+		"width": 16,
+		"height": 16
+	},
+	"elements": [
+		{
+			"name": "Wall完成_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 8.125, 0],
+			"to": [8, 16, 1.125],
+			"autouv": 0,
+			"color": 3,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 0, 0, 7.875],
+					"texture": 1
+				},
+				"east": {
+					"uv": [15.875, 0, 16, 7.875],
+					"texture": 1
+				},
+				"south": {
+					"uv": [0, 0, 16, 7.875],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0.125, 7.875],
+					"texture": 1
+				},
+				"up": {
+					"uv": [0, 0, 16, 0.125],
+					"texture": 1
+				},
+				"down": {
+					"uv": [0, 7.75, 16, 7.875],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "58e4cbbc-fa52-aedb-fb76-aa4e029ed354"
+		},
+		{
+			"name": "Wall完成_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 0, 0],
+			"to": [-2.875, 8.125, 1.125],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [5.125, 7.875, 0, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [5, 7.875, 5.125, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [0, 7.875, 5.125, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 7.875, 0.125, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [0, 7.875, 5.125, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [0, 15.875, 5.125, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "3f2bdbff-15a2-0ed6-e8f0-6a5cdfb1d5f2"
+		},
+		{
+			"name": "Wall完成_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.25, 0, 0],
+			"to": [2.25, 8.125, 1.125],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [10.25, 7.875, 5.75, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [10.125, 7.875, 10.25, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [5.75, 7.875, 10.25, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [5.75, 7.875, 5.875, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [5.75, 7.875, 10.25, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [5.75, 15.875, 10.25, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "879d6bfc-3f6c-1f20-b843-aee47a02c0b1"
+		},
+		{
+			"name": "Wall完成_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.875, 0, 0],
+			"to": [8, 8.125, 1.125],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 7.875, 10.875, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [15.875, 7.875, 16, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [10.875, 7.875, 16, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [10.875, 7.875, 11, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [10.875, 7.875, 16, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [10.875, 15.875, 16, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "660b798f-f598-1acd-eaa2-f75df853f21f"
+		},
+		{
+			"name": "Wall完成_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.875, 0, 0],
+			"to": [-2.25, 7.875, 1.125],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [5.75, 8.125, 5.125, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [5.625, 8.125, 5.75, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [5.125, 8.125, 5.75, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [5.125, 8.125, 5.25, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [5.125, 8.125, 5.75, 8.25],
+					"texture": 1
+				},
+				"down": {
+					"uv": [5.125, 15.875, 5.75, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "5f439912-347e-14f1-7b35-ed0f924f1d2e"
+		},
+		{
+			"name": "Wall完成_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.25, 0, 0],
+			"to": [2.875, 7.875, 1.125],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, 0.8],
+			"faces": {
+				"north": {
+					"uv": [10.875, 8.125, 10.25, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [10.75, 8.125, 10.875, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [10.25, 8.125, 10.875, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [10.25, 8.125, 10.375, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [10.25, 8.125, 10.875, 8.25],
+					"texture": 1
+				},
+				"down": {
+					"uv": [10.25, 15.875, 10.875, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "3f48effb-b7f0-f44d-ebfc-e16e1bbe6657"
+		},
+		{
+			"name": "Wall完成2_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.125, 0, -0.8],
+			"to": [0.125, 5.25, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.125, 10.75, 7.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8, 10.75, 8.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.875, 10.75, 8.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.875, 10.75, 8, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.875, 10.75, 8.125, 10.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.875, 15.875, 8.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3c76112f-6231-bc65-dea9-ece73760b624"
+		},
+		{
+			"name": "Wall完成2_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.375, 0, -0.8],
+			"to": [-0.125, 5.125, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.875, 10.875, 7.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.75, 10.875, 7.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.625, 10.875, 7.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.625, 10.875, 7.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.625, 10.875, 7.875, 11],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.625, 15.875, 7.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "28ad18e3-cccb-d211-f583-e9db8c7ab30e"
+		},
+		{
+			"name": "Wall完成2_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.125, 0, -0.8],
+			"to": [0.375, 5.125, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.375, 10.875, 8.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.25, 10.875, 8.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.125, 10.875, 8.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.125, 10.875, 8.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.125, 10.875, 8.375, 11],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.125, 15.875, 8.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d03e071f-bd31-4562-643b-bcb1a364bdf4"
+		},
+		{
+			"name": "Wall完成2_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.5, 0, -0.8],
+			"to": [-0.375, 5, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.625, 11, 7.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.5, 11, 7.625, 11.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.5, 15.875, 7.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b3a12630-e975-2b3b-013e-7496eb5b46ee"
+		},
+		{
+			"name": "Wall完成2_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.375, 0, -0.8],
+			"to": [0.5, 5, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.5, 11, 8.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.375, 11, 8.5, 11.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.375, 15.875, 8.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "5fb649fc-8f2b-afcb-158b-48c26c6fe6d2"
+		},
+		{
+			"name": "Wall完成2_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.625, 0, -0.8],
+			"to": [-0.5, 4, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.5, 12, 7.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.375, 12, 7.5, 12.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.375, 15.875, 7.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a07108cc-85a2-58c0-98d0-8b8e049c9ee3"
+		},
+		{
+			"name": "Wall完成2_6",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.5, 0, -0.8],
+			"to": [0.625, 4, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.625, 12, 8.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.5, 12, 8.625, 12.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.5, 15.875, 8.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "ecffd0fd-6673-fd07-26c5-4463ee261d7c"
+		},
+		{
+			"name": "Wall完成2_7",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.25, 0, -0.8],
+			"to": [-6, 3.625, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2, 12.375, 0.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [1.875, 12.375, 2, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.75, 12.375, 2, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.75, 12.375, 0.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.75, 12.375, 2, 12.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.75, 15.875, 2, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "ed0a972b-8b08-42d1-59a3-b0e412a68f1e"
+		},
+		{
+			"name": "Wall完成2_8",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6, 0, -0.8],
+			"to": [7.25, 3.625, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.25, 12.375, 14, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.125, 12.375, 15.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [14, 12.375, 15.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [14, 12.375, 14.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [14, 12.375, 15.25, 12.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [14, 15.875, 15.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "dacbc8d2-093e-9f4d-ffc0-3e9ca3bccae8"
+		},
+		{
+			"name": "Wall完成2_9",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.375, 0, -0.8],
+			"to": [-7.25, 3.5, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.75, 12.5, 0.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.625, 12.5, 0.75, 12.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.625, 15.875, 0.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "dec01ce9-934c-8b5f-3ed9-705bbc7610c1"
+		},
+		{
+			"name": "Wall完成2_10",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.25, 0, -0.8],
+			"to": [7.375, 3.5, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.375, 12.5, 15.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.25, 12.5, 15.375, 12.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.25, 15.875, 15.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3f642712-1142-a8ae-efd0-fa5e7f472338"
+		},
+		{
+			"name": "Wall完成2_11",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.5, 0, -0.8],
+			"to": [-7.375, 3.25, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.625, 12.75, 0.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.5, 12.75, 0.625, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.5, 15.875, 0.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "c9503f62-4569-6ea8-590f-41d75fd3abdd"
+		},
+		{
+			"name": "Wall完成2_12",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-6, 0, -0.8],
+			"to": [-5.875, 3.25, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.125, 12.75, 2, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2, 12.75, 2.125, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2, 15.875, 2.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "bf72cd68-5c44-11fe-ac73-4eaf98185279"
+		},
+		{
+			"name": "Wall完成2_13",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.875, 0, -0.8],
+			"to": [6, 3.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [14, 12.75, 13.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.875, 12.75, 14, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.875, 15.875, 14, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "bb3c6a1a-dccd-e0e0-6081-e1b20e9aad05"
+		},
+		{
+			"name": "Wall完成2_14",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.375, 0, -0.8],
+			"to": [7.5, 3.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.5, 12.75, 15.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.375, 12.75, 15.5, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.375, 15.875, 15.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "4a9cd31f-7e05-b100-af81-cb640c9eca21"
+		},
+		{
+			"name": "Wall完成2_15",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.625, 0, -0.8],
+			"to": [-7.5, 3, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.5, 13, 0.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.375, 13, 0.5, 13.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.375, 15.875, 0.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d727011b-4b70-c82e-9e20-64330730d793"
+		},
+		{
+			"name": "Wall完成2_16",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.5, 0, -0.8],
+			"to": [7.625, 3, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.625, 13, 15.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.5, 13, 15.625, 13.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.5, 15.875, 15.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "ca4f9719-8037-a1d5-8e7c-5de44a7d1be6"
+		},
+		{
+			"name": "Wall完成2_17",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.75, 0, -0.8],
+			"to": [-7.625, 2.75, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.375, 13.25, 0.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.25, 13.25, 0.375, 13.375],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.25, 15.875, 0.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "ff8b24c7-9f46-1ebb-7040-687a9c0600fa"
+		},
+		{
+			"name": "Wall完成2_18",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.625, 0, -0.8],
+			"to": [7.75, 2.75, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.75, 13.25, 15.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.625, 13.25, 15.75, 13.375],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.625, 15.875, 15.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a820ef5e-cec4-4a60-9cfd-ce00a1c7ebb6"
+		},
+		{
+			"name": "Wall完成2_19",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.875, 0, -0.8],
+			"to": [-5.75, 2.625, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.25, 13.375, 2.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.125, 13.375, 2.25, 13.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.125, 15.875, 2.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "6766fe98-f08b-2843-716e-59a4a0ec5916"
+		},
+		{
+			"name": "Wall完成2_20",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.75, 0, -0.8],
+			"to": [5.875, 2.625, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.875, 13.375, 13.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.75, 13.375, 13.875, 13.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.75, 15.875, 13.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "6a61d044-428b-7cc5-598d-3bccd51c53c3"
+		},
+		{
+			"name": "Wall完成2_21",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.875, 0, -0.8],
+			"to": [-7.75, 2.5, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.25, 13.5, 0.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.125, 13.5, 0.25, 13.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.125, 15.875, 0.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "76f20dff-5822-b841-6295-3da5973dfb3a"
+		},
+		{
+			"name": "Wall完成2_22",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.75, 0, -0.8],
+			"to": [7.875, 2.5, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.875, 13.5, 15.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.75, 13.5, 15.875, 13.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.75, 15.875, 15.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d2f5fd16-0be4-ed88-aad4-0dd58ce40bdf"
+		},
+		{
+			"name": "Wall完成2_23",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 0, -0.8],
+			"to": [-7.875, 2.25, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.125, 13.75, 0, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0, 13.75, 0.125, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0, 15.875, 0.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d2c270dc-b9bd-aece-9381-1073d1e10b55"
+		},
+		{
+			"name": "Wall完成2_24",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.75, 0, -0.8],
+			"to": [-0.625, 2.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.375, 13.75, 7.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.25, 13.75, 7.375, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.25, 15.875, 7.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "9fda68f9-c8fe-cbdb-5ec0-055f077234ed"
+		},
+		{
+			"name": "Wall完成2_25",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.625, 0, -0.8],
+			"to": [0.75, 2.25, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.75, 13.75, 8.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.625, 13.75, 8.75, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.625, 15.875, 8.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3ecb197e-2bcb-85a5-9ed5-7f5eb4647027"
+		},
+		{
+			"name": "Wall完成2_26",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.875, 0, -0.8],
+			"to": [8, 2.25, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 13.75, 15.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.875, 13.75, 16, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.875, 15.875, 16, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b0861f07-aac1-6591-ba77-4853c32eac53"
+		},
+		{
+			"name": "Wall完成2_27",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.75, 0, -0.8],
+			"to": [-5.625, 1.875, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.375, 14.125, 2.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.25, 14.125, 2.375, 14.25],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.25, 15.875, 2.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "c2ef96eb-9f6d-ee84-0681-ba5409622867"
+		},
+		{
+			"name": "Wall完成2_28",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.625, 0, -0.8],
+			"to": [5.75, 1.875, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.75, 14.125, 13.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.625, 14.125, 13.75, 14.25],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.625, 15.875, 13.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "84fa5c3d-5b5c-d7df-9cd3-341dbdb18d9b"
+		},
+		{
+			"name": "Wall完成2_29",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.625, 0, -0.8],
+			"to": [-4.75, 1.625, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [3.25, 14.375, 2.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [3.125, 14.375, 3.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.375, 14.375, 3.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.375, 14.375, 2.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.375, 14.375, 3.25, 14.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.375, 15.875, 3.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "05345d74-4a44-59bd-7669-be86be08448f"
+		},
+		{
+			"name": "Wall完成2_30",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.75, 0, -0.8],
+			"to": [5.625, 1.625, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.625, 14.375, 12.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.5, 14.375, 13.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [12.75, 14.375, 13.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [12.75, 14.375, 12.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [12.75, 14.375, 13.625, 14.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [12.75, 15.875, 13.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "1f598f0f-8f1f-1ebf-2d5b-d5b5d243c134"
+		},
+		{
+			"name": "Wall完成2_31",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.75, 0, -0.8],
+			"to": [-2.75, 1.5, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [5.25, 14.5, 3.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [5.125, 14.5, 5.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [3.25, 14.5, 5.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [3.25, 14.5, 3.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [3.25, 14.5, 5.25, 14.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [3.25, 15.875, 5.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3021a434-2c63-8c74-20c2-a8e6bd30f6ed"
+		},
+		{
+			"name": "Wall完成2_32",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.75, 0, -0.8],
+			"to": [4.75, 1.5, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [12.75, 14.5, 10.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [12.625, 14.5, 12.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [10.75, 14.5, 12.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [10.75, 14.5, 10.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [10.75, 14.5, 12.75, 14.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [10.75, 15.875, 12.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a5428d3b-f905-a009-d06f-d6ff4e451c76"
+		},
+		{
+			"name": "Wall完成2_33",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.75, 0, -0.8],
+			"to": [-1, 1.375, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7, 14.625, 5.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [6.875, 14.625, 7, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [5.25, 14.625, 7, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [5.25, 14.625, 5.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [5.25, 14.625, 7, 14.75],
+					"texture": 0
+				},
+				"down": {
+					"uv": [5.25, 15.875, 7, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "9bade048-63fd-8c63-4161-0c08ccc62c51"
+		},
+		{
+			"name": "Wall完成2_34",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1, 0, -0.8],
+			"to": [2.75, 1.375, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [10.75, 14.625, 9, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [10.625, 14.625, 10.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [9, 14.625, 10.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [9, 14.625, 9.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [9, 14.625, 10.75, 14.75],
+					"texture": 0
+				},
+				"down": {
+					"uv": [9, 15.875, 10.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "490772c4-f917-1adc-9098-2b28744378cb"
+		},
+		{
+			"name": "Wall完成2_35",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-1, 0, -0.8],
+			"to": [-0.75, 1.25, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.25, 14.75, 7, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.125, 14.75, 7.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7, 14.75, 7.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7, 14.75, 7.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7, 14.75, 7.25, 14.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7, 15.875, 7.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "7dde44de-158c-7017-1c22-148e6fd9cf34"
+		},
+		{
+			"name": "Wall完成2_36",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.75, 0, -0.8],
+			"to": [1, 1.25, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 0, -0.8],
+			"faces": {
+				"north": {
+					"uv": [9, 14.75, 8.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.875, 14.75, 9, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.75, 14.75, 9, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.75, 14.75, 8.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.75, 14.75, 9, 14.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.75, 15.875, 9, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "c0751a6e-91b5-c708-f18a-fef0b4f26a43"
+		},
+		{
+			"name": "Wall完成2_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.125, 32, -0.8],
+			"to": [0.125, 37.25, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.125, 10.75, 7.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8, 10.75, 8.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.875, 10.75, 8.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.875, 10.75, 8, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.875, 10.75, 8.125, 10.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.875, 15.875, 8.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "10ce049e-bca5-b0d8-d306-d18769ac7b3c"
+		},
+		{
+			"name": "Wall完成2_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.375, 32, -0.8],
+			"to": [-0.125, 37.125, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.875, 10.875, 7.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.75, 10.875, 7.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.625, 10.875, 7.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.625, 10.875, 7.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.625, 10.875, 7.875, 11],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.625, 15.875, 7.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "6d4be0c4-b10a-5da7-4992-552480b94139"
+		},
+		{
+			"name": "Wall完成2_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.125, 32, -0.8],
+			"to": [0.375, 37.125, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.375, 10.875, 8.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.25, 10.875, 8.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.125, 10.875, 8.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.125, 10.875, 8.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.125, 10.875, 8.375, 11],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.125, 15.875, 8.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "28e8c697-7eec-6251-39ed-a8850f208553"
+		},
+		{
+			"name": "Wall完成2_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.5, 32, -0.8],
+			"to": [-0.375, 37, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.625, 11, 7.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.5, 11, 7.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.5, 11, 7.625, 11.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.5, 15.875, 7.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "2e0b0b38-b0ed-12e4-c7d7-4704ba3e1d4f"
+		},
+		{
+			"name": "Wall完成2_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.375, 32, -0.8],
+			"to": [0.5, 37, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.5, 11, 8.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.375, 11, 8.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.375, 11, 8.5, 11.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.375, 15.875, 8.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "5b649ca4-3d21-bc06-c562-345dd5c3bda6"
+		},
+		{
+			"name": "Wall完成2_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.625, 32, -0.8],
+			"to": [-0.5, 36, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.5, 12, 7.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.375, 12, 7.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.375, 12, 7.5, 12.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.375, 15.875, 7.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d7aa104e-e6b3-883a-d4f7-9ab631496376"
+		},
+		{
+			"name": "Wall完成2_6",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.5, 32, -0.8],
+			"to": [0.625, 36, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.625, 12, 8.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.5, 12, 8.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.5, 12, 8.625, 12.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.5, 15.875, 8.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "11b3b5be-6d94-56de-61f9-fee2021c26ff"
+		},
+		{
+			"name": "Wall完成2_7",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.25, 32, -0.8],
+			"to": [-6, 35.625, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2, 12.375, 0.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [1.875, 12.375, 2, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.75, 12.375, 2, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.75, 12.375, 0.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.75, 12.375, 2, 12.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.75, 15.875, 2, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "5d9a2d83-0cd9-d0d4-21c0-a3270e822d0a"
+		},
+		{
+			"name": "Wall完成2_8",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [6, 32, -0.8],
+			"to": [7.25, 35.625, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.25, 12.375, 14, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.125, 12.375, 15.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [14, 12.375, 15.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [14, 12.375, 14.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [14, 12.375, 15.25, 12.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [14, 15.875, 15.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "9c7ce91e-f622-e7f9-3084-ce480b9bc9b6"
+		},
+		{
+			"name": "Wall完成2_9",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.375, 32, -0.8],
+			"to": [-7.25, 35.5, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.75, 12.5, 0.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.625, 12.5, 0.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.625, 12.5, 0.75, 12.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.625, 15.875, 0.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "16d9cc4a-03f7-587c-a77f-7ce0e747c665"
+		},
+		{
+			"name": "Wall完成2_10",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.25, 32, -0.8],
+			"to": [7.375, 35.5, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.375, 12.5, 15.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.25, 12.5, 15.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.25, 12.5, 15.375, 12.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.25, 15.875, 15.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "f43ec153-da04-0c57-2a44-eab79aa8cf03"
+		},
+		{
+			"name": "Wall完成2_11",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.5, 32, -0.8],
+			"to": [-7.375, 35.25, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.625, 12.75, 0.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.5, 12.75, 0.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.5, 12.75, 0.625, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.5, 15.875, 0.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "485ef532-dc39-c5f7-b936-5ecb00b91908"
+		},
+		{
+			"name": "Wall完成2_12",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-6, 32, -0.8],
+			"to": [-5.875, 35.25, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.125, 12.75, 2, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2, 12.75, 2.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2, 12.75, 2.125, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2, 15.875, 2.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "eec3445b-5664-0087-6654-adb48730629c"
+		},
+		{
+			"name": "Wall完成2_13",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.875, 32, -0.8],
+			"to": [6, 35.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [14, 12.75, 13.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.875, 12.75, 14, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.875, 12.75, 14, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.875, 15.875, 14, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "cc54d294-853e-203d-9865-52f86dd48988"
+		},
+		{
+			"name": "Wall完成2_14",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.375, 32, -0.8],
+			"to": [7.5, 35.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.5, 12.75, 15.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.375, 12.75, 15.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.375, 12.75, 15.5, 12.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.375, 15.875, 15.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "6d56996a-3b8c-d076-125e-b03bd65f9c66"
+		},
+		{
+			"name": "Wall完成2_15",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.625, 32, -0.8],
+			"to": [-7.5, 35, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.5, 13, 0.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.375, 13, 0.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.375, 13, 0.5, 13.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.375, 15.875, 0.5, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b478865b-d30b-e323-411b-198eb74b62f7"
+		},
+		{
+			"name": "Wall完成2_16",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.5, 32, -0.8],
+			"to": [7.625, 35, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.625, 13, 15.5, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.5, 13, 15.625, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.5, 13, 15.625, 13.125],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.5, 15.875, 15.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a074cb29-d40f-1f56-6685-0f2c19dfdaf0"
+		},
+		{
+			"name": "Wall完成2_17",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.75, 32, -0.8],
+			"to": [-7.625, 34.75, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.375, 13.25, 0.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.25, 13.25, 0.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.25, 13.25, 0.375, 13.375],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.25, 15.875, 0.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "9f88ca8e-7bca-f77c-66ef-ebe5b41dc721"
+		},
+		{
+			"name": "Wall完成2_18",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.625, 32, -0.8],
+			"to": [7.75, 34.75, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.75, 13.25, 15.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.625, 13.25, 15.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.625, 13.25, 15.75, 13.375],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.625, 15.875, 15.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "fb72d0f3-7e9a-b18c-17f2-d9bf7930b947"
+		},
+		{
+			"name": "Wall完成2_19",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.875, 32, -0.8],
+			"to": [-5.75, 34.625, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.25, 13.375, 2.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.125, 13.375, 2.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.125, 13.375, 2.25, 13.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.125, 15.875, 2.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a127232f-3c94-b8f4-f1c2-5856a5a9a102"
+		},
+		{
+			"name": "Wall完成2_20",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.75, 32, -0.8],
+			"to": [5.875, 34.625, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.875, 13.375, 13.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.75, 13.375, 13.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.75, 13.375, 13.875, 13.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.75, 15.875, 13.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "271c1658-51d7-086b-a082-0cc23f840315"
+		},
+		{
+			"name": "Wall完成2_21",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-7.875, 32, -0.8],
+			"to": [-7.75, 34.5, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.25, 13.5, 0.125, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0.125, 13.5, 0.25, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0.125, 13.5, 0.25, 13.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0.125, 15.875, 0.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b1218deb-9df9-50c5-7e27-748ec0b8ad6b"
+		},
+		{
+			"name": "Wall完成2_22",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.75, 32, -0.8],
+			"to": [7.875, 34.5, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [15.875, 13.5, 15.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.75, 13.5, 15.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.75, 13.5, 15.875, 13.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.75, 15.875, 15.875, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d95287e4-f25a-2646-ff92-fa4658ca7b5d"
+		},
+		{
+			"name": "Wall完成2_23",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 32, -0.8],
+			"to": [-7.875, 34.25, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [0.125, 13.75, 0, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0, 13.75, 0.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0, 13.75, 0.125, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0, 15.875, 0.125, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d19baa0e-2841-383c-d7da-be3ce7213981"
+		},
+		{
+			"name": "Wall完成2_24",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-0.75, 32, -0.8],
+			"to": [-0.625, 34.25, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.375, 13.75, 7.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7.25, 13.75, 7.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7.25, 13.75, 7.375, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7.25, 15.875, 7.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "e0153315-26b5-0a84-bae4-9d72892b37a7"
+		},
+		{
+			"name": "Wall完成2_25",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.625, 32, -0.8],
+			"to": [0.75, 34.25, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [8.75, 13.75, 8.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.625, 13.75, 8.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.625, 13.75, 8.75, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.625, 15.875, 8.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "c46e16a6-46a6-067c-05d4-94d66df03cd8"
+		},
+		{
+			"name": "Wall完成2_26",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [7.875, 32, -0.8],
+			"to": [8, 34.25, 0],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 13.75, 15.875, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [15.875, 13.75, 16, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [15.875, 13.75, 16, 13.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [15.875, 15.875, 16, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "bb32d2e3-b07f-4818-b5ad-92f1a7ead75c"
+		},
+		{
+			"name": "Wall完成2_27",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.75, 32, -0.8],
+			"to": [-5.625, 33.875, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [2.375, 14.125, 2.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.25, 14.125, 2.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.25, 14.125, 2.375, 14.25],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.25, 15.875, 2.375, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "a9fe8de9-586d-f776-fb7d-690623554043"
+		},
+		{
+			"name": "Wall完成2_28",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [5.625, 32, -0.8],
+			"to": [5.75, 33.875, 0],
+			"autouv": 0,
+			"color": 4,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.75, 14.125, 13.625, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [13.625, 14.125, 13.75, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [13.625, 14.125, 13.75, 14.25],
+					"texture": 0
+				},
+				"down": {
+					"uv": [13.625, 15.875, 13.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "4d0ea063-3320-9790-8561-8f81a631c2b0"
+		},
+		{
+			"name": "Wall完成2_29",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5.625, 32, -0.8],
+			"to": [-4.75, 33.625, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [3.25, 14.375, 2.375, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [3.125, 14.375, 3.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [2.375, 14.375, 3.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [2.375, 14.375, 2.5, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [2.375, 14.375, 3.25, 14.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [2.375, 15.875, 3.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "5edd45b1-30bf-32d4-2528-f92a5501d5f2"
+		},
+		{
+			"name": "Wall完成2_30",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.75, 32, -0.8],
+			"to": [5.625, 33.625, 0],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [13.625, 14.375, 12.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [13.5, 14.375, 13.625, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [12.75, 14.375, 13.625, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [12.75, 14.375, 12.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [12.75, 14.375, 13.625, 14.5],
+					"texture": 0
+				},
+				"down": {
+					"uv": [12.75, 15.875, 13.625, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "d070e9c5-296f-03c3-a688-eff0ea3d2620"
+		},
+		{
+			"name": "Wall完成2_31",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.75, 32, -0.8],
+			"to": [-2.75, 33.5, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [5.25, 14.5, 3.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [5.125, 14.5, 5.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [3.25, 14.5, 5.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [3.25, 14.5, 3.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [3.25, 14.5, 5.25, 14.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [3.25, 15.875, 5.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "1873e456-4646-5634-0d34-61b736b72a52"
+		},
+		{
+			"name": "Wall完成2_32",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.75, 32, -0.8],
+			"to": [4.75, 33.5, 0],
+			"autouv": 0,
+			"color": 0,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [12.75, 14.5, 10.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [12.625, 14.5, 12.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [10.75, 14.5, 12.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [10.75, 14.5, 10.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [10.75, 14.5, 12.75, 14.625],
+					"texture": 0
+				},
+				"down": {
+					"uv": [10.75, 15.875, 12.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "f56f9ce3-4ea9-539a-df50-1c9bb5fea273"
+		},
+		{
+			"name": "Wall完成2_33",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.75, 32, -0.8],
+			"to": [-1, 33.375, 0],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7, 14.625, 5.25, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [6.875, 14.625, 7, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [5.25, 14.625, 7, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [5.25, 14.625, 5.375, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [5.25, 14.625, 7, 14.75],
+					"texture": 0
+				},
+				"down": {
+					"uv": [5.25, 15.875, 7, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "e12a30a3-4ac5-1b62-02d2-b3beab47fb78"
+		},
+		{
+			"name": "Wall完成2_34",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [1, 32, -0.8],
+			"to": [2.75, 33.375, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [10.75, 14.625, 9, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [10.625, 14.625, 10.75, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [9, 14.625, 10.75, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [9, 14.625, 9.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [9, 14.625, 10.75, 14.75],
+					"texture": 0
+				},
+				"down": {
+					"uv": [9, 15.875, 10.75, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b420288d-e9c2-28a7-5a24-b9066cd741fc"
+		},
+		{
+			"name": "Wall完成2_35",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-1, 32, -0.8],
+			"to": [-0.75, 33.25, 0],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [7.25, 14.75, 7, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7.125, 14.75, 7.25, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [7, 14.75, 7.25, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [7, 14.75, 7.125, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [7, 14.75, 7.25, 14.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [7, 15.875, 7.25, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "54a4dc57-4fb2-4975-db1d-ce83b6a30af2"
+		},
+		{
+			"name": "Wall完成2_36",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.75, 32, -0.8],
+			"to": [1, 33.25, 0],
+			"autouv": 0,
+			"color": 9,
+			"origin": [-8, 32, -0.8],
+			"faces": {
+				"north": {
+					"uv": [9, 14.75, 8.75, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [8.875, 14.75, 9, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [8.75, 14.75, 9, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [8.75, 14.75, 8.875, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [8.75, 14.75, 9, 14.875],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8.75, 15.875, 9, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "58a9c270-f571-e696-faf4-232595495ffd"
+		},
+		{
+			"name": "Wall完成_0",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 24.125, 0],
+			"to": [8, 32, 1.125],
+			"autouv": 0,
+			"color": 3,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 0, 0, 7.875],
+					"texture": 1
+				},
+				"east": {
+					"uv": [15.875, 0, 16, 7.875],
+					"texture": 1
+				},
+				"south": {
+					"uv": [0, 0, 16, 7.875],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0.125, 7.875],
+					"texture": 1
+				},
+				"up": {
+					"uv": [0, 0, 16, 0.125],
+					"texture": 1
+				},
+				"down": {
+					"uv": [0, 7.75, 16, 7.875],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "48a81ff7-3adc-bf40-794c-e06c25b29363"
+		},
+		{
+			"name": "Wall完成_1",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-8, 16, 0],
+			"to": [-2.875, 24.125, 1.125],
+			"autouv": 0,
+			"color": 1,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [5.125, 7.875, 0, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [5, 7.875, 5.125, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [0, 7.875, 5.125, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 7.875, 0.125, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [0, 7.875, 5.125, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [0, 15.875, 5.125, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "a5491fe3-fcdb-4caa-e1e2-0c2a5251bc79"
+		},
+		{
+			"name": "Wall完成_2",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.25, 16, 0],
+			"to": [2.25, 24.125, 1.125],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [10.25, 7.875, 5.75, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [10.125, 7.875, 10.25, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [5.75, 7.875, 10.25, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [5.75, 7.875, 5.875, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [5.75, 7.875, 10.25, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [5.75, 15.875, 10.25, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "a0f374ec-664b-b715-839f-e6a55d114f10"
+		},
+		{
+			"name": "Wall完成_3",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.875, 16, 0],
+			"to": [8, 24.125, 1.125],
+			"autouv": 0,
+			"color": 2,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [16, 7.875, 10.875, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [15.875, 7.875, 16, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [10.875, 7.875, 16, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [10.875, 7.875, 11, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [10.875, 7.875, 16, 8],
+					"texture": 1
+				},
+				"down": {
+					"uv": [10.875, 15.875, 16, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "8d1130f4-890a-3d89-8b23-41fcdb438cfe"
+		},
+		{
+			"name": "Wall完成_4",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.875, 16, 0],
+			"to": [-2.25, 23.875, 1.125],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [5.75, 8.125, 5.125, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [5.625, 8.125, 5.75, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [5.125, 8.125, 5.75, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [5.125, 8.125, 5.25, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [5.125, 8.125, 5.75, 8.25],
+					"texture": 1
+				},
+				"down": {
+					"uv": [5.125, 15.875, 5.75, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "d7f04961-c320-cb02-46d4-4825aa820305"
+		},
+		{
+			"name": "Wall完成_5",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [2.25, 16, 0],
+			"to": [2.875, 23.875, 1.125],
+			"autouv": 0,
+			"color": 8,
+			"origin": [-8, 16, 0.8],
+			"faces": {
+				"north": {
+					"uv": [10.875, 8.125, 10.25, 16],
+					"texture": 1
+				},
+				"east": {
+					"uv": [10.75, 8.125, 10.875, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [10.25, 8.125, 10.875, 16],
+					"texture": 1
+				},
+				"west": {
+					"uv": [10.25, 8.125, 10.375, 16],
+					"texture": 1
+				},
+				"up": {
+					"uv": [10.25, 8.125, 10.875, 8.25],
+					"texture": 1
+				},
+				"down": {
+					"uv": [10.25, 15.875, 10.875, 16],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "50402268-2ceb-4e67-0f3b-5bf8c1915631"
+		}
+	],
+	"outliner": [
+		{
+			"name": "Wall2",
+			"origin": [0, 0, -0.8],
+			"color": 0,
+			"uuid": "9f346da0-b710-8c04-5dd6-2010d536b69f",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"3c76112f-6231-bc65-dea9-ece73760b624",
+				"28ad18e3-cccb-d211-f583-e9db8c7ab30e",
+				"d03e071f-bd31-4562-643b-bcb1a364bdf4",
+				"b3a12630-e975-2b3b-013e-7496eb5b46ee",
+				"5fb649fc-8f2b-afcb-158b-48c26c6fe6d2",
+				"a07108cc-85a2-58c0-98d0-8b8e049c9ee3",
+				"ecffd0fd-6673-fd07-26c5-4463ee261d7c",
+				"ed0a972b-8b08-42d1-59a3-b0e412a68f1e",
+				"dacbc8d2-093e-9f4d-ffc0-3e9ca3bccae8",
+				"dec01ce9-934c-8b5f-3ed9-705bbc7610c1",
+				"3f642712-1142-a8ae-efd0-fa5e7f472338",
+				"c9503f62-4569-6ea8-590f-41d75fd3abdd",
+				"bf72cd68-5c44-11fe-ac73-4eaf98185279",
+				"bb3c6a1a-dccd-e0e0-6081-e1b20e9aad05",
+				"4a9cd31f-7e05-b100-af81-cb640c9eca21",
+				"d727011b-4b70-c82e-9e20-64330730d793",
+				"ca4f9719-8037-a1d5-8e7c-5de44a7d1be6",
+				"ff8b24c7-9f46-1ebb-7040-687a9c0600fa",
+				"a820ef5e-cec4-4a60-9cfd-ce00a1c7ebb6",
+				"6766fe98-f08b-2843-716e-59a4a0ec5916",
+				"6a61d044-428b-7cc5-598d-3bccd51c53c3",
+				"76f20dff-5822-b841-6295-3da5973dfb3a",
+				"d2f5fd16-0be4-ed88-aad4-0dd58ce40bdf",
+				"d2c270dc-b9bd-aece-9381-1073d1e10b55",
+				"9fda68f9-c8fe-cbdb-5ec0-055f077234ed",
+				"3ecb197e-2bcb-85a5-9ed5-7f5eb4647027",
+				"b0861f07-aac1-6591-ba77-4853c32eac53",
+				"c2ef96eb-9f6d-ee84-0681-ba5409622867",
+				"84fa5c3d-5b5c-d7df-9cd3-341dbdb18d9b",
+				"05345d74-4a44-59bd-7669-be86be08448f",
+				"1f598f0f-8f1f-1ebf-2d5b-d5b5d243c134",
+				"3021a434-2c63-8c74-20c2-a8e6bd30f6ed",
+				"a5428d3b-f905-a009-d06f-d6ff4e451c76",
+				"9bade048-63fd-8c63-4161-0c08ccc62c51",
+				"490772c4-f917-1adc-9098-2b28744378cb",
+				"7dde44de-158c-7017-1c22-148e6fd9cf34",
+				"c0751a6e-91b5-c708-f18a-fef0b4f26a43"
+			]
+		},
+		{
+			"name": "Wall",
+			"origin": [0, 0, -0.2],
+			"color": 0,
+			"uuid": "5805bba4-92fe-1c3d-c2a4-f02c8fec9196",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"58e4cbbc-fa52-aedb-fb76-aa4e029ed354",
+				"3f2bdbff-15a2-0ed6-e8f0-6a5cdfb1d5f2",
+				"879d6bfc-3f6c-1f20-b843-aee47a02c0b1",
+				"660b798f-f598-1acd-eaa2-f75df853f21f",
+				"5f439912-347e-14f1-7b35-ed0f924f1d2e",
+				"3f48effb-b7f0-f44d-ebfc-e16e1bbe6657"
+			]
+		},
+		{
+			"name": "Wall3",
+			"origin": [0, 32, -0.8],
+			"rotation": [0.19788, -0.26978, 179.97705],
+			"color": 0,
+			"uuid": "4a772a22-1e1e-0201-911f-50e2007ddadb",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"10ce049e-bca5-b0d8-d306-d18769ac7b3c",
+				"6d4be0c4-b10a-5da7-4992-552480b94139",
+				"28e8c697-7eec-6251-39ed-a8850f208553",
+				"2e0b0b38-b0ed-12e4-c7d7-4704ba3e1d4f",
+				"5b649ca4-3d21-bc06-c562-345dd5c3bda6",
+				"d7aa104e-e6b3-883a-d4f7-9ab631496376",
+				"11b3b5be-6d94-56de-61f9-fee2021c26ff",
+				"5d9a2d83-0cd9-d0d4-21c0-a3270e822d0a",
+				"9c7ce91e-f622-e7f9-3084-ce480b9bc9b6",
+				"16d9cc4a-03f7-587c-a77f-7ce0e747c665",
+				"f43ec153-da04-0c57-2a44-eab79aa8cf03",
+				"485ef532-dc39-c5f7-b936-5ecb00b91908",
+				"eec3445b-5664-0087-6654-adb48730629c",
+				"cc54d294-853e-203d-9865-52f86dd48988",
+				"6d56996a-3b8c-d076-125e-b03bd65f9c66",
+				"b478865b-d30b-e323-411b-198eb74b62f7",
+				"a074cb29-d40f-1f56-6685-0f2c19dfdaf0",
+				"9f88ca8e-7bca-f77c-66ef-ebe5b41dc721",
+				"fb72d0f3-7e9a-b18c-17f2-d9bf7930b947",
+				"a127232f-3c94-b8f4-f1c2-5856a5a9a102",
+				"271c1658-51d7-086b-a082-0cc23f840315",
+				"b1218deb-9df9-50c5-7e27-748ec0b8ad6b",
+				"d95287e4-f25a-2646-ff92-fa4658ca7b5d",
+				"d19baa0e-2841-383c-d7da-be3ce7213981",
+				"e0153315-26b5-0a84-bae4-9d72892b37a7",
+				"c46e16a6-46a6-067c-05d4-94d66df03cd8",
+				"bb32d2e3-b07f-4818-b5ad-92f1a7ead75c",
+				"a9fe8de9-586d-f776-fb7d-690623554043",
+				"4d0ea063-3320-9790-8561-8f81a631c2b0",
+				"5edd45b1-30bf-32d4-2528-f92a5501d5f2",
+				"d070e9c5-296f-03c3-a688-eff0ea3d2620",
+				"1873e456-4646-5634-0d34-61b736b72a52",
+				"f56f9ce3-4ea9-539a-df50-1c9bb5fea273",
+				"e12a30a3-4ac5-1b62-02d2-b3beab47fb78",
+				"b420288d-e9c2-28a7-5a24-b9066cd741fc",
+				"54a4dc57-4fb2-4975-db1d-ce83b6a30af2",
+				"58a9c270-f571-e696-faf4-232595495ffd"
+			]
+		},
+		{
+			"name": "Wall4",
+			"origin": [0, 16, -0.2],
+			"color": 0,
+			"uuid": "84cca9d9-f06f-d2e3-8b0b-f4eb425383a1",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				"48a81ff7-3adc-bf40-794c-e06c25b29363",
+				"a5491fe3-fcdb-4caa-e1e2-0c2a5251bc79",
+				"a0f374ec-664b-b715-839f-e6a55d114f10",
+				"8d1130f4-890a-3d89-8b23-41fcdb438cfe",
+				"d7f04961-c320-cb02-46d4-4825aa820305",
+				"50402268-2ceb-4e67-0f3b-5bf8c1915631"
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\Texture\\3DModel\\素材\\Wall完成2.png",
+			"name": "Wall完成2.png",
+			"folder": "",
+			"namespace": "",
+			"id": "4",
+			"group": "",
+			"width": 128,
+			"height": 128,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "160f7d89-0418-52df-89d8-2ea1bcd8d06a",
+			"relative_path": "素材/Wall完成2.png",
+			"source": "data:image/png;base64,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"
+		},
+		{
+			"path": "C:\\Users\\rhyth\\Desktop\\Repository_List\\Abamdoned_city_Life\\Assets\\Texture\\3DModel\\素材\\Wall完成.png",
+			"name": "Wall完成.png",
+			"folder": "",
+			"namespace": "",
+			"id": "3",
+			"group": "",
+			"width": 128,
+			"height": 128,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "b69dd9c4-0da9-2821-1c6c-7d0921541a9d",
+			"relative_path": "素材/Wall完成.png",
+			"source": "data:image/png;base64,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"
+		}
+	]
+}

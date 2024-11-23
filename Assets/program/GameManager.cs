@@ -44,15 +44,16 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this);
-        SceneStartFunction(SceneManager.GetActiveScene().buildIndex,0);
         Application.targetFrameRate = 60;
+        SceneStartFunction(SceneManager.GetActiveScene().buildIndex,0);
         SavePath = Application.persistentDataPath + "/SaveData.json";
     }
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.O))
         {
-            playerMoney += 100;
+            playerMoney += 10000;
         }
     }
     public void SceneTransitionProcess(int transitionSceneNumber, int stageNumber)

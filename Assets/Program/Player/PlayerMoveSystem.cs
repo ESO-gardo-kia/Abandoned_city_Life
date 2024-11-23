@@ -57,7 +57,7 @@ public class PlayerMoveSystem : MonoBehaviour
         Vector3 Player_movedir = new Vector3(x, rigidBody.velocity.y, z); // ê≥ãKâª
         Player_movedir = this.transform.forward * z + this.transform.right * x;
         Player_movedir = Player_movedir.normalized;
-        rigidBody.velocity = new Vector3(Player_movedir.x * speed, rigidBody.velocity.y, Player_movedir.z * speed);
+        rigidBody.velocity = new Vector3((Player_movedir.x * speed) * Time.deltaTime, rigidBody.velocity.y, (Player_movedir.z * speed) * Time.deltaTime);
     }
     IEnumerator JunpMove(float jumpForce)
     {

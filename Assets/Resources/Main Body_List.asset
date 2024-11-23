@@ -15,12 +15,12 @@ MonoBehaviour:
   data:
   - bodyModel: {fileID: 0}
     bodyName: EARLY MODEL
-    hp: 100
+    hp: 200
     en: 200
     energyRecoveryTime: 0.3
     jumpForce: 150
-    walkSpeed: 40
-    dashSpeed: 17
+    walkSpeed: 900
+    dashSpeed: 1200
   - bodyModel: {fileID: 0}
     bodyName: 
     hp: 0
